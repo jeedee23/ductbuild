@@ -1,0 +1,4690 @@
+SOURCE FILE: sources/pdf/44449_Logivast_07maart2025(1).pdf
+NATIVE PDF TEXT ONLY. Geometry/reading order may be lost; view the original PDF. No OCR performed.
+
+===== PDF PAGE 1 / 8 =====
+GSPublisherVersion 1311.80.80.100
+P
+5
+20m
+Deze tekening niet gebruiken voor uitvoering van enige werkzaamheden. 
+Staalconstructie- en funderingsberekeningen volgens opgaaf constructeur. 
+Bouwbesluittoetsing en BENG berekening volgens nader in te dienen rapportage
+GEBOUWGEGEVENS:
+MATERIALEN EN KLEUREN:
+VEILIGHEIDSMAATREGELEN:
+Onderdeel:
+ 
+Dak:
+Dakrand / Windveren:
+Wanden:
+Accentvlakken:
+Sierlijsten:
+Borstwering:
+Kozijnen:
+Deuren / Ramen:
+Overheaddeuren:
+Goten / H.w.a.'s:
+Kleur:
+ 
+Lichtgrijs
+Grijsmetallic / Lichtgrijs
+Grijsmetallic
+Antraciet
+Antraciet
+Grijs
+Antraciet
+Antraciet
+Antraciet
+Grijs / Grijs
+Kleurcode:
+RAL 7038 / N.v.t.
+RAL 9007 / RAL 7038
+RAL 9007
+RAL 7016
+RAL 7016
+N.v.t.
+RAL 7016
+RAL 7016
+RAL 7016
+RAL 7036 / N.v.t.
+Materiaal:
+ 
+Staal / PVC
+Staal
+Staal
+Staal
+Aluminium
+Beton
+Kunststof
+Kunststof
+Staal
+Aluminium / PVC
+Deur welke, over de minimaal vereiste breedte, zonder gebruik te maken van 
+een sleutel, kan worden geopend. Dit d.m.v. draaiknopcilinder of gelijkwaardig
+Vluchtweg aanduidingsbord / transparant verlichtingsarmatuur, uitvoeringing
+van de symbolen "UIT" en "NOODUITGANG" conform de pictogramen zoals 
+vermeld in de NEN 3011. / NEN-EN-ISO 7010 en de zichtbaarheidseisen
+confrom de NEN-EN 1838.
+Sproeischuimblusser met een inhoud van ten minste 6 liter schuim.
+Brandslanghaspel met een slanglengte van 30m
+PS
+Postbus 376
+3900 AJ VEENENDAAL
+Generatorstraat 21
+3903 LH VEENENDAAL
+T: 0318 - 521700
+F: 0318 - 520418
+I: 
+www.hardeman.nl
+E: info@hardeman.nl
+Opdrachtgever:
+Logivast Beheer B.V.
+Wieselseweg 124
+7345 CG Wenum Wiesel
+Bouwadres:
+Hertog van Beijerenstraat 2
+2461 EM Ter Aar
+Onderwerp:
+Werknummer:
+Tekenaar: NVV
+Datum: 
+07 maart 2025
+Schaal: 
+1:500
+Formaat:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Bladnummer:
+Situatie
+44449
+1
+Bebouwd oppervlak:
+Bruto inhoud:
+Gem. ruimtes (GR):
+GBO Lichte Ind. functie:
+VG Lichte Ind. functie:
+GBO Industriefunctie:
+VG Industriefunctie:
+GBO Kantoorfunctie:
+VG Kantoorfunctie:
+GBO Bijeenkomstfunctie:
+VG Bijeenkomstfunctie:
+GBO / VG
+3679m²
+34689m³
+38,5m²
+2327,4m²
+0m²
+1595,4m²
+1595,4m²
+74,0m²
+74,0m²
+48,9m²
+48,9m²
+GBO+GR:
+2349,5m²
+1610,6m²
+74,7m²
+49,3m²
+Constructieve veiligheid:
+Brandbeperking vluchtroutes:
+Inbraakwerendheid:
+Geluidsbescherming:
+Vochtwering/regenwerendheid:
+Afvoer vuilwater/hemelwater:
+Luchtverversing:
+Verbrandingsluchttoevoer/
+rookgasafvoer:
+ 
+Meterruimte:
+ 
+Thermische isolatie:
+ 
+Luchtdoorlatendheid:
+ 
+Energieprestatie:
+ 
+Drinkwater-installatie:
+ 
+Electra-installatie:
+ 
+CV-installatie:
+NEN-NORMERING:
+NEN-EN 
+1990 t/m 1999
+ 
+NEN 13501-1
+ 
+NEN 5087/5096
+ 
+NEN 5077
+ 
+NEN 2778
+ 
+NEN 3215/7013
+ 
+NEN 1087/8087
+NEN 2757/6062
+ 
+NEN 2768
+NTA 8800
+NEN 2686
+NTA 8800
+NEN 1006
+NEN 1010/1041
+NEN 3028/1078
+60 minuten weerstand tegen brandoverslag
+en branddoorslag (WBDBO), conform de 
+NEN 6068 of NEN-EN 13501-2
+INTEGRALE TOEGANKELIJKHEID:
+De vrije doorgang van alle toegangen tot ruimtes 
+dient minimaal 850x2100mm te zijn, conform 
+BBL art. 4.180 lid 1.
+Daarbij is de opstaphoogte bij entreedeuren 
+niet groter dan 20mm, conform BBL art. 4.182 lid 5 
+Deur welke zelfsluitend is uitgevoerd, en in combinatie met het kozijn een
+brandwerendheid bezit van ten minste 60 minuten (conform NEN 6069)
+WERING MUIZEN EN RATTEN:
+Openingen in fundering, vloer, dak en wand 
+zijn "muisdicht" (conform BBL art. 4.144 en 4.145)
+60
+Tussen de assen 3/4, E/F en L/K wordt een gasbetonwand geplaatst met aan beide zijdes 
+een op zichzelf staande staalconstructie. 
+De gasbetonwand is gekoppeld aan beide constructies (met smeltverankering), zodat bij 
+brand in één van de brandcompartimenten de gasbetonwand minimaal 60 minuten blijft 
+staan waardoor de WBDBO van 60 minuten tussen de compartimenten gewaarborgd is. 
+Op as 20 (tussen as M en O) en op as M (tussen as 20 en 21) worden 100mm 
+PIRplus sandwichpanelen toegepast (EW60). De stalen kolommen op die assen 
+worden 60 minuten brandwerend uitgevoerd en voorzien van een zogenaamd 
+"kantelnokconstructie". WBDBO = 60 minuten o.b.v. spiegelsymmetrie. 
+Materiaal toegepast aan de binnenzijde van een schacht, koker of kanaal voldoet minimaal
+aan de in BBL art. 4.39 gestelde brandklasse (bepaald conform NEN-EN13501-1)
+Een zijde van een constructieonderdeel die grenst aan de binnenlucht voldoet minimaal 
+aan de in BBL art. 4.43 gestelde brand- en rookklasse (bepaald conform NEN-EN13501-1).
+Een zijde van een constructieonderdeel die grenst aan de buitenlucht voldoet minimaal 
+aan de in BBL art.4.44 gestelde brandklasse (bepaald conform NEN-EN13501-1). 
+Uitzondering daarop is de bovenzijde van het dak (uitvoering conform BBL art. 4.47)
+Een beloopbaar vlak (bovenzijde van een vloer, een trap, een hellingbaan), voldoet 
+min. aan de in BBL art. 4.45 gestelde brand- en rookklasse (conform NEN-EN13501-1)
+Elektrische leidingen en pijpisolatie voldoen minimaal aan de in BBL art.4.45a gestelde 
+brand- en rookklasse (bepaald conform NEN-EN13501-1 en NEN-EN13501-6)
+De weerstand tegen rookdoorgang voldoet minimaal aan de in BBL art. 4.61 en art. 4.62
+gestelde eisen (bepaald conform NEN 6075).
+De aanwezigheid en uitvoering van een brandmeldinstallatie voldoet minimaal aan de in 
+BBL art. 4.208 gestelde voorschiften (bepaald conform NEN 2535).
+De aanwezigheid en uitvoering van een ontruimingsinstallatie voldoet minimaal aan de in
+BBL art 4.213 gestelde voorschiften (bepaald (conform NEN 2575).
+INSTALLATIES:
+Alle installaties, zoals (nood)verlichting, water, 
+riolering, enz. uitvoeren conform opgaaf en 
+tekeningen van installateur.
+60
+Brandwerende wandpanelen (EW60) en 
+60 minuten brandwerende staalconstructie
+A0
+A
+A
+B
+B
+Nok
+Nok
+C
+C
+D
+D
+E
+E
+F
+F
+G
+G
+H
+H
+J
+J
+K
+K
+L
+L
+Nok
+Nok
+M
+M
+N
+N
+O
+O
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+25.000
+18.287
+7.974
+4.917
+2.800
+54.660
+65.660
+Bestaand inrit 
+6m breed
+Nieuwe inrit 
+10m breed
+Parkeerplaats voorzien
+van elektrische laadpaal
+Opstelplaats hulpdienstverlening
+Opstelplaats hulpdienstverlening
+Opstelplaats hulpdienstverlening
+2868
+2907
+3678
+3771
+4423
+4979
+4984
+5499
+6010
+6011
+6017
+6018
+6019
+6020
+6021
+6022
+6023
+6027
+6028
+6029
+6034
+6037
+6038
+6141
+6142
+6144
+6248
+6370
+6371
+6373
+6530
+6531
+6532
+6535
+6611
+6773
+6774
+6797
+6837
+6856
+6982
+6984
+6985
+6988
+7044
+7315
+7316
+7317
+7318
+7319
+7320
+7321
+7322
+7358
+7360
+7361
+7368
+7370
+7375
+7376
+7377
+7378
+7382
+7459
+7469
+7470
+7471
+7472
+7473
+7474
+7475
+7476
+7477
+7478
+7479
+7480
+7552
+7553
+7598
+7599
+7600
+7662
+7663
+7664
+7691
+7692
+7721
+7722
+7733
+7734
+7735
+7737
+7738
+7739
+7805
+7806
+7943
+7944
+7985
+8024
+8025
+8053
+8060
+8061
+8145
+8174
+8175
+8176
+8177
+8178
+8180
+8181
+8182
+8183
+8222
+8223
+8224
+8225
+8226
+8227
+8228
+8229
+8231
+8232
+8243
+8250
+8251
+8252
+8294
+8298
+8299
+8307
+8311
+8331
+8355
+Opp = 6237m²
+8356
+8585
+8586
+8837
+8838
+8839
+8840
+8891
+8894
+8942
+8949
+8950
+9013
+9014
+9015
+9016
+9017
+9018
+9019
+9020
+9021
+9022
+9023
+9024
+9025
+9026
+9027
+9028
+9029
+9030
+9031
+9032
+9033
+9034
+9035
+9036
+9037
+9038
+9039
+9040
+9041
+9042
+9043
+9044
+9045
+9046
+9047
+9307
+9336
+9337
+9503
+9504
+9505
+9506
+4046
+4196
+4374
+4375
+18
+6
+14
+16
+60B
+24
+22
+12
+20
+38
+28
+36
+34
+32
+30
+44
+42
+40
+48
+27-33
+68
+67
+64
+63A
+23
+22A
+22
+50
+65
+9
+10
+4
+8
+18
+6
+26
+16
+14
+3
+8
+13-13B
+16
+7-7A
+5-5A
+17
+14
+5
+1
+12-12C
+3
+1
+3
+2-2A
+7
+19
+9
+11
+4-4A
+13
+4
+15
+6
+17
+20
+8
+3
+19
+10
+5
+12
+7
+8
+9
+11
+63
+2
+1
+12-1
+5
+2
+4
+62A
+6
+62
+10
+12
+16
+61
+14
+8
+13
+15
+8
+14
+1-3
+10
+12
+6
+8
+27
+25
+14C
+14D
+14E
+14F
+14G
+19
+1
+15
+15
+17
+9-13
+7A
+6
+4
+7
+10
+2
+9-9D
+5
+14B
+5
+3
+Siersmid
+Hertog van Beijerenstraat
+Hertog van Beijerenstraat
+Stobbeweg
+Smidskade
+Smidskade
+Smidskade
+Houtweg
+Grofsmid
+Goudsmid
+Goudsmid
+Nieuw te bouwen bedrijfsruimte
+Bouwlocatie:
+Hertog van Beijerenstraat - Ter Aar
+Kadastrale gemeente: Ter Aar
+Sectie: A
+Perceelnummer: 8356 - 9506
+Totaal bebouw oppervlak = 3679m²
+Parkeren:
+Zie door opdrachtgever opgestelde "motivatie afwijking parkeernorm"
+Opstelplaatsen hulpverleningsdiensten:
+ 
+Voldoen aan bouwbesluit 2012 art. 6.37:
+a. een breedte van ten minste 4,5 meter
+b. een verharding over een breedte van  ten minste 3,25 meter, 
+die geschikt is voor motorvoertuigen met een massa van ten 
+minste 14.600 kilogram
+c. een vrijgehouden hoogte boven de kruin van de weg van 
+ten minste 4,2 meter, en
+d. een doeltreffende afwatering.
+Elektrische laadpaal:
+Minimaal 20% van de parkeerplaatsen is voorzien van 
+een mantelbuis t.b.v. toekomstige laadpalen
+P(e)
+
+
+===== PDF PAGE 2 / 8 =====
+GSPublisherVersion 1311.80.80.100
+P
+5
+20m
+Deze tekening niet gebruiken voor uitvoering van enige werkzaamheden. 
+Staalconstructie- en funderingsberekeningen volgens opgaaf constructeur. 
+Bouwbesluittoetsing en BENG berekening volgens nader in te dienen rapportage
+GEBOUWGEGEVENS:
+MATERIALEN EN KLEUREN:
+VEILIGHEIDSMAATREGELEN:
+Onderdeel:
+ 
+Dak:
+Dakrand / Windveren:
+Wanden:
+Accentvlakken:
+Sierlijsten:
+Borstwering:
+Kozijnen:
+Deuren / Ramen:
+Overheaddeuren:
+Goten / H.w.a.'s:
+Kleur:
+ 
+Lichtgrijs
+Grijsmetallic / Lichtgrijs
+Grijsmetallic
+Antraciet
+Antraciet
+Grijs
+Antraciet
+Antraciet
+Antraciet
+Grijs / Grijs
+Kleurcode:
+RAL 7038 / N.v.t.
+RAL 9007 / RAL 7038
+RAL 9007
+RAL 7016
+RAL 7016
+N.v.t.
+RAL 7016
+RAL 7016
+RAL 7016
+RAL 7036 / N.v.t.
+Materiaal:
+ 
+Staal / PVC
+Staal
+Staal
+Staal
+Aluminium
+Beton
+Kunststof
+Kunststof
+Staal
+Aluminium / PVC
+Deur welke, over de minimaal vereiste breedte, zonder gebruik te maken van 
+een sleutel, kan worden geopend. Dit d.m.v. draaiknopcilinder of gelijkwaardig
+Vluchtweg aanduidingsbord / transparant verlichtingsarmatuur, uitvoeringing
+van de symbolen "UIT" en "NOODUITGANG" conform de pictogramen zoals 
+vermeld in de NEN 3011. / NEN-EN-ISO 7010 en de zichtbaarheidseisen
+confrom de NEN-EN 1838.
+Sproeischuimblusser met een inhoud van ten minste 6 liter schuim.
+Brandslanghaspel met een slanglengte van 30m
+PS
+Postbus 376
+3900 AJ VEENENDAAL
+Generatorstraat 21
+3903 LH VEENENDAAL
+T: 0318 - 521700
+F: 0318 - 520418
+I: 
+www.hardeman.nl
+E: info@hardeman.nl
+Opdrachtgever:
+Logivast Beheer B.V.
+Wieselseweg 124
+7345 CG Wenum Wiesel
+Bouwadres:
+Hertog van Beijerenstraat 2
+2461 EM Ter Aar
+Onderwerp:
+Werknummer:
+Tekenaar: NVV
+Datum: 
+07 maart 2025
+Schaal: 
+1:100
+Formaat:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Bladnummer:
+Gevelaanzichten
+44449
+2
+Bebouwd oppervlak:
+Bruto inhoud:
+Gem. ruimtes (GR):
+GBO Lichte Ind. functie:
+VG Lichte Ind. functie:
+GBO Industriefunctie:
+VG Industriefunctie:
+GBO Kantoorfunctie:
+VG Kantoorfunctie:
+GBO Bijeenkomstfunctie:
+VG Bijeenkomstfunctie:
+GBO / VG
+3679m²
+34689m³
+38,5m²
+2327,4m²
+0m²
+1595,4m²
+1595,4m²
+74,0m²
+74,0m²
+48,9m²
+48,9m²
+GBO+GR:
+2349,5m²
+1610,6m²
+74,7m²
+49,3m²
+Constructieve veiligheid:
+Brandbeperking vluchtroutes:
+Inbraakwerendheid:
+Geluidsbescherming:
+Vochtwering/regenwerendheid:
+Afvoer vuilwater/hemelwater:
+Luchtverversing:
+Verbrandingsluchttoevoer/
+rookgasafvoer:
+ 
+Meterruimte:
+ 
+Thermische isolatie:
+ 
+Luchtdoorlatendheid:
+ 
+Energieprestatie:
+ 
+Drinkwater-installatie:
+ 
+Electra-installatie:
+ 
+CV-installatie:
+NEN-NORMERING:
+NEN-EN 
+1990 t/m 1999
+ 
+NEN 13501-1
+ 
+NEN 5087/5096
+ 
+NEN 5077
+ 
+NEN 2778
+ 
+NEN 3215/7013
+ 
+NEN 1087/8087
+NEN 2757/6062
+ 
+NEN 2768
+NTA 8800
+NEN 2686
+NTA 8800
+NEN 1006
+NEN 1010/1041
+NEN 3028/1078
+60 minuten weerstand tegen brandoverslag
+en branddoorslag (WBDBO), conform de 
+NEN 6068 of NEN-EN 13501-2
+INTEGRALE TOEGANKELIJKHEID:
+De vrije doorgang van alle toegangen tot ruimtes 
+dient minimaal 850x2100mm te zijn, conform 
+BBL art. 4.180 lid 1.
+Daarbij is de opstaphoogte bij entreedeuren 
+niet groter dan 20mm, conform BBL art. 4.182 lid 5 
+Deur welke zelfsluitend is uitgevoerd, en in combinatie met het kozijn een
+brandwerendheid bezit van ten minste 60 minuten (conform NEN 6069)
+WERING MUIZEN EN RATTEN:
+Openingen in fundering, vloer, dak en wand 
+zijn "muisdicht" (conform BBL art. 4.144 en 4.145)
+60
+Tussen de assen 3/4, E/F en L/K wordt een gasbetonwand geplaatst met aan beide zijdes 
+een op zichzelf staande staalconstructie. 
+De gasbetonwand is gekoppeld aan beide constructies (met smeltverankering), zodat bij 
+brand in één van de brandcompartimenten de gasbetonwand minimaal 60 minuten blijft 
+staan waardoor de WBDBO van 60 minuten tussen de compartimenten gewaarborgd is. 
+Op as 20 (tussen as M en O) en op as M (tussen as 20 en 21) worden 100mm 
+PIRplus sandwichpanelen toegepast (EW60). De stalen kolommen op die assen 
+worden 60 minuten brandwerend uitgevoerd en voorzien van een zogenaamd 
+"kantelnokconstructie". WBDBO = 60 minuten o.b.v. spiegelsymmetrie. 
+Materiaal toegepast aan de binnenzijde van een schacht, koker of kanaal voldoet minimaal
+aan de in BBL art. 4.39 gestelde brandklasse (bepaald conform NEN-EN13501-1)
+Een zijde van een constructieonderdeel die grenst aan de binnenlucht voldoet minimaal 
+aan de in BBL art. 4.43 gestelde brand- en rookklasse (bepaald conform NEN-EN13501-1).
+Een zijde van een constructieonderdeel die grenst aan de buitenlucht voldoet minimaal 
+aan de in BBL art.4.44 gestelde brandklasse (bepaald conform NEN-EN13501-1). 
+Uitzondering daarop is de bovenzijde van het dak (uitvoering conform BBL art. 4.47)
+Een beloopbaar vlak (bovenzijde van een vloer, een trap, een hellingbaan), voldoet 
+min. aan de in BBL art. 4.45 gestelde brand- en rookklasse (conform NEN-EN13501-1)
+Elektrische leidingen en pijpisolatie voldoen minimaal aan de in BBL art.4.45a gestelde 
+brand- en rookklasse (bepaald conform NEN-EN13501-1 en NEN-EN13501-6)
+De weerstand tegen rookdoorgang voldoet minimaal aan de in BBL art. 4.61 en art. 4.62
+gestelde eisen (bepaald conform NEN 6075).
+De aanwezigheid en uitvoering van een brandmeldinstallatie voldoet minimaal aan de in 
+BBL art. 4.208 gestelde voorschiften (bepaald conform NEN 2535).
+De aanwezigheid en uitvoering van een ontruimingsinstallatie voldoet minimaal aan de in
+BBL art 4.213 gestelde voorschiften (bepaald (conform NEN 2575).
+INSTALLATIES:
+Alle installaties, zoals (nood)verlichting, water, 
+riolering, enz. uitvoeren conform opgaaf en 
+tekeningen van installateur.
+60
+Brandwerende wandpanelen (EW60) en 
+60 minuten brandwerende staalconstructie
+A0
+N
+O
+A
+B Nok
+C
+D
+EF
+G
+H
+J
+KL
+Nok
+M
+18 19
+20
+21
+1
+3
+5
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+O
+NM
+Nok
+FE
+Nok
+A
+21
+20
+18
+16
+14
+12
+11
+10
+9
+8
+7
+5
+3
+1
+Voorgevel (noordwestzijde)
+1:100
+Rechtergevel (zuidwestzijde)
+1:100
+Achtergevel (zuidoostzijde)
+1:100
+Linkergevel (noordoostzijde)
+1:100
+
+
+===== PDF PAGE 3 / 8 =====
+GSPublisherVersion 1311.80.80.100
+P
+5
+20m
+Deze tekening niet gebruiken voor uitvoering van enige werkzaamheden. 
+Staalconstructie- en funderingsberekeningen volgens opgaaf constructeur. 
+Bouwbesluittoetsing en BENG berekening volgens nader in te dienen rapportage
+GEBOUWGEGEVENS:
+MATERIALEN EN KLEUREN:
+VEILIGHEIDSMAATREGELEN:
+Onderdeel:
+ 
+Dak:
+Dakrand / Windveren:
+Wanden:
+Accentvlakken:
+Sierlijsten:
+Borstwering:
+Kozijnen:
+Deuren / Ramen:
+Overheaddeuren:
+Goten / H.w.a.'s:
+Kleur:
+ 
+Lichtgrijs
+Grijsmetallic / Lichtgrijs
+Grijsmetallic
+Antraciet
+Antraciet
+Grijs
+Antraciet
+Antraciet
+Antraciet
+Grijs / Grijs
+Kleurcode:
+RAL 7038 / N.v.t.
+RAL 9007 / RAL 7038
+RAL 9007
+RAL 7016
+RAL 7016
+N.v.t.
+RAL 7016
+RAL 7016
+RAL 7016
+RAL 7036 / N.v.t.
+Materiaal:
+ 
+Staal / PVC
+Staal
+Staal
+Staal
+Aluminium
+Beton
+Kunststof
+Kunststof
+Staal
+Aluminium / PVC
+Deur welke, over de minimaal vereiste breedte, zonder gebruik te maken van 
+een sleutel, kan worden geopend. Dit d.m.v. draaiknopcilinder of gelijkwaardig
+Vluchtweg aanduidingsbord / transparant verlichtingsarmatuur, uitvoeringing
+van de symbolen "UIT" en "NOODUITGANG" conform de pictogramen zoals 
+vermeld in de NEN 3011. / NEN-EN-ISO 7010 en de zichtbaarheidseisen
+confrom de NEN-EN 1838.
+Sproeischuimblusser met een inhoud van ten minste 6 liter schuim.
+Brandslanghaspel met een slanglengte van 30m
+PS
+Postbus 376
+3900 AJ VEENENDAAL
+Generatorstraat 21
+3903 LH VEENENDAAL
+T: 0318 - 521700
+F: 0318 - 520418
+I: 
+www.hardeman.nl
+E: info@hardeman.nl
+Opdrachtgever:
+Logivast Beheer B.V.
+Wieselseweg 124
+7345 CG Wenum Wiesel
+Bouwadres:
+Hertog van Beijerenstraat 2
+2461 EM Ter Aar
+Onderwerp:
+Werknummer:
+Tekenaar: NVV
+Datum: 
+07 maart 2025
+Schaal: 
+1:100
+Formaat:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Bladnummer:
+Begane grond
+44449
+3
+Bebouwd oppervlak:
+Bruto inhoud:
+Gem. ruimtes (GR):
+GBO Lichte Ind. functie:
+VG Lichte Ind. functie:
+GBO Industriefunctie:
+VG Industriefunctie:
+GBO Kantoorfunctie:
+VG Kantoorfunctie:
+GBO Bijeenkomstfunctie:
+VG Bijeenkomstfunctie:
+GBO / VG
+3679m²
+34689m³
+38,5m²
+2327,4m²
+0m²
+1595,4m²
+1595,4m²
+74,0m²
+74,0m²
+48,9m²
+48,9m²
+GBO+GR:
+2349,5m²
+1610,6m²
+74,7m²
+49,3m²
+Constructieve veiligheid:
+Brandbeperking vluchtroutes:
+Inbraakwerendheid:
+Geluidsbescherming:
+Vochtwering/regenwerendheid:
+Afvoer vuilwater/hemelwater:
+Luchtverversing:
+Verbrandingsluchttoevoer/
+rookgasafvoer:
+ 
+Meterruimte:
+ 
+Thermische isolatie:
+ 
+Luchtdoorlatendheid:
+ 
+Energieprestatie:
+ 
+Drinkwater-installatie:
+ 
+Electra-installatie:
+ 
+CV-installatie:
+NEN-NORMERING:
+NEN-EN 
+1990 t/m 1999
+ 
+NEN 13501-1
+ 
+NEN 5087/5096
+ 
+NEN 5077
+ 
+NEN 2778
+ 
+NEN 3215/7013
+ 
+NEN 1087/8087
+NEN 2757/6062
+ 
+NEN 2768
+NTA 8800
+NEN 2686
+NTA 8800
+NEN 1006
+NEN 1010/1041
+NEN 3028/1078
+60 minuten weerstand tegen brandoverslag
+en branddoorslag (WBDBO), conform de 
+NEN 6068 of NEN-EN 13501-2
+INTEGRALE TOEGANKELIJKHEID:
+De vrije doorgang van alle toegangen tot ruimtes 
+dient minimaal 850x2100mm te zijn, conform 
+BBL art. 4.180 lid 1.
+Daarbij is de opstaphoogte bij entreedeuren 
+niet groter dan 20mm, conform BBL art. 4.182 lid 5 
+Deur welke zelfsluitend is uitgevoerd, en in combinatie met het kozijn een
+brandwerendheid bezit van ten minste 60 minuten (conform NEN 6069)
+WERING MUIZEN EN RATTEN:
+Openingen in fundering, vloer, dak en wand 
+zijn "muisdicht" (conform BBL art. 4.144 en 4.145)
+60
+Tussen de assen 3/4, E/F en L/K wordt een gasbetonwand geplaatst met aan beide zijdes 
+een op zichzelf staande staalconstructie. 
+De gasbetonwand is gekoppeld aan beide constructies (met smeltverankering), zodat bij 
+brand in één van de brandcompartimenten de gasbetonwand minimaal 60 minuten blijft 
+staan waardoor de WBDBO van 60 minuten tussen de compartimenten gewaarborgd is. 
+Op as 20 (tussen as M en O) en op as M (tussen as 20 en 21) worden 100mm 
+PIRplus sandwichpanelen toegepast (EW60). De stalen kolommen op die assen 
+worden 60 minuten brandwerend uitgevoerd en voorzien van een zogenaamd 
+"kantelnokconstructie". WBDBO = 60 minuten o.b.v. spiegelsymmetrie. 
+Materiaal toegepast aan de binnenzijde van een schacht, koker of kanaal voldoet minimaal
+aan de in BBL art. 4.39 gestelde brandklasse (bepaald conform NEN-EN13501-1)
+Een zijde van een constructieonderdeel die grenst aan de binnenlucht voldoet minimaal 
+aan de in BBL art. 4.43 gestelde brand- en rookklasse (bepaald conform NEN-EN13501-1).
+Een zijde van een constructieonderdeel die grenst aan de buitenlucht voldoet minimaal 
+aan de in BBL art.4.44 gestelde brandklasse (bepaald conform NEN-EN13501-1). 
+Uitzondering daarop is de bovenzijde van het dak (uitvoering conform BBL art. 4.47)
+Een beloopbaar vlak (bovenzijde van een vloer, een trap, een hellingbaan), voldoet 
+min. aan de in BBL art. 4.45 gestelde brand- en rookklasse (conform NEN-EN13501-1)
+Elektrische leidingen en pijpisolatie voldoen minimaal aan de in BBL art.4.45a gestelde 
+brand- en rookklasse (bepaald conform NEN-EN13501-1 en NEN-EN13501-6)
+De weerstand tegen rookdoorgang voldoet minimaal aan de in BBL art. 4.61 en art. 4.62
+gestelde eisen (bepaald conform NEN 6075).
+De aanwezigheid en uitvoering van een brandmeldinstallatie voldoet minimaal aan de in 
+BBL art. 4.208 gestelde voorschiften (bepaald conform NEN 2535).
+De aanwezigheid en uitvoering van een ontruimingsinstallatie voldoet minimaal aan de in
+BBL art 4.213 gestelde voorschiften (bepaald (conform NEN 2575).
+INSTALLATIES:
+Alle installaties, zoals (nood)verlichting, water, 
+riolering, enz. uitvoeren conform opgaaf en 
+tekeningen van installateur.
+60
+Brandwerende wandpanelen (EW60) en 
+60 minuten brandwerende staalconstructie
+A0
+1
+2
+3
+4
+5
+6
+7
+8
+23O x 196
+22A x 220
+1
+2
+3
+4
+5
+6
+7
+8
+23O x 196
+22A x 220
+Brandwerend roldoek
+Afm. 3.100x3.000
+Wandopening
+Afm. 2.135x2.400
+Wandopening
+Afm. 2.135x2.400
+Stalen geïsoleerde overheaddeur
+Afm. 4.160x5.000
+Stalen geïsoleerde overheaddeur
+Afm. 4.160x5.000
+Stalen geïsoleerde overheaddeur
+Afm. 3.100x4.200
+Stalen geïsoleerde overheaddeur
+Afm. 4.160x5.000
+Kunststof loopdeur
+Afm. 1.075x2.400
+Kunststof loopdeur
+Afm. 1.075x2.400
+Kunstsof kozijn
+Afm. 980x4.000
+Kunstsof kozijn
+Afm. 980x4.000
+Kunststof loopdeur
+Afm. 1.075x4.000
+Kunstsof kozijn
+Afm. 980x4.000
+Kunststof loopdeur
+Afm. 1.075x4.000
+Kunststof pui
+Afm. 3.100x2.400
+Kunststof entreepui
+Afm. 3.120x2.400
+Kunststof entreepui
+Afm. 3.120x2.400
+Kunststof pui
+Afm. 3.100x2.400
+Snelroldeur
+Afm. 4.160x3.000
+Stalen geïsoleerde overheaddeur
+Afm. 3.100x3.000
+Brandwerend roldoek
+Afm. 4.000x5.000
+Snelroldeur
+Afm. 4.000x5.000
+Brandwerend roldoek
+Afm. 1.500x3.000
+Snelroldeur
+Afm. 1.500x3.000
+Stalen geïsoleerde overheaddeur
+Afm. 3.100x3.000
+Trafodeur
+Afm. 1.990x2.535
+Kunststof loopdeur
+Afm. 2.700x2.400
+Kunststof loopdeur
+Afm. 2.700x2.400
+A
+A
+B
+B
+Nok
+Nok
+C
+C
+D
+D
+E
+E
+F
+F
+G
+G
+H
+H
+J
+J
+K
+K
+L
+L
+Nok
+Nok
+M
+M
+N
+N
+O
+O
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+S
+6
+S
+6
+S
+6
+S
+6
+30m
+S
+6
+30m
+S
+6
+30m
+S
+6
+30m
+S
+6
+S
+6
+S
+6
+S
+6
+S
+6
+S
+6
+Stalen geïsoleerde overheaddeur
+Afm. 3.100x3.000
+F
+F
+A
+A
+B
+B
+C
+C
+D
+D
+H
+H
+E
+E
+G
+G
+J
+J
+12.540 (minimaal 12.500)
+13.660
+1.734
+100
+2.200
+8.160
+100
+1.000
+9.786
+9.700
+13.250
+13.960
+3.834
+100
+1.000
+100
+2.200
+100
+1.060
+3.500
+100
+3.700
+100
+1.650
+100
+5.450
+100
+4.870
+3.550
+100
+2.210
+5.860
+6.710
+9.320
+2.150
+1.950
+100
+1.750
+100
+1.070
+1.125
+6.440
+4.160
+3.460
+7.634
+3.100
+3.326
+100
+800
+1.800
+350
+4.000
+1.800
+1.500
+10.150
+100
+3.000
+9.200
+3.820
+40
+100
+800
+LET OP: Minimaal 64.500 tussen de kolommen
+LET OP: Minimaal 25.180 tussen de kolommen
+LET OP: Minimaal 26.830 tussen de kolommen)
+3.520
+2.400
+100
+8.686
+100
+1.000
+1.450
+3.100
+2.160
+2.730
+7.020
+100
+2.580
+100
+6.060
+5.350
+2.650
+5.150
+5.100
+5.100
+5.100
+5.100
+2.600
+2.500
+1.900
+3.200
+1.300
+3.800
+700
+4.400
+5.150
+150
+100
+42.110
+100
+17.800
+100
+5.050
+100
+150
+42.360
+18.000
+5.300
+5.230
+5.230
+5.250
+5.230
+5.230
+160
+5.570
+5.570
+5.550
+5.570
+5.570
+100
+4.900
+150
+100
+54.160
+100
+150
+5.000
+54.660
+4.000
+40
+4.850
+300
+1.830
+5.400
+5.400
+2.780
+160
+5.300
+1.300
+160
+4.850
+4.810
+4.880
+4.450
+4.400
+4.400
+100
+4.900
+150
+100
+54.160
+100
+150
+5.000
+54.660
+6.060
+2.800
+5.200
+5.150
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.150
+150
+100
+65.160
+100
+150
+65.660
+5.000
+15.000
+5.000
+9.000
+4.110
+1.950
+160
+6.690
+160
+1.300
+4.000
+4.000
+1.300
+160
+4.850
+4.850
+4.880
+Maatvoering tussen dagkant 
+wandopening en buitenkant 
+sandwichpaneel zo klein 
+mogelijk aanhouden
+Minimaal 2500mm
+Kraan (10 ton)
+Kraan (3 ton)
+60
+60
+60
+60
+PS
+elektr. cilinder
+PS
+elektr. cilinder
+Laadkuil - afm inwendig 5m x 20m
+(Netto doorgang minimaal 2500mm)
+(Netto doorgang minimaal 2500mm)
+PS
+PS
+PS
+PS
+PS
+PS
+PS
+60
+60
+60
+60
+60
+60
+60
+Kraan (2 ton)
+0.11 Siloruimte
+Lichte Industriefunctie
+GBO: 173,27 m2
+(het verblijven van personen is van ondergeschikte aard)
+0.13 Elektra verdeelkast
+Lichte Industriefunctie
+GBO: 2,74 m2
+0.12 Trafohuis
+Lichte Industriefunctie
+GBO: 8,45 m2
+0.14 Werkplaats
+Industriefunctie
+GBO: 1.493,16 m2
+(1 persoon)
+0.10 Werkplaats
+Industriefunctie
+GBO: 92,87 m2
+(2 persoon)
+0.08 Kantoor
+Kantoorfunctie
+GBO: 36,16 m2
+(4 persoon)
+0.09 Kast
+Gem. ruimte
+GBO: 2,81 m2
+0.15 Matrijzenkluis
+Lichte Industriefunctie
+GBO: 62,54 m2
+(het verblijven van personen is van ondergeschikte aard)
+0.02 Kantine
+Bijeenkomstfunctie
+GBO: 29,74 m2
+(10 persoon)
+0.03 Kleedruimte
+Industriefunctie
+GBO: 9,35 m2
+(het verblijven van personen is van ondergeschikte aard)
+0.04 Portaal
+Gem. ruimte
+GBO: 4,16 m2
+0.05 Toilet
+Gem. ruimte
+GBO: 1,93 m2
+0.06 Toilet
+Gem. ruimte
+GBO: 4,03 m2
+0.07 Kast
+Gem. ruimte
+GBO: 2,29 m2
+0.01 Entree
+Gem. ruimte
+GBO: 12,86 m2
+0.16 Opslagruimte
+Lichte Industriefunctie
+GBO: 1.575,68 m2
+(het verblijven van personen is van ondergeschikte aard)
+0.17 Koelingsruimte
+Lichte Industriefunctie
+GBO: 87,22 m2
+(het verblijven van personen is van ondergeschikte aard)
+Begane grond
+1:100
+
+
+===== PDF PAGE 4 / 8 =====
+GSPublisherVersion 1311.80.80.100
+P
+5
+20m
+Deze tekening niet gebruiken voor uitvoering van enige werkzaamheden. 
+Staalconstructie- en funderingsberekeningen volgens opgaaf constructeur. 
+Bouwbesluittoetsing en BENG berekening volgens nader in te dienen rapportage
+GEBOUWGEGEVENS:
+MATERIALEN EN KLEUREN:
+VEILIGHEIDSMAATREGELEN:
+Onderdeel:
+ 
+Dak:
+Dakrand / Windveren:
+Wanden:
+Accentvlakken:
+Sierlijsten:
+Borstwering:
+Kozijnen:
+Deuren / Ramen:
+Overheaddeuren:
+Goten / H.w.a.'s:
+Kleur:
+ 
+Lichtgrijs
+Grijsmetallic / Lichtgrijs
+Grijsmetallic
+Antraciet
+Antraciet
+Grijs
+Antraciet
+Antraciet
+Antraciet
+Grijs / Grijs
+Kleurcode:
+RAL 7038 / N.v.t.
+RAL 9007 / RAL 7038
+RAL 9007
+RAL 7016
+RAL 7016
+N.v.t.
+RAL 7016
+RAL 7016
+RAL 7016
+RAL 7036 / N.v.t.
+Materiaal:
+ 
+Staal / PVC
+Staal
+Staal
+Staal
+Aluminium
+Beton
+Kunststof
+Kunststof
+Staal
+Aluminium / PVC
+Deur welke, over de minimaal vereiste breedte, zonder gebruik te maken van 
+een sleutel, kan worden geopend. Dit d.m.v. draaiknopcilinder of gelijkwaardig
+Vluchtweg aanduidingsbord / transparant verlichtingsarmatuur, uitvoeringing
+van de symbolen "UIT" en "NOODUITGANG" conform de pictogramen zoals 
+vermeld in de NEN 3011. / NEN-EN-ISO 7010 en de zichtbaarheidseisen
+confrom de NEN-EN 1838.
+Sproeischuimblusser met een inhoud van ten minste 6 liter schuim.
+Brandslanghaspel met een slanglengte van 30m
+PS
+Postbus 376
+3900 AJ VEENENDAAL
+Generatorstraat 21
+3903 LH VEENENDAAL
+T: 0318 - 521700
+F: 0318 - 520418
+I: 
+www.hardeman.nl
+E: info@hardeman.nl
+Opdrachtgever:
+Logivast Beheer B.V.
+Wieselseweg 124
+7345 CG Wenum Wiesel
+Bouwadres:
+Hertog van Beijerenstraat 2
+2461 EM Ter Aar
+Onderwerp:
+Werknummer:
+Tekenaar: NVV
+Datum: 
+07 maart 2025
+Schaal: 
+1:100
+Formaat:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Bladnummer:
+1e Verdieping
+44449
+4
+Bebouwd oppervlak:
+Bruto inhoud:
+Gem. ruimtes (GR):
+GBO Lichte Ind. functie:
+VG Lichte Ind. functie:
+GBO Industriefunctie:
+VG Industriefunctie:
+GBO Kantoorfunctie:
+VG Kantoorfunctie:
+GBO Bijeenkomstfunctie:
+VG Bijeenkomstfunctie:
+GBO / VG
+3679m²
+34689m³
+38,5m²
+2327,4m²
+0m²
+1595,4m²
+1595,4m²
+74,0m²
+74,0m²
+48,9m²
+48,9m²
+GBO+GR:
+2349,5m²
+1610,6m²
+74,7m²
+49,3m²
+Constructieve veiligheid:
+Brandbeperking vluchtroutes:
+Inbraakwerendheid:
+Geluidsbescherming:
+Vochtwering/regenwerendheid:
+Afvoer vuilwater/hemelwater:
+Luchtverversing:
+Verbrandingsluchttoevoer/
+rookgasafvoer:
+ 
+Meterruimte:
+ 
+Thermische isolatie:
+ 
+Luchtdoorlatendheid:
+ 
+Energieprestatie:
+ 
+Drinkwater-installatie:
+ 
+Electra-installatie:
+ 
+CV-installatie:
+NEN-NORMERING:
+NEN-EN 
+1990 t/m 1999
+ 
+NEN 13501-1
+ 
+NEN 5087/5096
+ 
+NEN 5077
+ 
+NEN 2778
+ 
+NEN 3215/7013
+ 
+NEN 1087/8087
+NEN 2757/6062
+ 
+NEN 2768
+NTA 8800
+NEN 2686
+NTA 8800
+NEN 1006
+NEN 1010/1041
+NEN 3028/1078
+60 minuten weerstand tegen brandoverslag
+en branddoorslag (WBDBO), conform de 
+NEN 6068 of NEN-EN 13501-2
+INTEGRALE TOEGANKELIJKHEID:
+De vrije doorgang van alle toegangen tot ruimtes 
+dient minimaal 850x2100mm te zijn, conform 
+BBL art. 4.180 lid 1.
+Daarbij is de opstaphoogte bij entreedeuren 
+niet groter dan 20mm, conform BBL art. 4.182 lid 5 
+Deur welke zelfsluitend is uitgevoerd, en in combinatie met het kozijn een
+brandwerendheid bezit van ten minste 60 minuten (conform NEN 6069)
+WERING MUIZEN EN RATTEN:
+Openingen in fundering, vloer, dak en wand 
+zijn "muisdicht" (conform BBL art. 4.144 en 4.145)
+60
+Tussen de assen 3/4, E/F en L/K wordt een gasbetonwand geplaatst met aan beide zijdes 
+een op zichzelf staande staalconstructie. 
+De gasbetonwand is gekoppeld aan beide constructies (met smeltverankering), zodat bij 
+brand in één van de brandcompartimenten de gasbetonwand minimaal 60 minuten blijft 
+staan waardoor de WBDBO van 60 minuten tussen de compartimenten gewaarborgd is. 
+Op as 20 (tussen as M en O) en op as M (tussen as 20 en 21) worden 100mm 
+PIRplus sandwichpanelen toegepast (EW60). De stalen kolommen op die assen 
+worden 60 minuten brandwerend uitgevoerd en voorzien van een zogenaamd 
+"kantelnokconstructie". WBDBO = 60 minuten o.b.v. spiegelsymmetrie. 
+Materiaal toegepast aan de binnenzijde van een schacht, koker of kanaal voldoet minimaal
+aan de in BBL art. 4.39 gestelde brandklasse (bepaald conform NEN-EN13501-1)
+Een zijde van een constructieonderdeel die grenst aan de binnenlucht voldoet minimaal 
+aan de in BBL art. 4.43 gestelde brand- en rookklasse (bepaald conform NEN-EN13501-1).
+Een zijde van een constructieonderdeel die grenst aan de buitenlucht voldoet minimaal 
+aan de in BBL art.4.44 gestelde brandklasse (bepaald conform NEN-EN13501-1). 
+Uitzondering daarop is de bovenzijde van het dak (uitvoering conform BBL art. 4.47)
+Een beloopbaar vlak (bovenzijde van een vloer, een trap, een hellingbaan), voldoet 
+min. aan de in BBL art. 4.45 gestelde brand- en rookklasse (conform NEN-EN13501-1)
+Elektrische leidingen en pijpisolatie voldoen minimaal aan de in BBL art.4.45a gestelde 
+brand- en rookklasse (bepaald conform NEN-EN13501-1 en NEN-EN13501-6)
+De weerstand tegen rookdoorgang voldoet minimaal aan de in BBL art. 4.61 en art. 4.62
+gestelde eisen (bepaald conform NEN 6075).
+De aanwezigheid en uitvoering van een brandmeldinstallatie voldoet minimaal aan de in 
+BBL art. 4.208 gestelde voorschiften (bepaald conform NEN 2535).
+De aanwezigheid en uitvoering van een ontruimingsinstallatie voldoet minimaal aan de in
+BBL art 4.213 gestelde voorschiften (bepaald (conform NEN 2575).
+INSTALLATIES:
+Alle installaties, zoals (nood)verlichting, water, 
+riolering, enz. uitvoeren conform opgaaf en 
+tekeningen van installateur.
+60
+Brandwerende wandpanelen (EW60) en 
+60 minuten brandwerende staalconstructie
+A0
+Kunststof pui
+Afm. 3.100x2.400
+Kunststof pui
+Afm. 3.100x2.400
+Kunststof pui
+Afm. 3.100x2.400
+Kunststof pui
+Afm. 3.100x2.400
+A
+A
+B
+B
+Nok
+Nok
+C
+C
+D
+D
+E
+E
+F
+F
+G
+G
+H
+H
+J
+J
+K
+K
+L
+L
+Nok
+Nok
+M
+M
+N
+N
+O
+O
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+S
+6
+S
+6
+S
+6
+F
+F
+A
+A
+B
+B
+C
+C
+D
+D
+H
+E
+E
+G
+G
+J
+J
+4.800
+100
+4.760
+4.790
+5.860
+2.500
+100
+4.210
+1.500
+100
+3.200
+100
+5.860
+6.000
+100
+2.950
+100
+1.070
+2.000
+100
+100
+1.400
+1.100
+100 1.060
+4.790
+8.846
+9.700
+4.974
+4.974
+6.060
+5.350
+2.650
+5.150
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.150
+100
+65.160
+100
+65.360
+40
+1.830
+5.400
+5.400
+2.780
+160
+5.300
+5.300
+160
+4.850
+4.810
+4.880
+4.450
+4.400
+4.400
+100
+54.160
+100
+54.360
+6.060
+2.800
+5.200
+5.150
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.150
+100
+65.160
+100
+65.360
+5.230
+5.230
+5.250
+5.230
+5.230
+160
+5.570
+5.570
+5.550
+5.570
+5.570
+100
+54.160
+100
+54.360
+4.110
+1.950
+160
+6.690
+1.300
+160
+160
+1.300
+4.000
+4.000
+4.850
+4.850
+4.880
+1.300
+1.650
+Kraan (2 ton)
+TOILET
+60
+60
+60
+Kraan (10 ton)
+60
+60
+60
+60
+60
+1.07 Vacuumruimte
+Lichte Industriefunctie
+GBO: 23,92 m2
+(het verblijven van personen is van ondergeschikte aard)
+1.06 Compressorruimte
+Lichte Industriefunctie
+GBO: 24,12 m2
+(het verblijven van personen is van ondergeschikte aard)
+1.08 Opslagruimte
+Lichte Industriefunctie
+GBO: 86,57 m2
+(het verblijven van personen is van ondergeschikte aard)
+1.09 Loopbrug
+Lichte Industriefunctie
+GBO: 217,86 m2
+(het verblijven van personen is van ondergeschikte aard)
+1.05 Opslagruimte
+Lichte Industriefunctie
+GBO: 65,00 m2
+(het verblijven van personen is van ondergeschikte aard)
+1.04 Server / Tech. ruimte
+Gem. ruimte
+GBO: 8,42 m2
+(het verblijven van personen is van ondergeschikte aard)
+1.01 Ontvangstruimte / Pantry
+Bijeenkomstfunctie
+GBO: 19,11 m2
+(2 persoon)
+1.02 Toilet
+Gem. ruimte
+GBO: 2,05 m2
+1.03 Kantoor
+Kantoorfunctie
+GBO: 37,88 m2
+(4 persoon)
+1e Verdieping (4500+Peil)
+1:100
+
+
+===== PDF PAGE 5 / 8 =====
+GSPublisherVersion 1311.80.80.100
+P
+5
+20m
+Deze tekening niet gebruiken voor uitvoering van enige werkzaamheden. 
+Staalconstructie- en funderingsberekeningen volgens opgaaf constructeur. 
+Bouwbesluittoetsing en BENG berekening volgens nader in te dienen rapportage
+GEBOUWGEGEVENS:
+MATERIALEN EN KLEUREN:
+VEILIGHEIDSMAATREGELEN:
+Onderdeel:
+ 
+Dak:
+Dakrand / Windveren:
+Wanden:
+Accentvlakken:
+Sierlijsten:
+Borstwering:
+Kozijnen:
+Deuren / Ramen:
+Overheaddeuren:
+Goten / H.w.a.'s:
+Kleur:
+ 
+Lichtgrijs
+Grijsmetallic / Lichtgrijs
+Grijsmetallic
+Antraciet
+Antraciet
+Grijs
+Antraciet
+Antraciet
+Antraciet
+Grijs / Grijs
+Kleurcode:
+RAL 7038 / N.v.t.
+RAL 9007 / RAL 7038
+RAL 9007
+RAL 7016
+RAL 7016
+N.v.t.
+RAL 7016
+RAL 7016
+RAL 7016
+RAL 7036 / N.v.t.
+Materiaal:
+ 
+Staal / PVC
+Staal
+Staal
+Staal
+Aluminium
+Beton
+Kunststof
+Kunststof
+Staal
+Aluminium / PVC
+Deur welke, over de minimaal vereiste breedte, zonder gebruik te maken van 
+een sleutel, kan worden geopend. Dit d.m.v. draaiknopcilinder of gelijkwaardig
+Vluchtweg aanduidingsbord / transparant verlichtingsarmatuur, uitvoeringing
+van de symbolen "UIT" en "NOODUITGANG" conform de pictogramen zoals 
+vermeld in de NEN 3011. / NEN-EN-ISO 7010 en de zichtbaarheidseisen
+confrom de NEN-EN 1838.
+Sproeischuimblusser met een inhoud van ten minste 6 liter schuim.
+Brandslanghaspel met een slanglengte van 30m
+PS
+Postbus 376
+3900 AJ VEENENDAAL
+Generatorstraat 21
+3903 LH VEENENDAAL
+T: 0318 - 521700
+F: 0318 - 520418
+I: 
+www.hardeman.nl
+E: info@hardeman.nl
+Opdrachtgever:
+Logivast Beheer B.V.
+Wieselseweg 124
+7345 CG Wenum Wiesel
+Bouwadres:
+Hertog van Beijerenstraat 2
+2461 EM Ter Aar
+Onderwerp:
+Werknummer:
+Tekenaar: NVV
+Datum: 
+07 maart 2025
+Schaal: 
+1:200
+Formaat:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Bladnummer:
+Fund. - Riolering - Dakoverz. - Kanaalplaten 44449
+5
+Bebouwd oppervlak:
+Bruto inhoud:
+Gem. ruimtes (GR):
+GBO Lichte Ind. functie:
+VG Lichte Ind. functie:
+GBO Industriefunctie:
+VG Industriefunctie:
+GBO Kantoorfunctie:
+VG Kantoorfunctie:
+GBO Bijeenkomstfunctie:
+VG Bijeenkomstfunctie:
+GBO / VG
+3679m²
+34689m³
+38,5m²
+2327,4m²
+0m²
+1595,4m²
+1595,4m²
+74,0m²
+74,0m²
+48,9m²
+48,9m²
+GBO+GR:
+2349,5m²
+1610,6m²
+74,7m²
+49,3m²
+Constructieve veiligheid:
+Brandbeperking vluchtroutes:
+Inbraakwerendheid:
+Geluidsbescherming:
+Vochtwering/regenwerendheid:
+Afvoer vuilwater/hemelwater:
+Luchtverversing:
+Verbrandingsluchttoevoer/
+rookgasafvoer:
+ 
+Meterruimte:
+ 
+Thermische isolatie:
+ 
+Luchtdoorlatendheid:
+ 
+Energieprestatie:
+ 
+Drinkwater-installatie:
+ 
+Electra-installatie:
+ 
+CV-installatie:
+NEN-NORMERING:
+NEN-EN 
+1990 t/m 1999
+ 
+NEN 13501-1
+ 
+NEN 5087/5096
+ 
+NEN 5077
+ 
+NEN 2778
+ 
+NEN 3215/7013
+ 
+NEN 1087/8087
+NEN 2757/6062
+ 
+NEN 2768
+NTA 8800
+NEN 2686
+NTA 8800
+NEN 1006
+NEN 1010/1041
+NEN 3028/1078
+60 minuten weerstand tegen brandoverslag
+en branddoorslag (WBDBO), conform de 
+NEN 6068 of NEN-EN 13501-2
+INTEGRALE TOEGANKELIJKHEID:
+De vrije doorgang van alle toegangen tot ruimtes 
+dient minimaal 850x2100mm te zijn, conform 
+BBL art. 4.180 lid 1.
+Daarbij is de opstaphoogte bij entreedeuren 
+niet groter dan 20mm, conform BBL art. 4.182 lid 5 
+Deur welke zelfsluitend is uitgevoerd, en in combinatie met het kozijn een
+brandwerendheid bezit van ten minste 60 minuten (conform NEN 6069)
+WERING MUIZEN EN RATTEN:
+Openingen in fundering, vloer, dak en wand 
+zijn "muisdicht" (conform BBL art. 4.144 en 4.145)
+60
+Tussen de assen 3/4, E/F en L/K wordt een gasbetonwand geplaatst met aan beide zijdes 
+een op zichzelf staande staalconstructie. 
+De gasbetonwand is gekoppeld aan beide constructies (met smeltverankering), zodat bij 
+brand in één van de brandcompartimenten de gasbetonwand minimaal 60 minuten blijft 
+staan waardoor de WBDBO van 60 minuten tussen de compartimenten gewaarborgd is. 
+Op as 20 (tussen as M en O) en op as M (tussen as 20 en 21) worden 100mm 
+PIRplus sandwichpanelen toegepast (EW60). De stalen kolommen op die assen 
+worden 60 minuten brandwerend uitgevoerd en voorzien van een zogenaamd 
+"kantelnokconstructie". WBDBO = 60 minuten o.b.v. spiegelsymmetrie. 
+Materiaal toegepast aan de binnenzijde van een schacht, koker of kanaal voldoet minimaal
+aan de in BBL art. 4.39 gestelde brandklasse (bepaald conform NEN-EN13501-1)
+Een zijde van een constructieonderdeel die grenst aan de binnenlucht voldoet minimaal 
+aan de in BBL art. 4.43 gestelde brand- en rookklasse (bepaald conform NEN-EN13501-1).
+Een zijde van een constructieonderdeel die grenst aan de buitenlucht voldoet minimaal 
+aan de in BBL art.4.44 gestelde brandklasse (bepaald conform NEN-EN13501-1). 
+Uitzondering daarop is de bovenzijde van het dak (uitvoering conform BBL art. 4.47)
+Een beloopbaar vlak (bovenzijde van een vloer, een trap, een hellingbaan), voldoet 
+min. aan de in BBL art. 4.45 gestelde brand- en rookklasse (conform NEN-EN13501-1)
+Elektrische leidingen en pijpisolatie voldoen minimaal aan de in BBL art.4.45a gestelde 
+brand- en rookklasse (bepaald conform NEN-EN13501-1 en NEN-EN13501-6)
+De weerstand tegen rookdoorgang voldoet minimaal aan de in BBL art. 4.61 en art. 4.62
+gestelde eisen (bepaald conform NEN 6075).
+De aanwezigheid en uitvoering van een brandmeldinstallatie voldoet minimaal aan de in 
+BBL art. 4.208 gestelde voorschiften (bepaald conform NEN 2535).
+De aanwezigheid en uitvoering van een ontruimingsinstallatie voldoet minimaal aan de in
+BBL art 4.213 gestelde voorschiften (bepaald (conform NEN 2575).
+INSTALLATIES:
+Alle installaties, zoals (nood)verlichting, water, 
+riolering, enz. uitvoeren conform opgaaf en 
+tekeningen van installateur.
+60
+Brandwerende wandpanelen (EW60) en 
+60 minuten brandwerende staalconstructie
+A0
+Hwa.
+Ø 125
+Hwa.
+Ø 125
+Hwa.
+Ø 125
+Hwa.
+Ø 125
+Hwa.
+Ø 125
+Hwa.
+Ø 125
+Hwa.
+Ø 125
+Hwa.
+Ø 125
+Hwa.
+Ø 125
+Hwa.
+Ø 125
+Hwa.
+Ø 100
+Hwa.
+Ø 100
+Hwa.
+Ø 125
+Hwa.
+Ø 125
+Hwa.
+Ø 125
+Hwa.
+Ø 125
+Hwa.
+Ø 125
+Hwa.
+Ø 125
+Hwa.
+Ø 125
+Hwa.
+Ø 125
+Hwa.
+Ø 125
+Hwa.
+Ø 125
+Wc.
+Ø 110
+Wc.
+Ø 110
+Aanr.
+Ø 50
+Wastafel
+Ø 50
+Stld.
+Ø 110
+D.
+Ø 50
+A
+A
+B
+B
+Nok
+Nok
+C
+C
+D
+D
+E
+E
+F
+F
+G
+G
+H
+H
+J
+J
+K
+K
+L
+L
+Nok
+Nok
+M
+M
+N
+N
+O
+O
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+Prefab 250mm dikke 
+betonelementen voorzien 
+van een 100mm dikke 
+PIR-isolatiekern
+Rc-waarde=4,80m²K/W
+Prefab 250mm dikke 
+betonelementen voorzien 
+van een 100mm dikke 
+PIR-isolatiekern
+Rc-waarde=4,80m²K/W
+Prefab 250mm dikke 
+betonelementen voorzien 
+van een 100mm dikke 
+PIR-isolatiekern
+Rc-waarde=4,80m²K/W
+Prefab 250mm dikke 
+betonelementen voorzien 
+van een 100mm dikke 
+PIR-isolatiekern
+Rc-waarde=4,80m²K/W
+Onderheide funderingsbalk
+Onderheide funderingsbalk
+Onderheide funderingsbalk
+Onderheide funderingsbalk
+Onderheide funderingsbalk
+Onderheide funderingsbalk
+Onderheide funderingsbalk
+H.w.a. aansluiten op
+gemeentelijke riolering
+Exacte uitvoeren, diameters, aansluitingen op gemeentelijke uitleggers
+en grondplan van de afvoeren volgens opgaaf installateur / grondwerker
+V.w.a. aansluiten op
+gemeentelijke riolering
+Onderheide laadkuil
+F
+F
+A
+A
+B
+B
+C
+C
+D
+D
+H
+H
+E
+E
+G
+G
+J
+J
+A
+A
+B
+B
+Nok
+Nok
+C
+C
+D
+D
+E
+E
+F
+F
+G
+G
+H
+H
+J
+J
+K
+K
+L
+L
+Nok
+Nok
+M
+M
+N
+N
+O
+O
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+Afschot 20 mm/m1
+Afschot 20 mm/m1
+F
+F
+A
+A
+B
+B
+C
+C
+D
+D
+H
+H
+E
+E
+G
+G
+J
+J
+6.060
+5.350
+2.650
+5.150
+5.100
+5.100
+5.100
+5.100
+2.600
+2.500
+1.900
+3.200
+1.300
+3.800
+700
+4.400
+5.150
+4.850
+300
+13.085
+13.085
+160
+13.915
+13.915
+6.060
+5.350
+2.650
+5.150
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.150
+4.850
+300
+13.085
+2.325
+160
+1.300
+4.000
+4.000
+1.300
+160
+4.850
+4.850
+4.215
+665
+13.250
+4.110
+2.110
+6.690
+160
+1.300
+4.000
+4.000
+6.310
+4.850
+4.880
+Permanetnt kabelsysteem op 
+ca. 2m vanaf de dakranden
+Exacte uitvoering en benodigd 
+aantal dakankers volgens 
+opgaaf van de leverancier.
+Permanetnt kabelsysteem op 
+ca. 2m vanaf de dakranden
+Exacte uitvoering en benodigd 
+aantal dakankers volgens 
+opgaaf van de leverancier.
+Permanetnt kabelsysteem op 
+ca. 2m vanaf de dakranden
+Exacte uitvoering en benodigd 
+aantal dakankers volgens 
+opgaaf van de leverancier.
+Permanetnt kabelsysteem op 
+ca. 2m vanaf de dakranden
+Exacte uitvoering en benodigd 
+aantal dakankers volgens 
+opgaaf van de leverancier.
+Stalen verzinkte sigma gording
+Stalen verzinkte sigma gording
+Stalen dakligger
+Stalen dakligger
+Stalen dakligger
+Stalen windveer
+Stalen windveer
+Permanetnt kabelsysteem op 
+ca. 2m vanaf de dakranden
+Exacte uitvoering en benodigd 
+aantal dakankers volgens 
+opgaaf van de leverancier.
+Permanetnt kabelsysteem op 
+ca. 2m vanaf de dakranden
+Exacte uitvoering en benodigd 
+aantal dakankers volgens 
+opgaaf van de leverancier.
+Permanetnt kabelsysteem op 
+ca. 2m vanaf de dakranden
+Exacte uitvoering en benodigd 
+aantal dakankers volgens 
+opgaaf van de leverancier.
+Plaats en afmetingen van spuwers volgens opgaaf constructeur
+Zonnepanelen conform opgaaf BENG berekening
+A
+A
+B
+B
+Nok
+Nok
+C
+C
+D
+D
+E
+E
+F
+F
+G
+G
+H
+H
+J
+J
+K
+K
+L
+L
+Nok
+Nok
+M
+M
+N
+N
+O
+O
+1
+1
+2
+2
+3
+3
+4
+4
+5
+5
+6
+6
+7
+7
+8
+8
+9
+9
+10
+10
+11
+11
+12
+12
+13
+13
+14
+14
+15
+15
+16
+16
+17
+17
+18
+18
+19
+19
+20
+20
+21
+21
+60
+1.200
+100
+560
+1.200
+1.010
+1.200
+1.200
+1.200
+1.200
+1.200
+1.200
+1.200
+330
+1.200
+1.200
+1.200
+1.200
+1.200
+1.200
+200
+1.200
+790
+1.200
+1.200
+1.200
+1.200
+4.850
+5.440
+5.320
+140
+4.850
+4.400
+5.260
+9.700
+5.300
+2.300
+5.300
+4.100
+5.300
+5.320
+Kanaalplaatvloer (n.b. 500kg/m²)
+Dikte = 265mm + 60mm deklaag
+Kanaalplaatvloer (n.b. 500kg/m²)
+Dikte = 150mm + 60mm deklaag
+Principe fundering / riolering
+1:200
+Dakoverzicht
+1:200
+Kanaalplaten
+1:200
+
+
+===== PDF PAGE 6 / 8 =====
+GSPublisherVersion 1311.80.80.100
+P
+5
+20m
+Deze tekening niet gebruiken voor uitvoering van enige werkzaamheden. 
+Staalconstructie- en funderingsberekeningen volgens opgaaf constructeur. 
+Bouwbesluittoetsing en BENG berekening volgens nader in te dienen rapportage
+GEBOUWGEGEVENS:
+MATERIALEN EN KLEUREN:
+VEILIGHEIDSMAATREGELEN:
+Onderdeel:
+ 
+Dak:
+Dakrand / Windveren:
+Wanden:
+Accentvlakken:
+Sierlijsten:
+Borstwering:
+Kozijnen:
+Deuren / Ramen:
+Overheaddeuren:
+Goten / H.w.a.'s:
+Kleur:
+ 
+Lichtgrijs
+Grijsmetallic / Lichtgrijs
+Grijsmetallic
+Antraciet
+Antraciet
+Grijs
+Antraciet
+Antraciet
+Antraciet
+Grijs / Grijs
+Kleurcode:
+RAL 7038 / N.v.t.
+RAL 9007 / RAL 7038
+RAL 9007
+RAL 7016
+RAL 7016
+N.v.t.
+RAL 7016
+RAL 7016
+RAL 7016
+RAL 7036 / N.v.t.
+Materiaal:
+ 
+Staal / PVC
+Staal
+Staal
+Staal
+Aluminium
+Beton
+Kunststof
+Kunststof
+Staal
+Aluminium / PVC
+Deur welke, over de minimaal vereiste breedte, zonder gebruik te maken van 
+een sleutel, kan worden geopend. Dit d.m.v. draaiknopcilinder of gelijkwaardig
+Vluchtweg aanduidingsbord / transparant verlichtingsarmatuur, uitvoeringing
+van de symbolen "UIT" en "NOODUITGANG" conform de pictogramen zoals 
+vermeld in de NEN 3011. / NEN-EN-ISO 7010 en de zichtbaarheidseisen
+confrom de NEN-EN 1838.
+Sproeischuimblusser met een inhoud van ten minste 6 liter schuim.
+Brandslanghaspel met een slanglengte van 30m
+PS
+Postbus 376
+3900 AJ VEENENDAAL
+Generatorstraat 21
+3903 LH VEENENDAAL
+T: 0318 - 521700
+F: 0318 - 520418
+I: 
+www.hardeman.nl
+E: info@hardeman.nl
+Opdrachtgever:
+Logivast Beheer B.V.
+Wieselseweg 124
+7345 CG Wenum Wiesel
+Bouwadres:
+Hertog van Beijerenstraat 2
+2461 EM Ter Aar
+Onderwerp:
+Werknummer:
+Tekenaar: NVV
+Datum: 
+07 maart 2025
+Schaal: 
+1:100
+Formaat:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Bladnummer:
+Doorsnede A - B - C - D
+44449
+6
+Bebouwd oppervlak:
+Bruto inhoud:
+Gem. ruimtes (GR):
+GBO Lichte Ind. functie:
+VG Lichte Ind. functie:
+GBO Industriefunctie:
+VG Industriefunctie:
+GBO Kantoorfunctie:
+VG Kantoorfunctie:
+GBO Bijeenkomstfunctie:
+VG Bijeenkomstfunctie:
+GBO / VG
+3679m²
+34689m³
+38,5m²
+2327,4m²
+0m²
+1595,4m²
+1595,4m²
+74,0m²
+74,0m²
+48,9m²
+48,9m²
+GBO+GR:
+2349,5m²
+1610,6m²
+74,7m²
+49,3m²
+Constructieve veiligheid:
+Brandbeperking vluchtroutes:
+Inbraakwerendheid:
+Geluidsbescherming:
+Vochtwering/regenwerendheid:
+Afvoer vuilwater/hemelwater:
+Luchtverversing:
+Verbrandingsluchttoevoer/
+rookgasafvoer:
+ 
+Meterruimte:
+ 
+Thermische isolatie:
+ 
+Luchtdoorlatendheid:
+ 
+Energieprestatie:
+ 
+Drinkwater-installatie:
+ 
+Electra-installatie:
+ 
+CV-installatie:
+NEN-NORMERING:
+NEN-EN 
+1990 t/m 1999
+ 
+NEN 13501-1
+ 
+NEN 5087/5096
+ 
+NEN 5077
+ 
+NEN 2778
+ 
+NEN 3215/7013
+ 
+NEN 1087/8087
+NEN 2757/6062
+ 
+NEN 2768
+NTA 8800
+NEN 2686
+NTA 8800
+NEN 1006
+NEN 1010/1041
+NEN 3028/1078
+60 minuten weerstand tegen brandoverslag
+en branddoorslag (WBDBO), conform de 
+NEN 6068 of NEN-EN 13501-2
+INTEGRALE TOEGANKELIJKHEID:
+De vrije doorgang van alle toegangen tot ruimtes 
+dient minimaal 850x2100mm te zijn, conform 
+BBL art. 4.180 lid 1.
+Daarbij is de opstaphoogte bij entreedeuren 
+niet groter dan 20mm, conform BBL art. 4.182 lid 5 
+Deur welke zelfsluitend is uitgevoerd, en in combinatie met het kozijn een
+brandwerendheid bezit van ten minste 60 minuten (conform NEN 6069)
+WERING MUIZEN EN RATTEN:
+Openingen in fundering, vloer, dak en wand 
+zijn "muisdicht" (conform BBL art. 4.144 en 4.145)
+60
+Tussen de assen 3/4, E/F en L/K wordt een gasbetonwand geplaatst met aan beide zijdes 
+een op zichzelf staande staalconstructie. 
+De gasbetonwand is gekoppeld aan beide constructies (met smeltverankering), zodat bij 
+brand in één van de brandcompartimenten de gasbetonwand minimaal 60 minuten blijft 
+staan waardoor de WBDBO van 60 minuten tussen de compartimenten gewaarborgd is. 
+Op as 20 (tussen as M en O) en op as M (tussen as 20 en 21) worden 100mm 
+PIRplus sandwichpanelen toegepast (EW60). De stalen kolommen op die assen 
+worden 60 minuten brandwerend uitgevoerd en voorzien van een zogenaamd 
+"kantelnokconstructie". WBDBO = 60 minuten o.b.v. spiegelsymmetrie. 
+Materiaal toegepast aan de binnenzijde van een schacht, koker of kanaal voldoet minimaal
+aan de in BBL art. 4.39 gestelde brandklasse (bepaald conform NEN-EN13501-1)
+Een zijde van een constructieonderdeel die grenst aan de binnenlucht voldoet minimaal 
+aan de in BBL art. 4.43 gestelde brand- en rookklasse (bepaald conform NEN-EN13501-1).
+Een zijde van een constructieonderdeel die grenst aan de buitenlucht voldoet minimaal 
+aan de in BBL art.4.44 gestelde brandklasse (bepaald conform NEN-EN13501-1). 
+Uitzondering daarop is de bovenzijde van het dak (uitvoering conform BBL art. 4.47)
+Een beloopbaar vlak (bovenzijde van een vloer, een trap, een hellingbaan), voldoet 
+min. aan de in BBL art. 4.45 gestelde brand- en rookklasse (conform NEN-EN13501-1)
+Elektrische leidingen en pijpisolatie voldoen minimaal aan de in BBL art.4.45a gestelde 
+brand- en rookklasse (bepaald conform NEN-EN13501-1 en NEN-EN13501-6)
+De weerstand tegen rookdoorgang voldoet minimaal aan de in BBL art. 4.61 en art. 4.62
+gestelde eisen (bepaald conform NEN 6075).
+De aanwezigheid en uitvoering van een brandmeldinstallatie voldoet minimaal aan de in 
+BBL art. 4.208 gestelde voorschiften (bepaald conform NEN 2535).
+De aanwezigheid en uitvoering van een ontruimingsinstallatie voldoet minimaal aan de in
+BBL art 4.213 gestelde voorschiften (bepaald (conform NEN 2575).
+INSTALLATIES:
+Alle installaties, zoals (nood)verlichting, water, 
+riolering, enz. uitvoeren conform opgaaf en 
+tekeningen van installateur.
+60
+Brandwerende wandpanelen (EW60) en 
+60 minuten brandwerende staalconstructie
+A0
+M
+A
+B
+C
+D
+E
+F
+G
+H
+K
+L
+Nok
+Nok
+01
+02
+03
+±0
++1.000
++1.000
++9.550
++10.297
+±0
++4.500
+±0
++4.500
+±0
++1.000
++9.550
++10.300
+13.085
+2.325
+160
+5.300
+4.000
+1.300
+160
+4.850
+4.850
+4.215
+665
+13.250
+Wandopbouw:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Wandopbouw:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Onderheide funderingsbalk
+Prefab 250mm dikke 
+betonelementen voorzien 
+van een 100mm dikke 
+PIR-isolatiekern
+Rc-waarde=4,80m²K/W
+Onderheide funderingsbalk
+Prefab 250mm dikke 
+betonelementen voorzien 
+van een 100mm dikke 
+PIR-isolatiekern
+Rc-waarde=4,80m²K/W
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Onderheide 200mm dikke betonvloer (max. vloerbelasting = 4000kg/m²) 
+op 130mm EPS100 vloerisolatie - Rc-waarde= 3,7m²K/W
+Onderheide 200mm dikke betonvloer (max. vloerbelasting = 4000kg/m²) 
+op 130mm EPS100 vloerisolatie - Rc-waarde= 3,7m²K/W
+Stalen geïsoleerde overheaddeur
+Stalen geïsoleerde overheaddeur
+Stalen geïsoleerde overheaddeur
+Binnenwand:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Binnenwand:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Kanaalplaatvloer (n.b. 500kg/m²)
+Dikte = 265mm + 60mm druklaag
+Trap:
+Tredebreedte = 900mm
+Aantrede = 220mm
+Optrede = 196mm
+Kanaalplaatvloer (n.b. 500kg/m²)
+Dikte = 150mm + 60mm druklaag
+60
+60
+60
+60
+A
+B Nok
+C
+D
+EF
+H
+J
+L
+Nok
+M
+O
+04
+13.250
+665
+4.215
+4.850
+4.850
+160
+5.300
+4.000
+1.460
+2.325
+13.085
+5.150
+±0
++1.000
++9.550
++10.300
+±0
++4.500
+±0
++4.100
++1.000
++9.550
++10.300
+Wandopbouw:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Wandopbouw:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Onderheide funderingsbalk
+Prefab 250mm dikke 
+betonelementen voorzien 
+van een 100mm dikke 
+PIR-isolatiekern
+Rc-waarde=4,80m²K/W
+Onderheide funderingsbalk
+Prefab 250mm dikke 
+betonelementen voorzien 
+van een 100mm dikke 
+PIR-isolatiekern
+Rc-waarde=4,80m²K/W
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Onderheide 200mm dikke betonvloer (max. vloerbelasting = 4000kg/m²) 
+op 130mm EPS100 vloerisolatie - Rc-waarde= 3,7m²K/W
+Onderheide 200mm dikke betonvloer (max. vloerbelasting = 4000kg/m²) 
+op 130mm EPS100 vloerisolatie - Rc-waarde= 3,7m²K/W
+Binnenwand:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Kanaalplaatvloer (n.b. 500kg/m²)
+Dikte = 265mm + 60mm druklaag
+Kanaalplaatvloer (n.b. 500kg/m²)
+Dikte = 150mm + 60mm druklaag
+Stalen geïsoleerde overheaddeur
+Stalen geïsoleerde overheaddeur
+Stalen geïsoleerde overheaddeur
+Snelroldeur
+Vloerafscheding - 1m hoog
+Vloerafscheding - 1m hoog
+60
+60
+60
+60
+60
+A
+Nok
+E
+F
+Nok
+M
+N
+O
+05
+06
+07
+13.915
+13.915
+160
+13.085
+13.085
+300
+4.850
+±0
++10.300
++1.000
++9.550
+±0
++1.000
++4.100
++9.550
++10.300
+Wandopbouw:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Wandopbouw:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Onderheide funderingsbalk
+Prefab 250mm dikke 
+betonelementen voorzien 
+van een 100mm dikke 
+PIR-isolatiekern
+Rc-waarde=4,80m²K/W
+Onderheide funderingsbalk
+Prefab 250mm dikke 
+betonelementen voorzien 
+van een 100mm dikke 
+PIR-isolatiekern
+Rc-waarde=4,80m²K/W
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Onderheide 200mm dikke betonvloer (max. vloerbelasting = 4000kg/m²) 
+op 130mm EPS100 vloerisolatie - Rc-waarde= 3,7m²K/W
+Onderheide 200mm dikke betonvloer (max. vloerbelasting = 4000kg/m²) 
+op 130mm EPS100 vloerisolatie - Rc-waarde= 3,7m²K/W
+Loopbrug (roosters op stalen liggers)
+Stalen geïsoleerde overheaddeur
+Wandopbouw:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Dakopbouw:
+1-laagse PVC dakbedekking
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen dakliggers
+Kunststof loopdeur
+Kooiladder t.b.v. loopbrug
+Vloerafscheding - 1m hoog
+60
+60
+O
+NM
+Nok
+LK
+J
+H
+G
+FE
+D
+C
+Nok B
+A
+08
+09
+4.850
+300
+13.085
+2.325
+160
+1.300
+4.000
+4.000
+1.300
+160
+4.850
+4.850
+4.215
+665
+13.250
+±0
++4.500
++9.550
++10.300
+±0
++4.100
++1.000
++9.550
++10.300
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Wandopbouw:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Brandwerendheid=EW60
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen welke 60min.
+brandwerend worden uitgevoerd
+Onderheide funderingsbalk
+Onderheide funderingsbalk
+Prefab 250mm dikke 
+betonelementen voorzien 
+van een 100mm dikke 
+PIR-isolatiekern
+Rc-waarde=4,80m²K/W
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Onderheide 200mm dikke betonvloer (max. vloerbelasting = 4000kg/m²) 
+op 130mm EPS100 vloerisolatie - Rc-waarde= 3,7m²K/W
+Onderheide 200mm dikke betonvloer (max. vloerbelasting = 4000kg/m²) 
+op 130mm EPS100 vloerisolatie - Rc-waarde= 3,7m²K/W
+Stalen geïsoleerde overheaddeur
+Stalen geïsoleerde overheaddeur
+Trap:
+Tredebreedte = 900mm
+Aantrede = 220mm
+Optrede = 196mm
+Loopbrug (roosters op stalen liggers)
+Vloerafscheding - 1m hoog
+Stalen geïsoleerde overheaddeur
+Kraan (10 ton)
+60
+60
+60
+60
+Doorsnede A-A
+1:100
+Doorsnede B-B
+1:100
+Doorsnede C-C
+1:100
+Doorsnede D-D
+1:100
+
+
+===== PDF PAGE 7 / 8 =====
+GSPublisherVersion 1311.80.80.100
+P
+5
+20m
+Deze tekening niet gebruiken voor uitvoering van enige werkzaamheden. 
+Staalconstructie- en funderingsberekeningen volgens opgaaf constructeur. 
+Bouwbesluittoetsing en BENG berekening volgens nader in te dienen rapportage
+GEBOUWGEGEVENS:
+MATERIALEN EN KLEUREN:
+VEILIGHEIDSMAATREGELEN:
+Onderdeel:
+ 
+Dak:
+Dakrand / Windveren:
+Wanden:
+Accentvlakken:
+Sierlijsten:
+Borstwering:
+Kozijnen:
+Deuren / Ramen:
+Overheaddeuren:
+Goten / H.w.a.'s:
+Kleur:
+ 
+Lichtgrijs
+Grijsmetallic / Lichtgrijs
+Grijsmetallic
+Antraciet
+Antraciet
+Grijs
+Antraciet
+Antraciet
+Antraciet
+Grijs / Grijs
+Kleurcode:
+RAL 7038 / N.v.t.
+RAL 9007 / RAL 7038
+RAL 9007
+RAL 7016
+RAL 7016
+N.v.t.
+RAL 7016
+RAL 7016
+RAL 7016
+RAL 7036 / N.v.t.
+Materiaal:
+ 
+Staal / PVC
+Staal
+Staal
+Staal
+Aluminium
+Beton
+Kunststof
+Kunststof
+Staal
+Aluminium / PVC
+Deur welke, over de minimaal vereiste breedte, zonder gebruik te maken van 
+een sleutel, kan worden geopend. Dit d.m.v. draaiknopcilinder of gelijkwaardig
+Vluchtweg aanduidingsbord / transparant verlichtingsarmatuur, uitvoeringing
+van de symbolen "UIT" en "NOODUITGANG" conform de pictogramen zoals 
+vermeld in de NEN 3011. / NEN-EN-ISO 7010 en de zichtbaarheidseisen
+confrom de NEN-EN 1838.
+Sproeischuimblusser met een inhoud van ten minste 6 liter schuim.
+Brandslanghaspel met een slanglengte van 30m
+PS
+Postbus 376
+3900 AJ VEENENDAAL
+Generatorstraat 21
+3903 LH VEENENDAAL
+T: 0318 - 521700
+F: 0318 - 520418
+I: 
+www.hardeman.nl
+E: info@hardeman.nl
+Opdrachtgever:
+Logivast Beheer B.V.
+Wieselseweg 124
+7345 CG Wenum Wiesel
+Bouwadres:
+Hertog van Beijerenstraat 2
+2461 EM Ter Aar
+Onderwerp:
+Werknummer:
+Tekenaar: NVV
+Datum: 
+07 maart 2025
+Schaal: 
+1:100
+Formaat:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Bladnummer:
+Doorsnede E - F - G - H
+44449
+7
+Bebouwd oppervlak:
+Bruto inhoud:
+Gem. ruimtes (GR):
+GBO Lichte Ind. functie:
+VG Lichte Ind. functie:
+GBO Industriefunctie:
+VG Industriefunctie:
+GBO Kantoorfunctie:
+VG Kantoorfunctie:
+GBO Bijeenkomstfunctie:
+VG Bijeenkomstfunctie:
+GBO / VG
+3679m²
+34689m³
+38,5m²
+2327,4m²
+0m²
+1595,4m²
+1595,4m²
+74,0m²
+74,0m²
+48,9m²
+48,9m²
+GBO+GR:
+2349,5m²
+1610,6m²
+74,7m²
+49,3m²
+Constructieve veiligheid:
+Brandbeperking vluchtroutes:
+Inbraakwerendheid:
+Geluidsbescherming:
+Vochtwering/regenwerendheid:
+Afvoer vuilwater/hemelwater:
+Luchtverversing:
+Verbrandingsluchttoevoer/
+rookgasafvoer:
+ 
+Meterruimte:
+ 
+Thermische isolatie:
+ 
+Luchtdoorlatendheid:
+ 
+Energieprestatie:
+ 
+Drinkwater-installatie:
+ 
+Electra-installatie:
+ 
+CV-installatie:
+NEN-NORMERING:
+NEN-EN 
+1990 t/m 1999
+ 
+NEN 13501-1
+ 
+NEN 5087/5096
+ 
+NEN 5077
+ 
+NEN 2778
+ 
+NEN 3215/7013
+ 
+NEN 1087/8087
+NEN 2757/6062
+ 
+NEN 2768
+NTA 8800
+NEN 2686
+NTA 8800
+NEN 1006
+NEN 1010/1041
+NEN 3028/1078
+60 minuten weerstand tegen brandoverslag
+en branddoorslag (WBDBO), conform de 
+NEN 6068 of NEN-EN 13501-2
+INTEGRALE TOEGANKELIJKHEID:
+De vrije doorgang van alle toegangen tot ruimtes 
+dient minimaal 850x2100mm te zijn, conform 
+BBL art. 4.180 lid 1.
+Daarbij is de opstaphoogte bij entreedeuren 
+niet groter dan 20mm, conform BBL art. 4.182 lid 5 
+Deur welke zelfsluitend is uitgevoerd, en in combinatie met het kozijn een
+brandwerendheid bezit van ten minste 60 minuten (conform NEN 6069)
+WERING MUIZEN EN RATTEN:
+Openingen in fundering, vloer, dak en wand 
+zijn "muisdicht" (conform BBL art. 4.144 en 4.145)
+60
+Tussen de assen 3/4, E/F en L/K wordt een gasbetonwand geplaatst met aan beide zijdes 
+een op zichzelf staande staalconstructie. 
+De gasbetonwand is gekoppeld aan beide constructies (met smeltverankering), zodat bij 
+brand in één van de brandcompartimenten de gasbetonwand minimaal 60 minuten blijft 
+staan waardoor de WBDBO van 60 minuten tussen de compartimenten gewaarborgd is. 
+Op as 20 (tussen as M en O) en op as M (tussen as 20 en 21) worden 100mm 
+PIRplus sandwichpanelen toegepast (EW60). De stalen kolommen op die assen 
+worden 60 minuten brandwerend uitgevoerd en voorzien van een zogenaamd 
+"kantelnokconstructie". WBDBO = 60 minuten o.b.v. spiegelsymmetrie. 
+Materiaal toegepast aan de binnenzijde van een schacht, koker of kanaal voldoet minimaal
+aan de in BBL art. 4.39 gestelde brandklasse (bepaald conform NEN-EN13501-1)
+Een zijde van een constructieonderdeel die grenst aan de binnenlucht voldoet minimaal 
+aan de in BBL art. 4.43 gestelde brand- en rookklasse (bepaald conform NEN-EN13501-1).
+Een zijde van een constructieonderdeel die grenst aan de buitenlucht voldoet minimaal 
+aan de in BBL art.4.44 gestelde brandklasse (bepaald conform NEN-EN13501-1). 
+Uitzondering daarop is de bovenzijde van het dak (uitvoering conform BBL art. 4.47)
+Een beloopbaar vlak (bovenzijde van een vloer, een trap, een hellingbaan), voldoet 
+min. aan de in BBL art. 4.45 gestelde brand- en rookklasse (conform NEN-EN13501-1)
+Elektrische leidingen en pijpisolatie voldoen minimaal aan de in BBL art.4.45a gestelde 
+brand- en rookklasse (bepaald conform NEN-EN13501-1 en NEN-EN13501-6)
+De weerstand tegen rookdoorgang voldoet minimaal aan de in BBL art. 4.61 en art. 4.62
+gestelde eisen (bepaald conform NEN 6075).
+De aanwezigheid en uitvoering van een brandmeldinstallatie voldoet minimaal aan de in 
+BBL art. 4.208 gestelde voorschiften (bepaald conform NEN 2535).
+De aanwezigheid en uitvoering van een ontruimingsinstallatie voldoet minimaal aan de in
+BBL art 4.213 gestelde voorschiften (bepaald (conform NEN 2575).
+INSTALLATIES:
+Alle installaties, zoals (nood)verlichting, water, 
+riolering, enz. uitvoeren conform opgaaf en 
+tekeningen van installateur.
+60
+Brandwerende wandpanelen (EW60) en 
+60 minuten brandwerende staalconstructie
+A0
+1
+3
+5
+7
+8
+9
+10
+11
+12
+14
+16
+18
+20
+21
+10
+±0
++1.000
++4.500
+±0
++1.000
+6.060
+5.350
+2.650
+5.150
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.150
++8.000
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Wandopbouw:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Onderheide funderingsbalk
+Prefab 250mm dikke 
+betonelementen voorzien 
+van een 100mm dikke 
+PIR-isolatiekern
+Rc-waarde=4,80m²K/W
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Onderheide 200mm dikke betonvloer (max. vloerbelasting = 4000kg/m²) 
+op 130mm EPS100 vloerisolatie - Rc-waarde= 3,7m²K/W
+Onderheide 200mm dikke betonvloer (max. vloerbelasting = 4000kg/m²) 
+op 130mm EPS100 vloerisolatie - Rc-waarde= 3,7m²K/W
+Kunststof kozijn
+Loopbrug (roosters op stalen liggers)
+Vloerafscheding - 1m hoog
+Kraan (10 ton)
+Wandopbouw:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Onderheide funderingsbalk
+Prefab 250mm dikke 
+betonelementen voorzien 
+van een 100mm dikke 
+PIR-isolatiekern
+Rc-waarde=4,80m²K/W
+Kraan (2 ton)
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+14
+16
+18
+20
+21
+±0
++4.500
++10.300
+±0
++1.000
++4.500
++10.298
+4.110
+1.950
+160
+5.190
+1.500
+1.150
+5.150
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.150
+Wandopbouw:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Onderheide funderingsbalk
+Prefab 250mm dikke 
+betonelementen voorzien 
+van een 100mm dikke 
+PIR-isolatiekern
+Rc-waarde=4,80m²K/W
+Onderheide 200mm dikke betonvloer (max. vloerbelasting = 4000kg/m²) 
+op 130mm EPS100 vloerisolatie - Rc-waarde= 3,7m²K/W
+Onderheide 200mm dikke betonvloer (max. vloerbelasting = 4000kg/m²) 
+op 130mm EPS100 vloerisolatie - Rc-waarde= 3,7m²K/W
+Kunststof kozijn
+Loopbrug (roosters op stalen liggers)
+Vloerafscheding - 1m hoog
+Kraan (10 ton)
+Kunststof kozijn
+Wandopbouw:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Onderheide funderingsbalk
+Prefab 250mm dikke 
+betonelementen voorzien 
+van een 100mm dikke 
+PIR-isolatiekern
+Rc-waarde=4,80m²K/W
+Kraan (3 ton)
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Vloerafscheding - 1m hoog
+Kanaalplaatvloer (n.b. 500kg/m²)
+Dikte = 265mm + 60mm druklaag
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+14
+16
+18
+20
+21
+11
+12
+±0
++1.000
++10.300
+±0
++4.500
++10.300
+4.110
+1.950
+160
+5.190
+1.500
+1.150
+5.150
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.150
+Wandopbouw:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Onderheide funderingsbalk
+Onderheide 200mm dikke betonvloer (max. vloerbelasting = 4000kg/m²) 
+op 130mm EPS100 vloerisolatie - Rc-waarde= 3,7m²K/W
+Onderheide 200mm dikke betonvloer (max. vloerbelasting = 4000kg/m²) 
+op 130mm EPS100 vloerisolatie - Rc-waarde= 3,7m²K/W
+Wandopbouw:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Onderheide funderingsbalk
+Prefab 250mm dikke 
+betonelementen voorzien 
+van een 100mm dikke 
+PIR-isolatiekern
+Rc-waarde=4,80m²K/W
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Kanaalplaatvloer (n.b. 500kg/m²)
+Dikte = 150mm + 60mm druklaag
+Trap:
+Tredebreedte = 900mm
+Aantrede = 220mm
+Optrede = 196mm
+Snelroldeur
+Snelroldeur
+Vloerafscheding - 1m hoog
+60
+60
+60
+60
+60
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+14
+16
+18
+20
+21
+4.110
+1.950
+160
+5.190
+1.500
+1.150
+5.150
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.150
+±0
++1.000
++10.300
+±0
++3.000
++4.500
++10.300
+Wandopbouw:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Onderheide funderingsbalk
+Onderheide 200mm dikke betonvloer (max. vloerbelasting = 4000kg/m²) 
+op 130mm EPS100 vloerisolatie - Rc-waarde= 3,7m²K/W
+Onderheide 200mm dikke betonvloer (max. vloerbelasting = 4000kg/m²) 
+op 130mm EPS100 vloerisolatie - Rc-waarde= 3,7m²K/W
+Wandopbouw:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Onderheide funderingsbalk
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Vloerafscheding - 1m hoog
+Snelroldeur
+Snelroldeur
+Stalen geïsoleerde overheaddeur
+Trap:
+Tredebreedte = 900mm
+Aantrede = 220mm
+Optrede = 196mm
+Doorsnede E-E
+1:100
+Doorsnede F-F
+1:100
+Doorsnede G-G
+1:100
+Doorsnede H-H
+1:100
+
+
+===== PDF PAGE 8 / 8 =====
+GSPublisherVersion 1311.80.80.100
+P
+5
+20m
+Deze tekening niet gebruiken voor uitvoering van enige werkzaamheden. 
+Staalconstructie- en funderingsberekeningen volgens opgaaf constructeur. 
+Bouwbesluittoetsing en BENG berekening volgens nader in te dienen rapportage
+GEBOUWGEGEVENS:
+MATERIALEN EN KLEUREN:
+VEILIGHEIDSMAATREGELEN:
+Onderdeel:
+ 
+Dak:
+Dakrand / Windveren:
+Wanden:
+Accentvlakken:
+Sierlijsten:
+Borstwering:
+Kozijnen:
+Deuren / Ramen:
+Overheaddeuren:
+Goten / H.w.a.'s:
+Kleur:
+ 
+Lichtgrijs
+Grijsmetallic / Lichtgrijs
+Grijsmetallic
+Antraciet
+Antraciet
+Grijs
+Antraciet
+Antraciet
+Antraciet
+Grijs / Grijs
+Kleurcode:
+RAL 7038 / N.v.t.
+RAL 9007 / RAL 7038
+RAL 9007
+RAL 7016
+RAL 7016
+N.v.t.
+RAL 7016
+RAL 7016
+RAL 7016
+RAL 7036 / N.v.t.
+Materiaal:
+ 
+Staal / PVC
+Staal
+Staal
+Staal
+Aluminium
+Beton
+Kunststof
+Kunststof
+Staal
+Aluminium / PVC
+Deur welke, over de minimaal vereiste breedte, zonder gebruik te maken van 
+een sleutel, kan worden geopend. Dit d.m.v. draaiknopcilinder of gelijkwaardig
+Vluchtweg aanduidingsbord / transparant verlichtingsarmatuur, uitvoeringing
+van de symbolen "UIT" en "NOODUITGANG" conform de pictogramen zoals 
+vermeld in de NEN 3011. / NEN-EN-ISO 7010 en de zichtbaarheidseisen
+confrom de NEN-EN 1838.
+Sproeischuimblusser met een inhoud van ten minste 6 liter schuim.
+Brandslanghaspel met een slanglengte van 30m
+PS
+Postbus 376
+3900 AJ VEENENDAAL
+Generatorstraat 21
+3903 LH VEENENDAAL
+T: 0318 - 521700
+F: 0318 - 520418
+I: 
+www.hardeman.nl
+E: info@hardeman.nl
+Opdrachtgever:
+Logivast Beheer B.V.
+Wieselseweg 124
+7345 CG Wenum Wiesel
+Bouwadres:
+Hertog van Beijerenstraat 2
+2461 EM Ter Aar
+Onderwerp:
+Werknummer:
+Tekenaar: NVV
+Datum: 
+07 maart 2025
+Schaal: 
+1:100, 1:10
+Formaat:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Wijziging:  
+Bladnummer:
+Doorsnede J - Details
+44449
+8
+Bebouwd oppervlak:
+Bruto inhoud:
+Gem. ruimtes (GR):
+GBO Lichte Ind. functie:
+VG Lichte Ind. functie:
+GBO Industriefunctie:
+VG Industriefunctie:
+GBO Kantoorfunctie:
+VG Kantoorfunctie:
+GBO Bijeenkomstfunctie:
+VG Bijeenkomstfunctie:
+GBO / VG
+3679m²
+34689m³
+38,5m²
+2327,4m²
+0m²
+1595,4m²
+1595,4m²
+74,0m²
+74,0m²
+48,9m²
+48,9m²
+GBO+GR:
+2349,5m²
+1610,6m²
+74,7m²
+49,3m²
+Constructieve veiligheid:
+Brandbeperking vluchtroutes:
+Inbraakwerendheid:
+Geluidsbescherming:
+Vochtwering/regenwerendheid:
+Afvoer vuilwater/hemelwater:
+Luchtverversing:
+Verbrandingsluchttoevoer/
+rookgasafvoer:
+ 
+Meterruimte:
+ 
+Thermische isolatie:
+ 
+Luchtdoorlatendheid:
+ 
+Energieprestatie:
+ 
+Drinkwater-installatie:
+ 
+Electra-installatie:
+ 
+CV-installatie:
+NEN-NORMERING:
+NEN-EN 
+1990 t/m 1999
+ 
+NEN 13501-1
+ 
+NEN 5087/5096
+ 
+NEN 5077
+ 
+NEN 2778
+ 
+NEN 3215/7013
+ 
+NEN 1087/8087
+NEN 2757/6062
+ 
+NEN 2768
+NTA 8800
+NEN 2686
+NTA 8800
+NEN 1006
+NEN 1010/1041
+NEN 3028/1078
+60 minuten weerstand tegen brandoverslag
+en branddoorslag (WBDBO), conform de 
+NEN 6068 of NEN-EN 13501-2
+INTEGRALE TOEGANKELIJKHEID:
+De vrije doorgang van alle toegangen tot ruimtes 
+dient minimaal 850x2100mm te zijn, conform 
+BBL art. 4.180 lid 1.
+Daarbij is de opstaphoogte bij entreedeuren 
+niet groter dan 20mm, conform BBL art. 4.182 lid 5 
+Deur welke zelfsluitend is uitgevoerd, en in combinatie met het kozijn een
+brandwerendheid bezit van ten minste 60 minuten (conform NEN 6069)
+WERING MUIZEN EN RATTEN:
+Openingen in fundering, vloer, dak en wand 
+zijn "muisdicht" (conform BBL art. 4.144 en 4.145)
+60
+Tussen de assen 3/4, E/F en L/K wordt een gasbetonwand geplaatst met aan beide zijdes 
+een op zichzelf staande staalconstructie. 
+De gasbetonwand is gekoppeld aan beide constructies (met smeltverankering), zodat bij 
+brand in één van de brandcompartimenten de gasbetonwand minimaal 60 minuten blijft 
+staan waardoor de WBDBO van 60 minuten tussen de compartimenten gewaarborgd is. 
+Op as 20 (tussen as M en O) en op as M (tussen as 20 en 21) worden 100mm 
+PIRplus sandwichpanelen toegepast (EW60). De stalen kolommen op die assen 
+worden 60 minuten brandwerend uitgevoerd en voorzien van een zogenaamd 
+"kantelnokconstructie". WBDBO = 60 minuten o.b.v. spiegelsymmetrie. 
+Materiaal toegepast aan de binnenzijde van een schacht, koker of kanaal voldoet minimaal
+aan de in BBL art. 4.39 gestelde brandklasse (bepaald conform NEN-EN13501-1)
+Een zijde van een constructieonderdeel die grenst aan de binnenlucht voldoet minimaal 
+aan de in BBL art. 4.43 gestelde brand- en rookklasse (bepaald conform NEN-EN13501-1).
+Een zijde van een constructieonderdeel die grenst aan de buitenlucht voldoet minimaal 
+aan de in BBL art.4.44 gestelde brandklasse (bepaald conform NEN-EN13501-1). 
+Uitzondering daarop is de bovenzijde van het dak (uitvoering conform BBL art. 4.47)
+Een beloopbaar vlak (bovenzijde van een vloer, een trap, een hellingbaan), voldoet 
+min. aan de in BBL art. 4.45 gestelde brand- en rookklasse (conform NEN-EN13501-1)
+Elektrische leidingen en pijpisolatie voldoen minimaal aan de in BBL art.4.45a gestelde 
+brand- en rookklasse (bepaald conform NEN-EN13501-1 en NEN-EN13501-6)
+De weerstand tegen rookdoorgang voldoet minimaal aan de in BBL art. 4.61 en art. 4.62
+gestelde eisen (bepaald conform NEN 6075).
+De aanwezigheid en uitvoering van een brandmeldinstallatie voldoet minimaal aan de in 
+BBL art. 4.208 gestelde voorschiften (bepaald conform NEN 2535).
+De aanwezigheid en uitvoering van een ontruimingsinstallatie voldoet minimaal aan de in
+BBL art 4.213 gestelde voorschiften (bepaald (conform NEN 2575).
+INSTALLATIES:
+Alle installaties, zoals (nood)verlichting, water, 
+riolering, enz. uitvoeren conform opgaaf en 
+tekeningen van installateur.
+60
+Brandwerende wandpanelen (EW60) en 
+60 minuten brandwerende staalconstructie
+A0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+14
+16
+18
+20
+21
+13
+14
+4.110
+1.950
+160
+5.190
+1.500
+1.150
+5.150
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.100
+5.150
+±0
++1.000
++10.297
+±0
++4.500
++5.000
++10.297
+Wandopbouw:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Onderheide funderingsbalk
+Onderheide 200mm dikke betonvloer (max. vloerbelasting = 4000kg/m²) 
+op 130mm EPS100 vloerisolatie - Rc-waarde= 3,7m²K/W
+Onderheide 200mm dikke betonvloer (max. vloerbelasting = 4000kg/m²) 
+op 130mm EPS100 vloerisolatie - Rc-waarde= 3,7m²K/W
+Wandopbouw:
+Verticaal gemonteerde
+vlakke 100mm dikke PIRplus
+sandwichpanelen 1060WB-LL
+Rc-waarde=4,70m²K/W
+Stalen wandregels
+Stalen kolommen 
+Onderheide funderingsbalk
+Prefab 250mm dikke 
+betonelementen voorzien 
+van een 100mm dikke 
+PIR-isolatiekern
+Rc-waarde=4,80m²K/W
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Dakopbouw:
+Geprofileerde PIRplus
+sandwichpanelen 132/164
+Rc-waarde=6,55m²K/W
+Stalen gordingen
+Stalen dakliggers
+Vloerafscheding - 1m hoog
+Snelroldeur
+Snelroldeur
+Stalen geïsoleerde overheaddeur
+Trap:
+Tredebreedte = 900mm
+Aantrede = 220mm
+Optrede = 196mm
++9.550
+Geprofileerde PIRplus 
+dakpaneel 132/164mm
+Rc-waarde = 6,55m² K/W
+Stalen verzinkte sigma kantgording 
+Vlak 100mm dik PIRplus 
+1060WB-LL  wandpaneel
+Rc-waarde = 4,70m² K/W
+Aluminium goot 
+±0
++1.000
+Stalen lekdorpel 
+Stalen verzinkte wandregel (C-profiel)
+Betonnen heipaal
+200mm dikke onderheide betonvloer
+100mm XPS-isolatie
+Vlak 100mm dik PIRplus 
+1060WB-LL  wandpaneel
+Rc-waarde = 4,70m² K/W
+130mm EPS100 vloerisolatie
+Rc-waarde=3,7m²K/W
+Prefab 250mm dik 
+betonelement voorzien 
+van een 100mm dikke
+PIR-isolatiekern
+Rc-waarde=4,80m²K/W
+Onderheide ringbalkfundering 
+MAAIVELD (-100 t.o.v. PEIL)
+1.000
+220
+196
+196
+220
+250
+250
+<500mm
+<500mm
++4.500
+Trapboom 
+Traptrede 
+Balustrade / traphekwerk (1m hoog) 
+(conform BB art. 2.19 lid 1) geen 
+openingen waardoor een bol kan 
+passeren met een doorsnede groter 
+dan 500mm.
+Alle aanwezige vloeren, en trappen 
+in de nieuwbouw zijn daarbij 
+(conform BB art. 2.19 lid 5) niet bestemd
+voor kinderen jonger dan 12 jaar)
+Stalen raveelijzer
+Kanaalplaatvloer - 150mm dik
+met een 60mm dikke druklaag
+(nuttige belasting = 500kg/m²)
+Metal stud wand
+Geprofileerde PIRplus 
+dakpaneel 132/164mm
+Rc-waarde = 6,55m² K/W
+Stalen verzinkte sigma gording 
+Gootbodem
+Stalen verzinkte sigma gording 
+Geprofileerde PIRplus 
+dakpaneel 132/164mm
+Rc-waarde = 6,55m² K/W
+Platdakbedekking 
+Smeltverankering
+Smeltverankering
+Gasbetonwand met aan beide zijdes een op 
+zichzelf staande staalconstructie.
+De gasbetonwand is gekoppeld aan beide 
+constructies (met smeltverankering), zodat bij
+brand in één van de brandcompartimenten de
+gasbetonwand minimaal 60 minuten blijft staan.
+De vereiste 60 minuten WBDBO tussen de 
+brandcompartimenten is hiermee gewaarborgd.
+Vlak 100mm dik PIRplus 
+1060WB-LL  wandpaneel
+Rc-waarde = 4,70m² K/W
+Geprofileerd PIRplus 
+dakpaneel 132/164mm
+Rc-waarde = 6,55m² K/W
+1 laagse PVC platdakbedekking
+Stalen lekdorpel
++4.100
+Vlak 100mm dik PIRplus 
+1060WB-LL  wandpaneel
+Rc-waarde = 4,70m² K/W
+Geprofileerd PIRplus 
+dakpaneel 132/164mm
+Rc-waarde = 6,55m² K/W
+Stalen dakrand 
+1 laagse PVC platdakbedekking
+Peil = 0
+Stalen verzinkte wandregel (C-profiel)
+Stalen lekdorpel 
+200mm dikke onderheide betonvloer
+Betonnen heipaal
+100mm XPS-isolatie
+Aluminium zetwerk
+Vlak 100mm dik PIRplus 
+1060WB-LL  wandpaneel
+Rc-waarde = 4,70m² K/W
+Onderheide ringbalkfundering 
+130mm EPS100 vloerisolatie
+Rc-waarde=3,7m²K/W
+MAAIVELD (-100 t.o.v. PEIL)
++6.500
++8.000
+Kunststof kozijn 
+Vlak 100mm dik PIRplus 
+1060WB-LL  wandpaneel
+Rc-waarde = 4,70m² K/W
+Stalen lekdorpel
+Vlak 100mm dik PIRplus 
+1060WB-LL  wandpaneel
+Rc-waarde = 4,70m² K/W
+Kunststof contrakozijn 
+Blank triple isolatieglas
+Trisolide Superplus
+Stalen lekdorpel
+±0
++4.000
+Betonnen heipaal
+200mm dikke onderheide betonvloer
+100mm XPS-isolatie
+130mm EPS100 vloerisolatie
+Rc-waarde=3,7m²K/W
+Onderheide ringbalkfundering 
+Geïsoleerd paneel
+Isostone dorpel
+Blank triple isolatieglas
+Trisolide Superplus
+Kunststof kozijn 
+Stalen verzinkte wandregel (C-profiel)
+Stalen zetwerk
+Kunststof kozijn 
+MAAIVELD (-100 t.o.v. PEIL)
++4.500
+Balustrade / traphekwerk (1m hoog) 
+(conform BB art. 2.19 lid 1) geen 
+openingen waardoor een bol kan 
+passeren met een doorsnede groter 
+dan 500mm.
+Alle aanwezige vloeren, en trappen 
+in de nieuwbouw zijn daarbij 
+(conform BB art. 2.19 lid 5) niet bestemd
+voor kinderen jonger dan 12 jaar)
+Roostervloer
+Vlak 100mm dik PIRplus 
+1060WB-LL  wandpaneel
+Rc-waarde = 4,70m² K/W
+Stalen verzinkte sigma vloerligger
+Stalen verzinkte wandregel (C-profiel)
++6.900
+500
+400
+Blank triple isolatieglas
+Trisolide Superplus
+Stalen verzinkte wandregel (C-profiel)
+Vlak 100mm dik PIRplus 
+1060WB-LL  wandpaneel
+Rc-waarde = 4,70m² K/W
+Stalen lekdorpel
+Aluminum sierlijst
+Kanaalplaatvloer - 150mm dik
+met een 60mm dikke druklaag
+(nuttige belasting = 500kg/m²)
+Kunststof kozijn 
+Stalen zetwerk
+Vlak 100mm dik PIRplus 
+1060WB-LL  wandpaneel
+Rc-waarde = 4,70m² K/W
+Stalen verdiepingsligger
+±0
++2.400
+Stalen verzinkte wandregel (C-profiel)
+200mm dikke onderheide betonvloer
+Onderheide ringbalkfundering 
+Betonnen heipaal
+100mm XPS-isolatie
+Kunststof kozijn 
+Kunststof loopdeur
+Blank dubbel isolatieglas
+Isolide Superplus
+Kunststof deur
+Isostone dorpel
+130mm EPS100 vloerisolatie
+Rc-waarde=3,7m²K/W
+Vlak 100mm dik PIRplus 
+1060WB-LL  wandpaneel
+Rc-waarde = 4,70m² K/W
+MAAIVELD (-100 t.o.v. PEIL)
++5.000
+Vlak 100mm dik PIRplus 
+1060WB-LL  wandpaneel
+Rc-waarde = 4,70m² K/W
+Stalen geïsoleerde overheaddeur 
+Stalen verzinkte wandregel en
+overheaddeurframe (C-profiel) 
+Stalen lekdorpel 
+Vlak 100mm dik PIRplus 
+1060WB-LL  wandpaneel
+Rc-waarde = 4,70m² K/W
+Stalen windveer
+Stalen verzinkte sigma gording
+Stalen dakligger (kopspant)
+Geprofileerd PIRplus 
+dakpaneel 132/164mm
+Rc-waarde = 6,55m² K/W
+Doorsnede J-J
+1:100
+Detail 01
+1:10
+Detail 02
+1:10
+Detail 03
+1:10
+Detail 04
+1:10
+Detail 05
+1:10
+Detail 06
+1:10
+Detail 07
+1:10
+Detail 08
+1:10
+Detail 09
+1:10
+Detail 10
+1:10
+Detail 11
+1:10
+Detail 12
+1:10
+Detail 13
+1:10
+Detail 14
+1:10

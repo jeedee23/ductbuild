@@ -1,0 +1,763 @@
+# -*- coding: utf-8 -*-
+"""makeframe v2 JOIN - rectangular Airkan frame for FreeCAD.
+
+CHANGE FROM V1
+  Rails are the entered internal L and B, not L/B minus a 15 mm end setback.
+  Adjacent rails meet at the internal corners. Corner pieces remain inserted.
+  The earlier raised strip on the corner has been removed; it was not the duct.
+  The STEP coordinate origin is the middle of the fully-seated nominal duct end.
+  XY is the duct-end plane; +Z is away from the frame into the continuing duct.
+  A single STEP product contains eight separate solids (not one fused solid).
+  FreeCAD reference geometry is not claimed to become a native Fusion JointOrigin.
+  The included optional Fusion helper creates a real named JointOrigin there.
+
+L/B ARE ALWAYS INTERNAL DIMENSIONS in mm. No insulation deduction is applied.
+This is a corrected assembly reconstruction, not manufacturer-approved tooling,
+crimping, cut-list, leakage, or tolerance data. Source sheet thicknesses/pocket
+radii/small holes remain assumptions from the earlier detailed library.
+
+The default duct-end plane is the duct-side face of the corner blank. This is
+an explicitly recorded assembly datum, not a new measured insertion depth.
+An axial datum offset can be entered without changing the physical frame.
+No stub or dummy solid is added: the actual duct remains in the main assembly.
+
+Run this file in FreeCAD. No third-party workbench required.
+Library use: runpy.run_path(path, init_globals={'MAKEFRAME_LIBRARY_ONLY':True})
+"""
+import os
+import math
+import json
+import time
+import traceback
+from datetime import datetime
+
+VERSION = '2.0-JOIN'
+DEFAULT_OUTPUT_DIR = r'D:/steps'
+DEFAULT_PROFILE = 'E30'
+DEFAULT_LENGTH_MM = 1000.0
+DEFAULT_WIDTH_MM = 800.0
+DEFAULT_CUTBACK_MM = 0.0
+
+PROFILE_SPECS = {
+    'E20': {'height':20., 'depth':25., 'sheet':.7, 'corners':['H20','H20L'],
+            'margin':1.1, 'corner_z':1.2, 'page':186},
+    'E30': {'height':30., 'depth':27., 'sheet':.8, 'corners':['H30'],
+            'margin':1.5, 'corner_z':1.05, 'page':187},
+    'A40': {'height':40., 'depth':36., 'sheet':1., 'corners':['H40'],
+            'margin':1.5, 'corner_z':1.3, 'page':188},
+    'A20': {'height':20., 'depth':27., 'sheet':.7, 'corners':['H20'],
+            'margin':1.1, 'corner_z':1.1, 'page':190},
+    'A30': {'height':30., 'depth':30., 'sheet':.8, 'corners':['H30'],
+            'margin':1.5, 'corner_z':1.05, 'page':191},
+}
+CORNER_SPECS = {
+    'H20': {'L':73., 'w':18., 'main_d':9., 'sheet':2.},
+    'H20L':{'L':83., 'w':18., 'main_d':9., 'sheet':2.},
+    'H30': {'L':105.,'w':27., 'main_d':11.,'sheet':2.5},
+    'H40': {'L':140.,'w':37., 'main_d':0., 'sheet':3.},
+}
+FIT_REFINEMENTS = {
+    'E20':'Unlabelled bead inner/depth coordinates changed from 3.5/5.5 to 3.8/5.8 mm; no change to 20x25 envelope or 8.5 top return.',
+    'E30':'Unlabelled bead inner/depth coordinates changed from 3.5/5.5 to 4.4/6.4 mm; no change to 30x27 envelope or 8.5 top return.',
+    'A40':'Original v2 section retained. Corner position is an assembly assumption.',
+    'A20':'Unlabelled start of lower return leaf changed from 2.1 to 3.8 mm in depth; no change to 20x27 envelope or 7.5 top return.',
+    'A30':'Unlabelled start of lower return leaf changed from 2.1 to 4.2 mm in depth; no change to 30x30 envelope or 9 top return.',
+}
+
+
+def unit(a):
+    l=math.hypot(a[0],a[1])
+    if l<1e-10: raise ValueError('Coincident points in profile')
+    return (a[0]/l,a[1]/l)
+
+
+def add(a,b): return (a[0]+b[0],a[1]+b[1])
+
+
+def sub(a,b): return (a[0]-b[0],a[1]-b[1])
+
+
+def mul(a,b): return (a[0]*b,a[1]*b)
+
+
+def cross(a,b): return a[0]*b[1]-a[1]*b[0]
+
+
+def norm(a): return (-a[1],a[0])
+
+
+def dist(a,b): return math.hypot(a[0]-b[0],a[1]-b[1])
+
+
+def filleted_path(points,radii=1.0,closed=False):
+    """Planar centreline built from tangent lines and exact circular arcs."""
+    pts=[tuple(map(float,p)) for p in points]
+    n=len(pts)
+    if n<2: raise ValueError('A path needs at least two points')
+    if isinstance(radii,(int,float)): radii=[float(radii)]*n
+    if len(radii)!=n: raise ValueError('One corner radius per point required')
+    vs=[]
+    for i,p in enumerate(pts):
+        if not closed and i in (0,n-1): vs.append((p,p,None));continue
+        u=unit(sub(p,pts[(i-1)%n]));v=unit(sub(pts[(i+1)%n],p))
+        theta=math.atan2(cross(u,v),u[0]*v[0]+u[1]*v[1])
+        if abs(theta)<1e-7 or float(radii[i])<=0:
+            vs.append((p,p,None));continue
+        if abs(abs(theta)-math.pi)<1e-5: raise ValueError('180-degree fold needs two bends')
+        k=math.tan(abs(theta)/2)
+        a=min(float(radii[i])*k,dist(p,pts[(i-1)%n])*.44,dist(p,pts[(i+1)%n])*.44)
+        r=a/k;s=1 if theta>0 else -1
+        tin=sub(p,mul(u,a));tout=add(p,mul(v,a));c=add(tin,mul(norm(u),s*r))
+        a0=math.atan2(tin[1]-c[1],tin[0]-c[0])
+        vs.append((tin,tout,{'type':'arc','c':c,'r':r,'a':a0,'theta':theta}))
+    result=[]
+    if closed:
+        prev=vs[-1][1]
+        for tin,tout,arc in vs:
+            if dist(prev,tin)>1e-8: result.append({'type':'line','p':prev,'q':tin})
+            if arc: result.append(arc)
+            prev=tout
+    else:
+        prev=pts[0]
+        for tin,tout,arc in vs[1:]:
+            if dist(prev,tin)>1e-8: result.append({'type':'line','p':prev,'q':tin})
+            if arc:result.append(arc)
+            prev=tout
+    return result
+
+
+def piece_ends(p):
+    if p['type']=='line':return p['p'],p['q']
+    c,r,a,th=p['c'],p['r'],p['a'],p['theta']
+    return add(c,(r*math.cos(a),r*math.sin(a))),add(c,(r*math.cos(a+th),r*math.sin(a+th)))
+
+
+def reverse_piece(p):
+    if p['type']=='line':return {'type':'line','p':p['q'],'q':p['p']}
+    return dict(p,a=p['a']+p['theta'],theta=-p['theta'])
+
+
+def offset_piece(p,d):
+    if p['type']=='line':
+        dv=mul(norm(unit(sub(p['q'],p['p']))),d)
+        return {'type':'line','p':add(p['p'],dv),'q':add(p['q'],dv)}
+    r=p['r']-(1 if p['theta']>0 else -1)*d
+    if r<=1e-5: raise ValueError('Inside bend radius collapsed; reduce sheet thickness')
+    return dict(p,r=r)
+
+
+def ribbon_boundary(points,thick,radii):
+    path=filleted_path(points,radii)
+    return ribbon_from_path(path,thick)
+
+
+def ribbon_from_path(path,thick):
+    left=[offset_piece(p,thick/2) for p in path]
+    right=[offset_piece(p,-thick/2) for p in path]
+    pieces=left+[{'type':'line','p':piece_ends(left[-1])[1],'q':piece_ends(right[-1])[1]}]
+    pieces += [reverse_piece(p) for p in right[::-1]]
+    pieces += [{'type':'line','p':piece_ends(right[0])[0],'q':piece_ends(left[0])[0]}]
+    return pieces
+
+
+class Kernel:
+    """Only primitive operations; native FreeCAD needs no CadQuery installation."""
+    def __init__(self,backend='freecad'):
+        self.backend=backend
+        if backend=='freecad':
+            import FreeCAD as App
+            import Part
+            self.App,self.P=App,Part
+        elif backend=='cadquery':
+            import cadquery as cq
+            self.cq=cq
+        else:raise ValueError('Unknown backend: '+backend)
+    def v(self,p):
+        return self.App.Vector(*p) if self.backend=='freecad' else self.cq.Vector(*p)
+    def box(self,x,y,z,p=(0,0,0)):
+        if min(x,y,z)<=0:raise ValueError('Positive box dimensions required')
+        if self.backend=='freecad':return self.P.makeBox(x,y,z,self.v(p))
+        return self.cq.Solid.makeBox(x,y,z,self.v(p))
+    def cyl(self,d,h,p=(0,0,0),axis=(0,0,1)):
+        if min(d,h)<=0:raise ValueError('Positive cylinder dimensions required')
+        if self.backend=='freecad':return self.P.makeCylinder(d/2,h,self.v(p),self.v(axis))
+        return self.cq.Solid.makeCylinder(d/2,h,self.v(p),self.v(axis))
+    def cone(self,d1,d2,h,p=(0,0,0),axis=(0,0,1)):
+        if self.backend=='freecad':return self.P.makeCone(d1/2,d2/2,h,self.v(p),self.v(axis))
+        return self.cq.Solid.makeCone(d1/2,d2/2,h,self.v(p),self.v(axis))
+    def compound(self,shapes):
+        ss=[s for s in shapes if s is not None]
+        return self.P.makeCompound(ss) if self.backend=='freecad' else self.cq.Compound.makeCompound(ss)
+    def cut(self,s,tools):
+        if not isinstance(tools,(list,tuple)):tools=[tools]
+        for tool in tools:s=s.cut(tool)
+        return self.clean(s)
+    def fuse(self,shapes):
+        if not shapes:raise ValueError('Empty fuse')
+        s=shapes[0]
+        for a in shapes[1:]:s=s.fuse(a)
+        return self.clean(s)
+    def clean(self,s):
+        return s.removeSplitter() if self.backend=='freecad' else s.clean()
+    def move(self,s,p):
+        if self.backend=='freecad':
+            s=s.copy();s.translate(self.v(p));return s
+        return s.translate(p)
+    def rotate(self,s,axis,deg,p=(0,0,0)):
+        if self.backend=='freecad':
+            s=s.copy();s.rotate(self.v(p),self.v(axis),deg);return s
+        q=tuple(p[i]+axis[i] for i in range(3));return s.rotate(p,q,deg)
+    def point(self,uv,plane,origin):
+        u,v=uv;x,y,z=origin
+        if plane=='XY':return (x+u,y+v,z)
+        if plane=='YZ':return (x,y+u,z+v)
+        if plane=='XZ':return (x+u,y,z+v)
+        raise ValueError('Unknown plane')
+    def wire(self,pieces,plane='XY',origin=(0,0,0)):
+        edges=[]
+        for seg in pieces:
+            p,q=piece_ends(seg)
+            a=self.v(self.point(p,plane,origin));b=self.v(self.point(q,plane,origin))
+            if seg['type']=='line':
+                if dist(p,q)<1e-7:continue
+                e=self.P.makeLine(a,b) if self.backend=='freecad' else self.cq.Edge.makeLine(a,b)
+            else:
+                c,r,ang,th=seg['c'],seg['r'],seg['a'],seg['theta']
+                mid=add(c,(r*math.cos(ang+th/2),r*math.sin(ang+th/2)))
+                m=self.v(self.point(mid,plane,origin))
+                e=self.P.Arc(a,m,b).toShape() if self.backend=='freecad' else self.cq.Edge.makeThreePointArc(a,m,b)
+            edges.append(e)
+        return self.P.Wire(edges) if self.backend=='freecad' else self.cq.Wire.assembleEdges(edges)
+    def extrude(self,pieces,length,plane='XY',origin=(0,0,0)):
+        wire=self.wire(pieces,plane,origin)
+        vec={'XY':(0,0,length),'YZ':(length,0,0),'XZ':(0,length,0)}[plane]
+        if self.backend=='freecad':return self.P.Face(wire).extrude(self.v(vec))
+        return self.cq.Solid.extrudeLinear(wire,[],self.v(vec))
+    def polygon(self,points,h,plane='XY',origin=(0,0,0),radius=0):
+        return self.extrude(filleted_path(points,radius,True),h,plane,origin)
+    def ribbon(self,points,t,r,length,plane='YZ',origin=(0,0,0)):
+        return self.extrude(ribbon_boundary(points,t,r),length,plane,origin)
+    def rounded_box(self,w,h,d,r,origin=(0,0,0),plane='XY'):
+        return self.polygon([(0,0),(w,0),(w,h),(0,h)],d,plane,origin,r)
+    def slot(self,length,width,depth,center=(0,0),angle=0,plane='XY',origin=(0,0,0)):
+        # A true capsule with semicircular ends, not a faceted polygon.
+        if length<width:raise ValueError('Slot length must be >= width')
+        r=width/2;a=(length-width)/2
+        ps=[{'type':'line','p':(-a,-r),'q':(a,-r)},
+            {'type':'arc','c':(a,0),'r':r,'a':-math.pi/2,'theta':math.pi},
+            {'type':'line','p':(a,r),'q':(-a,r)},
+            {'type':'arc','c':(-a,0),'r':r,'a':math.pi/2,'theta':math.pi}]
+        th=math.radians(angle);cs,sn=math.cos(th),math.sin(th)
+        def tf(p):return (center[0]+cs*p[0]-sn*p[1],center[1]+sn*p[0]+cs*p[1])
+        for p in ps:
+            if p['type']=='line':p['p']=tf(p['p']);p['q']=tf(p['q'])
+            else:p['c']=tf(p['c']);p['a']+=th
+        return self.extrude(ps,depth,plane,origin)
+    def tube(self,od,id_,h,p=(0,0,0),axis=(0,0,1)):
+        if not 0<id_<od:raise ValueError('Tube diameters must satisfy 0 < ID < OD')
+        start=tuple(p[i]-axis[i] for i in range(3))
+        return self.cut(self.cyl(od,h,p,axis),self.cyl(id_,h+2,start,axis))
+    def hex(self,af,h,p=(0,0,0),bore=0):
+        R=af/math.sqrt(3)
+        pts=[(R*math.cos(math.radians(30+i*60)),R*math.sin(math.radians(30+i*60))) for i in range(6)]
+        s=self.polygon(pts,h,origin=p)
+        return self.cut(s,self.cyl(bore,h+2,(p[0],p[1],p[2]-1))) if bore else s
+    def bounds(self,s):
+        b=s.BoundBox if self.backend=='freecad' else s.BoundingBox()
+        if self.backend=='freecad':return [b.XMin,b.YMin,b.ZMin,b.XMax,b.YMax,b.ZMax]
+        return [b.xmin,b.ymin,b.zmin,b.xmax,b.ymax,b.zmax]
+    def valid(self,s):return s.isValid()
+    def solids(self,s):return list(s.Solids) if self.backend=='freecad' else s.Solids()
+    def faces(self,s):return list(s.Faces) if self.backend=='freecad' else s.Faces()
+    def volume(self,s):return s.Volume if self.backend=='freecad' else s.Volume()
+    def inside(self,s,p):
+        if self.backend=='freecad':return s.isInside(self.v(p),1e-6,True)
+        return s.isInside(self.v(p),1e-6)
+
+
+def cut_holes(K,s,holes,t,z=0):
+    return K.cut(s,[K.cyl(d,t+2,(x,y,z-1)) for x,y,d in holes])
+
+
+def add_part(parts,name,shape,role='metal'):
+    parts.append(dict(name=name,shape=shape,role=role))
+
+
+def profile_section(variant,sheet=None):
+    """Midline topology follows source sections; dimensioned anchors preserved."""
+    cfg={'E20':(20.,25.,8.5,.7),'E30':(30.,27.,8.5,.8),'A40':(40.,36.,10.,1.),
+         'A20':(20.,27.,7.5,.7),'A30':(30.,30.,9.,.8),
+         'TDC':(30.,32.,10.,.8),'Europrofiel':(30.,35.,9.,.8)}
+    h,b,top,t=cfg[variant]
+    if sheet is not None:t=float(sheet)
+    a=t/2;inner=3.9 if h==20 else (4.5 if h==30 else 5.4)
+    # Real open rolled sheet, not overlapping solid boxes.
+    if variant=='TDC':
+        pts=[(b-a,1.6),(8,1.6),(6.4,a),(a,a),(a,h-3.5),(top-a,h-3),
+             (top-a,h-a),(-1.5,h-a),(-3.4,h-1.8),(-3.4,h*.65)]
+        return h,b,t,pts,[0,1.2,.8,2,2.2,1.1,1.1,1.3,1.3,0]
+    if variant in ['E20','E30','Europrofiel']:
+        bump_x=4.5
+        pts=[(b-a,a),(bump_x+1,a),(bump_x+1,4.5),(bump_x-1,4.5),
+             (bump_x-1,a),(a,a),(a,h-a),(top-1.8,h-a),(top-1.1,h-1.4),
+             (top-1.8,h-2.8),(inner,h-3.8),(inner,h*.35),
+             (inner+4.0,3.5),(b-4.0,1.8),(b-2.0,3.6)]
+        radii=[0,.7,.85,.85,.7,1.1,1.1,1.1,1.,1.,1.1,1.,1.1,.7,0]
+    elif variant=='A40':
+        pts=[(b-a,a),(a,a),(a,h-a),(top-1.4,h-a),(top-1.1,h-3.8),
+             (inner,h-5.1),(inner,10),(inner+2,7),(inner+4,7),(inner+6,4),
+             (b-5,2.0),(b-3,4.0)]
+        radii=[0,2,1.5,1.2,1.2,1.3,3,1.5,1,1.8,.8,0]
+    else:
+        # A20/A30 have the turned-back bottom entry and a separate upper lip.
+        pts=[(b-a,3.7),(b-2,2.3),(7.5,2.3),(inner,6.0)]
+        if variant=='A30':pts += [(inner,13),(inner+1.5,14.7),(inner,16.4)]
+        pts += [(inner,h-4.5),(top-1.6,h-3.0),(top-a,h-1.8),
+                (top-1.7,h-a),(a,h-a),(a,a),
+                (b*.69,a),(b*.71,1.2),(b*.67,1.55),(2.3,1.55)]
+        radii=[0]+[1.0]*(len(pts)-2)+[0]
+        # Thin reverse at bottom needs bend radius compatible with sheet.
+    return h,b,t,pts,radii
+
+
+def detailed_profile_path(variant,t):
+    h,b,top,_={'E20':(20.,25.,8.5,.7),'E30':(30.,27.,8.5,.8),
+              'A40':(40.,36.,10.,1.),'A20':(20.,27.,7.5,.7),
+              'A30':(30.,30.,9.,.8),'Europrofiel':(30.,35.,9.,.8)}[variant]
+    a=t/2;inner=3.9 if h==20 else (4.5 if h==30 else 5.4)
+    def line(p,q):return {'type':'line','p':p,'q':q}
+    def arc(c,r,ang,theta):return {'type':'arc','c':c,'r':r,'a':ang,'theta':theta}
+    if variant in ['A20','A30']:
+        # Reverse leaf below the duct-entry shelf, with a real semicircular return.
+        rx=b*.64;rz=1.9
+        path=[line(((3.8 if variant=='A20' else 4.2),rz),(rx,rz)),arc((rx,(rz+a)/2),(rz-a)/2,math.pi/2,-math.pi)]
+        prefix=[(rx,a),(a,a),(a,h-2)]
+        path+=filleted_path(prefix,[0,1.1,0])
+    else:
+        if variant=='A40':prefix=[(b,a),(a,a),(a,h-2)]
+        else:
+            # Inferred bead offset, refined for the unscaled corner plate.
+            left=4.4 if variant=='E30' else 3.8
+            right=left+2.0
+            prefix=[(b,a),(right,a),(right,4.5),(left,4.5),(left,a),(a,a),(a,h-2)]
+        path=filleted_path(prefix,[0]+[.85]*(len(prefix)-2)+[0])
+    R=2.0 if variant=='A40' else 1.5
+    path += [arc((2,h-2),2-a,math.pi,-math.pi/2),
+             line((2,h-a),(top-R,h-a)),
+             arc((top-R,h-R),R-a,math.pi/2,-math.pi)]
+    start=(top-R,h-2*R+a)
+    if variant in ['A20','A30']:
+        tail=[start,(inner,start[1])]
+        if variant=='A30':tail += [(inner,17),(inner+1.4,15.6),(inner,14.2)]
+        tail += [(inner,6.3),(8,3.2),(b-2,3.2)]
+        # End cap adjusted so the width dimension is exactly b, not b+t/2.
+        offset=a*.7
+        for i in range(12):offset=a*1.5/math.hypot(2-offset,1.5)
+        tail += [(b-offset,4.7)]
+        rr=[0]+[.85]*(len(tail)-2)+[0]
+    elif variant=='A40':
+        tail=[start,(inner,start[1]),(inner,10),(inner+2,7),(inner+4,7),(inner+6,4),(b-5,2),(b-3,4)]
+        rr=[0,1.2,2.3,1.2,1.1,1.4,.9,0]
+    else:
+        tail=[start,(inner,start[1]),(inner,h*.35),(inner+4,3.5),(b-4,1.8),(b-2,3.6)]
+        rr=[0,1.,1.,1.1,.9,0]
+    path += filleted_path(tail,rr)
+    return h,b,path
+
+
+def make_corner(K,code,p,parts,checks):
+    L,w,t=float(p['L']),float(p['w']),float(p['sheet']);tip=w*.8
+    outline=[(0,3),(0,L-tip),(w-3,L),(w,L),(w,w),(L,w),(L, w-3),(L-tip,0),(3,0)]
+    # Outer L blank is COPLANAR; vertical arm is not a vertical wall.
+    # Undimensioned inner blank radius: 0.75 for the 18 mm H20 arms,
+    # 2.0 for the larger blanks. No metal is subtracted after assembly.
+    inner_radius=float(p.get('inner_radius',.75 if code in ['H20','H20L'] else 2.0))
+    s=K.polygon(outline,t,radius=[2,1.2,1.3,1.4,inner_radius,1.4,1.2,1.2,2])
+    if code in ['H20','H20L']:
+        c=9. if code=='H20' else 10.
+        far=45. if code=='H20' else 51.
+        holes=[(c,c,9),(7.7,22,5),(7.7,far,5),(22,7.7,5),(far,7.7,5)]
+    elif code=='H30':
+        holes=[(13,13,11),(10,30,6),(10,49,6),(10,86,6),(30,10,6),(49,10,6),(86,10,6)]
+    else:
+        holes=[(12.5,57,8),(12.5,107,8),(57,12.5,8),(107,12.5,8)]
+    # The old raised inner-corner strip was a mistaken assembly detail.
+    # The duct is a separate sheet; it is NOT an upright lip on the corner.
+    # Keep the blank planar; retain the holes and shallow stamped features.
+    # Shallow local pressing represented without inventing a large upright wall.
+    for a,b in [((0,w+9),(w-4,w+9)),((w+9,0),(w+9,w-4))]:
+        groove=K.ribbon([a,b],.45,0,.25,'XY',(0,0,t-.22))
+        s=K.cut(s,groove)
+    s=cut_holes(K,s,holes,t+2)
+    checks['through_holes']=[{'center':(x,y,t/2),'diameter':d,'axis':(0,0,1),'thickness':t} for x,y,d in holes]
+    if code=='H40':
+        cx,cy=17.,17.;ang=math.pi/4
+        rect=[(-7,-5.5),(7,-5.5),(7,5.5),(-7,5.5)]
+        poly=[(cx+x*math.cos(ang)-y*math.sin(ang),cy+x*math.sin(ang)+y*math.cos(ang)) for x,y in rect]
+        tool=K.polygon(poly,t+4,origin=(0,0,-1),radius=.7)
+        s=K.cut(s,tool);checks['nonround_opening']={'center':(cx,cy,t/2),'nominal':(14,11),'angle':45}
+    add_part(parts,'Gestanst_hoekstuk',s)
+    checks['planar_corner']=True;checks['max_height']=t
+    checks['nominal_arm_length']=L
+
+def _number(value):
+    return ('%.3f'%float(value)).rstrip('0').rstrip('.').replace('.','p')
+
+
+def frame_config(profile='E30',length=1000.,width=800.,corner=None,datum_offset=0.):
+    profile=str(profile).strip().upper()
+    if profile not in PROFILE_SPECS:
+        raise ValueError('Kies E20, E30, A40, A20 of A30.')
+    spec=PROFILE_SPECS[profile]
+    corner=str(corner or spec['corners'][0]).strip().upper()
+    if corner not in spec['corners']:
+        raise ValueError('Bij %s hoort %s.'%(profile,' of '.join(spec['corners'])))
+    length,width,datum_offset=map(float,(length,width,datum_offset))
+    if not all(math.isfinite(v) for v in (length,width,datum_offset)):
+        raise ValueError('Alle afmetingen moeten eindige getallen zijn.')
+    if min(length,width)<=0 or max(length,width)>20000 or abs(datum_offset)>1000:
+        raise ValueError('Binnenmaten: 0..20000 mm; referentiecorrectie: -1000..1000 mm.')
+    cs=CORNER_SPECS[corner]
+    reach=cs['L']-spec['height']+spec['margin']
+    minimum=2*reach+1.0
+    if min(length,width)<minimum:
+        raise ValueError('Binnenmaten moeten voor %s minstens %.1f mm zijn om hoekoverlap te vermijden.'%(corner,minimum))
+    seat=spec['corner_z']+cs['sheet']
+    datum=seat+datum_offset
+    return dict(profile=profile,corner=corner,length=length,width=width,
+                dimension_basis='Internal nominal duct/frame opening, before insulation',
+                cutback=0.,rail_long=length,rail_short=width,
+                outer_length=length+2*spec['height'],outer_width=width+2*spec['height'],
+                profile_height=spec['height'],profile_depth=spec['depth'],
+                corner_margin=spec['margin'],corner_z=spec['corner_z'],
+                min_opening=minimum,corner_engagement=reach,
+                nominal_seat_from_flange_front=seat,datum_offset=datum_offset,
+                datum_from_flange_front=datum,
+                origin_description='Centre of nominal inserted duct-end plane',
+                assembly_translation=(-length/2,-width/2,-datum),
+                joint_center_mm=(0.,0.,0.),joint_x_axis=(1.,0.,0.),joint_z_axis=(0.,0.,1.),
+                flange_front_z=-datum)
+
+
+def frame_stem(cfg):
+    name='AIRKAN_%s_Kader_%sx%s_%s_JOIN'%(cfg['profile'],_number(cfg['length']),_number(cfg['width']),cfg['corner'])
+    if abs(cfg['datum_offset'])>1e-8:
+        name+='_Datum'+_number(cfg['datum_offset'])
+    return name
+
+
+def _common(K,a,b):
+    return a.common(b) if K.backend=='freecad' else a.intersect(b)
+
+
+def _distance(K,a,b):
+    return a.distToShape(b)[0] if K.backend=='freecad' else a.distance(b)
+
+
+def _rotate_point(p,angle,base):
+    c=math.cos(math.radians(angle));s=math.sin(math.radians(angle))
+    x,y,z=p
+    return (base[0]+c*x-s*y,base[1]+s*x+c*y,base[2]+z)
+
+
+def build_frame_geometry(profile='E30',length=1000.,width=800.,corner=None,
+                         datum_offset=0.,backend='freecad',progress=None):
+    """Build corrected 8-solid frame with coincident nominal rail-end edges.
+
+    Returns local, already JOIN-centred geometry. No document or filesystem IO.
+    No cutting back of rails, corner scaling, post-clash subtraction or fake
+    joining body is used. Corner blank is genuinely planar in this revision.
+    """
+    cfg=frame_config(profile,length,width,corner,datum_offset)
+    L,B=cfg['length'],cfg['width'];K=Kernel(backend)
+    def say(s):
+        if progress:progress(s)
+    pr=cfg['profile'];h,b,t,_,_=profile_section(pr)
+    _,_,path=detailed_profile_path(pr,t)
+    section=ribbon_from_path(path,t)
+    say('Profielen op de volledige binnenmaten opbouwen')
+    long_shape=K.extrude(section,L,'YZ')
+    short_shape=long_shape if abs(L-B)<1e-8 else K.extrude(section,B,'YZ')
+    parts=[]
+    for name,base,angle,shape,model_length in [
+        ('Profiel_onder',(0.,0.,0.),0.,long_shape,L),
+        ('Profiel_rechts',(L,0.,0.),90.,short_shape,B),
+        ('Profiel_boven',(L,B,0.),180.,long_shape,L),
+        ('Profiel_links',(0.,B,0.),270.,short_shape,B)]:
+        say(name)
+        s=K.move(K.rotate(K.rotate(shape,(1,0,0),90.),(0,0,1),angle),base)
+        parts.append(dict(name=name,code=pr,role='profile',shape=s,length=model_length))
+    say('Vlakke hoekstukken met de bestaande gaten in de profielen plaatsen')
+    cp=[];checks={};cc=cfg['corner'];make_corner(K,cc,CORNER_SPECS[cc],cp,checks)
+    d=h-cfg['corner_margin'];z=cfg['corner_z'];holes=[]
+    for name,base,angle in [
+        ('Hoek_linksonder',(-d,-d,z),0.),
+        ('Hoek_rechtsonder',(L+d,-d,z),90.),
+        ('Hoek_rechtsboven',(L+d,B+d,z),180.),
+        ('Hoek_linksboven',(-d,B+d,z),270.)]:
+        parts.append(dict(name=name,code=cc,role='corner',
+                          shape=K.move(K.rotate(cp[0]['shape'],(0,0,1),angle),base),length=None))
+        for hole in checks.get('through_holes',[]):
+            holes.append(dict(part=name,center=_rotate_point(hole['center'],angle,base),
+                              diameter=hole['diameter'],kind='round'))
+        if checks.get('nonround_opening'):
+            hole=checks['nonround_opening']
+            holes.append(dict(part=name,center=_rotate_point(hole['center'],angle,base),
+                              nominal=hole['nominal'],kind='nonround'))
+    # Translate geometry itself, not just a transient view placement. Coordinates
+    # therefore remain centred at the joining datum in STEP.
+    tr=cfg['assembly_translation']
+    for p in parts:p['shape']=K.move(p['shape'],tr)
+    for p in holes:p['center']=tuple(p['center'][i]+tr[i] for i in range(3))
+    say('Railcontact, vrije opening en onderdelen controleren')
+    for p in parts:
+        if not K.valid(p['shape']) or len(K.solids(p['shape']))!=1 or K.volume(p['shape'])<=0:
+            raise RuntimeError('Ongeldig onderdeel: '+p['name'])
+    total=K.compound([p['shape'] for p in parts]);bounds=K.bounds(total)
+    datum=cfg['datum_from_flange_front']
+    target=(-L/2-h,-B/2-h,-datum,L/2+h,B/2+h,b-datum)
+    if any(abs(a-v)>1e-4 for a,v in zip(bounds,target)):
+        raise RuntimeError('Onverwachte buitenmaten: '+str(bounds))
+    contact=[]
+    for i,j in [(0,1),(1,2),(2,3),(3,0)]:
+        distance=float(_distance(K,parts[i]['shape'],parts[j]['shape']))
+        contact.append(dict(a=parts[i]['name'],b=parts[j]['name'],gap_mm=distance))
+        if distance>1e-5:raise RuntimeError('Profielen sluiten niet aan: '+str(contact[-1]))
+    clashes=[];pair_checks=0
+    for i,a in enumerate(parts):
+        aa=K.bounds(a['shape'])
+        for bb in parts[i+1:]:
+            bs=K.bounds(bb['shape'])
+            if not all(min(aa[k+3],bs[k+3])-max(aa[k],bs[k])>1e-6 for k in range(3)):continue
+            pair_checks+=1;vol=K.volume(_common(K,a['shape'],bb['shape']))
+            if vol>1e-4:clashes.append(dict(a=a['name'],b=bb['name'],volume_mm3=vol))
+    if clashes:raise RuntimeError('Ongewenste materiaaloverlap: '+str(clashes))
+    for hole in holes:
+        part=next(p for p in parts if p['name']==hole['part'])
+        if K.inside(part['shape'],hole['center']):
+            raise RuntimeError('Gat ontbreekt in hoekstuk: '+hole['part'])
+    opening=K.box(L-2e-4,B-2e-4,b+2,(-L/2+1e-4,-B/2+1e-4,-datum-1))
+    occupied=sum(K.volume(_common(K,p['shape'],opening)) for p in parts)
+    if occupied>1e-4:raise RuntimeError('Materiaal steekt in de opgegeven vrije opening.')
+    return dict(config=cfg,parts=parts,shape=total,holes=holes,version=VERSION,
+                validation=dict(valid_solids=8,bounds_mm=bounds,clashes=clashes,
+                    adjacent_rail_contacts=contact,exact_intersection_checks=pair_checks,
+                    hole_center_checks=len(holes),opening_intrusion_mm3=occupied),
+                assumptions=dict(profile_refinement=FIT_REFINEMENTS[pr],
+                    corner_blank='Flat plate with holes and shallow pressed lines; erroneous raised lip removed; inferred inner radius H20/H20L=0.75 mm, others=2 mm',
+                    dimensional_authority='Catalogue anchors retained; undimensioned details remain reconstructed',
+                    insertion_datum='Model duct-side corner-plate plane, not supplier-certified physical insertion depth',
+                    crimping='Holes retained; local plastic deformation/locking forces are not simulated',
+                    exclusions='Duct sheet, insulation, sealant, bolts, opposite frame',
+                    rail_lengths_are_not_approved_cut_list=True),
+                source='User Airkan catalogue + user assembly correction; previous makeframe 1.0')
+
+
+def _property(obj,kind,name,value,group='makeframe'):
+    obj.addProperty(kind,name,group);setattr(obj,name,value);obj.setEditorMode(name,1)
+
+
+def create_frame(profile='E30',length=1000.,width=800.,corner=None,datum_offset=0.,progress=None):
+    """Create new FreeCAD document. No save dialog or automatic export."""
+    import FreeCAD as App
+    import Part
+    result=build_frame_geometry(profile,length,width,corner,datum_offset,progress=progress)
+    cfg=result['config'];L,B=cfg['length'],cfg['width'];stem=frame_stem(cfg)
+    doc=App.newDocument(stem);root=doc.addObject('App::Part','Frame')
+    root.Label='%s kader %g x %g binnenmaat | %s | JOIN'%(cfg['profile'],L,B,cfg['corner'])
+    for name,val in [('InternalLength',L),('InternalWidth',B),('OuterLength',cfg['outer_length']),
+                     ('OuterWidth',cfg['outer_width']),('RailEndSetback',0.),
+                     ('JoinDatumFromFlangeFront',cfg['datum_from_flange_front'])]:
+        _property(root,'App::PropertyLength',name,val)
+    for name,val in [('Profile',cfg['profile']),('Corner',cfg['corner']),('ParameterJSON',json.dumps(cfg)),
+                     ('JoinLocation','Origin (0,0,0), centre of nominal fully seated duct end'),
+                     ('JoinAxis','+Z towards continuing duct; X length; Y width'),
+                     ('Regenerate','Run makeframe again; these properties are records, not live drivers'),
+                     ('Accuracy','Corrected assembly model; non-dimensioned fits/crimps remain assumptions')]:
+        _property(root,'App::PropertyString',name,val)
+    objects=[]
+    for p in result['parts']:
+        obj=doc.addObject('Part::Feature',p['name']);root.addObject(obj)
+        obj.Label='%s | %s%s'%(p['code'],p['name'].replace('_',' '),(' L%g'%p['length']) if p['length'] else '')
+        obj.Shape=p['shape'];objects.append(obj)
+        _property(obj,'App::PropertyString','ArticleCode',p['code'])
+        if p['length'] is not None:_property(obj,'App::PropertyLength','ModelLength',p['length'])
+        if App.GuiUp:
+            obj.ViewObject.ShapeColor=(.69,.77,.83) if p['role']=='profile' else (.86,.64,.31)
+            obj.ViewObject.LineColor=(.14,.17,.20);obj.ViewObject.DisplayMode='Flat Lines';obj.ViewObject.Deviation=.3
+    refs=doc.addObject('App::DocumentObjectGroup','JoinReferences');refs.Label='JOIN referenties - niet in STEP'
+    root.addObject(refs)
+    pnt=doc.addObject('Part::Feature','JOIN_DUCT_CENTER');pnt.Label='JOIN_DUCT_CENTER - 0,0,0'
+    pnt.Shape=Part.Vertex(App.Vector(0,0,0));refs.addObject(pnt)
+    wire=Part.makePolygon([App.Vector(-L/2,-B/2,0),App.Vector(L/2,-B/2,0),
+        App.Vector(L/2,B/2,0),App.Vector(-L/2,B/2,0),App.Vector(-L/2,-B/2,0)])
+    plane=doc.addObject('Part::Feature','JOIN_DUCT_PLANE');plane.Label='JOIN_DUCT_PLANE - binnenmaat op z=0'
+    plane.Shape=Part.Face(wire);refs.addObject(plane)
+    if App.GuiUp:
+        pnt.ViewObject.PointColor=(.1,.65,.2);pnt.ViewObject.PointSize=8.0;pnt.Visibility=True
+        plane.ViewObject.ShapeColor=(.2,.7,.4);plane.ViewObject.Transparency=85;plane.Visibility=False
+    doc.recompute();return doc,root,objects,result
+
+
+def save_frame(doc,objects,result,outdir=DEFAULT_OUTPUT_DIR):
+    """Export one product / eight separate solids, preserving centred coordinates.
+
+    Only physical shapes are exported. Datum faces/points do not obstruct the
+    duct and are never presented as native Fusion JointOrigins in the STEP.
+    """
+    import Part
+    outdir=os.path.abspath(os.path.expanduser(outdir));os.makedirs(outdir,exist_ok=True)
+    name=frame_stem(result['config']);index=0
+    while True:
+        candidate=name+('_%03d'%index if index else '');stem=os.path.join(outdir,candidate)
+        if any(os.path.exists(stem+e) for e in ('.step','.FCStd','.json','.lock')):
+            index+=1;continue
+        try:
+            fd=os.open(stem+'.lock',os.O_CREAT|os.O_EXCL|os.O_WRONLY);os.close(fd);break
+        except FileExistsError:index+=1
+    paths=dict(step=stem+'.step',freecad=stem+'.FCStd',parameters=stem+'.json');carrier=None
+    try:
+        # A temporary carrier makes a single STEP product with independent
+        # solids, easier to move as ONE frame than eight unjoined occurrences.
+        carrier=doc.addObject('Part::Feature','ExportFrame_JOIN');carrier.Label=candidate
+        carrier.Shape=Part.makeCompound([o.Shape for o in objects]);doc.recompute()
+        if getattr(carrier,'ViewObject',None):carrier.Visibility=False
+        try:
+            import Import
+            Import.export([carrier],paths['step'])
+        except ImportError:Part.export([carrier],paths['step'])
+        if not os.path.isfile(paths['step']) or os.path.getsize(paths['step'])<=0:
+            raise RuntimeError('STEP-export heeft geen bestand aangemaakt.')
+        reread=Part.read(paths['step']);K=Kernel()
+        if not reread.isValid() or len(reread.Solids)!=8:
+            raise RuntimeError('STEP-terugleescontrole: 8 geldige solids verwacht.')
+        if any(abs(a-b)>1e-3 for a,b in zip(K.bounds(reread),result['validation']['bounds_mm'])):
+            raise RuntimeError('STEP-coordinaten wijken af; model eerst controleren.')
+        v0=sum(K.volume(p['shape']) for p in result['parts'])
+        if abs(reread.Volume-v0)>max(1e-3,v0*1e-6):raise RuntimeError('STEP-volume wijkt af.')
+        doc.removeObject(carrier.Name);carrier=None;doc.recompute();doc.saveAs(paths['freecad'])
+        if not os.path.isfile(paths['freecad']):raise RuntimeError('FCStd niet opgeslagen.')
+        data={k:v for k,v in result.items() if k not in ('parts','shape')}
+        data['created_local']=datetime.now().isoformat(timespec='seconds');data['files']=paths
+        data['validation']=dict(result['validation'],step_reread='PASS')
+        data['model_parts']=[{k:v for k,v in p.items() if k!='shape'} for p in result['parts']]
+        with open(paths['parameters'],'w',encoding='utf-8') as f:json.dump(data,f,indent=2)
+        return paths
+    except Exception:
+        for fn in paths.values():
+            if os.path.isfile(fn):
+                try:os.replace(fn,fn+'.FAILED')
+                except OSError:pass
+        raise
+    finally:
+        if carrier is not None:
+            try:doc.removeObject(carrier.Name)
+            except Exception:pass
+        try:os.remove(stem+'.lock')
+        except OSError:pass
+
+
+def qt_modules():
+    try:
+        from PySide import QtCore,QtGui
+        try:from PySide import QtWidgets
+        except ImportError:QtWidgets=QtGui
+        return QtWidgets,QtCore
+    except ImportError:
+        try:from PySide2 import QtWidgets,QtCore
+        except ImportError:from PySide6 import QtWidgets,QtCore
+        return QtWidgets,QtCore
+
+
+def request_parameters():
+    import FreeCADGui as Gui
+    W,C=qt_modules();dialog=W.QDialog(Gui.getMainWindow())
+    dialog.setWindowTitle('makeframe v2 - aansluitende profielen / JOIN');dialog.setMinimumWidth(600)
+    outer=W.QVBoxLayout(dialog)
+    intro=W.QLabel('Binnenmaat = lengte en breedte van de duct. Profielen worden niet 30 mm korter.\n'
+                  'Nulpunt = midden van het nominale volledig ingeschoven duct-eindvlak.\n'
+                  'Referentie-uitvoering: geen extra kanaalstuk of dummy-solid.')
+    intro.setWordWrap(True);outer.addWidget(intro);form=W.QFormLayout();outer.addLayout(form)
+    profile=W.QComboBox();profile.addItems(list(PROFILE_SPECS));profile.setCurrentText(DEFAULT_PROFILE)
+    corner=W.QComboBox()
+    def spin(value,lo=1.,hi=20000.):
+        s=W.QDoubleSpinBox();s.setRange(lo,hi);s.setDecimals(2);s.setSuffix(' mm');s.setValue(value);return s
+    length=spin(DEFAULT_LENGTH_MM);width=spin(DEFAULT_WIDTH_MM)
+    form.addRow('Profiel',profile);form.addRow('Hoekstuk',corner)
+    form.addRow('Lengte BINNENMAAT (X)',length);form.addRow('Breedte BINNENMAAT (Y)',width)
+    path=W.QLineEdit(DEFAULT_OUTPUT_DIR);chooser=W.QWidget();row=W.QHBoxLayout(chooser)
+    row.setContentsMargins(0,0,0,0);row.addWidget(path);browse=W.QPushButton('Map...');row.addWidget(browse)
+    form.addRow('Uitvoermap',chooser)
+    def choose():
+        d=W.QFileDialog.getExistingDirectory(dialog,'Kies uitvoermap',path.text())
+        if d:path.setText(d)
+    browse.clicked.connect(choose)
+    adv=W.QCheckBox('Geavanceerd: axiale referentiecorrectie');outer.addWidget(adv)
+    advanced=W.QWidget();af=W.QFormLayout(advanced);offset=spin(0.,-1000.,1000.)
+    af.addRow('Correctie op nominale aanslag',offset)
+    note=W.QLabel('0 mm = achtervlak van het hoekplaatje als modelaanslag.\n'
+                  'Deze waarde verplaatst alleen het nulpunt, niet de delen onderling.\n'
+                  'Geen door de fabrikant bevestigde insteekdiepte of productietolerantie.')
+    note.setWordWrap(True);af.addRow(note);outer.addWidget(advanced);advanced.hide();adv.toggled.connect(advanced.setVisible)
+    status=W.QLabel();status.setWordWrap(True);outer.addWidget(status)
+    buttons=W.QDialogButtonBox(W.QDialogButtonBox.Ok|W.QDialogButtonBox.Cancel)
+    buttons.button(W.QDialogButtonBox.Ok).setText('Aanmaken en opslaan');outer.addWidget(buttons)
+    def refresh(*args):
+        try:
+            cfg=frame_config(profile.currentText(),length.value(),width.value(),corner.currentText(),offset.value())
+            status.setText('Profielen: 2 x %g en 2 x %g mm | hoeken: 4 x %s\n'
+                'Buitenmaat: %g x %g | JOIN: 0,0,0 | richting duct: +Z\n'
+                'STEP: '+frame_stem(cfg)+'.step')
+            status.setText(status.text()%(cfg['rail_long'],cfg['rail_short'],cfg['corner'],cfg['outer_length'],cfg['outer_width']))
+            buttons.button(W.QDialogButtonBox.Ok).setEnabled(bool(path.text().strip()))
+        except Exception as exc:
+            status.setText(str(exc));buttons.button(W.QDialogButtonBox.Ok).setEnabled(False)
+    def set_corners(*args):
+        corner.blockSignals(True);corner.clear();corner.addItems(PROFILE_SPECS[profile.currentText()]['corners'])
+        corner.blockSignals(False);corner.setEnabled(corner.count()>1);refresh()
+    profile.currentIndexChanged.connect(set_corners);corner.currentIndexChanged.connect(refresh)
+    length.valueChanged.connect(refresh);width.valueChanged.connect(refresh);offset.valueChanged.connect(refresh);path.textChanged.connect(refresh)
+    buttons.accepted.connect(dialog.accept);buttons.rejected.connect(dialog.reject);set_corners()
+    execute=getattr(dialog,'exec',None) or dialog.exec_
+    if not execute():return None
+    target=path.text().strip()
+    if os.name!='nt' and target.lower().startswith('d:/'):
+        target=W.QFileDialog.getExistingDirectory(Gui.getMainWindow(),'D:/ bestaat hier niet; kies een map')
+        if not target:return None
+    return dict(profile=str(profile.currentText()),corner=str(corner.currentText()),
+                length=length.value(),width=width.value(),datum_offset=offset.value(),outdir=str(target))
+
+
+def main():
+    import FreeCAD as App
+    if not getattr(App,'GuiUp',False):raise RuntimeError('Voer deze macro uit binnen FreeCAD.')
+    import FreeCADGui as Gui
+    params=request_parameters()
+    if params is None:return
+    outdir=params.pop('outdir');os.makedirs(outdir,exist_ok=True)
+    W,C=qt_modules();progress=W.QProgressDialog('Kader opbouwen...',None,0,0,Gui.getMainWindow())
+    progress.setWindowTitle('makeframe v2 JOIN');progress.setCancelButton(None);progress.setMinimumDuration(0);progress.show()
+    def update(message):
+        progress.setLabelText(message);App.Console.PrintMessage('makeframe: '+message+'\n');W.QApplication.processEvents()
+    try:
+        doc,root,objects,result=create_frame(progress=update,**params)
+        Gui.activeDocument().activeView().viewAxonometric();Gui.activeDocument().activeView().fitAll()
+        update('STEP exporteren / teruglezen en FreeCAD-document opslaan')
+        paths=save_frame(doc,objects,result,outdir)
+        msg='Klaar: vier aansluitende profielen, vier hoekstukken.\nJOIN-nulpunt: 0,0,0.\n\nSTEP: '+paths['step']
+        App.Console.PrintMessage(msg+'\n');progress.close();W.QMessageBox.information(Gui.getMainWindow(),'makeframe v2 - opgeslagen',msg)
+        return doc,root,objects,result
+    finally:progress.close()
+
+
+if __name__=='__main__' and not globals().get('MAKEFRAME_LIBRARY_ONLY',False):
+    try:main()
+    except Exception:
+        message=traceback.format_exc()
+        try:
+            import FreeCAD as App
+            App.Console.PrintError('makeframe fout:\n'+message+'\n')
+            if App.GuiUp:
+                import FreeCADGui as Gui
+                W,C=qt_modules();W.QMessageBox.critical(Gui.getMainWindow(),'makeframe - fout',message)
+        except ImportError:raise

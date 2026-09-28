@@ -1,0 +1,383 @@
+{
+  "config": {
+    "profile": "E30",
+    "corner": "H30",
+    "length": 800.0,
+    "width": 800.0,
+    "cutback": 15.0,
+    "rail_long": 770.0,
+    "rail_short": 770.0,
+    "outer_length": 860.0,
+    "outer_width": 860.0,
+    "profile_height": 30.0,
+    "profile_depth": 27.0,
+    "corner_margin": 1.5,
+    "corner_z": 1.05,
+    "min_opening": 154.0,
+    "corner_engagement": 61.5
+  },
+  "holes": [
+    {
+      "part": "Hoek_linksonder",
+      "center": [
+        -15.5,
+        -15.5,
+        2.3
+      ],
+      "diameter": 11,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_linksonder",
+      "center": [
+        -18.5,
+        1.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_linksonder",
+      "center": [
+        -18.5,
+        20.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_linksonder",
+      "center": [
+        -18.5,
+        57.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_linksonder",
+      "center": [
+        1.5,
+        -18.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_linksonder",
+      "center": [
+        20.5,
+        -18.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_linksonder",
+      "center": [
+        57.5,
+        -18.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_rechtsonder",
+      "center": [
+        815.5,
+        -15.5,
+        2.3
+      ],
+      "diameter": 11,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_rechtsonder",
+      "center": [
+        798.5,
+        -18.499999999999996,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_rechtsonder",
+      "center": [
+        779.5,
+        -18.499999999999996,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_rechtsonder",
+      "center": [
+        742.5,
+        -18.499999999999996,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_rechtsonder",
+      "center": [
+        818.5,
+        1.5000000000000007,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_rechtsonder",
+      "center": [
+        818.5,
+        20.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_rechtsonder",
+      "center": [
+        818.5,
+        57.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_rechtsboven",
+      "center": [
+        815.5,
+        815.5,
+        2.3
+      ],
+      "diameter": 11,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_rechtsboven",
+      "center": [
+        818.5,
+        798.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_rechtsboven",
+      "center": [
+        818.5,
+        779.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_rechtsboven",
+      "center": [
+        818.5,
+        742.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_rechtsboven",
+      "center": [
+        798.5,
+        818.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_rechtsboven",
+      "center": [
+        779.5,
+        818.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_rechtsboven",
+      "center": [
+        742.5,
+        818.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_linksboven",
+      "center": [
+        -15.500000000000004,
+        815.5,
+        2.3
+      ],
+      "diameter": 11,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_linksboven",
+      "center": [
+        1.4999999999999964,
+        818.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_linksboven",
+      "center": [
+        20.499999999999996,
+        818.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_linksboven",
+      "center": [
+        57.5,
+        818.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_linksboven",
+      "center": [
+        -18.500000000000007,
+        798.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_linksboven",
+      "center": [
+        -18.50000000000001,
+        779.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    },
+    {
+      "part": "Hoek_linksboven",
+      "center": [
+        -18.500000000000014,
+        742.5,
+        2.3
+      ],
+      "diameter": 6,
+      "kind": "round"
+    }
+  ],
+  "validation": {
+    "valid_solids": 8,
+    "bounds_mm": [
+      -30.00000000000017,
+      -30.0,
+      0.0,
+      830.0000000000001,
+      830.0000000000001,
+      27.0
+    ],
+    "clashes": [],
+    "exact_intersection_checks": 8,
+    "hole_center_checks": 28,
+    "opening_intrusion_mm3": 0.0,
+    "step_reread": "PASS"
+  },
+  "assumptions": {
+    "rail_end_cutback_mm": 15.0,
+    "rail_lengths_are_not_approved_cut_list": true,
+    "corner_depth_and_radial_position": "Numerically checked assembly inference",
+    "profile_refinement": "Unlabelled bead inner/depth coordinates changed from 3.5/5.5 to 4.4/6.4 mm; no change to 30x27 envelope or 8.5 top return.",
+    "no_scaling_or_trimming": true,
+    "exclusions": "Duct sheet, internal insulation, sealant, bolts, clips, opposite frame"
+  },
+  "source": "Airkan Toebehoren pp.186-188/190-191, detailed library v2",
+  "version": "1.0",
+  "created_local": "2026-09-22T21:24:34",
+  "files": {
+    "step": "D:\\allshield_divers\\repo\\alshield\\shared\\sources\\3D parts Airkan\\AIRKAN_E30_Kader_800x800_H30.step",
+    "freecad": "D:\\allshield_divers\\repo\\alshield\\shared\\sources\\3D parts Airkan\\AIRKAN_E30_Kader_800x800_H30.FCStd",
+    "parameters": "D:\\allshield_divers\\repo\\alshield\\shared\\sources\\3D parts Airkan\\AIRKAN_E30_Kader_800x800_H30.json"
+  },
+  "model_parts": [
+    {
+      "name": "Profiel_onder",
+      "code": "E30",
+      "role": "profile",
+      "length": 770.0
+    },
+    {
+      "name": "Profiel_rechts",
+      "code": "E30",
+      "role": "profile",
+      "length": 770.0
+    },
+    {
+      "name": "Profiel_boven",
+      "code": "E30",
+      "role": "profile",
+      "length": 770.0
+    },
+    {
+      "name": "Profiel_links",
+      "code": "E30",
+      "role": "profile",
+      "length": 770.0
+    },
+    {
+      "name": "Hoek_linksonder",
+      "code": "H30",
+      "role": "corner",
+      "length": null
+    },
+    {
+      "name": "Hoek_rechtsonder",
+      "code": "H30",
+      "role": "corner",
+      "length": null
+    },
+    {
+      "name": "Hoek_rechtsboven",
+      "code": "H30",
+      "role": "corner",
+      "length": null
+    },
+    {
+      "name": "Hoek_linksboven",
+      "code": "H30",
+      "role": "corner",
+      "length": null
+    }
+  ]
+}
