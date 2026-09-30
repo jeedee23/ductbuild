@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIRKAN SVG review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <p class="eyebrow">DUCTBUILD</p>
+      <h1>AIRKAN SVG review</h1>
+    </div>
+    <div class="header-actions">
+      <button id="importButton" class="button button-secondary" type="button">Import JSON</button>
+      <button id="exportButton" class="button button-secondary" type="button">Download JSON</button>
+      <button id="saveButton" class="button button-primary" type="button">Save reviews</button>
+      <input id="importInput" type="file" accept="application/json,.json" hidden>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="viewer-panel" aria-label="SVG carousel">
+      <div class="toolbar">
+        <label class="search-field">
+          <span>Find</span>
+          <input id="searchInput" type="search" placeholder="Search filename">
+        </label>
+        <label>
+          <span>Status</span>
+          <select id="filterSelect">
+            <option value="all">All</option>
+            <option value="pending">Pending</option>
+            <option value="approved">Approved</option>
+            <option value="changes-requested">Changes requested</option>
+          </select>
+        </label>
+        <label>
+          <span>Drawing</span>
+          <select id="drawingSelect" aria-label="Select drawing"></select>
+        </label>
+      </div>
+
+      <div class="stage">
+        <button id="previousButton" class="nav-button nav-left" type="button" aria-label="Previous SVG">
+          <span aria-hidden="true">‹</span>
+        </button>
+        <figure>
+          <div class="svg-frame">
+            <img id="svgImage" alt="">
+          </div>
+          <figcaption>
+            <strong id="drawingName"></strong>
+            <span id="positionLabel"></span>
+          </figcaption>
+        </figure>
+        <button id="nextButton" class="nav-button nav-right" type="button" aria-label="Next SVG">
+          <span aria-hidden="true">›</span>
+        </button>
+      </div>
+    </section>
+
+    <aside class="review-panel" aria-label="Drawing review">
+      <section class="progress-card">
+        <div class="progress-copy">
+          <span id="reviewedCount">0 reviewed</span>
+          <span id="progressPercent">0%</span>
+        </div>
+        <div class="progress-track" aria-hidden="true">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+        <div class="status-counts">
+          <span><i class="status-dot approved"></i><b id="approvedCount">0</b> approved</span>
+          <span><i class="status-dot changes"></i><b id="changesCount">0</b> changes</span>
+          <span><i class="status-dot pending"></i><b id="pendingCount">0</b> pending</span>
+        </div>
+      </section>
+
+      <section class="review-card">
+        <p class="section-label">Decision</p>
+        <div class="decision-buttons">
+          <button id="approveButton" class="decision approve" type="button">Approve</button>
+          <button id="changesButton" class="decision changes" type="button">Request changes</button>
+          <button id="pendingButton" class="decision pending" type="button">Reset to pending</button>
+        </div>
+
+        <label class="remark-field">
+          <span>Remark</span>
+          <textarea id="remarkInput" rows="8" placeholder="Describe what should change…"></textarea>
+        </label>
+        <p id="saveStatus" class="save-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="shortcuts">
+        <p class="section-label">Keyboard</p>
+        <dl>
+          <div><dt>← / →</dt><dd>Previous / next</dd></div>
+          <div><dt>A</dt><dd>Approve</dd></div>
+          <div><dt>X</dt><dd>Request changes</dd></div>
+          <div><dt>R</dt><dd>Focus remark</dd></div>
+        </dl>
+      </section>
+    </aside>
+  </main>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
