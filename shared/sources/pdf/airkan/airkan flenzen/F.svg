@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="404" height="216" viewBox="134 1 404 216" role="img" aria-labelledby="title desc">
+  <title id="title">F - Ø1 galvanized circular flange</title>
+  <desc id="desc">Editable technical drawing with side and front views, dimensions, centerlines, and multilingual flange label.</desc>
+  <defs>
+    <marker id="dim-arrow" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 8 1 L 0 4 L 8 7 Z" fill="#8B5CF6" stroke="none"/>
+    </marker>
+  </defs>
+
+  <rect x="134" y="1" width="404" height="216" fill="#FFFFFF" stroke="none"/>
+
+  <g id="side-view">
+    <path d="M 299 47 C 286 64, 289 80, 300 95 C 288 111, 289 130, 299 143"
+          fill="none" stroke="#555555" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 2"/>
+    <line x1="299" y1="47" x2="324" y2="47" stroke="#555555" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="3 2"/>
+    <line x1="299" y1="143" x2="324" y2="143" stroke="#555555" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="3 2"/>
+    <rect x="324" y="36" width="5" height="119" fill="#111111" stroke="none"/>
+    <line x1="323" y1="36" x2="323" y2="155" stroke="#111111" stroke-width="1.2" stroke-linecap="square"/>
+    <line x1="330" y1="36" x2="330" y2="155" stroke="#111111" stroke-width="1.2" stroke-linecap="square"/>
+  </g>
+
+  <g id="front-view">
+    <circle cx="447" cy="95" r="61" fill="none" stroke="#111111" stroke-width="2.2"/>
+    <circle cx="447" cy="95" r="56" fill="none" stroke="#111111" stroke-width="1.1"/>
+    <circle cx="447" cy="95" r="47" fill="none" stroke="#111111" stroke-width="2.2"/>
+    <circle cx="447" cy="95" r="52" fill="none" stroke="#555555" stroke-width="1.2" stroke-dasharray="5 5"/>
+    <circle cx="447.00" cy="43.00" r="2.5" fill="none" stroke="#111111" stroke-width="1.4"/>
+    <circle cx="473.00" cy="49.97" r="2.5" fill="none" stroke="#111111" stroke-width="1.4"/>
+    <circle cx="492.03" cy="69.00" r="2.5" fill="none" stroke="#111111" stroke-width="1.4"/>
+    <circle cx="499.00" cy="95.00" r="2.5" fill="none" stroke="#111111" stroke-width="1.4"/>
+    <circle cx="492.03" cy="121.00" r="2.5" fill="none" stroke="#111111" stroke-width="1.4"/>
+    <circle cx="473.00" cy="140.03" r="2.5" fill="none" stroke="#111111" stroke-width="1.4"/>
+    <circle cx="447.00" cy="147.00" r="2.5" fill="none" stroke="#111111" stroke-width="1.4"/>
+    <circle cx="421.00" cy="140.03" r="2.5" fill="none" stroke="#111111" stroke-width="1.4"/>
+    <circle cx="401.97" cy="121.00" r="2.5" fill="none" stroke="#111111" stroke-width="1.4"/>
+    <circle cx="395.00" cy="95.00" r="2.5" fill="none" stroke="#111111" stroke-width="1.4"/>
+    <circle cx="401.97" cy="69.00" r="2.5" fill="none" stroke="#111111" stroke-width="1.4"/>
+    <circle cx="421.00" cy="49.97" r="2.5" fill="none" stroke="#111111" stroke-width="1.4"/>
+  </g>
+
+  <g id="centerlines">
+    <line x1="284" y1="95" x2="342" y2="95" stroke="#999999" stroke-width="1.1" stroke-dasharray="9 4 2 4"/>
+    <line x1="376" y1="95" x2="518" y2="95" stroke="#999999" stroke-width="1.1" stroke-dasharray="10 4 2 4"/>
+    <line x1="447" y1="25" x2="447" y2="165" stroke="#999999" stroke-width="1.1" stroke-dasharray="10 4 2 4"/>
+    <circle cx="447" cy="95" r="2.2" fill="#999999" stroke="none"/>
+  </g>
+
+  <g id="dimensions">
+    <line x1="260" y1="36" x2="260" y2="47" stroke="#8B5CF6" stroke-width="1.1" marker-start="url(#dim-arrow)" marker-end="url(#dim-arrow)"/>
+    <line x1="260" y1="47" x2="260" y2="143" stroke="#8B5CF6" stroke-width="1.1" marker-start="url(#dim-arrow)" marker-end="url(#dim-arrow)"/>
+    <line x1="260" y1="143" x2="260" y2="155" stroke="#8B5CF6" stroke-width="1.1" marker-start="url(#dim-arrow)" marker-end="url(#dim-arrow)"/>
+    <line x1="258" y1="36" x2="324" y2="36" stroke="#8B5CF6" stroke-width="0.9"/>
+    <line x1="258" y1="47" x2="299" y2="47" stroke="#8B5CF6" stroke-width="0.9"/>
+    <line x1="258" y1="143" x2="299" y2="143" stroke="#8B5CF6" stroke-width="0.9"/>
+    <line x1="258" y1="155" x2="324" y2="155" stroke="#8B5CF6" stroke-width="0.9"/>
+    <text x="250" y="42" fill="#8B5CF6" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="500" text-anchor="middle" transform="rotate(-90 250 42)">b</text>
+    <text x="250" y="95" fill="#8B5CF6" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="500" text-anchor="middle" transform="rotate(-90 250 95)">Ø1</text>
+    <text x="250" y="149" fill="#8B5CF6" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="500" text-anchor="middle" transform="rotate(-90 250 149)">b</text>
+
+    <line x1="354" y1="36" x2="354" y2="155" stroke="#8B5CF6" stroke-width="1.1" marker-start="url(#dim-arrow)" marker-end="url(#dim-arrow)"/>
+    <line x1="329" y1="36" x2="356" y2="36" stroke="#8B5CF6" stroke-width="0.9"/>
+    <line x1="329" y1="155" x2="356" y2="155" stroke="#8B5CF6" stroke-width="0.9"/>
+    <text x="344" y="96" fill="#8B5CF6" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="500" text-anchor="middle" transform="rotate(-90 344 96)">ØK</text>
+
+    <line x1="324" y1="16" x2="329" y2="16" stroke="#8B5CF6" stroke-width="1.1" marker-start="url(#dim-arrow)" marker-end="url(#dim-arrow)"/>
+    <line x1="324" y1="14" x2="324" y2="34" stroke="#8B5CF6" stroke-width="0.9"/>
+    <line x1="329" y1="14" x2="329" y2="34" stroke="#8B5CF6" stroke-width="0.9"/>
+    <text x="326.5" y="11" fill="#8B5CF6" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="500" text-anchor="middle">s</text>
+
+    <line x1="447" y1="95" x2="410" y2="58" stroke="#8B5CF6" stroke-width="1.0" marker-end="url(#dim-arrow)"/>
+    <text x="426" y="67" fill="#8B5CF6" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="500" text-anchor="middle" transform="rotate(45 426 67)">Ø2</text>
+    <line x1="447" y1="95" x2="407" y2="135" stroke="#8B5CF6" stroke-width="1.0" marker-end="url(#dim-arrow)"/>
+    <text x="422" y="120" fill="#8B5CF6" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="500" text-anchor="middle" transform="rotate(-45 422 120)">ØK</text>
+    <polyline points="492,69 511,69 518,65" fill="none" stroke="#8B5CF6" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="522" y="68" fill="#8B5CF6" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="500">Q</text>
+  </g>
+
+  <g id="annotations">
+    <text x="145" y="88" fill="#8B5CF6" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="12">Ø1 = Ø buis</text>
+    <text x="169" y="105" fill="#8B5CF6" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="12">= Ø gaine</text>
+    <text x="169" y="122" fill="#8B5CF6" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="12">= Ø duct</text>
+    <polyline points="324,155 324,176 332,176" fill="none" stroke="#111111" stroke-width="1.0" stroke-linecap="square" stroke-linejoin="miter"/>
+    <text x="336" y="180" fill="#111111" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="12">Flens - Bride - Flange</text>
+  </g>
+
+  <text x="336" y="208" fill="#111111" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="600" text-anchor="middle">F - Ø1</text>
+</svg>

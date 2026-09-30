@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="184" viewBox="0 0 194 184" role="img" aria-labelledby="title desc">
+  <title id="title">KRS roof cap</title><desc id="desc">KRS roof cap with trellis and drainage callouts and three confirmed 50 dimensions.</desc>
+  <defs><marker id="a" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto-start-reverse"><path d="M0 0 4 2 0 4Z" fill="#8B5CF6"/></marker><marker id="l" markerWidth="4" markerHeight="4" refX="4" refY="2" orient="auto"><path d="M0 0 4 2 0 4Z" fill="#8B5CF6"/></marker></defs><rect width="194" height="184" fill="#fff"/>
+  <g transform="translate(-10)" fill="#fff" stroke="#222" stroke-width="1.15">
+    <path d="M73 43h48v7H68L57 91 69 139h55l12-48-11-41H73Z"/>
+    <path d="M73 43 82 35h44" fill="none"/><path d="M57 91h79"/><rect x="69" y="139" width="55" height="7"/><rect x="71" y="146" width="51" height="6"/><path d="M72 152v10M121 152v10"/>
+  </g>
+  <g transform="translate(-10)" fill="none" stroke="#888" stroke-width=".65" stroke-dasharray="3 2"><path d="M68 60h57L57 91l67 48M125 60l11 31-67 48"/><path d="M72 162c0-7 49-7 49 0s-49 7-49 0"/></g><path d="M86.5 21v153" fill="none" stroke="#aaa" stroke-width=".65" stroke-dasharray="6 2 1 2"/>
+  <g transform="translate(-10)" fill="none" stroke="#8B5CF6" stroke-width=".6">
+    <path d="M57 91V8M136 91V8M57 11h79" marker-start="url(#a)" marker-end="url(#a)"/><path d="M68 43V25M125 43V25M68 28h57" marker-start="url(#a)" marker-end="url(#a)"/>
+    <path d="M68 43H47M68 50H47M50 43v7" marker-start="url(#a)" marker-end="url(#a)"/><path d="M68 50H39M68 57H39M42 50v7" marker-start="url(#a)" marker-end="url(#a)"/>
+    <path d="M57 57H29M69 139H29M32 57v82" marker-start="url(#a)" marker-end="url(#a)"/><path d="M69 139H47M71 152H47M50 139v13" marker-start="url(#a)" marker-end="url(#a)"/>
+    <path d="M72 170h49" marker-start="url(#a)" marker-end="url(#a)"/><path d="M145 39h-12l-7-4" marker-end="url(#l)"/><path d="M146 102h-11l-20 14" marker-end="url(#l)"/>
+  </g>
+  <g transform="translate(-10)" fill="#8B5CF6" stroke="none" font-family="Arial, sans-serif" font-size="5.5"><text x="96.5" y="7" text-anchor="middle">1.67Ø</text><text x="96.5" y="24" text-anchor="middle">Ø</text><text x="45" y="48" text-anchor="end">50</text><text x="37" y="55" text-anchor="end">50</text><text x="27" y="99" transform="rotate(-90 27 99)" text-anchor="middle">H + 30</text><text x="45" y="148" text-anchor="end">50</text><text x="96.5" y="89" text-anchor="middle">1.20Ø</text><text x="96.5" y="168" text-anchor="middle">Ø</text><text x="147" y="35">Tralie incl.</text><text x="147" y="42">Treillis incl.</text><text x="147" y="49">Trellis incl.</text><text x="147" y="100">Afwatering</text><text x="147" y="107">Ecoulement</text><text x="147" y="114">Draining</text></g>
+  <text x="97" y="181" fill="#222" stroke="none" font-family="Arial, sans-serif" font-size="7" font-weight="700" text-anchor="middle">KRS - Ø</text>
+</svg>

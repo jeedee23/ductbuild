@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="244" height="205" viewBox="0 0 244 205">
+  <title>RC2 rectangular transition</title>
+  <defs>
+    <marker id="d" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse">
+      <path d="M5 0 0 2.5 5 5" fill="none" stroke="#8B5CF6" stroke-width="1" />
+    </marker>
+  </defs>
+  <rect width="244" height="205" fill="#fff" stroke="none" />
+  <g fill="none" stroke="#111" stroke-width="1.7" stroke-linejoin="round">
+    <path d="M82 66H211V122H82Z" fill="none" stroke="#111" stroke-width="1.7" stroke-linejoin="round" />
+    <path d="M82 66L113 96V122M211 66L180 96V122M113 96H180" fill="none" stroke="#111" stroke-width="1.7" stroke-linejoin="round" />
+  </g>
+  <path d="M113 96H180L113 113Z" fill="#cfcfcf" stroke="none" />
+  <g fill="none" stroke="#8B5CF6" stroke-width=".8">
+    <path d="M82 43V62M113 43V92M84 47H111" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".8" />
+    <path d="M50 66H78M50 122H78M54 68V120" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".8" />
+    <path d="M66 96H78M66 122H78M70 98V120" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".8" />
+  </g>
+  <g font-family="Arial,sans-serif" font-size="9" font-weight="600">
+    <text x="94" y="38" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="9" font-weight="600" stroke="none">E</text>
+    <text x="44" y="97" fill="#8B5CF6" transform="rotate(-90 44 97)" font-family="Arial,sans-serif" font-size="9" font-weight="600" stroke="none">B</text>
+    <text x="62" y="113" fill="#8B5CF6" transform="rotate(-90 62 113)" font-family="Arial,sans-serif" font-size="9" font-weight="600" stroke="none">D</text>
+    <text x="170" y="59" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="9" font-weight="600" stroke="none">F = 0</text>
+  </g>
+  <text x="122" y="198" fill="#111" stroke="none" font-family="Arial,sans-serif" font-size="11" font-weight="600" text-anchor="middle">RC2</text>
+</svg>

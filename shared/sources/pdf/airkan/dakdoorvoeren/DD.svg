@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="184" viewBox="0 0 194 184" role="img" aria-labelledby="title desc">
+  <title id="title">DD roof penetration</title><desc id="desc">Roof penetration with storm collar, hidden circular sections, callouts and dimensions.</desc>
+  <defs><marker id="a" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto-start-reverse"><path d="M0 0 4 2 0 4Z" fill="#8B5CF6"/></marker></defs>
+  <rect width="194" height="184" fill="#fff"/>
+  <g fill="none" stroke="#888" stroke-width=".65" stroke-dasharray="3 2">
+    <path d="M76 48V31C76 24 118 24 118 31V48M76 31c0 7 42 7 42 0"/>
+    <path d="M76 59v79c0 7 42 7 42 0V59M76 75c0 7 42 7 42 0M76 105c0 7 42 7 42 0M76 138c0 7 42 7 42 0"/>
+  </g>
+  <g fill="#fff" stroke="#222" stroke-width="1.25">
+    <path d="M67 58v80M127 58v80"/>
+    <rect x="56" y="48" width="82" height="11"/>
+    <circle cx="64" cy="53.5" r="2.1"/><circle cx="130" cy="53.5" r="2.1"/>
+    <path d="M48 74 67 58h60l19 16Z"/>
+    <path d="M20 111h154"/>
+  </g>
+  <path d="M97 20v135" fill="none" stroke="#aaa" stroke-width=".65" stroke-dasharray="6 2 1 2"/>
+  <g fill="none" stroke="#8B5CF6" stroke-width=".6">
+    <path d="M56 48V11M138 48V11M56 14h82" marker-start="url(#a)" marker-end="url(#a)"/>
+    <path d="M138 48h25M146 74h17M160 48v26" marker-start="url(#a)" marker-end="url(#a)"/>
+    <path d="M138 48h12M138 59h12M147 48v11" marker-start="url(#a)" marker-end="url(#a)"/>
+    <path d="M67 58H35M67 111H35M38 58v53" marker-start="url(#a)" marker-end="url(#a)"/>
+    <path d="M67 138v34M127 138v34M67 168h60" marker-start="url(#a)" marker-end="url(#a)"/>
+    <path d="M20 111v61M20 168h47" marker-start="url(#a)" marker-end="url(#a)"/>
+    <path d="M174 111v61M127 168h47" marker-start="url(#a)" marker-end="url(#a)"/>
+    <path d="M10 50h20l25 17" marker-end="url(#a)"/><path d="M10 133h17l40-22" marker-end="url(#a)"/>
+  </g>
+  <g fill="#8B5CF6" stroke="none" font-family="Arial, sans-serif" font-size="6">
+    <text x="97" y="9" text-anchor="middle">Ø + 150</text><text x="166" y="63">75</text><text x="145" y="55" transform="rotate(-90 145 55)" text-anchor="middle">40</text>
+    <text x="33" y="86" transform="rotate(-90 33 86)" text-anchor="middle">300</text>
+    <text x="97" y="165" text-anchor="middle">Ø</text><text x="43" y="165" text-anchor="middle">≥ 150</text><text x="151" y="165" text-anchor="middle">≥ 150</text>
+    <text x="3" y="48">SO</text><text x="2" y="131">DD</text>
+  </g>
+  <text x="97" y="181" fill="#222" stroke="none" font-family="Arial, sans-serif" font-size="7" font-weight="700" text-anchor="middle">DD - Ø</text>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="339" height="257" viewBox="0 0 339 257">
+  <title>ISR_2</title><desc>Editable technical redraw of four-latch ISR access panel.</desc>
+  <rect x="0" y="0" width="339" height="257" fill="#fff"/>
+  <g id="panel" fill="none" stroke="#111" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="55" y="35" width="202" height="121" rx="13"/><rect x="66" y="47" width="180" height="98" rx="20"/>
+    <g id="latches"><path d="M89 32l6-5 6 3 4-4 5 4-3 5 5 5-4 4-6-3-5 5-5-3 2-6Zm116 0 6-5 6 3 4-4 5 4-3 5 5 5-4 4-6-3-5 5-5-3 2-6ZM89 137l6-5 6 3 4-4 5 4-3 5 5 5-4 4-6-3-5 5-5-3 2-6Zm116 0 6-5 6 3 4-4 5 4-3 5 5 5-4 4-6-3-5 5-5-3 2-6Z"/><path d="M97 26v22M86 37h26m101-11v22m-11-11h26M97 131v22m-11-11h26m101-11v22m-11-11h26"/></g>
+    <path d="M62 181 H250 V193 H62 Z"/>
+  </g>
+  <g id="centerlines" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="8 4 2 4"><line x1="156" y1="27" x2="156" y2="161"/></g>
+  <g id="dimensions" fill="none" stroke="#8B5CF6" stroke-width="1.2">
+    <line x1="55" y1="20" x2="257" y2="20"/><line x1="55" y1="20" x2="55" y2="35"/><line x1="257" y1="20" x2="257" y2="35"/>
+    <line x1="272" y1="35" x2="272" y2="156"/><line x1="257" y1="35" x2="276" y2="35"/><line x1="257" y1="156" x2="276" y2="156"/>
+    <line x1="62" y1="207" x2="250" y2="207"/><line x1="62" y1="193" x2="62" y2="211"/><line x1="250" y1="193" x2="250" y2="211"/>
+    <path d="M55 20 l8 -3 v6 z M257 20 l-8 -3 v6 z M272 35 l-3 8 h6 z M272 156 l-3 -8 h6 z M62 207 l8 -3 v6 z M250 207 l-8 -3 v6 z" fill="#8B5CF6" stroke="none"/>
+  </g>
+  <g fill="#8B5CF6" font-family="Arial, sans-serif" font-size="15"><text x="156" y="16" text-anchor="middle">A</text><text x="287" y="100">B</text><text x="156" y="204" text-anchor="middle">E x F</text><text x="156" y="221" text-anchor="middle">C x D</text><text x="273" y="191">25</text></g>
+  <text id="designation" x="169.5" y="250" fill="#111" stroke="none" font-family="Arial, sans-serif" font-size="9.0" font-style="normal" font-weight="400" text-anchor="middle" text-decoration="none">ISR_2</text>
+</svg>

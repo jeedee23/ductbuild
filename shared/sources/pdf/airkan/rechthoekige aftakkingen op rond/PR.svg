@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="202" viewBox="0 0 194 202" role="img" aria-labelledby="title desc">
+  <title id="title">PR rectangular branch on round duct</title><desc id="desc">Front technical view matching the source.</desc>
+
+  <style>
+    .obj{fill:none;stroke:#777;stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round}
+    .hidden{fill:none;stroke:#aaa;stroke-width:.9;stroke-dasharray:3 2}
+    .center{fill:none;stroke:#999;stroke-width:.75;stroke-dasharray:5 2 1 2}
+    .dim{fill:none;stroke:#888;stroke-width:.75}
+    .txt{fill:#555;font-family:Arial,Helvetica,sans-serif;font-size:7px}
+  </style>
+  <rect width="194" height="184" fill="#fff"/>
+
+  <g id="object">
+    <circle class="hidden" cx="101" cy="112" r="38" fill="none" stroke="#aaa" stroke-width=".9" stroke-dasharray="3 2"/>
+    <path class="obj" d="M74 76V42H128V76M65 78A38 38 0 0 1 137 78" fill="none" stroke="#777" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="center" d="M57 112H145M101 68V156" fill="none" stroke="#999" stroke-width=".75" stroke-dasharray="5 2 1 2"/>
+  </g>
+  <g id="dimensions">
+    <path class="dim" d="M74 34V22M128 34V22M77 26H125M77 24L73 26L77 28M125 24L129 26L125 28" fill="none" stroke="#8B5CF6" stroke-width=".75"/>
+    <text class="txt" x="101" y="18" text-anchor="middle" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="7px">B x L</text>
+    <path class="dim" d="M66 42H48M66 76H48M52 45V73M50 45L52 41L54 45M50 73L52 77L54 73" fill="none" stroke="#8B5CF6" stroke-width=".75"/>
+    <text class="txt" x="43" y="60" text-anchor="middle" transform="rotate(-90 43 60)" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="7px">100</text>
+    <path class="dim" d="M63 142V166M139 142V166M66 161H136M66 159L62 161L66 163M136 159L140 161L136 163" fill="none" stroke="#8B5CF6" stroke-width=".75"/>
+    <text class="txt" x="101" y="157" text-anchor="middle" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="7px">Ø1</text>
+  </g>
+  <text id="designation" x="97" y="195" fill="#111" font-family="Arial,Helvetica,sans-serif" font-size="10px" font-weight="700" text-anchor="middle">PR</text>
+</svg>

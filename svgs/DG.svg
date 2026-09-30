@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="216" viewBox="0 0 194 216">
+  <title>DG</title>
+  <desc>Round gasketed end cover with concealed rear edge and diameter dimension.</desc>
+  <rect width="194" height="216" fill="#fff"/>
+  <path d="M112 177V7h34c2.3 0 4 1.7 4 4M112 7v170h34c2.3 0 4-1.7 4-4" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M150 11v162" fill="none" stroke="#555" stroke-width="1" stroke-dasharray="4 3"/>
+  <g fill="#111">
+    <circle cx="112" cy="7" r="2.5"/><circle cx="150" cy="11" r="2.3"/>
+    <circle cx="112" cy="177" r="2.5"/><circle cx="150" cy="173" r="2.3"/>
+  </g>
+  <path d="M103 92h59" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="11 5 2 5"/>
+  <g fill="none" stroke="#8B5CF6" stroke-width="1">
+    <path d="M67 7h36M67 177h36M67 7v170M63 3l8 8M63 173l8 8"/>
+  </g>
+  <text x="45" y="92" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="17" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 45 92)">Ø</text>
+  <text id="designation-footer" x="97" y="205" fill="#111" stroke="none" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" text-anchor="middle">DG</text>
+</svg>

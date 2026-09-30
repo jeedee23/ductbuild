@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="194"
+     height="168"
+     viewBox="0 0 194 168">
+  <title>SM</title>
+  <desc>Clean editable redraw of the AIRKAN SM compensator technical drawing.</desc>
+
+  <defs>
+    <marker id="dimension-arrow"
+            markerWidth="6"
+            markerHeight="6"
+            refX="3"
+            refY="3"
+            orient="auto-start-reverse"
+            markerUnits="strokeWidth">
+      <path d="M 0 3 L 6 0 L 6 6 Z" fill="#8B5CF6" stroke="none"/>
+    </marker>
+  </defs>
+
+  <rect id="background" x="0" y="0" width="194" height="168" fill="#fff" stroke="none"/>
+
+  <g id="compensator"
+     fill="none"
+     stroke="#111"
+     stroke-width="1.5"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+    <path d="M 83 19 V 112" fill="none" stroke="#111" stroke-width="1.5"/>
+    <path d="M 86 28 H 91 V 103 H 86 Z" fill="none" stroke="#111" stroke-width="1.5"/>
+    <path d="M 91 29
+             L 95 27 L 99 29 L 103 27
+             L 107 29 L 111 27 L 115 29"
+          fill="none" stroke="#111" stroke-width="1.5"/>
+    <path d="M 91 102
+             L 95 104 L 99 102 L 103 104
+             L 107 102 L 111 104 L 115 102"
+          fill="none" stroke="#111" stroke-width="1.5"/>
+    <path d="M 95 28 V 103 M 103 28 V 103 M 111 28 V 103"
+          fill="none" stroke="#111" stroke-width="1.25"/>
+    <path d="M 115 28 H 119 V 103 H 115 Z" fill="none" stroke="#111" stroke-width="1.5"/>
+    <path d="M 119 19 V 112" fill="none" stroke="#111" stroke-width="1.5"/>
+    <path d="M 116 19 L 141 0" fill="none" stroke="#111" stroke-width="1.25"/>
+  </g>
+
+  <g id="centerlines"
+     fill="none"
+     stroke="#999"
+     stroke-width=".75"
+     stroke-dasharray="10 3 2 3">
+    <path d="M 78 65 H 123"
+          fill="none" stroke="#999" stroke-width=".75" stroke-dasharray="10 3 2 3"/>
+  </g>
+
+  <g id="dimensions" fill="#8B5CF6" stroke="#8B5CF6">
+    <g id="diameter">
+      <path d="M 60 28 H 80" fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+      <path d="M 60 103 H 80" fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+      <path d="M 60 30 V 101"
+            fill="none"
+            stroke="#8B5CF6"
+            stroke-width=".75"
+            marker-start="url(#dimension-arrow)"
+            marker-end="url(#dimension-arrow)"/>
+      <text x="54" y="65.5"
+            fill="#8B5CF6"
+            stroke="none"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10"
+            text-anchor="middle"
+            transform="rotate(-90 54 65.5)">Ø</text>
+    </g>
+
+    <g id="length">
+      <path d="M 82 107 V 136" fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+      <path d="M 120 107 V 136" fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+      <path d="M 84 133 H 118"
+            fill="none"
+            stroke="#8B5CF6"
+            stroke-width=".75"
+            marker-start="url(#dimension-arrow)"
+            marker-end="url(#dimension-arrow)"/>
+      <text x="101" y="129"
+            fill="#8B5CF6"
+            stroke="none"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10"
+            text-anchor="middle">90 (110)</text>
+    </g>
+  </g>
+
+  <text id="designation-footer" x="97" y="157" fill="#111" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" text-anchor="middle">SM</text>
+</svg>

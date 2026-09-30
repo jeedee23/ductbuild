@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="232" height="190" viewBox="0 0 232 190">
+  <title>GE60XL grille</title>
+  <desc>Editable technical redraw of the AIRKAN GE60XL grille, with front and side views.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3"
+            orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 3 L 6 0 L 6 6 Z" fill="#8B5CF6" stroke="none"/>
+    </marker>
+  </defs>
+  <rect id="background" x="0" y="0" width="232" height="190" fill="#fff" stroke="none"/>
+
+  <g id="front-view">
+    <rect x="20" y="28" width="120" height="82" fill="none" stroke="#111"
+          stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="24" y="32" width="112" height="74" fill="none" stroke="#111"
+          stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+    <g id="vertical-supports" fill="none" stroke="#999" stroke-width=".65">
+      <path d="M 46 32 V 106"/>
+      <path d="M 68 32 V 106"/>
+      <path d="M 92 32 V 106"/>
+      <path d="M 114 32 V 106"/>
+    </g>
+    <g id="horizontal-blades" fill="none" stroke="#555" stroke-width="1"
+       stroke-linecap="round">
+      <path d="M 24 39 H 136"/>
+      <path d="M 24 46 H 136"/>
+      <path d="M 24 53 H 136"/>
+      <path d="M 24 60 H 136"/>
+      <path d="M 24 67 H 136"/>
+      <path d="M 24 74 H 136"/>
+      <path d="M 24 81 H 136"/>
+      <path d="M 24 88 H 136"/>
+      <path d="M 24 95 H 136"/>
+      <path d="M 24 102 H 136"/>
+    </g>
+  </g>
+
+  <g id="side-view">
+    <rect x="180" y="28" width="28" height="82" fill="none" stroke="#111"
+          stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g id="dimensions" fill="none" stroke="#8B5CF6">
+    <path d="M 20 114 V 138 M 140 114 V 138" stroke-width=".65"/>
+    <path d="M 22 134 H 138" stroke-width=".75"
+          marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <path d="M 145 28 H 164 M 145 110 H 164" stroke-width=".65"/>
+    <path d="M 160 30 V 108" stroke-width=".75"
+          marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <path d="M 180 114 V 138 M 208 114 V 138" stroke-width=".65"/>
+    <path d="M 182 134 H 206" stroke-width=".75"
+          marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  </g>
+  <g id="dimension-labels" fill="#8B5CF6" stroke="none"
+     font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700"
+     text-anchor="middle">
+    <text x="80" y="131">B</text>
+    <text x="157" y="69" transform="rotate(-90 157 69)">H</text>
+    <text x="194" y="131">100</text>
+  </g>
+
+  <text id="designation" x="116" y="181" fill="#111" stroke="none"
+        font-family="Arial, Helvetica, sans-serif" font-size="13"
+        font-weight="700" text-anchor="middle">GE60XL</text>
+</svg>

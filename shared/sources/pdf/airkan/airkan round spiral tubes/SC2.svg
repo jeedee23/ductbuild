@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="339"
+     height="253"
+     viewBox="0 0 339 253">
+  <title>SC2</title>
+  <desc>Clean editable redraw of the AIRKAN SC2 round spiral tube and lock-seam detail.</desc>
+
+  <defs>
+    <marker id="dimension-arrow"
+            markerWidth="6"
+            markerHeight="6"
+            refX="3"
+            refY="3"
+            orient="auto-start-reverse"
+            markerUnits="strokeWidth">
+      <path d="M 0 3 L 6 0 L 6 6 Z" fill="#8B5CF6" stroke="none"/>
+    </marker>
+    <clipPath id="tube-clip">
+      <path d="M 109 46 H 253 V 119 H 109
+               C 104 103 104 62 109 46 Z"/>
+    </clipPath>
+  </defs>
+
+  <rect id="background" x="0" y="0" width="339" height="253" fill="#fff" stroke="none"/>
+
+  <g id="diameter-note">
+    <text x="3" y="52"
+          fill="#8B5CF6"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="11"
+          font-weight="400"
+          text-anchor="start">Ø</text>
+    <text x="25" y="52"
+          fill="#8B5CF6"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="11"
+          font-weight="400"
+          text-anchor="start">= binnenmaat</text>
+    <text x="25" y="65"
+          fill="#8B5CF6"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="11"
+          font-weight="400"
+          text-anchor="start">= intérieur</text>
+    <text x="25" y="78"
+          fill="#8B5CF6"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="11"
+          font-weight="400"
+          text-anchor="start">= inside</text>
+  </g>
+
+  <g id="tube">
+    <path d="M 109 46 H 253 V 119 H 109"
+          fill="none" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 109 46 C 104 62 104 103 109 119"
+          fill="none" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 109 82 C 116 91 117 106 109 119"
+          fill="none" stroke="#555" stroke-width="1"
+          stroke-linecap="round"/>
+  </g>
+
+  <g id="spiral-seams" clip-path="url(#tube-clip)">
+    <path d="M 116 39 C 136 60 129 96 147 126"
+          fill="none" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round"/>
+    <path d="M 119 39 C 139 60 132 96 150 126"
+          fill="none" stroke="#555" stroke-width="1"
+          stroke-linecap="round"/>
+    <path d="M 135 39 C 155 60 148 96 166 126"
+          fill="none" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round"/>
+    <path d="M 138 39 C 158 60 151 96 169 126"
+          fill="none" stroke="#555" stroke-width="1"
+          stroke-linecap="round"/>
+    <path d="M 154 39 C 174 60 167 96 185 126"
+          fill="none" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round"/>
+    <path d="M 157 39 C 177 60 170 96 188 126"
+          fill="none" stroke="#555" stroke-width="1"
+          stroke-linecap="round"/>
+    <path d="M 173 39 C 193 60 186 96 204 126"
+          fill="none" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round"/>
+    <path d="M 176 39 C 196 60 189 96 207 126"
+          fill="none" stroke="#555" stroke-width="1"
+          stroke-linecap="round"/>
+    <path d="M 192 39 C 212 60 205 96 223 126"
+          fill="none" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round"/>
+    <path d="M 195 39 C 215 60 208 96 226 126"
+          fill="none" stroke="#555" stroke-width="1"
+          stroke-linecap="round"/>
+    <path d="M 211 39 C 231 60 224 96 242 126"
+          fill="none" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round"/>
+    <path d="M 214 39 C 234 60 227 96 245 126"
+          fill="none" stroke="#555" stroke-width="1"
+          stroke-linecap="round"/>
+    <path d="M 230 39 C 250 60 243 96 261 126"
+          fill="none" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round"/>
+    <path d="M 233 39 C 253 60 246 96 264 126"
+          fill="none" stroke="#555" stroke-width="1"
+          stroke-linecap="round"/>
+    <path d="M 249 39 C 269 60 262 96 280 126"
+          fill="none" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round"/>
+    <path d="M 252 39 C 272 60 265 96 283 126"
+          fill="none" stroke="#555" stroke-width="1"
+          stroke-linecap="round"/>
+  </g>
+
+  <g id="centerline">
+    <path d="M 104 82 H 255"
+          fill="none" stroke="#999" stroke-width=".75"
+          stroke-dasharray="10 3 2 3" stroke-linecap="butt"/>
+  </g>
+
+  <g id="diameter-dimension">
+    <path d="M 256 46 H 278"
+          fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+    <path d="M 256 119 H 278"
+          fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+    <path d="M 278 49 V 116"
+          fill="none" stroke="#8B5CF6" stroke-width=".75"
+          marker-start="url(#dimension-arrow)"
+          marker-end="url(#dimension-arrow)"/>
+    <text x="272" y="82.5"
+          fill="#8B5CF6"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="12"
+          font-weight="400"
+          text-anchor="middle"
+          dominant-baseline="middle"
+          transform="rotate(-90 272 82.5)">Ø</text>
+  </g>
+
+  <g id="lock-seam-detail">
+    <path d="M 151 119 L 181 139"
+          fill="none" stroke="#999" stroke-width=".75"/>
+    <path d="M 198 136 H 304
+             C 314 136 321 145 321 156
+             C 321 167 314 176 304 176
+             H 198
+             C 188 176 181 167 181 156
+             C 181 145 188 136 198 136 Z"
+          fill="none" stroke="#999" stroke-width="1"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 181 157 H 194
+             C 194 153 197 151 200 151 H 204
+             C 208 151 210 153 210 157
+             H 246
+             C 248 157 249 153 253 153 H 255
+             C 259 153 260 157 262 157
+             H 293
+             C 293 153 296 151 299 151 H 304
+             C 308 151 310 153 310 157
+             H 321"
+          fill="none" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 194 157 H 210
+             C 209 160 207 161 204 161 H 200
+             C 197 161 195 160 194 157 Z"
+          fill="#111" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 293 157 H 310
+             C 309 160 307 161 304 161 H 299
+             C 296 161 294 160 293 157 Z"
+          fill="#111" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 197 155 H 207 M 296 155 H 307"
+          fill="none" stroke="#777" stroke-width="1"
+          stroke-linecap="round"/>
+  </g>
+
+  <text id="designation-footer" x="169.5" y="242" fill="#111" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" text-anchor="middle">SC2</text>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="160" viewBox="0 0 194 160">
+  <title>A40 retaining ring</title><rect width="194" height="160" fill="#fff"/>
+  <path id="retaining-ring" d="M42 75C35 70 32 65 32 61c0-12 28-22 65-22s65 10 65 22c0 4-3 9-10 14l-14 9-7-11 14-9c-10-6-28-10-48-10s-38 4-48 10l14 9-7 11Z" fill="none" stroke="#111" stroke-width="2.5" stroke-linejoin="round"/>
+  <text id="designation" x="97" y="153" fill="#111" stroke="none" font-family="Arial, sans-serif" font-size="9.0" font-style="normal" font-weight="400" text-anchor="middle" text-decoration="none">A40 - H40 - SR40 - CL40 - CM_2</text>
+</svg>

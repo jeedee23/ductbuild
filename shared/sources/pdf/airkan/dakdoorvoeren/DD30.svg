@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="184" viewBox="0 0 194 184" role="img" aria-labelledby="title desc">
+  <title id="title">DD30 roof penetration</title><desc id="desc">Thirty degree roof penetration with storm collar and repeated hidden circular sections.</desc>
+  <defs><marker id="a" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto-start-reverse"><path d="M0 0 4 2 0 4Z" fill="#8B5CF6"/></marker></defs><rect width="194" height="184" fill="#fff"/>
+  <g fill="none" stroke="#888" stroke-width=".65" stroke-dasharray="3 2"><path d="M76 48V31C76 24 118 24 118 31V48M76 31c0 7 42 7 42 0"/><path d="M76 58v99c0 7 42 7 42 0V58M76 78c0 7 42 7 42 0M76 104c0 7 42 7 42 0M76 130c0 7 42 7 42 0M76 157c0 7 42 7 42 0"/></g>
+  <g fill="#fff" stroke="#222" stroke-width="1.2"><path d="M67 58v99M127 58v99"/><rect x="56" y="48" width="82" height="10"/><circle cx="64" cy="53" r="2"/><circle cx="130" cy="53" r="2"/><path d="M48 73 67 58h60l19 15Z"/></g>
+  <path d="M17 151 166 65" fill="none" stroke="#222" stroke-width="1.2"/><path d="M97 20v151M97 151h64" fill="none" stroke="#aaa" stroke-width=".65" stroke-dasharray="6 2 1 2"/>
+  <g fill="none" stroke="#8B5CF6" stroke-width=".6"><path d="M56 48V11M138 48V11M56 14h82" marker-start="url(#a)" marker-end="url(#a)"/><path d="M56 48H34M48 73H34M37 48v25" marker-start="url(#a)" marker-end="url(#a)"/><path d="M56 48H46M56 58H46M49 48v10" marker-start="url(#a)" marker-end="url(#a)"/><path d="M146 73h23M158 73v25" marker-start="url(#a)" marker-end="url(#a)"/><path d="M161 151a79 79 0 0 0-15-78" marker-start="url(#a)" marker-end="url(#a)"/><path d="M76 171h42" marker-start="url(#a)" marker-end="url(#a)"/></g>
+  <g fill="#8B5CF6" stroke="none" font-family="Arial, sans-serif" font-size="6"><text x="97" y="9" text-anchor="middle">Ø + 150</text><text x="31" y="61" transform="rotate(-90 31 61)" text-anchor="middle">75</text><text x="44" y="53" transform="rotate(-90 44 53)" text-anchor="middle">40</text><text x="162" y="88">100</text><text x="165" y="139">30°</text><text x="97" y="168" text-anchor="middle">Ø</text></g>
+  <text x="97" y="181" fill="#222" stroke="none" font-family="Arial, sans-serif" font-size="7" font-weight="700" text-anchor="middle">DD30 - Ø</text>
+</svg>

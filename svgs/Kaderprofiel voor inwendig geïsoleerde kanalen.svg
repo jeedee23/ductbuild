@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="671" height="855" viewBox="0 0 671 855">
+  <title>Kaderprofiel voor inwendig geïsoleerde kanalen</title><desc>Editable technical redraw of insulated duct frame profile and corner assembly.</desc>
+  <rect x="0" y="0" width="671" height="855" fill="#fff"/>
+  <g id="section" fill="none" stroke="#111" stroke-width="2.4" stroke-linejoin="round">
+    <path d="M122 133 V76 Q122 68 130 68 H151 V77 L137 82 V128 H225 Q230 128 232 123"/>
+    <path d="M122 133 H592 M122 205 H592"/>
+    <path d="M137 133 V145 H153 V133"/>
+  </g>
+  <g id="insulation" fill="none" stroke="#555" stroke-width="1.6">
+    <path d="M139 151 q-18 18 0 36 q18 18 35 0 q18 -18 0 -36 q-18 -18 -35 0
+             M174 151 q18 -18 35 0 q18 18 0 36 q-18 18 -35 0
+             M209 151 q18 -18 35 0 q18 18 0 36 q-18 18 -35 0
+             M244 151 q18 -18 35 0 q18 18 0 36 q-18 18 -35 0
+             M279 151 q18 -18 35 0 q18 18 0 36 q-18 18 -35 0
+             M314 151 q18 -18 35 0 q18 18 0 36 q-18 18 -35 0
+             M349 151 q18 -18 35 0 q18 18 0 36 q-18 18 -35 0
+             M384 151 q18 -18 35 0 q18 18 0 36 q-18 18 -35 0
+             M419 151 q18 -18 35 0 q18 18 0 36 q-18 18 -35 0
+             M454 151 q18 -18 35 0 q18 18 0 36 q-18 18 -35 0
+             M489 151 q18 -18 35 0 q18 18 0 36 q-18 18 -35 0
+             M524 151 q18 -18 35 0 q18 18 0 36 q-18 18 -35 0
+             M559 151 q18 -18 33 0 q17 18 0 36"/>
+  </g>
+  <g id="section-dimensions" fill="none" stroke="#8B5CF6" stroke-width="1.2">
+    <line x1="102" y1="133" x2="102" y2="205"/><line x1="95" y1="133" x2="122" y2="133"/><line x1="95" y1="205" x2="122" y2="205"/>
+    <line x1="122" y1="225" x2="272" y2="225"/><line x1="122" y1="205" x2="122" y2="232"/><line x1="272" y1="205" x2="272" y2="232"/>
+    <line x1="137" y1="145" x2="153" y2="145"/>
+    <path d="M102 133 l-3 8 h6 z M102 205 l-3 -8 h6 z M122 225 l8 -3 v6 z M272 225 l-8 -3 v6 z" fill="#8B5CF6" stroke="none"/>
+  </g>
+  <g id="assembly" fill="none" stroke="#555" stroke-width="1.7" stroke-linejoin="round">
+    <path d="M111 443 L334 300 L585 437 L452 527 L452 757 L337 812 L120 691 Z"/>
+    <path d="M111 443 L337 574 L585 437 M337 574 V812 M120 464 L337 590 L452 518"/>
+    <path d="M120 464 V691 M585 437 V693 L452 757"/>
+    <path d="M111 443 L120 464 L337 321 L574 449 L585 437 L334 300 Z"/>
+    <path d="M120 691 L132 682 L337 797 L443 746 L452 757 L337 812 Z"/>
+    <path d="M452 527 L465 535 V740 L452 757"/>
+    <path d="M133 458 V644 L337 754 V590 Z" fill="#999" stroke="#555"/>
+    <path d="M337 590 V754 L439 705 V535 Z" fill="#999" stroke="#555"/>
+    <path d="M452 527 L574 449 V693 L452 757"/>
+    <path d="M120 443 L120 426 L334 286 L585 420 L585 437"/>
+    <path d="M120 426 L337 550 L585 420 M337 550 V574"/>
+    <path d="M108 690 l13 -10 13 7 -13 10 z M442 760 l13 -10 17 9 -14 10 z M573 443 l13 -9 17 9 -14 10 z M323 302 l13 -9 17 9 -14 10 z"/>
+    <circle cx="121" cy="688" r="3"/><circle cx="457" cy="759" r="3"/><circle cx="588" cy="443" r="3"/><circle cx="338" cy="302" r="3"/>
+  </g>
+  <g id="centerlines" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="7 5">
+    <line x1="337" y1="321" x2="337" y2="812"/>
+  </g>
+  <g id="leaders" fill="none" stroke="#111" stroke-width="1.4">
+    <path d="M176 34 L148 70 M447 94 L414 135 M472 248 L390 177 M271 270 L205 204 M507 350 L486 396 M282 747 L224 685 M178 781 L127 681"/>
+    <path d="M148 70 l5 -9 4 7 z M414 135 l8 -4 -2 9 z M390 177 l9 2 -7 6 z M205 204 l8 4 -9 4 z M486 396 l2 -9 7 6 z M224 685 l8 4 -8 4 z M127 681 l8 3 -7 5 z" fill="#111" stroke="none"/>
+  </g>
+  <g fill="#111" font-family="Arial, sans-serif" font-size="13">
+    <text x="173" y="28">A20 - A30</text>
+    <text x="454" y="88">Kanaalwand</text><text x="454" y="104">Paroi de conduit</text><text x="454" y="120">Duct wall</text>
+    <text x="478" y="255">25 mm isolatie</text><text x="478" y="271">25 mm isolation</text><text x="478" y="287">25 mm insulation</text>
+    <text x="270" y="282">IS25</text><text x="519" y="345">A20 - A30</text><text x="279" y="760">IS25</text>
+    <text x="180" y="785">25 mm isolatie</text><text x="180" y="801">25 mm isolation</text><text x="180" y="817">25 mm insulation</text>
+  </g>
+  <g fill="#8B5CF6" font-family="Arial, sans-serif" font-size="12"><text x="95" y="174" transform="rotate(-90 95 174)">22</text><text x="142" y="143">6</text><text x="191" y="221">45</text></g>
+  <text id="designation" x="335.5" y="846" fill="#111" stroke="none" font-family="Arial, sans-serif" font-size="11.0" font-style="normal" font-weight="400" text-anchor="middle" text-decoration="none">Kaderprofiel voor inwendig geïsoleerde kanalen</text>
+</svg>

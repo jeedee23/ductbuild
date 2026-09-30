@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="671" height="429" viewBox="0 0 671 429">
+  <title>Luchtdichte kaderprofielen</title><desc>Editable schematic of a TDC airtight rectangular duct corner.</desc>
+  <rect x="0" y="0" width="671" height="429" fill="#fff"/>
+  <g id="corner-profile" stroke="#111" stroke-width="3" stroke-linejoin="round">
+    <path d="M60 139 V72 Q60 31 100 31 H163 Q181 31 181 45 Q181 60 163 60 H112 V331 H140 V347 H98 Q76 347 76 325 V90 H60 Z" fill="#999"/>
+    <path d="M112 331 H154 Q164 331 170 326 H473 L466 333 L474 341 H169 Q160 355 140 355 H98 Q68 355 68 325 V139" fill="#999"/>
+    <path d="M91 95 V316 Q91 338 110 338 H140" fill="none"/>
+    <path d="M112 68 H91 V95 H112" fill="#999"/>
+  </g>
+  <g id="seal-airflow" fill="none" stroke="#555" stroke-width="1.5" stroke-dasharray="7 5">
+    <path d="M122 42 q28 22 5 53 q-17 25 4 39"/><path d="M136 40 q23 29 4 55 q-17 23 -4 40"/>
+  </g>
+  <g id="leaders" fill="none" stroke="#111" stroke-width="1.2">
+    <path d="M253 267 H116 M362 282 L300 330"/>
+    <path d="M116 267 l8 -4 v8 z M300 330 l4 -8 5 7 z" fill="#111" stroke="none"/>
+  </g>
+  <g fill="#111" font-family="Arial, sans-serif">
+    <text x="215" y="61" font-size="38" font-weight="700">TDC-PROFIEL</text>
+    <text x="165" y="126" font-size="11">* Kanaal en kader vormen 1 geheel waardoor de luchtdichtheid automatisch verbetert.</text><text x="174" y="140" font-size="11">Nieuw kadersysteem compatibel met Airkan Europrofiel E20 en E30.</text>
+    <text x="165" y="164" font-size="11">* Gaine rectangulaire et cadre, forment 1 unité qui améliore la densité de l'air automa</text><text x="174" y="178" font-size="11">tiquement. Nouveau système de cadre compatible avec des Europrofils d'Airkan E20 et E30.</text>
+    <text x="165" y="202" font-size="11">* Rectangular duct and frame form 1 unit which improves the air density automatically.</text><text x="174" y="216" font-size="11">New frame system compatible with the Airkan Europrofiles E20 and E30.</text>
+    <text x="151" y="263" font-size="11">Hoekstuk - Angle - Corner piece</text><text x="324" y="278" font-size="11">Luchtkanaal - Gaines rectangulaire - Rectangular duct</text>
+  </g>
+  <text id="designation" x="335.5" y="421" fill="#111" stroke="none" font-family="Arial, sans-serif" font-size="11.0" font-style="normal" font-weight="400" text-anchor="middle" text-decoration="none">Luchtdichte kaderprofielen</text>
+</svg>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="671" height="209" viewBox="0 0 671 209">
+  <title>IS235</title><desc>Editable technical redraw of sealed access panel and sealing detail.</desc>
+  <rect x="0" y="0" width="671" height="209" fill="#fff"/>
+  <g id="panel" fill="none" stroke="#111" stroke-width="2.3" stroke-linejoin="round">
+    <path d="M84 51 L218 11 L325 33 L325 112 L183 141 L83 116 Z"/>
+    <path d="M89 58 L183 81 L313 49 M183 81 L183 129 M218 11 L313 35 L313 114"/>
+    <path d="M91 65v45l88 21v-44Z"/>
+    <path d="M98 57 L197 82 M118 50 L215 75 M143 42 L236 69 M172 34 L257 62 M204 26 L280 56"/>
+    <path d="M225 18 L320 39 M229 15 L323 36 M234 12 L326 33"/>
+    <ellipse cx="207" cy="40" rx="20" ry="11"/><ellipse cx="207" cy="40" rx="12" ry="7"/>
+    <path d="M199 40 q8 -10 16 0 q-8 10 -16 0"/>
+  </g>
+  <g id="seal-detail" fill="none" stroke="#111" stroke-width="2" stroke-linejoin="round">
+    <path d="M347 127 L528 122 L594 127 M351 132 L589 132"/>
+    <rect x="358" y="122" width="204" height="18"/>
+    <path d="M350 119 q5 -8 13 0 L375 121 M558 121 L575 118 q8 -4 13 3"/>
+    <line x1="459" y1="108" x2="459" y2="140"/><path d="M452 109 l7 -7 7 7 -7 7 z M448 102 l5 -5 M470 102 l-5 -5"/>
+    <line x1="349" y1="156" x2="349" y2="184"/><line x1="562" y1="144" x2="562" y2="184"/>
+  </g>
+  <g id="dimensions" fill="none" stroke="#8B5CF6" stroke-width="1.3">
+    <line x1="349" y1="176" x2="562" y2="176"/><path d="M349 176 l10 -4 v8 z M562 176 l-10 -4 v8 z" fill="#8B5CF6" stroke="none"/>
+  </g>
+  <text x="459" y="172" fill="#8B5CF6" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Ø 200</text>
+  <text x="505" y="99" fill="#555" font-family="Arial, sans-serif" font-size="13">Dichting / Joint / Sealing</text>
+  <text id="designation" x="335.5" y="201" fill="#111" stroke="none" font-family="Arial, sans-serif" font-size="11.0" font-style="normal" font-weight="400" text-anchor="middle" text-decoration="none">IS235</text>
+</svg>

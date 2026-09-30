@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="194"
+     height="168"
+     viewBox="0 0 194 168">
+  <title>SS</title>
+  <desc>Clean editable redraw of the AIRKAN SS compensator technical drawing.</desc>
+
+  <defs>
+    <marker id="dimension-arrow"
+            markerWidth="6"
+            markerHeight="6"
+            refX="3"
+            refY="3"
+            orient="auto-start-reverse"
+            markerUnits="strokeWidth">
+      <path d="M 0 3 L 6 0 L 6 6 Z" fill="#8B5CF6" stroke="none"/>
+    </marker>
+  </defs>
+
+  <rect id="background" x="0" y="0" width="194" height="168" fill="#fff" stroke="none"/>
+
+  <g id="duct"
+     fill="none"
+     stroke="#111"
+     stroke-width="1.25"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+    <path d="M 18 11 H 45" fill="none" stroke="#111" stroke-width="1.25"/>
+    <path d="M 45 11 H 82" fill="none" stroke="#111" stroke-width="1.25"/>
+    <path d="M 18 98 H 45" fill="none" stroke="#111" stroke-width="1.25"/>
+    <path d="M 45 98 H 82" fill="none" stroke="#111" stroke-width="1.25"/>
+    <path d="M 51 11
+             C 43 23 43 36 51 54
+             C 59 70 43 84 51 98"
+          fill="none" stroke="#111" stroke-width="1.25"/>
+
+    <path d="M 158 11 H 188" fill="none" stroke="#111" stroke-width="1.25"/>
+    <path d="M 158 98 H 188" fill="none" stroke="#111" stroke-width="1.25"/>
+    <path d="M 188 11
+             C 196 25 196 38 188 54
+             C 180 70 196 84 188 98"
+          fill="none" stroke="#111" stroke-width="1.25"/>
+  </g>
+
+  <g id="compensator"
+     fill="none"
+     stroke="#111"
+     stroke-width="1.5"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+    <path d="M 82 11 H 86 V 98 H 82" fill="none" stroke="#111" stroke-width="1.5"/>
+    <path d="M 86 11 H 89 V 98 H 86" fill="none" stroke="#111" stroke-width="1.5"/>
+    <path d="M 89 11
+             L 93 7 L 97 11 L 101 7 L 105 11
+             L 109 7 L 113 11 L 117 7 L 121 11
+             L 125 7 L 129 11 L 133 7 L 137 11
+             L 141 7 L 145 11 L 149 7 L 153 11"
+          fill="none" stroke="#111" stroke-width="1.5"/>
+    <path d="M 89 98
+             L 93 102 L 97 98 L 101 102 L 105 98
+             L 109 102 L 113 98 L 117 102 L 121 98
+             L 125 102 L 129 98 L 133 102 L 137 98
+             L 141 102 L 145 98 L 149 102 L 153 98"
+          fill="none" stroke="#111" stroke-width="1.5"/>
+    <path d="M 93 8 V 101 M 101 8 V 101 M 109 8 V 101 M 117 8 V 101
+             M 125 8 V 101 M 133 8 V 101 M 141 8 V 101 M 149 8 V 101"
+          fill="none" stroke="#111" stroke-width="1.25"/>
+    <path d="M 153 11 H 157 V 98 H 153" fill="none" stroke="#111" stroke-width="1.5"/>
+    <path d="M 157 11 V 98" fill="none" stroke="#111" stroke-width="1.5"/>
+  </g>
+
+  <g id="centerlines"
+     fill="none"
+     stroke="#999"
+     stroke-width=".75"
+     stroke-dasharray="10 3 2 3">
+    <path d="M 42 55 H 194"
+          fill="none" stroke="#999" stroke-width=".75" stroke-dasharray="10 3 2 3"/>
+  </g>
+
+  <g id="dimensions" fill="#8B5CF6" stroke="#8B5CF6">
+    <g id="diameter">
+      <path d="M 18 11 H 43" fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+      <path d="M 18 98 H 43" fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+      <path d="M 18 13 V 96"
+            fill="none"
+            stroke="#8B5CF6"
+            stroke-width=".75"
+            marker-start="url(#dimension-arrow)"
+            marker-end="url(#dimension-arrow)"/>
+      <text x="13" y="54.5"
+            fill="#8B5CF6"
+            stroke="none"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10"
+            text-anchor="middle"
+            transform="rotate(-90 13 54.5)">Ø</text>
+    </g>
+
+    <g id="length">
+      <path d="M 87 103 V 132" fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+      <path d="M 153 103 V 132" fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+      <path d="M 89 129 H 151"
+            fill="none"
+            stroke="#8B5CF6"
+            stroke-width=".75"
+            marker-start="url(#dimension-arrow)"
+            marker-end="url(#dimension-arrow)"/>
+      <text x="120" y="125"
+            fill="#8B5CF6"
+            stroke="none"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10"
+            text-anchor="middle">175 (200)</text>
+    </g>
+  </g>
+
+  <text id="designation-footer" x="97" y="157" fill="#111" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" text-anchor="middle">SS</text>
+</svg>

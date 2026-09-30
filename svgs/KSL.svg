@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="184" viewBox="0 0 194 184" role="img" aria-labelledby="title desc">
+  <title id="title">KSL roof cap</title><desc id="desc">Low rectangular roof cap with proportional dimensions and hidden duct end.</desc>
+  <defs><marker id="a" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto-start-reverse"><path d="M0 0 4 2 0 4Z" fill="#8B5CF6"/></marker></defs><rect width="194" height="184" fill="#fff"/>
+  <g fill="#fff" stroke="#222" stroke-width="1.2"><rect x="53" y="53" width="88" height="61"/><path d="M65 72h65v34H65Z"/><rect x="70" y="114" width="54" height="8"/><path d="M73 122v35M121 122v35"/></g>
+  <path d="M73 157c0-7 48-7 48 0s-48 7-48 0" fill="none" stroke="#888" stroke-width=".65" stroke-dasharray="3 2"/><path d="M97 34v137" fill="none" stroke="#aaa" stroke-width=".65" stroke-dasharray="6 2 1 2"/>
+  <g fill="none" stroke="#8B5CF6" stroke-width=".6"><path d="M53 53V11M141 53V11M53 14h88" marker-start="url(#a)" marker-end="url(#a)"/><path d="M65 72V31M130 72V31M65 34h65" marker-start="url(#a)" marker-end="url(#a)"/><path d="M53 53H33M53 114H33M36 53v61" marker-start="url(#a)" marker-end="url(#a)"/><path d="M141 53h21M124 122h38M159 53v69" marker-start="url(#a)" marker-end="url(#a)"/><path d="M73 166h48" marker-start="url(#a)" marker-end="url(#a)"/></g>
+  <g fill="#8B5CF6" stroke="none" font-family="Arial, sans-serif" font-size="6"><text x="97" y="9" text-anchor="middle">1.60</text><text x="97" y="29" text-anchor="middle">1.30</text><text x="30" y="84" transform="rotate(-90 30 84)" text-anchor="middle">0.30</text><text x="166" y="88" transform="rotate(-90 166 88)" text-anchor="middle">H = Ø</text><text x="97" y="164" text-anchor="middle">Ø</text></g>
+  <text x="97" y="181" fill="#222" stroke="none" font-family="Arial, sans-serif" font-size="7" font-weight="700" text-anchor="middle">KSL - Ø</text>
+</svg>

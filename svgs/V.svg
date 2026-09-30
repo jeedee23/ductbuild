@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="216" viewBox="0 0 194 216">
+  <title>V</title>
+  <desc>Round duct connection with central rolled seam and diameter dimension.</desc>
+  <rect width="194" height="216" fill="#fff"/>
+  <g fill="none" stroke="#111" stroke-linejoin="round">
+    <path d="M91 7h77v170H91z" stroke-width="2.5"/>
+    <path d="M124 11c0-3 1.7-5 4-5s4 2 4 5v162c0 3-1.7 5-4 5s-4-2-4-5z" fill="#fff" stroke-width="2.2"/>
+  </g>
+  <path d="M81 92h98" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="11 5 2 5"/>
+  <g fill="none" stroke="#8B5CF6" stroke-width="1">
+    <path d="M47 7h35M47 177h35M47 7v170M43 3l8 8M43 173l8 8"/>
+  </g>
+  <text x="27" y="92" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="17" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 27 92)">Ø</text>
+  <text id="designation-footer" x="97" y="205" fill="#111" stroke="none" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" text-anchor="middle">V</text>
+</svg>

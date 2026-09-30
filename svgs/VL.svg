@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="216" viewBox="0 0 194 216">
+  <title>VL</title>
+  <desc>Extended round duct connection, approximately 200 millimetres long.</desc>
+  <rect width="194" height="216" fill="#fff"/>
+  <g fill="none" stroke="#111" stroke-linejoin="round">
+    <path d="M67 57h102v87H67z" stroke-width="2.4"/>
+    <path d="M113 60c0-2.8 1.6-4.7 3.8-4.7s3.8 1.9 3.8 4.7v81c0 2.8-1.6 4.7-3.8 4.7s-3.8-1.9-3.8-4.7z" fill="#fff" stroke-width="2"/>
+  </g>
+  <path d="M59 100.5h120" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="11 5 2 5"/>
+  <g fill="none" stroke="#8B5CF6" stroke-width="1">
+    <path d="M67 31h102M67 31v18M169 31v18M63 27l8 8M165 27l8 8"/>
+    <path d="M30 57h29M30 144h29M30 57v87M26 53l8 8M26 140l8 8"/>
+  </g>
+  <g fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif">
+    <text x="118" y="23" font-size="14" font-weight="600" text-anchor="middle">+/- 200</text>
+    <text x="14" y="100.5" font-size="17" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 14 100.5)">Ø</text>
+  </g>
+  <text id="designation-footer" x="97" y="205" fill="#111" stroke="none" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" text-anchor="middle">VL</text>
+</svg>

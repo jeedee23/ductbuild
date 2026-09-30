@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="216" viewBox="0 0 194 216">
+  <title>VT</title>
+  <desc>Flexible round duct connection with folded sides and diameter dimension.</desc>
+  <rect width="194" height="216" fill="#fff"/>
+  <g stroke="#111" stroke-linejoin="round">
+    <path d="M88 9l16-4h17l18 4v166l-18 4h-17l-16-4z" fill="#fff" stroke-width="2.1"/>
+    <path d="M88 9l16-4v174l-16-4zM121 5l18 4v166l-18 4z" fill="#fff" stroke-width="1.4"/>
+    <path d="M104 5h17v174h-17z" fill="#fff" stroke-width="1.8"/>
+    <path d="M110 5v174M115 5v174" fill="none" stroke-width="1.2"/>
+  </g>
+  <path d="M89 13H103 M89 17H103 M89 21H103 M89 25H103 M89 29H103
+           M89 33H103 M89 37H103 M89 41H103 M89 45H103 M89 49H103
+           M89 53H103 M89 57H103 M89 61H103 M89 65H103 M89 69H103
+           M89 73H103 M89 77H103 M89 81H103 M89 85H103 M89 89H103
+           M89 93H103 M89 97H103 M89 101H103 M89 105H103 M89 109H103
+           M89 113H103 M89 117H103 M89 121H103 M89 125H103 M89 129H103
+           M89 133H103 M89 137H103 M89 141H103 M89 145H103 M89 149H103
+           M89 153H103 M89 157H103 M89 161H103 M89 165H103 M89 169H103
+           M122 9H138 M122 13H138 M122 17H138 M122 21H138 M122 25H138
+           M122 29H138 M122 33H138 M122 37H138 M122 41H138 M122 45H138
+           M122 49H138 M122 53H138 M122 57H138 M122 61H138 M122 65H138
+           M122 69H138 M122 73H138 M122 77H138 M122 81H138 M122 85H138
+           M122 89H138 M122 93H138 M122 97H138 M122 101H138 M122 105H138
+           M122 109H138 M122 113H138 M122 117H138 M122 121H138 M122 125H138
+           M122 129H138 M122 133H138 M122 137H138 M122 141H138 M122 145H138
+           M122 149H138 M122 153H138 M122 157H138 M122 161H138 M122 165H138
+           M122 169H138 M122 173H138"
+        fill="none" stroke="#777" stroke-width=".45"/>
+  <path d="M80 92h70" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="11 5 2 5"/>
+  <g fill="none" stroke="#8B5CF6" stroke-width="1">
+    <path d="M64 5h16M64 179h16M64 5v174M60 1l8 8M60 175l8 8"/>
+  </g>
+  <text x="49" y="92" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="16" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 49 92)">Ø</text>
+  <text id="designation-footer" x="97" y="205" fill="#111" stroke="none" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" text-anchor="middle">VT</text>
+</svg>

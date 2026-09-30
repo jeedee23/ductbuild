@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="671" height="215" viewBox="0 0 671 215">
+  <title>Two-side asymmetric rectangular-to-round transition</title>
+  <defs>
+    <marker id="d" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse">
+      <path d="M5 0 0 2.5 5 5" fill="none" stroke="#8B5CF6" stroke-width="1" />
+    </marker>
+    <marker id="l" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0 0 7 3.5 0 7Z" fill="#111" stroke="none" />
+    </marker>
+  </defs>
+  <rect width="671" height="215" fill="#fff" stroke="none" />
+  <g font-family="Arial,sans-serif" font-size="8" fill="#111">
+    <text x="109" y="16" fill="#111" font-family="Arial,sans-serif" font-size="8" stroke="none">2 zijden asymmetrisch</text>
+    <text x="109" y="26" fill="#111" font-family="Arial,sans-serif" font-size="8" stroke="none">2 côtés asymétriques</text>
+    <text x="109" y="36" fill="#111" font-family="Arial,sans-serif" font-size="8" stroke="none">2 asymmetric slopes</text>
+  </g>
+  <g fill="none" stroke="#111" stroke-width="1.6">
+    <rect x="187" y="56" width="66" height="96" fill="none" stroke="#111" stroke-width="1.6" />
+    <circle cx="225" cy="87" r="20" fill="none" stroke="#111" stroke-width="1.6" />
+    <path d="M374 79H393L478 53V155L393 129H374Z" fill="none" stroke="#111" stroke-width="1.6" />
+    <path d="M381 79V129M478 53V155" fill="none" stroke="#111" stroke-width="1.6" />
+    <path d="M393 79L478 53M393 129L478 155" stroke="#777" stroke-width=".75" fill="none" />
+    <path d="M570 97H526L485 97" stroke-width="1" marker-end="url(#l)" fill="none" stroke="#111" />
+  </g>
+  <path d="M189 133L220 143V150H189Z" fill="#cfcfcf" stroke="none" />
+  <g fill="none" stroke="#999" stroke-width=".7" stroke-dasharray="7 3 1 3">
+    <path d="M173 87H267M225 44V163M360 104H490" fill="none" stroke="#999" stroke-width=".7" stroke-dasharray="7 3 1 3" />
+  </g>
+  <g fill="none" stroke="#8B5CF6" stroke-width=".7">
+    <path d="M187 36V52M253 36V52M190 40H250" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".7" />
+    <path d="M271 56H257M271 152H257M267 59V149" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".7" />
+    <path d="M170 87H183M170 152H183M174 90V149" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".7" />
+    <path d="M187 170V156M225 170V111M190 166H222" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".7" />
+    <path d="M374 36V75M478 36V49M377 40H475" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".7" />
+    <path d="M351 79H370M351 129H370M355 82V126" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".7" />
+    <path d="M498 53H482M498 155H482M494 56V152" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".7" />
+  </g>
+  <g font-family="Arial,sans-serif" font-size="8">
+    <g fill="#8B5CF6" text-anchor="middle">
+      <text x="220" y="33" font-family="Arial,sans-serif" font-size="8" fill="#8B5CF6" text-anchor="middle" stroke="none">B</text>
+      <text x="278" y="106" transform="rotate(-90 278 106)" font-family="Arial,sans-serif" font-size="8" fill="#8B5CF6" text-anchor="middle" stroke="none">A</text>
+      <text x="166" y="121" transform="rotate(-90 166 121)" font-family="Arial,sans-serif" font-size="8" fill="#8B5CF6" text-anchor="middle" stroke="none">E</text>
+      <text x="206" y="179" font-family="Arial,sans-serif" font-size="8" fill="#8B5CF6" text-anchor="middle" stroke="none">F</text>
+      <text x="426" y="33" font-family="Arial,sans-serif" font-size="8" fill="#8B5CF6" text-anchor="middle" stroke="none">L</text>
+      <text x="346" y="105" transform="rotate(-90 346 105)" font-family="Arial,sans-serif" font-size="8" fill="#8B5CF6" text-anchor="middle" stroke="none">Ø</text>
+      <text x="505" y="105" transform="rotate(-90 505 105)" font-family="Arial,sans-serif" font-size="8" fill="#8B5CF6" text-anchor="middle" stroke="none">A × B</text>
+    </g>
+    <g fill="#111">
+      <text x="532" y="80" font-family="Arial,sans-serif" font-size="8" fill="#111" stroke="none">TDC20 - E20</text>
+      <text x="532" y="92" font-family="Arial,sans-serif" font-size="8" fill="#111" stroke="none">TDC30 - E30</text>
+      <text x="532" y="104" font-family="Arial,sans-serif" font-size="8" fill="#111" stroke="none">A20</text>
+      <text x="532" y="116" font-family="Arial,sans-serif" font-size="8" fill="#111" stroke="none">A30</text>
+      <text x="532" y="128" font-family="Arial,sans-serif" font-size="8" fill="#111" stroke="none">A40</text>
+    </g>
+  </g>
+  <text x="335.5" y="208" fill="#111" stroke="none" font-family="Arial,sans-serif" font-size="11" font-weight="600" text-anchor="middle">VRA</text>
+</svg>

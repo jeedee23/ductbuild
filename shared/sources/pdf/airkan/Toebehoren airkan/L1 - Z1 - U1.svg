@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="244" height="256" viewBox="0 0 244 256">
+  <title>L1 - Z1 - U1 elastic suspension detail</title><rect width="244" height="256" fill="#fff"/>
+  <defs><marker id="a" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M5 0 0 2.5 5 5Z" fill="#8B5CF6"/></marker></defs>
+  <g id="assembly" stroke="#111" stroke-linejoin="round">
+    <path d="M38 169h78q12 0 12-12v-43h56v14h-42v31q0 24-24 24H38Z" fill="#fff" stroke-width="2.2"/>
+    <path d="M116 94h68v34h-68Z" fill="#555" stroke-width="1.5"/>
+    <path d="M121 99h58m-58 5h58m-58 5h58m-58 5h58m-58 5h58" fill="none" stroke="#999" stroke-width=".8"/>
+    <g id="threaded-rod" fill="none" stroke-width="1.5"><path d="M151 39v55m7-55v55"/><path d="m151 44 7 3m-7 4 7 3m-7 4 7 3m-7 4 7 3m-7 4 7 3m-7 4 7 3m-7 4 7 3"/></g>
+    <g id="washer-nut" fill="#fff" stroke-width="1.5"><path d="M137 128h33v8h-33Z"/><path d="m140 136 7-7h14l7 7-7 10h-14Z"/><path d="M151 146v31m7-31v31"/></g>
+  </g>
+  <g id="dimensions" fill="none" stroke="#8B5CF6" stroke-width="1"><path d="M38 202h146M38 183v24m78-24v24m68-79v79M202 128v55m-18-55h23m-23 55h23" marker-start="url(#a)" marker-end="url(#a)"/></g>
+  <g fill="#555" font-family="Arial,sans-serif"><rect x="76" y="74" width="31" height="24" fill="#fff" stroke="#555"/><text x="91.5" y="91" text-anchor="middle" font-size="14">Z1</text><path d="m107 98 12 8" fill="none" stroke="#111" stroke-width="1.3"/></g>
+  <g fill="#8B5CF6" font-family="Arial,sans-serif" font-size="10"><text x="77" y="197">35</text><text x="146" y="197">35</text><text x="196" y="158" transform="rotate(-90 196 158)">25</text><text x="166" y="37">Ø8</text><text x="64" y="163">2 mm</text></g>
+  <text id="designation" x="122" y="249" fill="#111" stroke="none" font-family="Arial, sans-serif" font-size="9.0" font-style="normal" font-weight="400" text-anchor="middle" text-decoration="none">L1 - Z1 - U1</text>
+</svg>

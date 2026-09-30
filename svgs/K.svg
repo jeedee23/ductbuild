@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="184" viewBox="0 0 194 184" role="img" aria-labelledby="title desc">
+  <title id="title">K rain cap</title><desc id="desc">Conical rain cap with proportional dimensions and hidden duct end.</desc>
+  <defs><marker id="a" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto-start-reverse"><path d="M0 0 4 2 0 4Z" fill="#8B5CF6"/></marker></defs><rect width="194" height="184" fill="#fff"/>
+  <g fill="#fff" stroke="#222" stroke-width="1.25"><path d="M49 88 97 54l49 34Z"/><path d="M62 88 70 123h54l8-35"/><rect x="68" y="123" width="58" height="8"/><rect x="71" y="131" width="52" height="7"/><path d="M72 138v24M122 138v24"/></g>
+  <path d="M72 162c0-7 50-7 50 0s-50 7-50 0" fill="none" stroke="#888" stroke-width=".65" stroke-dasharray="3 2"/><path d="M97 37v137" fill="none" stroke="#aaa" stroke-width=".65" stroke-dasharray="6 2 1 2"/>
+  <g fill="none" stroke="#8B5CF6" stroke-width=".6"><path d="M49 88V10M146 88V10M49 13h97" marker-start="url(#a)" marker-end="url(#a)"/><path d="M49 54H30M70 123H30M33 54v69" marker-start="url(#a)" marker-end="url(#a)"/><path d="M72 170h50" marker-start="url(#a)" marker-end="url(#a)"/></g>
+  <g fill="#8B5CF6" stroke="none" font-family="Arial, sans-serif" font-size="6"><text x="97" y="8" text-anchor="middle">1.8Ø</text><text x="27" y="89" transform="rotate(-90 27 89)" text-anchor="middle">0.65Ø</text><text x="97" y="168" text-anchor="middle">Ø</text></g>
+  <text x="97" y="181" fill="#222" stroke="none" font-family="Arial, sans-serif" font-size="7" font-weight="700" text-anchor="middle">K - Ø</text>
+</svg>

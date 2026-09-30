@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="305"
+     height="205"
+     viewBox="185 0 305 205">
+  <title>AP - Ø1 - Ø2</title>
+  <desc>Clean editable redraw of the AIRKAN centered circular branch technical drawing.</desc>
+
+  <defs>
+    <marker id="dimension-arrow"
+            markerWidth="6"
+            markerHeight="6"
+            refX="3"
+            refY="3"
+            orient="auto-start-reverse"
+            markerUnits="strokeWidth">
+      <path d="M 0 3 L 6 0 L 6 6 Z" fill="#8B5CF6"/>
+    </marker>
+  </defs>
+
+  <rect id="background" x="185" y="0" width="305" height="205" fill="#fff"/>
+
+  <g id="front-view">
+    <g id="main-duct-hidden"
+       fill="none"
+       stroke="#555"
+       stroke-width="1"
+       stroke-dasharray="5 3"
+       stroke-linecap="round">
+      <path d="M 229 71 H 260" stroke-dasharray="5 3"/>
+      <path d="M 329 71 H 356" stroke-dasharray="5 3"/>
+      <path d="M 229 150 H 356" stroke-dasharray="5 3"/>
+      <ellipse cx="229" cy="110" rx="8" ry="39" stroke-dasharray="5 3"/>
+      <ellipse cx="356" cy="110" rx="8" ry="39" stroke-dasharray="5 3"/>
+    </g>
+
+    <g id="branch-front"
+       fill="none"
+       stroke="#111"
+       stroke-width="1.5"
+       stroke-linecap="round"
+       stroke-linejoin="round">
+      <path d="M 278 35 H 311 V 51
+               L 329 71 V 97 H 260 V 71
+               L 278 51 Z"/>
+      <path d="M 262 96 L 294.5 54 L 327 96"/>
+      <path d="M 278 49 H 311"/>
+      <path d="M 278 53 H 311"/>
+    </g>
+
+    <g id="front-centerlines"
+       fill="none"
+       stroke="#999"
+       stroke-width=".75"
+       stroke-dasharray="10 3 2 3">
+      <path d="M 218 110 H 367" stroke-dasharray="10 3 2 3"/>
+      <path d="M 294.5 27 V 104" stroke-dasharray="10 3 2 3"/>
+    </g>
+  </g>
+
+  <g id="side-view">
+    <circle cx="437" cy="110" r="40"
+            fill="none"
+            stroke="#555"
+            stroke-width="1"
+            stroke-dasharray="5 3"/>
+
+    <g id="branch-side"
+       fill="none"
+       stroke="#111"
+       stroke-width="1.5"
+       stroke-linecap="round"
+       stroke-linejoin="round">
+      <path d="M 422 35 H 453 V 51
+               C 464 70 477 91 477 110
+               A 40 40 0 1 1 397 110
+               C 397 91 410 70 422 51 Z"/>
+      <path d="M 422 49 H 453"/>
+      <path d="M 422 53 H 453"/>
+    </g>
+
+    <g id="side-centerlines"
+       fill="none"
+       stroke="#999"
+       stroke-width=".75"
+       stroke-dasharray="10 3 2 3">
+      <path d="M 389 110 H 485" stroke-dasharray="10 3 2 3"/>
+      <path d="M 437 62 V 158" stroke-dasharray="10 3 2 3"/>
+      <path d="M 437.5 27 V 66" stroke-dasharray="10 3 2 3"/>
+    </g>
+  </g>
+
+  <g id="dimensions" fill="#8B5CF6" stroke="#8B5CF6">
+    <g id="front-height">
+      <path d="M 202 35 H 275" fill="none" stroke-width=".65"/>
+      <path d="M 202 71 H 226" fill="none" stroke-width=".65"/>
+      <path d="M 202 150 H 226" fill="none" stroke-width=".65"/>
+      <path d="M 202 37 V 69"
+            fill="none"
+            stroke-width=".75"
+            marker-start="url(#dimension-arrow)"
+            marker-end="url(#dimension-arrow)"/>
+      <path d="M 202 73 V 148"
+            fill="none"
+            stroke-width=".75"
+            marker-start="url(#dimension-arrow)"
+            marker-end="url(#dimension-arrow)"/>
+      <text x="198" y="53"
+            stroke="none"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10"
+            text-anchor="middle"
+            transform="rotate(-90 198 53)">60</text>
+      <text x="198" y="110.5"
+            stroke="none"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10"
+            text-anchor="middle"
+            transform="rotate(-90 198 110.5)">Ø1</text>
+    </g>
+
+    <g id="front-branch-diameter">
+      <path d="M 278 10 V 32" fill="none" stroke-width=".65"/>
+      <path d="M 311 10 V 32" fill="none" stroke-width=".65"/>
+      <path d="M 280 12 H 309"
+            fill="none"
+            stroke-width=".75"
+            marker-start="url(#dimension-arrow)"
+            marker-end="url(#dimension-arrow)"/>
+      <text x="294.5" y="9"
+            stroke="none"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10"
+            text-anchor="middle">Ø2</text>
+    </g>
+
+    <g id="front-saddle-width">
+      <path d="M 260 100 V 131" fill="none" stroke-width=".65"/>
+      <path d="M 329 100 V 131" fill="none" stroke-width=".65"/>
+      <path d="M 262 128 H 327"
+            fill="none"
+            stroke-width=".75"
+            marker-start="url(#dimension-arrow)"
+            marker-end="url(#dimension-arrow)"/>
+      <text x="294.5" y="125"
+            stroke="none"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10"
+            text-anchor="middle">Ø2 + 120</text>
+    </g>
+
+    <g id="side-branch-diameter">
+      <path d="M 422 10 V 32" fill="none" stroke-width=".65"/>
+      <path d="M 453 10 V 32" fill="none" stroke-width=".65"/>
+      <path d="M 424 12 H 451"
+            fill="none"
+            stroke-width=".75"
+            marker-start="url(#dimension-arrow)"
+            marker-end="url(#dimension-arrow)"/>
+      <text x="437.5" y="9"
+            stroke="none"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10"
+            text-anchor="middle">Ø2</text>
+    </g>
+
+    <g id="side-main-diameter">
+      <path d="M 397 153 V 178" fill="none" stroke-width=".65"/>
+      <path d="M 477 153 V 178" fill="none" stroke-width=".65"/>
+      <path d="M 399 177 H 475"
+            fill="none"
+            stroke-width=".75"
+            marker-start="url(#dimension-arrow)"
+            marker-end="url(#dimension-arrow)"/>
+      <text x="437" y="173"
+            stroke="none"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10"
+            text-anchor="middle">Ø1</text>
+    </g>
+  </g>
+
+  <text id="part-name"
+        x="337.5"
+        y="198"
+        fill="#111"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="12"
+        font-weight="700"
+        text-anchor="middle">AP - Ø1 - Ø2</text>
+</svg>

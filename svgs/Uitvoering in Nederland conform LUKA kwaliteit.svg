@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="671" height="425" viewBox="0 0 671 425">
+  <title>Uitvoering in Nederland conform LUKA kwaliteit</title>
+  <defs>
+    <marker id="d" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse">
+      <path d="M5 0 0 2.5 5 5" fill="none" stroke="#8B5CF6" stroke-width="1" />
+    </marker>
+  </defs>
+  <rect width="671" height="425" fill="#fff" stroke="none" />
+  <g id="assembly" fill="none" stroke="#111" stroke-width="1.4" stroke-linejoin="round">
+    <path d="M235 31H412V85H290V216L274 247V313H327L353 328H416L445 347L416 366H353L327 366H244V313H274" fill="none" stroke="#111" stroke-width="1.4" stroke-linejoin="round" />
+    <path d="M235 31V216L244 247V313" fill="none" stroke="#111" stroke-width="1.4" stroke-linejoin="round" />
+    <path d="M235 85H290M235 156H290M235 216H290M244 247H274M244 313H274M244 366H327M327 313V366M353 328V366M416 328V366" fill="none" stroke="#111" stroke-width="1.4" stroke-linejoin="round" />
+    <path d="M212 319L244 313V366L212 379Z" fill="none" stroke="#111" stroke-width="1.4" stroke-linejoin="round" />
+    <path d="M416 328L445 347L416 366M424 334V360" fill="none" stroke="#111" stroke-width="1.4" stroke-linejoin="round" />
+    <path d="M235 85A54 54 0 0 1 289 31" stroke-width="1.2" fill="none" stroke="#111" stroke-linejoin="round" />
+    <path d="M246 85A43 43 0 0 1 289 42M257 85A32 32 0 0 1 289 53" stroke="#777" stroke-width=".8" stroke-dasharray="4 3" fill="none" stroke-linejoin="round" />
+  </g>
+  <g id="centrelines" fill="none" stroke="#999" stroke-width=".65" stroke-dasharray="7 3 1 3">
+    <path d="M235 58H412M262 31V216M259 247V313M244 339H445" fill="none" stroke="#999" stroke-width=".65" stroke-dasharray="7 3 1 3" />
+  </g>
+  <g id="dimensions" fill="none" stroke="#8B5CF6" stroke-width=".65">
+    <path d="M235 13V28M290 13V81M238 17H287" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".65" />
+    <path d="M290 13V28M412 13V28M293 17H409" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".65" />
+    <path d="M216 31H231M216 216H231M220 34V213" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".65" />
+    <path d="M216 216H231M216 366H240M220 219V363" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".65" />
+    <path d="M235 111H286" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".65" />
+    <path d="M239 231L286 231" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".65" />
+    <path d="M202 319H209M202 379H209M206 322V376" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".65" />
+    <path d="M212 389V382M244 389V370M215 386H241" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".65" />
+    <path d="M244 389V370M353 389V370M247 386H350" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".65" />
+    <path d="M353 389V370M445 389V351M356 386H442" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".65" />
+    <path d="M459 328H420M459 366H420M455 331V363" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".65" />
+  </g>
+  <g font-family="Arial,sans-serif" font-size="6.8" fill="#8B5CF6" text-anchor="middle">
+    <text x="262" y="10" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="6.8" text-anchor="middle" stroke="none">C</text>
+    <text x="351" y="10" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="6.8" text-anchor="middle" stroke="none">L1</text>
+    <text x="211" y="124" transform="rotate(-90 211 124)" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="6.8" text-anchor="middle" stroke="none">L2</text>
+    <text x="211" y="291" transform="rotate(-90 211 291)" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="6.8" text-anchor="middle" stroke="none">L3</text>
+    <text x="260" y="108" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="6.8" text-anchor="middle" stroke="none">C×D</text>
+    <text x="262" y="228" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="6.8" text-anchor="middle" stroke="none">E×F</text>
+    <text x="197" y="350" transform="rotate(-90 197 350)" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="6.8" text-anchor="middle" stroke="none">C×D</text>
+    <text x="228" y="398" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="6.8" text-anchor="middle" stroke="none">L4</text>
+    <text x="298" y="398" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="6.8" text-anchor="middle" stroke="none">L5</text>
+    <text x="399" y="398" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="6.8" text-anchor="middle" stroke="none">L6</text>
+    <text x="466" y="348" transform="rotate(-90 466 348)" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="6.8" text-anchor="middle" stroke="none">Ø</text>
+    <text x="422" y="59" transform="rotate(-90 422 59)" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="6.8" text-anchor="middle" stroke="none">A</text>
+    <text x="300" y="151" transform="rotate(-90 300 151)" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="6.8" text-anchor="middle" stroke="none">A×B</text>
+    <text x="364" y="349" transform="rotate(-90 364 349)" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="6.8" text-anchor="middle" stroke="none">N</text>
+  </g>
+  <g id="calculation-notes" font-family="Arial,sans-serif" font-size="6.3" fill="#111">
+    <text x="342" y="100" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">2 (A+B) L1</text>
+    <text x="342" y="109" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">2 (C+D) L2</text>
+    <text x="342" y="118" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">2 (E+F) L3</text>
+    <text x="342" y="127" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">2 (A+B) (L4+L5)</text>
+    <text x="342" y="136" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">2 (M+N) L6</text>
+    <text x="342" y="151" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">TOTAAL M²</text>
+    <text x="342" y="160" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">TOTAL M²</text>
+    <text x="342" y="169" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">TOTAL SQ.M.</text>
+    <text x="342" y="191" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">* min zijde</text>
+    <text x="409" y="191" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">= 150 mm</text>
+    <text x="342" y="200" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">min côté</text>
+    <text x="342" y="209" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">min side</text>
+    <text x="342" y="224" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">* min lengte</text>
+    <text x="409" y="224" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">= 500 mm</text>
+    <text x="342" y="233" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">min longueur</text>
+    <text x="342" y="242" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">min length</text>
+    <text x="342" y="257" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">* min opp.</text>
+    <text x="409" y="257" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">= 0,7 m²</text>
+    <text x="342" y="266" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">min surface</text>
+    <text x="342" y="275" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">min surface/pcs</text>
+    <text x="342" y="290" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">* drums inbegrepen</text>
+    <text x="342" y="299" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">coudes inclus</text>
+    <text x="342" y="308" fill="#111" font-family="Arial,sans-serif" font-size="6.3" stroke="none">elbows included</text>
+  </g>
+  <text x="335.5" y="418" fill="#111" stroke="none" font-family="Arial,sans-serif" font-size="11" font-weight="600" text-anchor="middle">Uitvoering in Nederland conform LUKA kwaliteit</text>
+</svg>

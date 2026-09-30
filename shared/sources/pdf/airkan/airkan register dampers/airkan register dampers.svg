@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="327" height="224" viewBox="8 8 327 224" role="img" aria-labelledby="title desc">
+  <title id="title">Airkan register dampers</title>
+  <desc id="desc">Editable technical drawing showing side and front views of a four-blade rectangular register damper.</desc>
+  <defs>
+    <marker id="dim-arrow" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M 0 0 L 6 3.5 L 0 7 Z" fill="#8B5CF6" stroke="none"/>
+    </marker>
+  </defs>
+
+  <rect x="8" y="8" width="327" height="224" fill="#FFFFFF" stroke="none"/>
+
+  <g id="side-view" aria-label="Side view">
+    <g id="side-frame">
+      <line x1="16" y1="14" x2="16" y2="184" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="square"/>
+      <line x1="64" y1="14" x2="64" y2="184" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="square"/>
+      <line x1="16" y1="24" x2="64" y2="24" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="square"/>
+      <line x1="16" y1="174" x2="64" y2="174" fill="none" stroke="#111111" stroke-width="2" stroke-linecap="square"/>
+      <line x1="20" y1="26" x2="20" y2="172" fill="none" stroke="#111111" stroke-width="1.2"/>
+      <line x1="60" y1="26" x2="60" y2="172" fill="none" stroke="#111111" stroke-width="1.2"/>
+      <rect x="33" y="20" width="14" height="8" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+      <line x1="29" y1="22" x2="33" y2="22" fill="none" stroke="#111111" stroke-width="1.5"/>
+      <line x1="47" y1="24" x2="60" y2="24" fill="none" stroke="#111111" stroke-width="1.5"/>
+      <line x1="34" y1="170" x2="46" y2="170" fill="none" stroke="#111111" stroke-width="1.5"/>
+      <rect x="34" y="171" width="12" height="7" fill="#FFFFFF" stroke="#111111" stroke-width="1.4"/>
+    </g>
+    <g id="side-hidden-blade-edges">
+      <ellipse cx="40" cy="45" rx="17" ry="16" fill="none" stroke="#555555" stroke-width="0.9" stroke-dasharray="2.5 2.5"/>
+      <ellipse cx="40" cy="78" rx="17" ry="16" fill="none" stroke="#555555" stroke-width="0.9" stroke-dasharray="2.5 2.5"/>
+      <ellipse cx="40" cy="111" rx="17" ry="16" fill="none" stroke="#555555" stroke-width="0.9" stroke-dasharray="2.5 2.5"/>
+      <ellipse cx="40" cy="144" rx="17" ry="16" fill="none" stroke="#555555" stroke-width="0.9" stroke-dasharray="2.5 2.5"/>
+    </g>
+    <g id="side-blades">
+      <line x1="25" y1="35" x2="55" y2="55" fill="none" stroke="#111111" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="25" y1="68" x2="55" y2="88" fill="none" stroke="#111111" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="25" y1="101" x2="55" y2="121" fill="none" stroke="#111111" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="25" y1="134" x2="55" y2="154" fill="none" stroke="#111111" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="40" cy="45" r="1.8" fill="#FFFFFF" stroke="#111111" stroke-width="1"/>
+      <circle cx="40" cy="78" r="1.8" fill="#FFFFFF" stroke="#111111" stroke-width="1"/>
+      <circle cx="40" cy="111" r="1.8" fill="#FFFFFF" stroke="#111111" stroke-width="1"/>
+      <circle cx="40" cy="144" r="1.8" fill="#FFFFFF" stroke="#111111" stroke-width="1"/>
+    </g>
+    <line x1="40" y1="18" x2="40" y2="180" fill="none" stroke="#999999" stroke-width="0.8" stroke-dasharray="7 2 1.5 2"/>
+  </g>
+
+  <g id="front-view" aria-label="Front view">
+    <g id="front-frame">
+      <rect x="138" y="14" width="168" height="169" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+      <rect x="146" y="22" width="151" height="152" fill="#FFFFFF" stroke="#111111" stroke-width="1.2"/>
+      <line x1="138" y1="14" x2="146" y2="22" fill="none" stroke="#111111" stroke-width="0.9"/>
+      <line x1="306" y1="14" x2="297" y2="22" fill="none" stroke="#111111" stroke-width="0.9"/>
+      <line x1="138" y1="183" x2="146" y2="174" fill="none" stroke="#111111" stroke-width="0.9"/>
+      <line x1="306" y1="183" x2="297" y2="174" fill="none" stroke="#111111" stroke-width="0.9"/>
+      <rect x="149" y="26" width="145" height="144" fill="#FFFFFF" stroke="#111111" stroke-width="1.2"/>
+      <line x1="153" y1="29" x2="290" y2="29" fill="none" stroke="#111111" stroke-width="1"/>
+      <line x1="153" y1="166" x2="290" y2="166" fill="none" stroke="#111111" stroke-width="1"/>
+      <line x1="153" y1="169" x2="290" y2="169" fill="none" stroke="#111111" stroke-width="1"/>
+    </g>
+    <g id="front-blades">
+      <path d="M 153 31 L 290 31 C 293 40 294 51 290 63 L 154 63 C 150 51 150 40 153 31 Z" fill="#FFFFFF" stroke="#111111" stroke-width="1.3" stroke-linejoin="round"/>
+      <path d="M 154 64 L 290 64 C 293 73 294 84 290 96 L 154 96 C 150 84 150 73 154 64 Z" fill="#FFFFFF" stroke="#111111" stroke-width="1.3" stroke-linejoin="round"/>
+      <path d="M 154 97 L 290 97 C 293 106 294 117 290 129 L 154 129 C 150 117 150 106 154 97 Z" fill="#FFFFFF" stroke="#111111" stroke-width="1.3" stroke-linejoin="round"/>
+      <path d="M 154 130 L 290 130 C 293 139 294 151 290 163 L 154 163 C 150 151 150 139 154 130 Z" fill="#FFFFFF" stroke="#111111" stroke-width="1.3" stroke-linejoin="round"/>
+      <path d="M 153 31 C 149 40 149 53 154 63 L 158 60 C 154 50 154 40 157 33 Z" fill="#111111" stroke="#111111" stroke-width="0.7"/>
+      <path d="M 290 31 C 294 40 295 53 290 63 L 286 60 C 290 50 290 40 286 33 Z" fill="#111111" stroke="#111111" stroke-width="0.7"/>
+      <path d="M 154 64 C 150 73 150 86 154 96 L 158 93 C 154 83 154 73 158 66 Z" fill="#111111" stroke="#111111" stroke-width="0.7"/>
+      <path d="M 290 64 C 294 73 294 86 290 96 L 286 93 C 290 83 290 73 286 66 Z" fill="#111111" stroke="#111111" stroke-width="0.7"/>
+      <path d="M 154 97 C 150 106 150 119 154 129 L 158 126 C 154 116 154 106 158 99 Z" fill="#111111" stroke="#111111" stroke-width="0.7"/>
+      <path d="M 290 97 C 294 106 294 119 290 129 L 286 126 C 290 116 290 106 286 99 Z" fill="#111111" stroke="#111111" stroke-width="0.7"/>
+      <path d="M 154 130 C 150 139 150 152 154 163 L 158 160 C 154 150 154 140 158 132 Z" fill="#111111" stroke="#111111" stroke-width="0.7"/>
+      <path d="M 290 130 C 294 139 294 152 290 163 L 286 160 C 290 150 290 140 286 132 Z" fill="#111111" stroke="#111111" stroke-width="0.7"/>
+    </g>
+    <g id="front-centerlines">
+      <line x1="148" y1="47" x2="296" y2="47" fill="none" stroke="#999999" stroke-width="0.7" stroke-dasharray="7 2 1.5 2"/>
+      <line x1="148" y1="80" x2="296" y2="80" fill="none" stroke="#999999" stroke-width="0.7" stroke-dasharray="7 2 1.5 2"/>
+      <line x1="148" y1="113" x2="296" y2="113" fill="none" stroke="#999999" stroke-width="0.7" stroke-dasharray="7 2 1.5 2"/>
+      <line x1="148" y1="146" x2="296" y2="146" fill="none" stroke="#999999" stroke-width="0.7" stroke-dasharray="7 2 1.5 2"/>
+    </g>
+    <g id="control-shaft">
+      <rect x="113" y="77" width="40" height="5" fill="#FFFFFF" stroke="#111111" stroke-width="1.3"/>
+      <line x1="153" y1="74" x2="153" y2="85" fill="none" stroke="#111111" stroke-width="1.2"/>
+    </g>
+  </g>
+
+  <g id="dimensions" aria-label="Dimensions">
+    <line x1="16" y1="184" x2="16" y2="198" fill="none" stroke="#8B5CF6" stroke-width="0.8"/>
+    <line x1="64" y1="184" x2="64" y2="198" fill="none" stroke="#8B5CF6" stroke-width="0.8"/>
+    <line x1="16" y1="194" x2="64" y2="194" fill="none" stroke="#8B5CF6" stroke-width="0.8" marker-start="url(#dim-arrow)" marker-end="url(#dim-arrow)"/>
+    <text x="40" y="207" fill="#8B5CF6" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" text-anchor="middle">120</text>
+
+    <line x1="138" y1="183" x2="138" y2="199" fill="none" stroke="#8B5CF6" stroke-width="0.8"/>
+    <line x1="306" y1="183" x2="306" y2="199" fill="none" stroke="#8B5CF6" stroke-width="0.8"/>
+    <line x1="138" y1="195" x2="306" y2="195" fill="none" stroke="#8B5CF6" stroke-width="0.8" marker-start="url(#dim-arrow)" marker-end="url(#dim-arrow)"/>
+    <text x="222" y="207" fill="#8B5CF6" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" text-anchor="middle">B = BREEDTE</text>
+
+    <line x1="306" y1="14" x2="322" y2="14" fill="none" stroke="#8B5CF6" stroke-width="0.8"/>
+    <line x1="297" y1="24" x2="322" y2="24" fill="none" stroke="#8B5CF6" stroke-width="0.8"/>
+    <line x1="297" y1="174" x2="322" y2="174" fill="none" stroke="#8B5CF6" stroke-width="0.8"/>
+    <line x1="306" y1="183" x2="322" y2="183" fill="none" stroke="#8B5CF6" stroke-width="0.8"/>
+    <line x1="318" y1="14" x2="318" y2="24" fill="none" stroke="#8B5CF6" stroke-width="0.8" marker-start="url(#dim-arrow)" marker-end="url(#dim-arrow)"/>
+    <line x1="318" y1="24" x2="318" y2="174" fill="none" stroke="#8B5CF6" stroke-width="0.8" marker-start="url(#dim-arrow)" marker-end="url(#dim-arrow)"/>
+    <line x1="318" y1="174" x2="318" y2="183" fill="none" stroke="#8B5CF6" stroke-width="0.8" marker-start="url(#dim-arrow)" marker-end="url(#dim-arrow)"/>
+    <text x="329" y="19" fill="#8B5CF6" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="400" text-anchor="middle" transform="rotate(-90 329 19)">30</text>
+    <text x="329" y="99" fill="#8B5CF6" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" text-anchor="middle" transform="rotate(-90 329 99)">B = HOOGTE</text>
+    <text x="329" y="179" fill="#8B5CF6" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="400" text-anchor="middle" transform="rotate(-90 329 179)">30</text>
+  </g>
+
+  <text id="designation" x="171.5" y="226" fill="#111111" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="600" letter-spacing="0.7" text-anchor="middle">AIRKAN REGISTER DAMPERS</text>
+</svg>

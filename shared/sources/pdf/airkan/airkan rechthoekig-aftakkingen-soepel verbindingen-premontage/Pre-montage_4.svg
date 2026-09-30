@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="671" height="215" viewBox="0 0 671 215" role="img" aria-labelledby="title desc">
+  <title id="title">Pre-montage round take-off</title>
+  <desc id="desc">Two-view pre-mounting technical drawing matching the source.</desc>
+
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+      <path d="M1 7L6 0" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+    </marker>
+    <marker id="leader" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 1L8 4L0 7Z" fill="#111"/>
+    </marker>
+  </defs>
+  <style>
+    .obj{fill:none;stroke:#111;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter}
+    .thin{fill:none;stroke:#555;stroke-width:1}
+    .dim{fill:none;stroke:#666;stroke-width:1;marker-start:url(#arrow);marker-end:url(#arrow)}
+    .ext{fill:none;stroke:#777;stroke-width:1}
+    .hidden{fill:none;stroke:#555;stroke-width:1.35;stroke-dasharray:8 6}
+    .center{fill:none;stroke:#999;stroke-width:.8;stroke-dasharray:8 3 2 3}
+    .txt{fill:#333;font-family:Arial,Helvetica,sans-serif;font-size:11px}
+    .small{fill:#333;font-family:Arial,Helvetica,sans-serif;font-size:9px}
+  </style>
+  <rect width="671" height="191" fill="#fff"/>
+
+  <defs>
+    <marker id="flow" markerWidth="11" markerHeight="9" refX="10" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0L11 4.5L0 9Z" fill="#111"/>
+    </marker></defs>
+  <path d="M0 94H42" fill="none" stroke="#111" stroke-width="3.5" marker-end="url(#flow)"/>
+  <g id="side-view"><path class="obj" d="M89 88H313V130H89Z" fill="none" stroke="#111" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/><path class="thin" d="M98 84V134M304 84V134" fill="none" stroke="#555" stroke-width="1"/><path class="obj" d="M236 88V78H267V88" fill="none" stroke="#111" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/><path class="center" d="M252 66V111" fill="none" stroke="#999" stroke-width=".8" stroke-dasharray="8 3 2 3"/>
+    
+    <path class="ext" d="M89 19V41M260 19V41M89 137V162M313 137V162M229 45V72M275 45V72" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+    <path class="dim" d="M93 29H256M93 151H309M233 57H271" fill="none" stroke="#8B5CF6" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <text class="txt" x="175" y="24" text-anchor="middle" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="11px">G</text><text class="txt" x="201" y="146" text-anchor="middle" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="11px">L</text><text class="txt" x="252" y="52" text-anchor="middle" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="11px">ØD</text>
+    <text class="txt" x="53" y="101" fill="#333" font-family="Arial,Helvetica,sans-serif" font-size="11px">K<tspan baseline-shift="sub" font-size="8">1</tspan></text>
+    <text class="txt" x="319" y="101" fill="#333" font-family="Arial,Helvetica,sans-serif" font-size="11px">K<tspan baseline-shift="sub" font-size="8">2</tspan></text>
+  </g>
+  <g id="end-view">
+    <path class="obj" d="M433 91H516V139H433Z" fill="none" stroke="#111" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/><path class="obj" d="M444 91V82H455V73H495V82H506V91" fill="none" stroke="#111" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/><path class="center" d="M475 61V106" fill="none" stroke="#999" stroke-width=".8" stroke-dasharray="8 3 2 3"/>
+    <path class="ext" d="M421 91H397M421 139H397M433 145V169M516 145V169M455 51V68M495 51V68" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+    <path class="dim" d="M409 95V135M437 158H512M459 62H491" fill="none" stroke="#8B5CF6" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <text class="txt" x="403" y="116" text-anchor="middle" transform="rotate(-90 403 116)" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="11px">B</text><text class="txt" x="475" y="177" text-anchor="middle" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="11px">A</text><text class="txt" x="475" y="57" text-anchor="middle" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="11px">E</text>
+    <text class="txt" x="475" y="78" text-anchor="middle" fill="#333" font-family="Arial,Helvetica,sans-serif" font-size="11px">1</text><text class="txt" x="524" y="119" fill="#333" font-family="Arial,Helvetica,sans-serif" font-size="11px">2</text><text class="txt" x="475" y="151" text-anchor="middle" fill="#333" font-family="Arial,Helvetica,sans-serif" font-size="11px">3</text><text class="txt" x="420" y="119" fill="#333" font-family="Arial,Helvetica,sans-serif" font-size="11px">4</text>
+    <path d="M497 80L530 67" fill="none" stroke="#111" stroke-width="1.2" marker-end="url(#leader)"/>
+    <text class="txt" x="536" y="57" fill="#333" font-family="Arial,Helvetica,sans-serif" font-size="11px">- Ronde aftakking</text><text class="txt" x="536" y="75" fill="#333" font-family="Arial,Helvetica,sans-serif" font-size="11px">- Piquage circulaire</text><text class="txt" x="536" y="93" fill="#333" font-family="Arial,Helvetica,sans-serif" font-size="11px">- Round take-offs</text></g>
+  <text id="designation" x="335.5" y="207" fill="#111" font-family="Arial,Helvetica,sans-serif" font-size="13px" font-weight="700" text-anchor="middle">Pre-montage_4</text>
+</svg>

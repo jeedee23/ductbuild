@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="202" viewBox="0 0 194 202" role="img" aria-labelledby="title desc">
+  <title id="title">PR - PRA rectangular branch on round duct</title><desc id="desc">Isometric technical view matching the source.</desc>
+
+  <style>
+    .obj{fill:none;stroke:#777;stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round}
+    .hidden{fill:none;stroke:#aaa;stroke-width:.9;stroke-dasharray:3 2}
+    .center{fill:none;stroke:#999;stroke-width:.75;stroke-dasharray:5 2 1 2}
+    .dim{fill:none;stroke:#888;stroke-width:.75}
+    .txt{fill:#555;font-family:Arial,Helvetica,sans-serif;font-size:7px}
+  </style>
+  <rect width="194" height="184" fill="#fff"/>
+
+  <g id="round-duct">
+    <path class="obj" d="M33 145L156 73M56 162L179 90" fill="none" stroke="#777" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+    <ellipse class="obj" cx="44.5" cy="153.5" rx="13" ry="21" transform="rotate(-60 44.5 153.5)" fill="none" stroke="#777" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="obj" d="M156 73A13 21 -60 0 1 179 90" fill="none" stroke="#777" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="hidden" d="M179 90A13 21 -60 0 1 156 73" fill="none" stroke="#aaa" stroke-width=".9" stroke-dasharray="3 2"/>
+    <path class="center" d="M26 164L63 143M146 93L184 71M44 153L168 81" fill="none" stroke="#999" stroke-width=".75" stroke-dasharray="5 2 1 2"/>
+  </g>
+  <g id="rectangular-branch">
+    <path class="obj" d="M67 107L115 79L143 95L95 123Z" fill="none" stroke="#777" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="obj" d="M67 79L115 51L143 67L95 95Z" fill="none" stroke="#777" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="obj" d="M67 79V107M95 95V123M115 51V79M143 67V95" fill="none" stroke="#777" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="hidden" d="M67 107Q81 108 95 123M115 79Q129 80 143 95" fill="none" stroke="#aaa" stroke-width=".9" stroke-dasharray="3 2"/>
+  </g>
+  <g id="dimensions">
+    <path class="dim" d="M60 72L107 45M61 68L57 72L63 72M105 42L109 44L106 48" fill="none" stroke="#8B5CF6" stroke-width=".75"/>
+    <path class="dim" d="M60 75L53 71M110 46L103 42" fill="none" stroke="#8B5CF6" stroke-width=".75"/>
+    <text class="txt" x="82" y="53" transform="rotate(-30 82 53)" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="7px">L</text>
+    <path class="dim" d="M120 42L136 51M121 39L117 42L122 44M135 48L139 51L134 52" fill="none" stroke="#8B5CF6" stroke-width=".75"/>
+    <path class="dim" d="M116 48L121 40M143 64L148 56" fill="none" stroke="#8B5CF6" stroke-width=".75"/>
+    <text class="txt" x="132" y="39" transform="rotate(30 132 39)" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="7px">B</text>
+    <path class="dim" d="M59 80H49M59 107H49M53 83V104M51 83L53 79L55 83M51 104L53 108L55 104" fill="none" stroke="#8B5CF6" stroke-width=".75"/>
+    <text class="txt" x="45" y="94" text-anchor="middle" transform="rotate(-90 45 94)" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="7px">100</text>
+    <path class="dim" d="M26 170L53 154M27 167L23 171L29 170M51 151L56 152L52 155" fill="none" stroke="#8B5CF6" stroke-width=".75"/>
+    <text class="txt" x="36" y="156" transform="rotate(-30 36 156)" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="7px">Ø1</text>
+  </g>
+  <text id="designation" x="97" y="195" fill="#111" font-family="Arial,Helvetica,sans-serif" font-size="10px" font-weight="700" text-anchor="middle">PR - PRA</text>
+</svg>

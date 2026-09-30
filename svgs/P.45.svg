@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="671" height="215" viewBox="0 0 671 215" role="img" aria-labelledby="title desc">
+  <title id="title">P.45 rectangular 45 degree branch</title>
+  <desc id="desc">Technical side view matching the source drawing.</desc>
+
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+      <path d="M1 7L6 0" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+    </marker>
+    <marker id="leader" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 1L8 4L0 7Z" fill="#111"/>
+    </marker>
+  </defs>
+  <style>
+    .obj{fill:none;stroke:#111;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter}
+    .thin{fill:none;stroke:#555;stroke-width:1}
+    .dim{fill:none;stroke:#666;stroke-width:1;marker-start:url(#arrow);marker-end:url(#arrow)}
+    .ext{fill:none;stroke:#777;stroke-width:1}
+    .hidden{fill:none;stroke:#555;stroke-width:1.35;stroke-dasharray:8 6}
+    .center{fill:none;stroke:#999;stroke-width:.8;stroke-dasharray:8 3 2 3}
+    .txt{fill:#333;font-family:Arial,Helvetica,sans-serif;font-size:11px}
+    .small{fill:#333;font-family:Arial,Helvetica,sans-serif;font-size:9px}
+  </style>
+  <rect width="671" height="191" fill="#fff"/>
+
+  <g id="duct" class="hidden" fill="none" stroke="#555" stroke-width="1.35" stroke-dasharray="8 6">
+    <path d="M213 93L202 179H424L435 93"/>
+    <line x1="213" y1="93" x2="267" y2="93"/>
+    <line x1="388" y1="93" x2="435" y2="93"/>
+  </g>
+  <g id="branch" class="obj" fill="none" stroke="#111" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M252 93H267L291 60H371V93H388"/>
+  </g>
+  <g id="dimensions">
+    <path class="ext" d="M265 10V37M291 10V37M371 10V37" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+    <path class="dim" d="M269 22H287M295 22H367" fill="none" stroke="#8B5CF6" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <text class="txt" x="278" y="17" text-anchor="middle" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="11px">E</text>
+    <text class="txt" x="331" y="17" text-anchor="middle" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="11px">AxB</text>
+    <path class="ext" d="M411 59H437M411 93H437" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+    <path class="dim" d="M423 63V89" fill="none" stroke="#8B5CF6" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <text class="txt" x="417" y="77" text-anchor="middle" transform="rotate(-90 417 77)" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="11px">L</text>
+    <path class="thin" d="M291 60A33 33 0 0 1 310 88" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+    <text class="txt" x="304" y="79" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="11px">45</text>
+  </g>
+  <text id="designation" x="335.5" y="207" fill="#111" font-family="Arial,Helvetica,sans-serif" font-size="13px" font-weight="700" text-anchor="middle">P.45</text>
+</svg>

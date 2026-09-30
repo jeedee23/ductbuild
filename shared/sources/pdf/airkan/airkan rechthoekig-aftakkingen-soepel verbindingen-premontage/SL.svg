@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="244" height="181" viewBox="0 0 244 181" role="img" aria-labelledby="title desc">
+  <title id="title">SL flexible sleeve</title>
+  <desc id="desc">Flexible connection profile matching the source drawing.</desc>
+
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+      <path d="M1 7L6 0" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+    </marker>
+    <marker id="leader" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 1L8 4L0 7Z" fill="#111"/>
+    </marker>
+  </defs>
+  <style>
+    .obj{fill:none;stroke:#111;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter}
+    .thin{fill:none;stroke:#555;stroke-width:1}
+    .dim{fill:none;stroke:#666;stroke-width:1;marker-start:url(#arrow);marker-end:url(#arrow)}
+    .ext{fill:none;stroke:#777;stroke-width:1}
+    .hidden{fill:none;stroke:#555;stroke-width:1.35;stroke-dasharray:8 6}
+    .center{fill:none;stroke:#999;stroke-width:.8;stroke-dasharray:8 3 2 3}
+    .txt{fill:#333;font-family:Arial,Helvetica,sans-serif;font-size:11px}
+    .small{fill:#333;font-family:Arial,Helvetica,sans-serif;font-size:9px}
+  </style>
+  <rect width="244" height="181" fill="#fff"/>
+
+  <path id="sleeve" d="M11 75H66C69.2188 75 69.2188 70 72.4375 70C75.6562 70 75.6562 75 78.875 75C82.0938 75 82.0938 70 85.3125 70C88.5312 70 88.5312 75 91.75 75C94.9688 75 94.9688 70 98.1875 70C101.406 70 101.406 75 104.625 75C107.844 75 107.844 70 111.062 70C114.281 70 114.281 75 117.5 75C120.719 75 120.719 70 123.938 70C127.156 70 127.156 75 130.375 75C133.594 75 133.594 70 136.812 70C140.031 70 140.031 75 143.25 75C146.469 75 146.469 70 149.688 70C152.906 70 152.906 75 156.125 75C159.344 75 159.344 70 162.562 70C165.781 70 165.781 75 169 75H229" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round"/>
+  <g id="dimension">
+    <path class="ext" d="M11 91V119M229 91V119" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+    <path class="dim" d="M15 105H225" fill="none" stroke="#8B5CF6" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <text class="small" x="120" y="101" text-anchor="middle" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="9px">L=110(130)</text>
+  </g>
+  <text id="designation" x="122" y="168" fill="#111" font-family="Arial,Helvetica,sans-serif" font-size="12px" font-weight="700" text-anchor="middle">SL</text>
+</svg>

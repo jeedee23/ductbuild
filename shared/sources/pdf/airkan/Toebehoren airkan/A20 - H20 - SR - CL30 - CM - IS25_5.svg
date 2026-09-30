@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="160" viewBox="0 0 194 160">
+  <title>A20 angled strip</title><rect width="194" height="160" fill="#fff"/>
+  <defs><marker id="a" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M5 0 0 2.5 5 5Z" fill="#8B5CF6"/></marker></defs>
+  <path id="strip" d="M47 95V57h10v13l42-31M47 95h72m0 0 45-35" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round"/>
+  <g id="dimensions" fill="none" stroke="#8B5CF6" stroke-width=".9"><path d="M43 57H31m12 38H31m4-38v38M47 53V42m10 24V42M47 46h10M47 100v13m72-13v13M47 109h72" marker-start="url(#a)" marker-end="url(#a)"/></g>
+  <g fill="#555" font-family="Arial,sans-serif" font-size="8"><text x="37" y="18">L = 3m</text></g>
+  <g fill="#8B5CF6" font-family="Arial,sans-serif" font-size="7"><text x="29" y="78" transform="rotate(-90 29 78)">22</text><text x="52" y="41">6</text><text x="83" y="121">55</text></g>
+  <text id="designation" x="97" y="153" fill="#111" stroke="none" font-family="Arial, sans-serif" font-size="9.0" font-style="normal" font-weight="400" text-anchor="middle" text-decoration="none">A20 - H20 - SR - CL30 - CM - IS25_5</text>
+</svg>

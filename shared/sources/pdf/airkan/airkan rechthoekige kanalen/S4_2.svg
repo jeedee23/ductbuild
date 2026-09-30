@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="244" height="205" viewBox="0 0 244 205">
+  <title>Rectangular transition hood, two views</title>
+  <defs>
+    <marker id="d" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse">
+      <path d="M5 0 0 2.5 5 5" fill="none" stroke="#8B5CF6" stroke-width="1" />
+    </marker>
+  </defs>
+  <rect width="244" height="205" fill="#fff" stroke="none" />
+  <g fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M31 91L67 76L106 91L99 119H38Z" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" />
+    <path d="M38 113H99" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" />
+    <path d="M137 88H215V119H137Z" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" />
+    <path d="M143 88V119M209 88V119" fill="none" stroke="#111" stroke-width="1.5" stroke-linejoin="round" />
+  </g>
+  <path d="M31 91H106M137 95H215" fill="none" stroke="#777" stroke-width=".7" stroke-dasharray="3 2" />
+  <g fill="none" stroke="#8B5CF6" stroke-width=".7">
+    <path d="M31 55V87M106 55V87M34 59H103" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".7" />
+    <path d="M38 139V123M99 139V123M41 136H96" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".7" />
+    <path d="M21 76H28M21 119H35M24 79V116" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".7" />
+    <path d="M137 55V84M215 55V84M140 59H212" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".7" />
+    <path d="M137 139V123M215 139V123M140 136H212" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".7" />
+  </g>
+  <g font-family="Arial,sans-serif" font-size="8" fill="#8B5CF6" text-anchor="middle">
+    <text x="68" y="51" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="8" text-anchor="middle" stroke="none">B+H</text>
+    <text x="68" y="150" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="8" text-anchor="middle" stroke="none">B×A</text>
+    <text x="17" y="100" transform="rotate(-90 17 100)" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="8" text-anchor="middle" stroke="none">H = B/2</text>
+    <text x="176" y="51" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="8" text-anchor="middle" stroke="none">A+H</text>
+    <text x="176" y="150" fill="#8B5CF6" font-family="Arial,sans-serif" font-size="8" text-anchor="middle" stroke="none">A</text>
+  </g>
+  <text x="122" y="198" fill="#111" stroke="none" font-family="Arial,sans-serif" font-size="11" font-weight="600" text-anchor="middle">S4_2</text>
+</svg>

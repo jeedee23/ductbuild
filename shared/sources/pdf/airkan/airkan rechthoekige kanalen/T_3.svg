@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="671" height="215" viewBox="0 0 671 215">
+  <title>Angled rectangular tee</title>
+  <defs>
+    <marker id="d" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse">
+      <path d="M5 0 0 2.5 5 5" fill="none" stroke="#8B5CF6" stroke-width="1" />
+    </marker>
+    <marker id="l" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0 0 7 3.5 0 7Z" fill="#111" stroke="none" />
+    </marker>
+  </defs>
+  <rect width="671" height="215" fill="#fff" stroke="none" />
+  <g fill="none" stroke="#111" stroke-width="1.7" stroke-linejoin="round">
+    <path d="M251 73H307L352 31L397 68L384 81H432V151H251Z" fill="none" stroke="#111" stroke-width="1.7" stroke-linejoin="round" />
+    <path d="M244 73V151M439 81V151" fill="none" stroke="#111" stroke-width="1.7" stroke-linejoin="round" />
+    <path d="M348 36L391 71M384 81L397 68" fill="none" stroke="#111" stroke-width="1.7" stroke-linejoin="round" />
+    <path d="M121 91H190L242 82" stroke-width="1.1" marker-end="url(#l)" fill="none" stroke="#111" stroke-linejoin="round" />
+    <path d="M550 91H486L441 88" stroke-width="1.1" marker-end="url(#l)" fill="none" stroke="#111" stroke-linejoin="round" />
+  </g>
+  <path d="M388 76L373 61" fill="none" stroke="#777" stroke-width=".9" stroke-dasharray="4 3" />
+  <path d="M379 80A18 18 0 0 1 395 72" fill="none" stroke="#777" stroke-width=".7" />
+  <g fill="none" stroke="#8B5CF6" stroke-width=".8">
+    <path d="M251 46V69M307 46V69M254 49H304" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".8" />
+    <path d="M359 11L416 58M362 13L413 56" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".8" />
+    <path d="M220 73H240M220 151H240M224 76V148" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".8" />
+    <path d="M463 81H443M463 151H443M459 84V148" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".8" />
+    <path d="M251 173V155M432 173V155M254 169H429" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".8" />
+    <path d="M384 104V118M432 104V118M387 114H429" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".8" />
+    <path d="M326 70L371 28" marker-start="url(#d)" marker-end="url(#d)" fill="none" stroke="#8B5CF6" stroke-width=".8" />
+  </g>
+  <g font-family="Arial,sans-serif" font-size="8.5">
+    <g fill="#111">
+      <text x="137" y="89" font-family="Arial,sans-serif" font-size="8.5" fill="#111" stroke="none">TDC20 - E20</text>
+      <text x="137" y="102" font-family="Arial,sans-serif" font-size="8.5" fill="#111" stroke="none">TDC30 - E30</text>
+      <text x="182" y="115" font-family="Arial,sans-serif" font-size="8.5" fill="#111" stroke="none">A20</text>
+      <text x="182" y="128" font-family="Arial,sans-serif" font-size="8.5" fill="#111" stroke="none">A30</text>
+      <text x="182" y="141" font-family="Arial,sans-serif" font-size="8.5" fill="#111" stroke="none">A40</text>
+      <text x="490" y="89" font-family="Arial,sans-serif" font-size="8.5" fill="#111" stroke="none">E20 - TDC20</text>
+      <text x="490" y="102" font-family="Arial,sans-serif" font-size="8.5" fill="#111" stroke="none">E30 - TDC30</text>
+      <text x="490" y="115" font-family="Arial,sans-serif" font-size="8.5" fill="#111" stroke="none">A20</text>
+      <text x="490" y="128" font-family="Arial,sans-serif" font-size="8.5" fill="#111" stroke="none">A30</text>
+      <text x="490" y="141" font-family="Arial,sans-serif" font-size="8.5" fill="#111" stroke="none">A40</text>
+      <text x="262" y="116" font-family="Arial,sans-serif" font-size="8.5" fill="#111" stroke="none">K1</text>
+      <text x="365" y="56" font-family="Arial,sans-serif" font-size="8.5" fill="#111" stroke="none">K2</text>
+      <text x="415" y="116" font-family="Arial,sans-serif" font-size="8.5" fill="#111" stroke="none">K3</text>
+      <text x="397" y="83" font-size="12" font-family="Arial,sans-serif" fill="#8B5CF6" stroke="none">α</text>
+    </g>
+    <g fill="#8B5CF6" text-anchor="middle">
+      <text x="279" y="43" font-family="Arial,sans-serif" font-size="8.5" fill="#8B5CF6" text-anchor="middle" stroke="none">E</text>
+      <text x="389" y="15" transform="rotate(39 389 15)" font-family="Arial,sans-serif" font-size="8.5" fill="#8B5CF6" text-anchor="middle" stroke="none">C×B</text>
+      <text x="214" y="112" transform="rotate(-90 214 112)" font-family="Arial,sans-serif" font-size="8.5" fill="#8B5CF6" text-anchor="middle" stroke="none">A×B</text>
+      <text x="469" y="115" transform="rotate(-90 469 115)" font-family="Arial,sans-serif" font-size="8.5" fill="#8B5CF6" text-anchor="middle" stroke="none">D×B</text>
+      <text x="341" y="181" font-family="Arial,sans-serif" font-size="8.5" fill="#8B5CF6" text-anchor="middle" stroke="none">L</text>
+      <text x="408" y="111" font-family="Arial,sans-serif" font-size="8.5" fill="#8B5CF6" text-anchor="middle" stroke="none">G</text>
+      <text x="361" y="67" transform="rotate(-43 361 67)" font-family="Arial,sans-serif" font-size="8.5" fill="#8B5CF6" text-anchor="middle" stroke="none">F</text>
+    </g>
+  </g>
+  <text x="335.5" y="208" fill="#111" stroke="none" font-family="Arial,sans-serif" font-size="11" font-weight="600" text-anchor="middle">T_3</text>
+</svg>

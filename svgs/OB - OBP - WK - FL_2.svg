@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="160" viewBox="0 0 194 160">
+  <title>OB - OBP - WK - FL clamp dimensions</title><rect width="194" height="160" fill="#fff"/>
+  <defs><marker id="a" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M5 0 0 2.5 5 5Z" fill="#8B5CF6"/></marker></defs>
+  <g id="clamp" fill="none" stroke="#111" stroke-width="1.7" stroke-linejoin="round">
+    <rect x="82" y="18" width="52" height="29" rx="4"/><circle cx="118" cy="32.5" r="8"/><path d="M82 22q15-9 29 0-12 14 0 25"/>
+    <path d="M95 46v14h30v-9h10v14h-9v39q0 14-15 14H84q-12 0-12-11V72q0-12 13-12h10"/><path d="M84 65v42h30V65"/><rect x="90" y="48" width="11" height="11"/>
+  </g>
+  <path d="M104 15v107" fill="none" stroke="#999" stroke-width=".8" stroke-dasharray="5 3"/>
+  <g id="dimensions" fill="none" stroke="#8B5CF6" stroke-width=".9"><path d="M82 9h52M82 9v9m52-9v9m11 0v29m-11-29h15m-15 29h15M61 60v58m0-58h11m-11 58h23M72 128h54M72 118v14m54-28v28" marker-start="url(#a)" marker-end="url(#a)"/></g>
+  <g fill="#8B5CF6" font-family="Arial,sans-serif" font-size="9"><text x="108" y="8" text-anchor="middle">T</text><text x="152" y="35">V</text><text x="53" y="57">Z</text><text x="52" y="94" transform="rotate(-90 52 94)">W</text><text x="138" y="90">U</text><text x="97" y="126">X</text><text x="119" y="135">Ø</text></g>
+  <text id="designation" x="97" y="153" fill="#111" stroke="none" font-family="Arial, sans-serif" font-size="9.0" font-style="normal" font-weight="400" text-anchor="middle" text-decoration="none">OB - OBP - WK - FL_2</text>
+</svg>

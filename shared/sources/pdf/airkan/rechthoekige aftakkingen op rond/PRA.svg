@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="202" viewBox="0 0 194 202" role="img" aria-labelledby="title desc">
+  <title id="title">PRA asymmetric rectangular branch on round duct</title><desc id="desc">Front technical view matching the source.</desc>
+
+  <style>
+    .obj{fill:none;stroke:#777;stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round}
+    .hidden{fill:none;stroke:#aaa;stroke-width:.9;stroke-dasharray:3 2}
+    .center{fill:none;stroke:#999;stroke-width:.75;stroke-dasharray:5 2 1 2}
+    .dim{fill:none;stroke:#888;stroke-width:.75}
+    .txt{fill:#555;font-family:Arial,Helvetica,sans-serif;font-size:7px}
+  </style>
+  <rect width="194" height="184" fill="#fff"/>
+
+  <g id="object">
+    <circle class="hidden" cx="101" cy="112" r="38" fill="none" stroke="#aaa" stroke-width=".9" stroke-dasharray="3 2"/>
+    <path class="obj" d="M101 74V42H137V112M101 74A38 38 0 0 1 139 112" fill="none" stroke="#777" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="center" d="M57 112H145M101 68V156" fill="none" stroke="#999" stroke-width=".75" stroke-dasharray="5 2 1 2"/>
+  </g>
+  <g id="dimensions">
+    <path class="dim" d="M101 34V22M137 34V22M104 26H134M104 24L100 26L104 28M134 24L138 26L134 28" fill="none" stroke="#8B5CF6" stroke-width=".75"/>
+    <text class="txt" x="119" y="18" text-anchor="middle" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="7px">B x L</text>
+    <path class="dim" d="M93 42H73M93 74H73M77 45V71M75 45L77 41L79 45M75 71L77 75L79 71" fill="none" stroke="#8B5CF6" stroke-width=".75"/>
+    <text class="txt" x="68" y="58" text-anchor="middle" transform="rotate(-90 68 58)" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="7px">100</text>
+    <path class="dim" d="M63 142V166M139 112V166M66 161H136M66 159L62 161L66 163M136 159L140 161L136 163" fill="none" stroke="#8B5CF6" stroke-width=".75"/>
+    <text class="txt" x="101" y="157" text-anchor="middle" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="7px">Ø1</text>
+  </g>
+  <text id="designation" x="97" y="195" fill="#111" font-family="Arial,Helvetica,sans-serif" font-size="10px" font-weight="700" text-anchor="middle">PRA</text>
+</svg>

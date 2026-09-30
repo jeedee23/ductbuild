@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="305"
+     height="205"
+     viewBox="185 0 305 205">
+  <title>PSA - Ø1 - Ø2</title>
+  <desc>Clean editable redraw of the AIRKAN asymmetric branch technical drawing.</desc>
+
+  <defs>
+    <marker id="dimension-arrow"
+            markerWidth="6"
+            markerHeight="6"
+            refX="3"
+            refY="3"
+            orient="auto-start-reverse"
+            markerUnits="strokeWidth">
+      <path d="M 0 3 L 6 0 L 6 6 Z" fill="#8B5CF6"/>
+    </marker>
+    <style>
+      .object {
+        fill: none;
+        stroke: #111;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .hidden {
+        fill: none;
+        stroke: #555;
+        stroke-width: 1;
+        stroke-dasharray: 5 3;
+        stroke-linecap: round;
+      }
+      .center {
+        fill: none;
+        stroke: #999;
+        stroke-width: .75;
+        stroke-dasharray: 10 3 2 3;
+      }
+      .dimension {
+        fill: none;
+        stroke: #8B5CF6;
+        stroke-width: .75;
+        marker-start: url(#dimension-arrow);
+        marker-end: url(#dimension-arrow);
+      }
+      .extension {
+        fill: none;
+        stroke: #8B5CF6;
+        stroke-width: .65;
+      }
+      .dimension-text {
+        fill: #8B5CF6;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        text-anchor: middle;
+      }
+    </style>
+  </defs>
+
+  <rect id="background" x="185" y="0" width="305" height="205" fill="#fff"/>
+
+  <g id="front-view">
+    <g id="main-duct-hidden"
+       fill="none"
+       stroke="#555"
+       stroke-width="1"
+       stroke-dasharray="5 3"
+       stroke-linecap="round">
+      <path d="M 229 73 H 276"/>
+      <path d="M 310 73 H 352"/>
+      <path d="M 229 153 H 352"/>
+      <ellipse cx="229" cy="113" rx="8" ry="40"/>
+      <ellipse cx="352" cy="113" rx="8" ry="40"/>
+    </g>
+
+    <g id="branch-front"
+       fill="none"
+       stroke="#111"
+       stroke-width="1.5"
+       stroke-linecap="round"
+       stroke-linejoin="round">
+      <path d="M 276 34 H 310 V 72
+               C 310 91 304 106 293 112
+               C 282 106 276 91 276 72 Z"/>
+      <path d="M 281 52 V 71
+               C 281 86 286 99 293 103
+               C 300 99 305 86 305 71
+               V 52"/>
+      <path d="M 276 49 H 310"/>
+      <path d="M 276 53 H 310"/>
+    </g>
+
+    <g id="front-centerlines"
+       fill="none"
+       stroke="#999"
+       stroke-width=".75"
+       stroke-dasharray="10 3 2 3">
+      <path d="M 217 113 H 364"/>
+      <path d="M 293 27 V 121"/>
+    </g>
+  </g>
+
+  <g id="side-view">
+    <g id="branch-side"
+       fill="none"
+       stroke="#111"
+       stroke-width="1.5"
+       stroke-linecap="round"
+       stroke-linejoin="round">
+      <path d="M 443 34 H 475 V 113"/>
+      <path d="M 443 34 V 73"/>
+      <path d="M 443 49 H 475"/>
+      <path d="M 443 53 H 475"/>
+      <path d="M 443 73
+               C 460 76 472 91 475 113"/>
+    </g>
+
+    <g id="main-duct-side">
+      <path d="M 435 73 A 40 40 0 0 1 475 113"
+            fill="none"
+            stroke="#111"
+            stroke-width="1.5"
+            stroke-linecap="round"/>
+      <path d="M 475 113 A 40 40 0 1 1 435 73"
+            fill="none"
+            stroke="#555"
+            stroke-width="1"
+            stroke-dasharray="5 3"
+            stroke-linecap="round"/>
+    </g>
+
+    <g id="side-centerlines"
+       fill="none"
+       stroke="#999"
+       stroke-width=".75"
+       stroke-dasharray="10 3 2 3">
+      <path d="M 386 113 H 484"/>
+      <path d="M 435 64 V 162"/>
+      <path d="M 459 27 V 80"/>
+    </g>
+  </g>
+
+  <g id="dimensions">
+    <g id="front-height">
+      <path d="M 202 34 H 273" fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+      <path d="M 202 73 H 226" fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+      <path d="M 202 153 H 226" fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+      <path d="M 202 36 V 71"
+            fill="none"
+            stroke="#8B5CF6"
+            stroke-width=".75"
+            marker-start="url(#dimension-arrow)"
+            marker-end="url(#dimension-arrow)"/>
+      <path d="M 202 75 V 151"
+            fill="none"
+            stroke="#8B5CF6"
+            stroke-width=".75"
+            marker-start="url(#dimension-arrow)"
+            marker-end="url(#dimension-arrow)"/>
+      <text class="dimension-text"
+            x="198"
+            y="53.5"
+            fill="#8B5CF6"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10"
+            text-anchor="middle"
+            transform="rotate(-90 198 53.5)">100</text>
+      <text class="dimension-text"
+            x="198"
+            y="113"
+            fill="#8B5CF6"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10"
+            text-anchor="middle"
+            transform="rotate(-90 198 113)">Ø1</text>
+    </g>
+
+    <g id="front-branch-diameter">
+      <path d="M 276 10 V 31" fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+      <path d="M 310 10 V 31" fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+      <path d="M 278 12 H 308"
+            fill="none"
+            stroke="#8B5CF6"
+            stroke-width=".75"
+            marker-start="url(#dimension-arrow)"
+            marker-end="url(#dimension-arrow)"/>
+      <text x="293" y="9"
+            fill="#8B5CF6"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10"
+            text-anchor="middle">Ø2</text>
+    </g>
+
+    <g id="side-branch-diameter">
+      <path d="M 443 10 V 31" fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+      <path d="M 475 10 V 31" fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+      <path d="M 445 12 H 473"
+            fill="none"
+            stroke="#8B5CF6"
+            stroke-width=".75"
+            marker-start="url(#dimension-arrow)"
+            marker-end="url(#dimension-arrow)"/>
+      <text x="459" y="9"
+            fill="#8B5CF6"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10"
+            text-anchor="middle">Ø2</text>
+    </g>
+
+    <g id="side-main-diameter">
+      <path d="M 395 146 V 178" fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+      <path d="M 475 116 V 178" fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+      <path d="M 397 177 H 473"
+            fill="none"
+            stroke="#8B5CF6"
+            stroke-width=".75"
+            marker-start="url(#dimension-arrow)"
+            marker-end="url(#dimension-arrow)"/>
+      <text x="435" y="173"
+            fill="#8B5CF6"
+            font-family="Arial, Helvetica, sans-serif"
+            font-size="10"
+            text-anchor="middle">Ø1</text>
+    </g>
+  </g>
+
+  <text id="part-name"
+        x="337.5"
+        y="198"
+        fill="#111"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="12"
+        font-weight="700"
+        text-anchor="middle">PSA - Ø1 - Ø2</text>
+</svg>

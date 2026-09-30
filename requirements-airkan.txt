@@ -1,0 +1,12 @@
+# PDF reading, rendering, text extraction, and page geometry
+pymupdf==1.28.2
+pdfplumber==0.11.10
+
+# Raster analysis and drawing/photo classification
+pillow==12.3.0
+numpy==2.5.3
+opencv-python-headless==5.0.0.93
+
+# SVG generation and review-PDF output
+svgwrite==1.4.3
+reportlab==5.0.1

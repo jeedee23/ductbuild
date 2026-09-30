@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="160" viewBox="0 0 194 160">
+  <title>HL20 corner piece</title><rect width="194" height="160" fill="#fff"/>
+  <g id="corner-piece" fill="#fff" stroke="#111" stroke-width="2" stroke-linejoin="round">
+    <path d="M54 21h77l13 14v34H87v48H54l-13-13V32Z"/><path d="m45 31 10-10 17 3 7 11-8 15-17 2-12-9Z"/><path d="m53 29 10-2 9 8-5 10-11 1-8-8Z"/>
+    <path d="m130 27 9 3 4 10-6 3-5-8-7-2ZM48 98l7 8-3 7-8-8Z"/>
+  </g>
+  <text id="designation" x="97" y="153" fill="#111" stroke="none" font-family="Arial, sans-serif" font-size="9.0" font-style="normal" font-weight="400" text-anchor="middle" text-decoration="none">HL20</text>
+</svg>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="216" viewBox="0 0 194 216">
+  <title>DF</title>
+  <desc>Round flanged end cover with diameter dimension.</desc>
+  <rect width="194" height="216" fill="#fff"/>
+  <path d="M113 7h32c2.3 0 4 1.7 4 4v162c0 2.3-1.7 4-4 4h-32z" fill="none" stroke="#111" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M104 92h58" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="11 5 2 5"/>
+  <g fill="none" stroke="#8B5CF6" stroke-width="1">
+    <path d="M68 7h36M68 177h36M68 7v170M64 3l8 8M64 173l8 8"/>
+  </g>
+  <text x="46" y="92" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="17" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 46 92)">Ø</text>
+  <text id="designation-footer" x="97" y="205" fill="#111" stroke="none" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" text-anchor="middle">DF</text>
+</svg>

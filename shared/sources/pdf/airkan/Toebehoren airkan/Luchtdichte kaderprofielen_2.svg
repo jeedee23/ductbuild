@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="671" height="429" viewBox="0 0 671 429">
+  <title>Luchtdichte kaderprofielen_2</title><desc>Editable schematic of an airtight Europrofile duct corner.</desc>
+  <rect x="0" y="0" width="671" height="429" fill="#fff"/>
+  <g id="profile" stroke="#111" stroke-width="3" stroke-linejoin="round">
+    <path d="M106 28 H165 Q184 28 184 42 Q184 55 164 60 L143 65 V224 L206 288 H327 L316 299 H151 Q138 299 138 286 V52 H106 Z" fill="#999"/>
+    <path d="M106 28 V304 H138 V287 Q138 253 154 253 Q168 253 174 276 L181 298 H432 V287 H207 L151 229 L138 245 V52 H106 Z" fill="#999"/>
+    <rect x="111" y="37" width="27" height="258" fill="#999" stroke="#555" stroke-width="1.4"/>
+    <path d="M151 275 q15 -10 27 22 h31 q-20 -44 -58 -22" fill="#999" stroke="#555" stroke-width="1.3"/>
+    <path d="m154 273 18 24m-10-29 21 29m-11-27 20 27m-10-21 15 21" fill="none" stroke="#555" stroke-width=".8"/>
+  </g>
+  <g id="leaders" fill="none" stroke="#111" stroke-width="1.1">
+    <path d="M203 86 L143 107 M203 110 L124 139 M203 158 L153 180 M203 205 L157 250 M203 335 L172 290 M203 366 L183 300 M203 389 L236 299"/>
+  </g>
+  <g fill="#111" font-family="Arial, sans-serif">
+    <text x="228" y="56" font-size="34" font-weight="700">EUROPROFIEL</text>
+    <text x="205" y="82" font-size="9">Dubbel kaderprofiel / Profil double</text><text x="205" y="94" font-size="9">Double ductwork profile</text>
+    <text x="205" y="119" font-size="9">Hoekstukken 2,5 en 3 mm dikte / Equerre massive ép. 2,5 et 3 mm</text><text x="205" y="131" font-size="9">Corner piece 2.5 and 3 mm thick</text>
+    <text x="205" y="157" font-size="9">Klemming van de hoekstukken / Serrage equerre</text><text x="205" y="169" font-size="9">Clamping of corner piece</text>
+    <text x="205" y="199" font-size="9">Elastisch blijvende dichting / Etanchéité souple</text><text x="205" y="211" font-size="9">Elastic seal</text>
+    <text x="205" y="235" font-size="9">Aanslag luchtkanaal over hele omtrek / Butée gaine sur le contour entier</text><text x="205" y="247" font-size="9">Bump against the whole contour of the duct</text>
+    <text x="334" y="277" font-size="9">Luchtkanaal / Gaine rectangulaire</text><text x="334" y="289" font-size="9">Rectangular duct</text>
+    <text x="205" y="334" font-size="9">Klemdichting / Etanchéité par effet de serrage</text><text x="205" y="346" font-size="9">Airtightness ensured by clamping</text>
+    <text x="205" y="370" font-size="9">Perfecte dichting kanaal in dichtingsmassa / Etanchéité parfaite gaine dans la masse d'étanchéité</text><text x="205" y="382" font-size="9">Perfect seal of duct in sealing mass</text>
+  </g>
+  <text id="designation" x="335.5" y="421" fill="#111" stroke="none" font-family="Arial, sans-serif" font-size="11.0" font-style="normal" font-weight="400" text-anchor="middle" text-decoration="none">Luchtdichte kaderprofielen_2</text>
+</svg>

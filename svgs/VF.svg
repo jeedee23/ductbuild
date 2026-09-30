@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="216" viewBox="0 0 194 216">
+  <title>VF</title>
+  <desc>Round fitting connection with opposed folded edges and diameter dimension.</desc>
+  <rect width="194" height="216" fill="#fff"/>
+  <g fill="none" stroke="#111" stroke-width="2.4" stroke-linejoin="round">
+    <path d="M91 7h33v5l3 3v154l-3 3v5H91z"/>
+    <path d="M132 7h33v170h-33v-5l-3-3V15l3-3z"/>
+    <path d="M124 12h8M124 172h8" stroke-width="1.8"/>
+  </g>
+  <path d="M81 92h95" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="11 5 2 5"/>
+  <g fill="none" stroke="#8B5CF6" stroke-width="1">
+    <path d="M47 7h35M47 177h35M47 7v170M43 3l8 8M43 173l8 8"/>
+  </g>
+  <text x="27" y="92" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="17" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 27 92)">Ø</text>
+  <text id="designation-footer" x="97" y="205" fill="#111" stroke="none" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" text-anchor="middle">VF</text>
+</svg>

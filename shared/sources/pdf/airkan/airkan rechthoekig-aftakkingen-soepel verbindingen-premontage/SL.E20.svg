@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="244" height="181" viewBox="0 0 244 181" role="img" aria-labelledby="title desc">
+  <title id="title">SL.E20 and SL.E30 flexible sleeve</title>
+  <desc id="desc">Flexible connection profile matching the source drawing.</desc>
+
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+      <path d="M1 7L6 0" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+    </marker>
+    <marker id="leader" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 1L8 4L0 7Z" fill="#111"/>
+    </marker>
+  </defs>
+  <style>
+    .obj{fill:none;stroke:#111;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter}
+    .thin{fill:none;stroke:#555;stroke-width:1}
+    .dim{fill:none;stroke:#666;stroke-width:1;marker-start:url(#arrow);marker-end:url(#arrow)}
+    .ext{fill:none;stroke:#777;stroke-width:1}
+    .hidden{fill:none;stroke:#555;stroke-width:1.35;stroke-dasharray:8 6}
+    .center{fill:none;stroke:#999;stroke-width:.8;stroke-dasharray:8 3 2 3}
+    .txt{fill:#333;font-family:Arial,Helvetica,sans-serif;font-size:11px}
+    .small{fill:#333;font-family:Arial,Helvetica,sans-serif;font-size:9px}
+  </style>
+  <rect width="244" height="181" fill="#fff"/>
+
+  <g id="sleeve" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 108V82Q12 79 15 79H20V84H16V102L29 108H60"/>
+    <path d="M60 108C63.25 108 63.25 103 66.5 103C69.75 103 69.75 108 73 108C76.25 108 76.25 103 79.5 103C82.75 103 82.75 108 86 108C89.25 108 89.25 103 92.5 103C95.75 103 95.75 108 99 108C102.25 108 102.25 103 105.5 103C108.75 103 108.75 108 112 108C115.25 108 115.25 103 118.5 103C121.75 103 121.75 108 125 108C128.25 108 128.25 103 131.5 103C134.75 103 134.75 108 138 108C141.25 108 141.25 103 144.5 103C147.75 103 147.75 108 151 108C154.25 108 154.25 103 157.5 103C160.75 103 160.75 108 164 108C167.25 108 167.25 103 170.5 103C173.75 103 173.75 108 177 108H177L195 108L200 102V84H196V79H200Q203 79 203 82V108"/>
+    <path class="thin" d="M12 103L29 111H42M203 103L186 111H175" fill="none" stroke="#555" stroke-width="1"/>
+  </g>
+  <g id="labels"><path class="thin" d="M203 88H222M203 99H222" fill="none" stroke="#555" stroke-width="1"/><text class="small" x="224" y="91" fill="#333" font-family="Arial,Helvetica,sans-serif" font-size="9px">E20</text><text class="small" x="224" y="102" fill="#333" font-family="Arial,Helvetica,sans-serif" font-size="9px">E30</text></g>
+  <text id="designation" x="122" y="168" fill="#111" font-family="Arial,Helvetica,sans-serif" font-size="12px" font-weight="700" text-anchor="middle">SL.E20</text>
+</svg>

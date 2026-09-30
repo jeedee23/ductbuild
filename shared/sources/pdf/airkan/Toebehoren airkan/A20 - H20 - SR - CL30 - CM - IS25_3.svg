@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="194" height="160" viewBox="0 0 194 160">
+  <title>A20 channel section</title><rect width="194" height="160" fill="#fff"/>
+  <defs><marker id="a" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M5 0 0 2.5 5 5Z" fill="#8B5CF6"/></marker></defs>
+  <g id="channel" fill="none" stroke="#111" stroke-width="1.7" stroke-linejoin="round"><path d="m55 95-5-28 20-22h76l6 6-10 14-50 42-11-6-3-22-10-9-11 4 5 26Z"/><path d="m50 67 18-3 24 6 60-19M68 64l10 15m14-9v37m-30-7 19 1"/></g>
+  <g id="dimensions" fill="none" stroke="#8B5CF6" stroke-width=".9"><path d="M70 40V29m76 11V29M70 33h76M47 65 36 58m34-17-11-7M39 58l22-22M49 68l-13 2m21 24-13 2m-7-26 5 25m15 8-2 13m26-11-2 13m-23-3 23 4m13-47 9 6m-9 27 9 6m-6-32v29" marker-start="url(#a)" marker-end="url(#a)"/></g>
+  <g fill="#8B5CF6" font-family="Arial,sans-serif" font-size="7"><text x="108" y="28" text-anchor="middle">21</text><text x="47" y="46" transform="rotate(-45 47 46)">40</text><text x="32" y="84" transform="rotate(-82 32 84)">14</text><text x="67" y="125" text-anchor="middle">18</text><text x="106" y="92" transform="rotate(-90 106 92)">11</text></g>
+  <text id="designation" x="97" y="153" fill="#111" stroke="none" font-family="Arial, sans-serif" font-size="9.0" font-style="normal" font-weight="400" text-anchor="middle" text-decoration="none">A20 - H20 - SR - CL30 - CM - IS25_3</text>
+</svg>

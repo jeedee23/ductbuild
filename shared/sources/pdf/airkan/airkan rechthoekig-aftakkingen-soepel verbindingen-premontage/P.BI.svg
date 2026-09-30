@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="671" height="215" viewBox="0 0 671 215" role="img" aria-labelledby="title desc">
+  <title id="title">P.BI rectangular branch</title>
+  <desc id="desc">Technical side view matching the source drawing.</desc>
+
+  <defs>
+    <marker id="arrow" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+      <path d="M1 7L6 0" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+    </marker>
+    <marker id="leader" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 1L8 4L0 7Z" fill="#111"/>
+    </marker>
+  </defs>
+  <style>
+    .obj{fill:none;stroke:#111;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter}
+    .thin{fill:none;stroke:#555;stroke-width:1}
+    .dim{fill:none;stroke:#666;stroke-width:1;marker-start:url(#arrow);marker-end:url(#arrow)}
+    .ext{fill:none;stroke:#777;stroke-width:1}
+    .hidden{fill:none;stroke:#555;stroke-width:1.35;stroke-dasharray:8 6}
+    .center{fill:none;stroke:#999;stroke-width:.8;stroke-dasharray:8 3 2 3}
+    .txt{fill:#333;font-family:Arial,Helvetica,sans-serif;font-size:11px}
+    .small{fill:#333;font-family:Arial,Helvetica,sans-serif;font-size:9px}
+  </style>
+  <rect width="671" height="191" fill="#fff"/>
+
+  <g id="duct" class="hidden" fill="none" stroke="#555" stroke-width="1.35" stroke-dasharray="8 6">
+    <path d="M229 93L218 176H432L443 93"/>
+    <line x1="229" y1="93" x2="280" y2="93"/>
+    <line x1="399" y1="93" x2="443" y2="93"/>
+  </g>
+  <path id="branch" class="obj" d="M265 93H280V60H380V93H399" fill="none" stroke="#111" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/>
+  <g id="dimensions">
+    <path class="ext" d="M278 12V56M299 30V56M380 12V56" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+    <path class="dim" d="M282 24H376M282 43H295" fill="none" stroke="#8B5CF6" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <text class="txt" x="329" y="19" text-anchor="middle" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="11px">AxB</text>
+    <text class="txt" x="307" y="46" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="11px">20</text>
+    <path class="ext" d="M420 57H449M420 93H449" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+    <path class="dim" d="M432 61V89" fill="none" stroke="#8B5CF6" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <text class="txt" x="426" y="76" text-anchor="middle" transform="rotate(-90 426 76)" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="11px">L</text>
+    <path class="ext" d="M377 111V138M398 111V138" fill="none" stroke="#8B5CF6" stroke-width="1"/>
+    <path class="dim" d="M381 124H394" fill="none" stroke="#8B5CF6" stroke-width="1" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <text class="txt" x="405" y="127" fill="#8B5CF6" font-family="Arial,Helvetica,sans-serif" font-size="11px">25</text>
+  </g>
+  <text id="designation" x="335.5" y="207" fill="#111" font-family="Arial,Helvetica,sans-serif" font-size="13px" font-weight="700" text-anchor="middle">P.BI</text>
+</svg>

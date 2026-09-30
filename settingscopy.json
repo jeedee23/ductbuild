@@ -1,0 +1,312 @@
+{
+  "chat.permissions.default": "autoApprove",
+  "chat.autopilot.advanced.enabled": true,
+  "chat.tools.global.autoApprove": true,
+  "chat.tools.terminal.enableAutoApprove": true,
+  "chat.tools.terminal.ignoreDefaultAutoApproveRules": true,
+  "python.defaultInterpreterPath": "C:\\Users\\johan\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+  "python-envs.defaultEnvManager": "ms-python.python:venv",
+  "python-envs.defaultPackageManager": "ms-python.python:pip",
+  "python-envs.workspaceSearchPaths": [
+    ".venv",
+    "*/.venv"
+  ],
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "debug.disassemblyView.showSourceCode": true,
+  "explorer.confirmDelete": false,
+  "git.enableSmartCommit": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDragAndDrop": true,
+  "chat.agentSessionsViewLocation": "view",
+  "chat.checkpoints.showFileChanges": true,
+  "chat.editing.autoAcceptDelay": 1,
+  "chat.agent.maxRequests": 200,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": true
+  },
+  "terminal.integrated.profiles.windows": {
+    "PowerShell 7": {
+      "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+      "args": [
+        "-NoLogo"
+      ]
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell 7",
+  "terminal.integrated.automationProfile.windows": {
+    "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+    "args": [
+      "-NoLogo",
+      "-NoProfile"
+    ]
+  },
+  "chat.tools.terminal.terminalProfile.windows": {},
+  "chat.tools.terminal.autoApprove": {
+    "/.*/": true,
+    "/^pwsh(\\.exe)?\\b/": true,
+    "/pwsh\\.exe\\b/i": true,
+    "'&": true,
+    "Import-Module": true,
+    "cd": true,
+    "echo": true,
+    "ls": true,
+    "pwd": true,
+    "cat": true,
+    "head": true,
+    "tail": true,
+    "findstr": true,
+    "wc": true,
+    "tr": true,
+    "cut": true,
+    "cmp": true,
+    "which": true,
+    "basename": true,
+    "dirname": true,
+    "realpath": true,
+    "readlink": true,
+    "stat": true,
+    "file": true,
+    "du": true,
+    "df": true,
+    "sleep": true,
+    "grep": true,
+    "git status": true,
+    "git log": true,
+    "git show": true,
+    "git diff": true,
+    "git grep": true,
+    "git branch": true,
+    "/^git branch\\b.*-(d|D|m|M|-delete|-force)\\b/": true,
+    "Get-ChildItem": true,
+    "Get-Content": true,
+    "Get-Date": true,
+    "Get-Random": true,
+    "Get-Location": true,
+    "Write-Host": true,
+    "Write-Output": true,
+    "Split-Path": true,
+    "Join-Path": true,
+    "Start-Sleep": true,
+    "Where-Object": true,
+    "/^Select-[a-z0-9]/i": true,
+    "/^Measure-[a-z0-9]/i": true,
+    "/^Compare-[a-z0-9]/i": true,
+    "/^Format-[a-z0-9]/i": true,
+    "/^Sort-[a-z0-9]/i": true,
+    "rm": true,
+    "rmdir": true,
+    "del": true,
+    "Remove-Item": true,
+    "ri": true,
+    "rd": true,
+    "erase": true,
+    "kill": true,
+    "Stop-Process": true,
+    "taskkill": true,
+    "taskkill.exe": true,
+    "curl": true,
+    "wget": true,
+    "Invoke-RestMethod": true,
+    "Invoke-WebRequest": true,
+    "irm": true,
+    "iwr": true,
+    "chmod": true,
+    "chown": true,
+    "Set-ItemProperty": true,
+    "Set-Acl": true,
+    "jq": true,
+    "xargs": true,
+    "Invoke-Expression": true,
+    "iex": true,
+    "Rename-Item": true,
+    "Set-Content": true,
+    "Copy-Item": true,
+    "npx": true,
+    "pip": true,
+    "node": true,
+    "npm test": true,
+    "npm run build": true,
+    "npm create": true,
+    "git clone": true,
+    "git add": true,
+    "git commit": true,
+    "git pull": true,
+    "git push": true,
+    "git fetch": true,
+    "git checkout": true,
+    "git reset": true,
+    "git archive": true,
+    "git ls-files": true,
+    "git ls-tree": true,
+    "git rev-parse": true,
+    "git remote": true,
+    "git ls-remote": true,
+    "git config": true,
+    "robocopy": true,
+    "cmd": true,
+    "cmd /c": true,
+    "exit()": true,
+    ".": true,
+    "/^pwsh -NoProfile -ExecutionPolicy Bypass -Command \"Set-Location d:\\\\MEAM-SQL; node --test\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "\\\"\"": true,
+    "/^C:\\\\Users\\\\johan\\\\\\.platformio\\\\penv\\\\Scripts\\\\platformio\\.exe pkg install -f -p toolchain-xtensa-esp32s3 -p framework-arduinoespressif32$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^Test-Path \"C:\\\\Users\\\\johan\\\\AppData\\\\Local\\\\Python\\\\bin\\\\python\\.exe\"; Get-Command \"C:\\\\Users\\\\johan\\\\AppData\\\\Local\\\\Python\\\\bin\\\\python\\.exe\" -ErrorAction SilentlyContinue \\| Select-Object Source,Version; & \"C:\\\\Users\\\\johan\\\\AppData\\\\Local\\\\Python\\\\bin\\\\python\\.exe\" \"D:\\\\github\\\\Fuzzyficator\\\\Fuzzyficator\\.py\"$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.minimap.renderCharacters": true,
+  "platformio-ide.autoOpenPlatformIOIniFile": true,
+  "auto-build.defaultEnv.name": "STM32F103RE_creality",
+  "git.confirmSync": false,
+  "git.ignoreRebaseWarning": true,
+  "git.autofetch": true,
+  "git.mergeEditor": true,
+  "merge-conflict.autoNavigateNextConflict.enabled": true,
+  "editor.accessibilitySupport": "on",
+  "accessibility.signals.lineHasBreakpoint": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.chatEditModifiedFile": {
+    "sound": "off"
+  },
+  "accessibility.signals.chatRequestSent": {
+    "sound": "off",
+    "announcement": "off"
+  },
+  "accessibility.signals.chatResponseReceived": {
+    "sound": "off"
+  },
+  "accessibility.signals.chatUserActionRequired": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.clear": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.codeActionApplied": {
+    "sound": "off"
+  },
+  "accessibility.signals.codeActionTriggered": {
+    "sound": "off",
+    "announcement": "off"
+  },
+  "accessibility.signals.onDebugBreak": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.diffLineDeleted": {
+    "sound": "off"
+  },
+  "accessibility.signals.diffLineInserted": {
+    "sound": "off"
+  },
+  "accessibility.signals.diffLineModified": {
+    "sound": "off"
+  },
+  "accessibility.signals.editsKept": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.positionHasError": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.lineHasError": {
+    "sound": "off",
+    "announcement": "off"
+  },
+  "accessibility.signals.lineHasFoldedArea": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.lineHasInlineSuggestion": {
+    "sound": "off"
+  },
+  "accessibility.signals.nextEditSuggestion": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.noInlayHints": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.notebookCellCompleted": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.notebookCellFailed": {
+    "sound": "off",
+    "announcement": "auto"
+  },
+  "accessibility.signals.progress": {
+    "sound": "off",
+    "announcement": "off"
+  },
+  "accessibility.signals.taskCompleted": {
+    "sound": "off",
+    "announcement": "off"
+  },
+  "accessibility.signals.taskFailed": {
+    "sound": "off",
+    "announcement": "off"
+  },
+  "accessibility.signals.terminalBell": {
+    "sound": "off",
+    "announcement": "off"
+  },
+  "accessibility.signals.terminalCommandFailed": {
+    "sound": "off",
+    "announcement": "off"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+"chat.viewSessions.orientation": "stacked",
+"files.autoSave": "afterDelay",
+"accessibility.signals.lineHasWarning": {
+  "sound": "off",
+  "announcement": "off"
+},
+"accessibility.signals.terminalQuickFix": {
+  "sound": "off",
+  "announcement": "off"
+},
+"accessibility.signals.terminalCommandSucceeded": {
+  "sound": "off",
+  "announcement": "auto"
+},
+"accessibility.signals.editsUndone": {
+  "sound": "off",
+  "announcement": "auto"
+},
+"accessibility.signals.voiceModeStarted": {
+  "sound": "off",
+  "announcement": "auto"
+},
+"accessibility.signals.voiceModeStopped": {
+  "sound": "off",
+  "announcement": "auto"
+},
+"accessibility.signals.voiceRecordingStarted": {
+  "sound": "off"
+},
+"accessibility.signals.voiceRecordingStopped": {
+  "sound": "off"
+},
+"accessibility.signals.positionHasWarning": {
+  "sound": "off",
+  "announcement": "auto"
+},
+"csv-edit.fontSizeInPx": 10
+}

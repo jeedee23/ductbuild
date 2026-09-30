@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="194"
+     height="216"
+     viewBox="0 0 194 216">
+  <title>S</title>
+  <desc>Clean editable redraw of the AIRKAN round spiral tube and seam detail.</desc>
+
+  <defs>
+    <marker id="dimension-arrow"
+            markerWidth="6"
+            markerHeight="6"
+            refX="3"
+            refY="3"
+            orient="auto-start-reverse"
+            markerUnits="strokeWidth">
+      <path d="M 0 3 L 6 0 L 6 6 Z" fill="#8B5CF6" stroke="none"/>
+    </marker>
+  </defs>
+
+  <rect id="background" x="0" y="0" width="194" height="216" fill="#fff" stroke="none"/>
+
+  <g id="tube">
+    <path d="M 9 26 H 163 V 109 H 9"
+          fill="none" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 9 26 C 0 36 0 52 9 67 C 18 82 18 98 9 109"
+          fill="none" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 9 67 C 3 74 2 84 5 94 C 7 101 10 106 15 109"
+          fill="none" stroke="#555" stroke-width="1"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g id="spiral-seams">
+    <path d="M 20 26 C 38 43 42 85 67 109"
+          fill="none" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 23 26 C 41 43 45 84 70 109"
+          fill="none" stroke="#555" stroke-width="1"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 60 26 C 79 45 83 86 108 109"
+          fill="none" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 63 26 C 82 45 86 85 111 109"
+          fill="none" stroke="#555" stroke-width="1"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 100 26 C 119 45 123 86 148 109"
+          fill="none" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 103 26 C 122 45 126 85 151 109"
+          fill="none" stroke="#555" stroke-width="1"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 140 26 C 151 37 156 53 163 68"
+          fill="none" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 143 26 C 153 37 158 52 163 63"
+          fill="none" stroke="#555" stroke-width="1"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g id="centerline">
+    <path d="M 1 67 H 164"
+          fill="none" stroke="#999" stroke-width=".75"
+          stroke-dasharray="10 3 2 3" stroke-linecap="butt"/>
+  </g>
+
+  <g id="diameter-dimension">
+    <path d="M 166 26 H 191"
+          fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+    <path d="M 166 109 H 191"
+          fill="none" stroke="#8B5CF6" stroke-width=".65"/>
+    <path d="M 191 29 V 106"
+          fill="none" stroke="#8B5CF6" stroke-width=".75"
+          marker-start="url(#dimension-arrow)"
+          marker-end="url(#dimension-arrow)"/>
+    <text x="185" y="67.5"
+          fill="#8B5CF6"
+          font-family="Arial, Helvetica, sans-serif"
+          font-size="14"
+          font-weight="400"
+          text-anchor="middle"
+          dominant-baseline="middle"
+          transform="rotate(-90 185 67.5)">Ø</text>
+  </g>
+
+  <g id="seam-detail">
+    <path d="M 67 109 L 87 122"
+          fill="none" stroke="#999" stroke-width=".75"/>
+    <circle cx="102" cy="137" r="23"
+            fill="none" stroke="#999" stroke-width="1"/>
+    <path d="M 79 137 H 94 M 110 137 H 125"
+          fill="none" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round"/>
+    <path d="M 94 137
+             C 94 133 97 131 100 131 H 104
+             C 107 131 110 133 110 137
+             C 109 140 107 141 104 141 H 100
+             C 97 141 95 140 94 137 Z"
+          fill="#111" stroke="#111" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 97 135 H 107"
+          fill="none" stroke="#777" stroke-width="1"
+          stroke-linecap="round"/>
+  </g>
+
+  <text id="designation-footer" x="97" y="205" fill="#111" stroke="none" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" text-anchor="middle">S</text>
+</svg>
