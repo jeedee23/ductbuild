@@ -8,7 +8,12 @@ const state = {
 };
 
 const elements = {
+  pngImage: document.querySelector("#pngImage"),
+  pngMissing: document.querySelector("#pngMissing"),
   image: document.querySelector("#svgImage"),
+  svgPathGroup: document.querySelector("#svgPathGroup"),
+  svgPath: document.querySelector("#svgPath"),
+  copySvgPath: document.querySelector("#copySvgPathButton"),
   name: document.querySelector("#drawingName"),
   position: document.querySelector("#positionLabel"),
   previous: document.querySelector("#previousButton"),
@@ -149,8 +154,14 @@ function statusGlyph(status) {
 }
 
 function renderEmpty() {
+  elements.pngImage.removeAttribute("src");
+  elements.pngImage.alt = "";
+  elements.pngImage.hidden = true;
+  elements.pngMissing.hidden = false;
   elements.image.removeAttribute("src");
   elements.image.alt = "";
+  elements.svgPath.textContent = "";
+  elements.svgPathGroup.hidden = true;
   elements.name.textContent = "No drawings match this filter";
   elements.position.textContent = "0 / 0";
   elements.remark.value = "";
@@ -169,8 +180,21 @@ function showFile(file) {
   state.currentFile = file;
   const review = reviewFor(file);
 
+  if (item.png) {
+    elements.pngImage.src = encodeURI(item.png);
+    elements.pngImage.alt = `Original drawing ${item.name}`;
+    elements.pngImage.hidden = false;
+    elements.pngMissing.hidden = true;
+  } else {
+    elements.pngImage.removeAttribute("src");
+    elements.pngImage.alt = "";
+    elements.pngImage.hidden = true;
+    elements.pngMissing.hidden = false;
+  }
   elements.image.src = encodeURI(item.file);
   elements.image.alt = `Technical drawing ${item.name}`;
+  elements.svgPath.textContent = item.path;
+  elements.svgPathGroup.hidden = false;
   elements.name.textContent = item.name;
   elements.position.textContent = `${filteredIndex + 1} / ${state.filtered.length}`;
   elements.drawing.value = file;
@@ -319,6 +343,21 @@ function updateProgress() {
   elements.progressBar.style.width = `${percent}%`;
 }
 
+async function copySvgPath() {
+  const path = elements.svgPath.textContent;
+  if (!path) return;
+
+  try {
+    await navigator.clipboard.writeText(path);
+    elements.copySvgPath.textContent = "Copied";
+    setTimeout(() => {
+      elements.copySvgPath.textContent = "Copy path";
+    }, 1_500);
+  } catch (error) {
+    elements.saveStatus.textContent = `Could not copy the SVG path: ${error.message}`;
+  }
+}
+
 elements.previous.addEventListener("click", () => move(-1));
 elements.next.addEventListener("click", () => move(1));
 elements.search.addEventListener("input", () => applyFilters());
@@ -330,6 +369,7 @@ elements.pending.addEventListener("click", () => setStatus("pending"));
 elements.remark.addEventListener("input", () => persistRemark());
 elements.save.addEventListener("click", saveReviews);
 elements.exportButton.addEventListener("click", downloadReviews);
+elements.copySvgPath.addEventListener("click", copySvgPath);
 elements.importButton.addEventListener("click", () => elements.importInput.click());
 elements.importInput.addEventListener("change", () => {
   if (elements.importInput.files[0]) importReviews(elements.importInput.files[0]);

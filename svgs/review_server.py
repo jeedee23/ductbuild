@@ -8,9 +8,11 @@ from http import HTTPStatus
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any
+from urllib.parse import unquote, urlsplit
 
 
 ROOT = Path(__file__).resolve().parent
+PNG_ROOT = ROOT.parent / "pngs" / "originals"
 REVIEWS_PATH = ROOT / "reviews.json"
 HOST = "127.0.0.1"
 PORT = 8765
@@ -61,6 +63,9 @@ class ReviewHandler(SimpleHTTPRequestHandler):
         if self.path == "/api/reviews":
             self.send_json_file(REVIEWS_PATH)
             return
+        if urlsplit(self.path).path.startswith("/pngs/"):
+            self.send_png()
+            return
         super().do_GET()
 
     def do_PUT(self) -> None:
@@ -94,6 +99,24 @@ class ReviewHandler(SimpleHTTPRequestHandler):
         content = path.read_bytes()
         self.send_response(HTTPStatus.OK)
         self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(content)))
+        self.send_header("Cache-Control", "no-store")
+        self.end_headers()
+        self.wfile.write(content)
+
+    def send_png(self) -> None:
+        requested_name = Path(unquote(urlsplit(self.path).path)).name
+        path = (PNG_ROOT / requested_name).resolve()
+        if path.parent != PNG_ROOT.resolve() or path.suffix.lower() != ".png":
+            self.send_error(HTTPStatus.NOT_FOUND)
+            return
+        if not path.is_file():
+            self.send_error(HTTPStatus.NOT_FOUND)
+            return
+
+        content = path.read_bytes()
+        self.send_response(HTTPStatus.OK)
+        self.send_header("Content-Type", "image/png")
         self.send_header("Content-Length", str(len(content)))
         self.send_header("Cache-Control", "no-store")
         self.end_headers()
