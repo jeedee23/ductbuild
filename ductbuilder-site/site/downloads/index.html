@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Download verified AAVDS-duct-builder releases for Windows.">
+  <title>Downloads | AAVDS-duct-builder</title>
+  <link rel="icon" href="../assets/images/aavds-duct-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script src="../assets/js/releases.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../" aria-label="AAVDS-duct-builder home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>AAVDS-duct-builder</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a aria-current="page" href="./">Downloads</a>
+      <a href="#installation">Installation</a>
+    </nav>
+  </header>
+
+  <main class="download-main">
+    <section class="download-heading">
+      <p class="eyebrow">Private Windows pilot</p>
+      <h1>Downloads</h1>
+      <p>Signed installers are supplied only to approved pilot users after a personal request.</p>
+    </section>
+
+    <section class="release-panel" aria-labelledby="latest-release-title">
+      <div class="release-panel-heading">
+        <div>
+          <p class="section-number">Latest</p>
+          <h2 id="latest-release-title">Current release</h2>
+        </div>
+        <p class="release-status" data-latest-release aria-live="polite">Checking release information...</p>
+      </div>
+      <div class="download-list" data-download-list>
+        <p class="empty-state">No public download is available during the private pilot.</p>
+      </div>
+      <noscript>
+        <p>JavaScript is disabled. Contact the project owner to request the current signed installer.</p>
+      </noscript>
+    </section>
+
+    <section class="verification" aria-labelledby="verification-title">
+      <div>
+        <p class="section-number">Before installation</p>
+        <h2 id="verification-title">Verify the download</h2>
+      </div>
+      <ul>
+        <li>Use only an installer supplied directly by the project owner.</li>
+        <li>Confirm that Windows shows the expected verified publisher.</li>
+        <li>Compare the SHA-256 value with the published checksum file.</li>
+      </ul>
+    </section>
+
+    <section class="workflow" id="installation" aria-labelledby="installation-title">
+      <div>
+        <p class="section-number">Installation</p>
+        <h2 id="installation-title">Install on Windows</h2>
+      </div>
+      <ol>
+        <li><strong>Receive</strong><span>Use the complete installer ZIP and checksum supplied directly by the project owner.</span></li>
+        <li><strong>Verify</strong><span>Compare the ZIP's SHA-256 value with the supplied checksum before opening it.</span></li>
+        <li><strong>Extract</strong><span>Extract the complete ZIP to a local folder under Downloads or <code>C:\AAVDS</code>. Do not run setup from inside the ZIP.</span></li>
+        <li><strong>Install</strong><span>Double-click the AAVDS setup executable and choose whether to create a desktop shortcut. Administrator rights are not required.</span></li>
+        <li><strong>Start</strong><span>Open <strong>AAVDS-duct-builder</strong> from the Start menu. Projects are stored in <code>Documents\AAVDSProjects</code> and remain available after uninstalling.</span></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <span>Published by Johan Degraeve</span>
+    <a href="../">Back to overview</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,3182 @@
+{
+  "schema": "airkan.freecad.rules.v3",
+  "version": "3.2.0",
+  "units": "mm",
+  "catalogue_date": "2026-07-01",
+  "purpose": "BOM / coordination; not fabrication release",
+  "frame_rule": {
+    "threshold_mm": 1250,
+    "comparison": ">",
+    "default_profile": "E30",
+    "default_corner": "H30",
+    "large_profile": "A40",
+    "large_corner": "H40",
+    "scope": "each rectangular connection; unmodified purchased REG frame excluded",
+    "source": "explicit user decision 2026-09-23"
+  },
+  "sources": {
+    "rect": {
+      "filename": "airkan rechthoekige kanalen.pdf",
+      "sha256": "d990ff9ea61eff7023b4d960b2e76eb63f18719ec8206d683b51845dc88d1100"
+    },
+    "orders": {
+      "filename": "BestelbonnenAirkan.pdf",
+      "sha256": "1d091fec75e741fd3e7b5e8ef7e040261bcdad4b4f36d3394464325df39debe6"
+    },
+    "takeoff": {
+      "filename": "airkan rechthoekig-aftakkingen-soepel verbindingen-premontage.pdf",
+      "sha256": "7c3e60365930374054048340e52c4ce4691428fb0a78a3f2743596f70ec928f0"
+    },
+    "s": {
+      "filename": "airkan round spiral tubes.pdf",
+      "sha256": "889e149709013dfcba79d4473eabcf058f3cd8d782a1d8cd1bb817aa6a39008b"
+    },
+    "bs": {
+      "filename": "airkan segmentbochten.pdf",
+      "sha256": "98aee8141281ddfc8348150fca8258b27f7e60a78f7d6f20d45e33d0bfe4d527"
+    },
+    "reg": {
+      "filename": "airkan register dampers.pdf",
+      "sha256": "d5817de6aa1d1e601b878eade6c9834abd02f2b5b7d6e0748b07f4f37daac0ea"
+    },
+    "f": {
+      "filename": "airkan flenzen.pdf",
+      "sha256": "430f1f696656edd10b3684b9d896157fb3a2a5e95c07623fe287f0e0805cfb39"
+    },
+    "v": {
+      "filename": "airkan verbindingen buizen.pdf",
+      "sha256": "62ae421ebd6ee7871f25f71c7c78ac5b625e8bdcac73ce6307c1787e6d523053"
+    },
+    "flex": {
+      "filename": "airkan compensators.pdf",
+      "sha256": "14035c4fd2193c685d2e65823a5852274839700b55c6e0a627ff6eae8af67b3f"
+    },
+    "cover": {
+      "filename": "Aitkan rond deksels en condens.pdf",
+      "sha256": "e286224482a1ba7116e8fe4c3dd341341ea0055dc5b632151a5fd6f064be0463"
+    },
+    "roof": {
+      "filename": "dakdoorvoeren.pdf",
+      "sha256": "ede06af8483df2291697bcea05d9d5160a6e698f6d56ebea9b886d57a47cd9a3"
+    },
+    "acc": {
+      "filename": "Toebehoren airkan(1).pdf",
+      "sha256": "64844638c49ce6a39fca5e8fc5912c72ce358f8b1d0eff521619430984dd944d"
+    },
+    "pr": {
+      "filename": "rechthoekige aftakkingen op rond.pdf",
+      "sha256": "330bbf09ce6c10ff74e745b314d890c9a623b0b7bfbc1593b47a2b9856e6748a"
+    },
+    "ap": {
+      "filename": "airkan aftakken rond rond(1).pdf",
+      "sha256": "3efba6c7a5fc8fec7988ec15459b2a9a470833f24a677e04829bd38be5886b55"
+    },
+    "psa": {
+      "filename": "aftakkingen rond D80-82.pdf",
+      "sha256": "9b59bb68d005e414d6ac8d078418f436b5474b607738c00ddb0e252d4130927e"
+    },
+    "fire_grille": {
+      "filename": "Airkan roosters.pdf",
+      "sha256": "d0848a462ee58b8a4cd3ad666a384c3f7287f425b471a8425fe52eb3d00894ae"
+    }
+  },
+  "families": [
+    {
+      "id": "FRAME",
+      "label": "Los aansluitend kader",
+      "code": "FRAME",
+      "detail": "CONNECTION_EXACT",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "a_mm",
+          "label": "A: vrije binnenmaat X",
+          "kind": "number",
+          "default": 1000,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "b_mm",
+          "label": "B: vrije binnenmaat Y",
+          "kind": "number",
+          "default": 800,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "material",
+          "label": "Materiaal",
+          "kind": "choice",
+          "choices": [
+            "GALVA",
+            "INOX304",
+            "INOX316",
+            "ALMG3"
+          ],
+          "default": "GALVA",
+          "note": ""
+        },
+        {
+          "key": "airtightness_class",
+          "label": "Gevraagde klasse",
+          "kind": "choice",
+          "choices": [
+            "B",
+            "C",
+            "NIET_OPGEGEVEN"
+          ],
+          "default": "B",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "acc",
+          "pdf_page": 19,
+          "catalogue_page": 187
+        },
+        {
+          "source_id": "acc",
+          "pdf_page": 20,
+          "catalogue_page": 188
+        }
+      ],
+      "notes": "Originele makeframe_v2: vier profielen en vier hoeken, geen terugstand. Niet gewijzigd.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "BU",
+      "label": "Rechthoekige rechte duct",
+      "code": "BU",
+      "detail": "DUCT_GEOMETRY",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "a_mm",
+          "label": "A: vrije binnenmaat X",
+          "kind": "number",
+          "default": 1000,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "b_mm",
+          "label": "B: vrije binnenmaat Y",
+          "kind": "number",
+          "default": 800,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "length_mm",
+          "label": "Lengte L",
+          "kind": "number",
+          "default": 1000,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "length_basis",
+          "label": "L gemeten tussen",
+          "kind": "choice",
+          "choices": [
+            "FLENSVLAKKEN",
+            "PROFIELINVOER"
+          ],
+          "default": "FLENSVLAKKEN",
+          "note": ""
+        },
+        {
+          "key": "frames",
+          "label": "Aansluitkaders",
+          "kind": "choice",
+          "choices": [
+            "PROJECT_AUTO",
+            "GEEN"
+          ],
+          "default": "PROJECT_AUTO",
+          "note": "E30/H30 t/m 1250; A40/H40 zodra een aansluitmaat >1250. Per aansluiting bepaald."
+        },
+        {
+          "key": "thickness_mode",
+          "label": "Plaatdiktebasis",
+          "kind": "choice",
+          "choices": [
+            "HANDMATIG",
+            "AIRKAN_BC"
+          ],
+          "default": "HANDMATIG",
+          "note": ""
+        },
+        {
+          "key": "t_mm",
+          "label": "Plaatdikte kanaal (niet profiel)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 10,
+          "unit": "mm",
+          "note": "0 = nog niet opgegeven; vul een echte dikte in of gebruik expliciet de B/C-tabel."
+        },
+        {
+          "key": "airkan_a_mm",
+          "label": "Selectiemaat A voor B/C-tabel (apart)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": "Geen automatische gelijkstelling aan X, Y of max(X,Y)."
+        },
+        {
+          "key": "insertion_mode",
+          "label": "Plaat aan kader",
+          "kind": "choice",
+          "choices": [
+            "BOM_REFERENTIE",
+            "HANDMATIGE_INSTEEK"
+          ],
+          "default": "BOM_REFERENTIE",
+          "note": ""
+        },
+        {
+          "key": "insertion_mm",
+          "label": "Handmatige axiale insteek",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 36,
+          "unit": "mm",
+          "note": "BOM_REFERENTIE stopt aan profielinvoer. Geen gevalideerde opnamepassing. Handmatige insteek wordt op clash gecontroleerd."
+        },
+        {
+          "key": "material",
+          "label": "Materiaal",
+          "kind": "choice",
+          "choices": [
+            "GALVA",
+            "INOX304",
+            "INOX316",
+            "ALMG3"
+          ],
+          "default": "GALVA",
+          "note": ""
+        },
+        {
+          "key": "airtightness_class",
+          "label": "Gevraagde klasse",
+          "kind": "choice",
+          "choices": [
+            "B",
+            "C",
+            "NIET_OPGEGEVEN"
+          ],
+          "default": "B",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "rect",
+          "pdf_page": 11,
+          "catalogue_page": 152
+        },
+        {
+          "source_id": "rect",
+          "pdf_page": 7,
+          "catalogue_page": 148
+        },
+        {
+          "source_id": "orders",
+          "pdf_page": 2,
+          "catalogue_page": null
+        }
+      ],
+      "notes": "L-basis expliciet; catalogus-/bestellengte = flensvlak tot flensvlak. Geen langsnaad of verstijvingsplooien.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "BEND_RECT",
+      "label": "Rechthoekige bocht 15-125 graden",
+      "code": "B90 / Balpha",
+      "detail": "DUCT_GEOMETRY",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "a_mm",
+          "label": "A: vrije binnenmaat X",
+          "kind": "number",
+          "default": 1000,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "b_mm",
+          "label": "B: vrije binnenmaat Y",
+          "kind": "number",
+          "default": 800,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "angle_deg",
+          "label": "Afbuighoek",
+          "kind": "number",
+          "default": 90,
+          "minimum": 15,
+          "maximum": 125,
+          "unit": "graden",
+          "note": ""
+        },
+        {
+          "key": "radius_mm",
+          "label": "Binnenradius vrije luchtweg",
+          "kind": "number",
+          "default": 150,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "straight_in_mm",
+          "label": "Recht voor boog vanaf profielinvoer",
+          "kind": "number",
+          "default": 50,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "straight_out_mm",
+          "label": "Recht na boog tot profielinvoer",
+          "kind": "number",
+          "default": 50,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "turn",
+          "label": "Bochtrichting in XZ",
+          "kind": "choice",
+          "choices": [
+            "RECHTS",
+            "LINKS"
+          ],
+          "default": "RECHTS",
+          "note": ""
+        },
+        {
+          "key": "frames",
+          "label": "Aansluitkaders",
+          "kind": "choice",
+          "choices": [
+            "PROJECT_AUTO",
+            "GEEN"
+          ],
+          "default": "PROJECT_AUTO",
+          "note": "E30/H30 t/m 1250; A40/H40 zodra een aansluitmaat >1250. Per aansluiting bepaald."
+        },
+        {
+          "key": "thickness_mode",
+          "label": "Plaatdiktebasis",
+          "kind": "choice",
+          "choices": [
+            "HANDMATIG",
+            "AIRKAN_BC"
+          ],
+          "default": "HANDMATIG",
+          "note": ""
+        },
+        {
+          "key": "t_mm",
+          "label": "Plaatdikte kanaal (niet profiel)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 10,
+          "unit": "mm",
+          "note": "0 = nog niet opgegeven; vul een echte dikte in of gebruik expliciet de B/C-tabel."
+        },
+        {
+          "key": "airkan_a_mm",
+          "label": "Selectiemaat A voor B/C-tabel (apart)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": "Geen automatische gelijkstelling aan X, Y of max(X,Y)."
+        },
+        {
+          "key": "insertion_mode",
+          "label": "Plaat aan kader",
+          "kind": "choice",
+          "choices": [
+            "BOM_REFERENTIE",
+            "HANDMATIGE_INSTEEK"
+          ],
+          "default": "BOM_REFERENTIE",
+          "note": ""
+        },
+        {
+          "key": "insertion_mm",
+          "label": "Handmatige axiale insteek",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 36,
+          "unit": "mm",
+          "note": "BOM_REFERENTIE stopt aan profielinvoer. Geen gevalideerde opnamepassing. Handmatige insteek wordt op clash gecontroleerd."
+        },
+        {
+          "key": "material",
+          "label": "Materiaal",
+          "kind": "choice",
+          "choices": [
+            "GALVA",
+            "INOX304",
+            "INOX316",
+            "ALMG3"
+          ],
+          "default": "GALVA",
+          "note": ""
+        },
+        {
+          "key": "airtightness_class",
+          "label": "Gevraagde klasse",
+          "kind": "choice",
+          "choices": [
+            "B",
+            "C",
+            "NIET_OPGEGEVEN"
+          ],
+          "default": "B",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "rect",
+          "pdf_page": 12,
+          "catalogue_page": 153
+        },
+        {
+          "source_id": "rect",
+          "pdf_page": 14,
+          "catalogue_page": 155
+        },
+        {
+          "source_id": "orders",
+          "pdf_page": 5,
+          "catalogue_page": null
+        }
+      ],
+      "notes": "A ligt IN het bochtvlak XZ; B staat LOODRECHT daarop. Tangentiele revolve, geen reductie in de boog. R-referentie en 50 mm vanaf invoer zijn expliciete modelconventies.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "REDUCER_RECT",
+      "label": "Rechthoekige transfo / reductie",
+      "code": "R1 / RC1 / R / RC / R2 / RC2",
+      "detail": "DUCT_GEOMETRY",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "a_mm",
+          "label": "A: vrije binnenmaat X",
+          "kind": "number",
+          "default": 1000,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "b_mm",
+          "label": "B: vrije binnenmaat Y",
+          "kind": "number",
+          "default": 800,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "c_mm",
+          "label": "C: vrije binnenmaat X aan uitgang",
+          "kind": "number",
+          "default": 800,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "d_mm",
+          "label": "D: vrije binnenmaat Y aan uitgang",
+          "kind": "number",
+          "default": 600,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "length_mm",
+          "label": "Lengte L",
+          "kind": "number",
+          "default": 1000,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "variant",
+          "label": "Uitvoering",
+          "kind": "choice",
+          "choices": [
+            "RC",
+            "R",
+            "R1",
+            "RC1",
+            "R2",
+            "RC2"
+          ],
+          "default": "RC",
+          "note": ""
+        },
+        {
+          "key": "e_mm",
+          "label": "E: X-offset linker rand uitgang",
+          "kind": "number",
+          "default": 100,
+          "minimum": -20000,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "f_mm",
+          "label": "F: Y-offset onderrand uitgang",
+          "kind": "number",
+          "default": 100,
+          "minimum": -20000,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "straight_in_mm",
+          "label": "Recht vanaf profielinvoer",
+          "kind": "number",
+          "default": 50,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "straight_out_mm",
+          "label": "Recht tot profielinvoer",
+          "kind": "number",
+          "default": 50,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "frames",
+          "label": "Aansluitkaders",
+          "kind": "choice",
+          "choices": [
+            "PROJECT_AUTO",
+            "GEEN"
+          ],
+          "default": "PROJECT_AUTO",
+          "note": "E30/H30 t/m 1250; A40/H40 zodra een aansluitmaat >1250. Per aansluiting bepaald."
+        },
+        {
+          "key": "thickness_mode",
+          "label": "Plaatdiktebasis",
+          "kind": "choice",
+          "choices": [
+            "HANDMATIG",
+            "AIRKAN_BC"
+          ],
+          "default": "HANDMATIG",
+          "note": ""
+        },
+        {
+          "key": "t_mm",
+          "label": "Plaatdikte kanaal (niet profiel)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 10,
+          "unit": "mm",
+          "note": "0 = nog niet opgegeven; vul een echte dikte in of gebruik expliciet de B/C-tabel."
+        },
+        {
+          "key": "airkan_a_mm",
+          "label": "Selectiemaat A voor B/C-tabel (apart)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": "Geen automatische gelijkstelling aan X, Y of max(X,Y)."
+        },
+        {
+          "key": "insertion_mode",
+          "label": "Plaat aan kader",
+          "kind": "choice",
+          "choices": [
+            "BOM_REFERENTIE",
+            "HANDMATIGE_INSTEEK"
+          ],
+          "default": "BOM_REFERENTIE",
+          "note": ""
+        },
+        {
+          "key": "insertion_mm",
+          "label": "Handmatige axiale insteek",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 36,
+          "unit": "mm",
+          "note": "BOM_REFERENTIE stopt aan profielinvoer. Geen gevalideerde opnamepassing. Handmatige insteek wordt op clash gecontroleerd."
+        },
+        {
+          "key": "material",
+          "label": "Materiaal",
+          "kind": "choice",
+          "choices": [
+            "GALVA",
+            "INOX304",
+            "INOX316",
+            "ALMG3"
+          ],
+          "default": "GALVA",
+          "note": ""
+        },
+        {
+          "key": "airtightness_class",
+          "label": "Gevraagde klasse",
+          "kind": "choice",
+          "choices": [
+            "B",
+            "C",
+            "NIET_OPGEGEVEN"
+          ],
+          "default": "B",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "rect",
+          "pdf_page": 15,
+          "catalogue_page": 156
+        },
+        {
+          "source_id": "orders",
+          "pdf_page": 6,
+          "catalogue_page": null
+        }
+      ],
+      "notes": "E/F zijn rand-offsets, geen hartlijn-offsets. R: E=0; R1: E=0,F=B-D; R2: E=F=0; RC1: F=B-D; RC2: F=0; RC: E/F vrij. L is tussen flensvlakken. Taperwanddikte is een sectie-offset, niet de normale plaatdikte op schuine vlakken (BOM-model).",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "VER",
+      "label": "Verspringend rechthoekig verloop",
+      "code": "VER",
+      "detail": "DUCT_GEOMETRY",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "a_mm",
+          "label": "A: vrije binnenmaat X",
+          "kind": "number",
+          "default": 1000,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "b_mm",
+          "label": "B: vrije binnenmaat Y",
+          "kind": "number",
+          "default": 800,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "length_mm",
+          "label": "Lengte L",
+          "kind": "number",
+          "default": 1000,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "offset_x_mm",
+          "label": "Hartlijnverschuiving X",
+          "kind": "number",
+          "default": 300,
+          "minimum": -20000,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "offset_y_mm",
+          "label": "Hartlijnverschuiving Y",
+          "kind": "number",
+          "default": 0,
+          "minimum": -20000,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "straight_in_mm",
+          "label": "Recht vanaf profielinvoer",
+          "kind": "number",
+          "default": 50,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "straight_out_mm",
+          "label": "Recht tot profielinvoer",
+          "kind": "number",
+          "default": 50,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "frames",
+          "label": "Aansluitkaders",
+          "kind": "choice",
+          "choices": [
+            "PROJECT_AUTO",
+            "GEEN"
+          ],
+          "default": "PROJECT_AUTO",
+          "note": "E30/H30 t/m 1250; A40/H40 zodra een aansluitmaat >1250. Per aansluiting bepaald."
+        },
+        {
+          "key": "thickness_mode",
+          "label": "Plaatdiktebasis",
+          "kind": "choice",
+          "choices": [
+            "HANDMATIG",
+            "AIRKAN_BC"
+          ],
+          "default": "HANDMATIG",
+          "note": ""
+        },
+        {
+          "key": "t_mm",
+          "label": "Plaatdikte kanaal (niet profiel)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 10,
+          "unit": "mm",
+          "note": "0 = nog niet opgegeven; vul een echte dikte in of gebruik expliciet de B/C-tabel."
+        },
+        {
+          "key": "airkan_a_mm",
+          "label": "Selectiemaat A voor B/C-tabel (apart)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": "Geen automatische gelijkstelling aan X, Y of max(X,Y)."
+        },
+        {
+          "key": "insertion_mode",
+          "label": "Plaat aan kader",
+          "kind": "choice",
+          "choices": [
+            "BOM_REFERENTIE",
+            "HANDMATIGE_INSTEEK"
+          ],
+          "default": "BOM_REFERENTIE",
+          "note": ""
+        },
+        {
+          "key": "insertion_mm",
+          "label": "Handmatige axiale insteek",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 36,
+          "unit": "mm",
+          "note": "BOM_REFERENTIE stopt aan profielinvoer. Geen gevalideerde opnamepassing. Handmatige insteek wordt op clash gecontroleerd."
+        },
+        {
+          "key": "material",
+          "label": "Materiaal",
+          "kind": "choice",
+          "choices": [
+            "GALVA",
+            "INOX304",
+            "INOX316",
+            "ALMG3"
+          ],
+          "default": "GALVA",
+          "note": ""
+        },
+        {
+          "key": "airtightness_class",
+          "label": "Gevraagde klasse",
+          "kind": "choice",
+          "choices": [
+            "B",
+            "C",
+            "NIET_OPGEGEVEN"
+          ],
+          "default": "B",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "rect",
+          "pdf_page": 14,
+          "catalogue_page": 155
+        },
+        {
+          "source_id": "orders",
+          "pdf_page": 7,
+          "catalogue_page": null
+        }
+      ],
+      "notes": "Twee parallelle aansluitingen; dit is GEEN Balpha-bocht. Sectie-offsetwanddikte op schuine vlakken.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "RECT_ROUND",
+      "label": "Rechthoek naar rond",
+      "code": "VR / VRA / VRAA",
+      "detail": "DUCT_GEOMETRY",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "a_mm",
+          "label": "A: vrije binnenmaat X",
+          "kind": "number",
+          "default": 1000,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "b_mm",
+          "label": "B: vrije binnenmaat Y",
+          "kind": "number",
+          "default": 800,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "diameter_mm",
+          "label": "Nominale diameter / vrije ID bij S",
+          "kind": "number",
+          "default": 900,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "length_mm",
+          "label": "Lengte L",
+          "kind": "number",
+          "default": 1000,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "variant",
+          "label": "Uitvoering",
+          "kind": "choice",
+          "choices": [
+            "VR",
+            "VRA",
+            "VRAA"
+          ],
+          "default": "VR",
+          "note": ""
+        },
+        {
+          "key": "offset_x_mm",
+          "label": "Ronde as t.o.v. rechthoekcentrum X",
+          "kind": "number",
+          "default": 0,
+          "minimum": -20000,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "offset_y_mm",
+          "label": "Ronde as t.o.v. rechthoekcentrum Y",
+          "kind": "number",
+          "default": 0,
+          "minimum": -20000,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "straight_in_mm",
+          "label": "Recht vanaf rechthoekige profielinvoer",
+          "kind": "number",
+          "default": 50,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "straight_out_mm",
+          "label": "Ronde rechte aansluitlengte",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": "Verplicht bevestigen: tekening- en bestelbonreferenties zijn niet gelijk. 0 geeft geen ronde rechte stub."
+        },
+        {
+          "key": "frames",
+          "label": "Aansluitkaders",
+          "kind": "choice",
+          "choices": [
+            "PROJECT_AUTO",
+            "GEEN"
+          ],
+          "default": "PROJECT_AUTO",
+          "note": "E30/H30 t/m 1250; A40/H40 zodra een aansluitmaat >1250. Per aansluiting bepaald."
+        },
+        {
+          "key": "thickness_mode",
+          "label": "Plaatdiktebasis",
+          "kind": "choice",
+          "choices": [
+            "HANDMATIG",
+            "AIRKAN_BC"
+          ],
+          "default": "HANDMATIG",
+          "note": ""
+        },
+        {
+          "key": "t_mm",
+          "label": "Plaatdikte kanaal (niet profiel)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 10,
+          "unit": "mm",
+          "note": "0 = nog niet opgegeven; vul een echte dikte in of gebruik expliciet de B/C-tabel."
+        },
+        {
+          "key": "airkan_a_mm",
+          "label": "Selectiemaat A voor B/C-tabel (apart)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": "Geen automatische gelijkstelling aan X, Y of max(X,Y)."
+        },
+        {
+          "key": "insertion_mode",
+          "label": "Plaat aan kader",
+          "kind": "choice",
+          "choices": [
+            "BOM_REFERENTIE",
+            "HANDMATIGE_INSTEEK"
+          ],
+          "default": "BOM_REFERENTIE",
+          "note": ""
+        },
+        {
+          "key": "insertion_mm",
+          "label": "Handmatige axiale insteek",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 36,
+          "unit": "mm",
+          "note": "BOM_REFERENTIE stopt aan profielinvoer. Geen gevalideerde opnamepassing. Handmatige insteek wordt op clash gecontroleerd."
+        },
+        {
+          "key": "material",
+          "label": "Materiaal",
+          "kind": "choice",
+          "choices": [
+            "GALVA",
+            "INOX304",
+            "INOX316",
+            "ALMG3"
+          ],
+          "default": "GALVA",
+          "note": ""
+        },
+        {
+          "key": "airtightness_class",
+          "label": "Gevraagde klasse",
+          "kind": "choice",
+          "choices": [
+            "B",
+            "C",
+            "NIET_OPGEGEVEN"
+          ],
+          "default": "B",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "rect",
+          "pdf_page": 17,
+          "catalogue_page": 158
+        },
+        {
+          "source_id": "orders",
+          "pdf_page": 9,
+          "catalogue_page": null
+        }
+      ],
+      "notes": "VR gecentreerd; VRA een offset-as; VRAA twee offset-assen. Gladde holle loft, geen uitslag of plaatontwikkelingen. Rondnominaal als vrije ID gemodelleerd; fittingtolerantie niet bekend.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "TEE_RECT",
+      "label": "Rechthoekig T-stuk, rechte hoofdsectie",
+      "code": "T (projectgeometrie)",
+      "detail": "DUCT_GEOMETRY",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "a_mm",
+          "label": "A: vrije binnenmaat X",
+          "kind": "number",
+          "default": 1000,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "b_mm",
+          "label": "B: vrije binnenmaat Y",
+          "kind": "number",
+          "default": 800,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "length_mm",
+          "label": "Lengte L",
+          "kind": "number",
+          "default": 1800,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "branch_a_mm",
+          "label": "Aftakking vrije maat in XZ",
+          "kind": "number",
+          "default": 500,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "branch_length_mm",
+          "label": "Aftakking: vrije hoogte boven hoofdwand",
+          "kind": "number",
+          "default": 400,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "branch_z_mm",
+          "label": "Hart aftakking vanaf inlaatflens",
+          "kind": "number",
+          "default": 900,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "shoulder_radius_mm",
+          "label": "Inwendige schouderradius",
+          "kind": "number",
+          "default": 150,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "frames",
+          "label": "Aansluitkaders",
+          "kind": "choice",
+          "choices": [
+            "PROJECT_AUTO",
+            "GEEN"
+          ],
+          "default": "PROJECT_AUTO",
+          "note": "E30/H30 t/m 1250; A40/H40 zodra een aansluitmaat >1250. Per aansluiting bepaald."
+        },
+        {
+          "key": "thickness_mode",
+          "label": "Plaatdiktebasis",
+          "kind": "choice",
+          "choices": [
+            "HANDMATIG",
+            "AIRKAN_BC"
+          ],
+          "default": "HANDMATIG",
+          "note": ""
+        },
+        {
+          "key": "t_mm",
+          "label": "Plaatdikte kanaal (niet profiel)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 10,
+          "unit": "mm",
+          "note": "0 = nog niet opgegeven; vul een echte dikte in of gebruik expliciet de B/C-tabel."
+        },
+        {
+          "key": "airkan_a_mm",
+          "label": "Selectiemaat A voor B/C-tabel (apart)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": "Geen automatische gelijkstelling aan X, Y of max(X,Y)."
+        },
+        {
+          "key": "insertion_mode",
+          "label": "Plaat aan kader",
+          "kind": "choice",
+          "choices": [
+            "BOM_REFERENTIE",
+            "HANDMATIGE_INSTEEK"
+          ],
+          "default": "BOM_REFERENTIE",
+          "note": ""
+        },
+        {
+          "key": "insertion_mm",
+          "label": "Handmatige axiale insteek",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 36,
+          "unit": "mm",
+          "note": "BOM_REFERENTIE stopt aan profielinvoer. Geen gevalideerde opnamepassing. Handmatige insteek wordt op clash gecontroleerd."
+        },
+        {
+          "key": "material",
+          "label": "Materiaal",
+          "kind": "choice",
+          "choices": [
+            "GALVA",
+            "INOX304",
+            "INOX316",
+            "ALMG3"
+          ],
+          "default": "GALVA",
+          "note": ""
+        },
+        {
+          "key": "airtightness_class",
+          "label": "Gevraagde klasse",
+          "kind": "choice",
+          "choices": [
+            "B",
+            "C",
+            "NIET_OPGEGEVEN"
+          ],
+          "default": "B",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "rect",
+          "pdf_page": 16,
+          "catalogue_page": 157
+        },
+        {
+          "source_id": "orders",
+          "pdf_page": 8,
+          "catalogue_page": null
+        }
+      ],
+      "notes": "Beperkte T-uitvoering: gelijke hoofdsecties, aftakking in +X, gemeenschappelijke diepte B, 90 graden. Niet de volledige T/Talpha-variantentabel. Eigen technische naam; bestelcode niet als volledig bevestigd voorgesteld.",
+      "naming_status": "PROJECT_GEOMETRY"
+    },
+    {
+      "id": "TAKEOFF_RECT",
+      "label": "Rechthoekige aftakking P",
+      "code": "P / P.BI / P.45",
+      "detail": "DUCT_GEOMETRY",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "a_mm",
+          "label": "A: vrije binnenmaat X",
+          "kind": "number",
+          "default": 1000,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "b_mm",
+          "label": "B: vrije binnenmaat Y",
+          "kind": "number",
+          "default": 800,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "length_mm",
+          "label": "L: montagevlak tot aansluitflens",
+          "kind": "number",
+          "default": 150,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "variant",
+          "label": "Uitvoering",
+          "kind": "choice",
+          "choices": [
+            "P",
+            "P.BI",
+            "P.45"
+          ],
+          "default": "P",
+          "note": ""
+        },
+        {
+          "key": "frames",
+          "label": "Aansluitkaders",
+          "kind": "choice",
+          "choices": [
+            "PROJECT_AUTO",
+            "GEEN"
+          ],
+          "default": "PROJECT_AUTO",
+          "note": "E30/H30 t/m 1250; A40/H40 zodra een aansluitmaat >1250. Per aansluiting bepaald."
+        },
+        {
+          "key": "thickness_mode",
+          "label": "Plaatdiktebasis",
+          "kind": "choice",
+          "choices": [
+            "HANDMATIG",
+            "AIRKAN_BC"
+          ],
+          "default": "HANDMATIG",
+          "note": ""
+        },
+        {
+          "key": "t_mm",
+          "label": "Plaatdikte kanaal (niet profiel)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 10,
+          "unit": "mm",
+          "note": "0 = nog niet opgegeven; vul een echte dikte in of gebruik expliciet de B/C-tabel."
+        },
+        {
+          "key": "airkan_a_mm",
+          "label": "Selectiemaat A voor B/C-tabel (apart)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": "Geen automatische gelijkstelling aan X, Y of max(X,Y)."
+        },
+        {
+          "key": "insertion_mode",
+          "label": "Plaat aan kader",
+          "kind": "choice",
+          "choices": [
+            "BOM_REFERENTIE",
+            "HANDMATIGE_INSTEEK"
+          ],
+          "default": "BOM_REFERENTIE",
+          "note": ""
+        },
+        {
+          "key": "insertion_mm",
+          "label": "Handmatige axiale insteek",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 36,
+          "unit": "mm",
+          "note": "BOM_REFERENTIE stopt aan profielinvoer. Geen gevalideerde opnamepassing. Handmatige insteek wordt op clash gecontroleerd."
+        },
+        {
+          "key": "material",
+          "label": "Materiaal",
+          "kind": "choice",
+          "choices": [
+            "GALVA",
+            "INOX304",
+            "INOX316",
+            "ALMG3"
+          ],
+          "default": "GALVA",
+          "note": ""
+        },
+        {
+          "key": "airtightness_class",
+          "label": "Gevraagde klasse",
+          "kind": "choice",
+          "choices": [
+            "B",
+            "C",
+            "NIET_OPGEGEVEN"
+          ],
+          "default": "B",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "takeoff",
+          "pdf_page": 1,
+          "catalogue_page": 161
+        }
+      ],
+      "notes": "25 mm montageomslag. P.BI: 20 mm binnenomslag; geen extra kader. P.45: een 45-graden verbrede wand, bovenste aansluiting blijft recht. Gastkanaal niet meegeleverd.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "S",
+      "label": "Ronde spiraalbuis, glad BOM-model",
+      "code": "S",
+      "detail": "DUCT_GEOMETRY",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "diameter_mm",
+          "label": "Nominale diameter / vrije ID bij S",
+          "kind": "number",
+          "default": 900,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "length_mm",
+          "label": "Lengte L",
+          "kind": "number",
+          "default": 1000,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "thickness_mode",
+          "label": "Plaatdiktebasis",
+          "kind": "choice",
+          "choices": [
+            "S_STANDAARD",
+            "HANDMATIG"
+          ],
+          "default": "S_STANDAARD",
+          "note": ""
+        },
+        {
+          "key": "t_mm",
+          "label": "Plaatdikte kanaal (niet profiel)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 10,
+          "unit": "mm",
+          "note": "0 = nog niet opgegeven; vul een echte dikte in of gebruik expliciet de B/C-tabel."
+        },
+        {
+          "key": "material",
+          "label": "Materiaal",
+          "kind": "choice",
+          "choices": [
+            "GALVA",
+            "INOX304",
+            "INOX316",
+            "ALMG3"
+          ],
+          "default": "GALVA",
+          "note": ""
+        },
+        {
+          "key": "airtightness_class",
+          "label": "Gevraagde klasse",
+          "kind": "choice",
+          "choices": [
+            "B",
+            "C",
+            "NIET_OPGEGEVEN"
+          ],
+          "default": "B",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "s",
+          "pdf_page": 1,
+          "catalogue_page": 12
+        },
+        {
+          "source_id": "orders",
+          "pdf_page": 1,
+          "catalogue_page": null
+        }
+      ],
+      "notes": "Diameter is vrije binnenmaat. Spiraalnaad niet gemodelleerd. L is fysieke zaaglengte.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "BEND_ROUND",
+      "label": "Ronde gesegmenteerde bocht",
+      "code": "BS9X / B6X / BS4X / B3X / B15X",
+      "detail": "DUCT_GEOMETRY",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "diameter_mm",
+          "label": "Nominale diameter / vrije ID bij S",
+          "kind": "number",
+          "default": 900,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "variant",
+          "label": "Hoekfamilie",
+          "kind": "choice",
+          "choices": [
+            "BS9X",
+            "B6X",
+            "BS4X",
+            "B3X",
+            "B15X"
+          ],
+          "default": "BS9X",
+          "note": ""
+        },
+        {
+          "key": "radius_mm",
+          "label": "Hartlijnradius (0 = brontabel)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "segments",
+          "label": "Aantal rechte segmenten",
+          "kind": "number",
+          "default": 5,
+          "minimum": 2,
+          "maximum": 25,
+          "unit": "stuks",
+          "note": ""
+        },
+        {
+          "key": "straight_in_mm",
+          "label": "Extra rechte inlaat",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "straight_out_mm",
+          "label": "Extra rechte uitlaat",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "t_mm",
+          "label": "Plaatdikte kanaal (niet profiel)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 10,
+          "unit": "mm",
+          "note": "0 = nog niet opgegeven; vul een echte dikte in of gebruik expliciet de B/C-tabel."
+        },
+        {
+          "key": "material",
+          "label": "Materiaal",
+          "kind": "choice",
+          "choices": [
+            "GALVA",
+            "INOX304",
+            "INOX316",
+            "ALMG3"
+          ],
+          "default": "GALVA",
+          "note": ""
+        },
+        {
+          "key": "airtightness_class",
+          "label": "Gevraagde klasse",
+          "kind": "choice",
+          "choices": [
+            "B",
+            "C",
+            "NIET_OPGEGEVEN"
+          ],
+          "default": "B",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "bs",
+          "pdf_page": 1,
+          "catalogue_page": 96
+        }
+      ],
+      "notes": "Werkelijk verstek-geknipte cilindersegmenten; geen gladde torus. Segmentenaantal en eindinsteek zijn projectinputs, niet automatisch uit een plaatje gecertificeerd. R=1D (100-630); R=0.75D (710-1500).",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "REG",
+      "label": "Registerklep: een Body",
+      "code": "REG / REGH",
+      "detail": "BOM_SIMPLIFIED",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "a_mm",
+          "label": "A: vrije binnenmaat X",
+          "kind": "number",
+          "default": 1000,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "b_mm",
+          "label": "B: vrije binnenmaat Y",
+          "kind": "number",
+          "default": 800,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "variant",
+          "label": "Bediening",
+          "kind": "choice",
+          "choices": [
+            "REG",
+            "REGH"
+          ],
+          "default": "REG",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "reg",
+          "pdf_page": 1,
+          "catalogue_page": 164
+        }
+      ],
+      "notes": "Een holle omhullings-Body: 120 mm diep, 30 mm rand. Geen lamellen, assen, tandwielen of actuator. Geen massaberekening. Bestelvolgorde H-B = B-A in deze X/Y-notatie.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "SL_RECT",
+      "label": "Rechthoekige soepele mouw: een Body",
+      "code": "SL.E30 / SL.A40",
+      "detail": "BOM_SIMPLIFIED",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "a_mm",
+          "label": "A: vrije binnenmaat X",
+          "kind": "number",
+          "default": 1000,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "b_mm",
+          "label": "B: vrije binnenmaat Y",
+          "kind": "number",
+          "default": 800,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "length_mm",
+          "label": "Gemonteerde lengte L",
+          "kind": "number",
+          "default": 110,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "visual_wall_mm",
+          "label": "Visuele wand (geen materiaalgegeven)",
+          "kind": "number",
+          "default": 1,
+          "minimum": 0.1,
+          "maximum": 10,
+          "unit": "mm",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "takeoff",
+          "pdf_page": 3,
+          "catalogue_page": 163
+        }
+      ],
+      "notes": "Een Body inclusief vereenvoudigde kaderomhullingen. Visuele wand is geen constructiedikte of massa. Projectprofiel automatisch.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "FLEX_ROUND",
+      "label": "Ronde soepele verbinding: een Body",
+      "code": "SS / SL / SM / SB",
+      "detail": "BOM_SIMPLIFIED",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "diameter_mm",
+          "label": "Nominale diameter / vrije ID bij S",
+          "kind": "number",
+          "default": 900,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "variant",
+          "label": "Type",
+          "kind": "choice",
+          "choices": [
+            "SL",
+            "SS",
+            "SM",
+            "SB"
+          ],
+          "default": "SL",
+          "note": ""
+        },
+        {
+          "key": "length_mm",
+          "label": "Bevestigde totale montagelengte",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "outer_diameter_mm",
+          "label": "Bevestigde buitenmaat omhulling",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "flex",
+          "pdf_page": 1,
+          "catalogue_page": 30
+        }
+      ],
+      "notes": "Hol cilindrisch omhullingsmodel; geen rubberplooien, bouten of spanbanddetails. Geef werkelijke totale buitenmaat en gemonteerde lengte in.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "CONNECTOR_ROUND",
+      "label": "Rond verbindingsstuk",
+      "code": "V / VF / VL / VLB / VT",
+      "detail": "BOM_SIMPLIFIED",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "diameter_mm",
+          "label": "Nominale diameter / vrije ID bij S",
+          "kind": "number",
+          "default": 900,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "variant",
+          "label": "Type",
+          "kind": "choice",
+          "choices": [
+            "V",
+            "VF",
+            "VL",
+            "VLB",
+            "VT"
+          ],
+          "default": "V",
+          "note": ""
+        },
+        {
+          "key": "length_mm",
+          "label": "Werkelijke totale lengte",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "actual_id_mm",
+          "label": "Werkelijke vrije binnendiameter",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "actual_od_mm",
+          "label": "Werkelijke buitendiameter",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "v",
+          "pdf_page": 1,
+          "catalogue_page": 27
+        }
+      ],
+      "notes": "Nominale code en werkelijke pasdiameters zijn apart. Geen verzonnen passing; ril/naad niet gemodelleerd.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "FLANGE_ROUND",
+      "label": "Ronde F-flens met sleufgaten",
+      "code": "F",
+      "detail": "CONNECTION_EXACT",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "diameter_mm",
+          "label": "Nominale diameter / vrije ID bij S",
+          "kind": "number",
+          "default": 900,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "pitch_override_mm",
+          "label": "Steekcirkel correctie (0 = tabel)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "hole_clock_deg",
+          "label": "Klokstand gatenpatroon",
+          "kind": "number",
+          "default": 0,
+          "minimum": -360,
+          "maximum": 360,
+          "unit": "graden",
+          "note": ""
+        },
+        {
+          "key": "material",
+          "label": "Materiaal",
+          "kind": "choice",
+          "choices": [
+            "GALVA",
+            "INOX304",
+            "INOX316",
+            "ALMG3"
+          ],
+          "default": "GALVA",
+          "note": ""
+        },
+        {
+          "key": "airtightness_class",
+          "label": "Gevraagde klasse",
+          "kind": "choice",
+          "choices": [
+            "B",
+            "C",
+            "NIET_OPGEGEVEN"
+          ],
+          "default": "B",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "f",
+          "pdf_page": 1,
+          "catalogue_page": 28
+        }
+      ],
+      "notes": "Tabelgestuurde ring, dikte en sleufgaten. Rij diameter250 bevat onmogelijke steekcirkel586: zonder expliciete correctie geen bouw. Sleuven tangentiale modelorientatie.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "COVER_ROUND",
+      "label": "Rond deksel / tralie: een Body",
+      "code": "D / DF / DG / DFG / DH / DFP",
+      "detail": "BOM_SIMPLIFIED",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "diameter_mm",
+          "label": "Nominale diameter / vrije ID bij S",
+          "kind": "number",
+          "default": 900,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "variant",
+          "label": "Type",
+          "kind": "choice",
+          "choices": [
+            "D",
+            "DF",
+            "DG",
+            "DFG",
+            "DH",
+            "DFP"
+          ],
+          "default": "D",
+          "note": ""
+        },
+        {
+          "key": "length_mm",
+          "label": "Werkelijke opstanddiepte",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "actual_od_mm",
+          "label": "Werkelijke buitenmaat",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "visual_wall_mm",
+          "label": "Visuele wand (geen materiaalgegeven)",
+          "kind": "number",
+          "default": 1,
+          "minimum": 0.1,
+          "maximum": 10,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "drain_id_mm",
+          "label": "DFP vrije afvoer-ID",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "drain_od_mm",
+          "label": "DFP buitenmaat afvoer",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "drain_length_mm",
+          "label": "DFP afvoerprojectie",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "cover",
+          "pdf_page": 1,
+          "catalogue_page": 69
+        },
+        {
+          "source_id": "cover",
+          "pdf_page": 2,
+          "catalogue_page": 178
+        }
+      ],
+      "notes": "D/DF/DH/DFP gesloten deksel. DG/DFG open met schematisch kruisrooster, geen exact traliepatroon. Werkelijke fittingmaten verplicht; geen fictieve tolerantie.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "GRILLE_FIRE",
+      "label": "Brandwerend wandrooster GE60 / GE60K / GE60XL",
+      "code": "GE60 / GE60K / GE60XL",
+      "detail": "PURCHASED_COORDINATION_ENVELOPE",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "variant",
+          "label": "Artikelcode",
+          "kind": "choice",
+          "choices": ["GE60", "GE60K", "GE60XL"],
+          "default": "GE60",
+          "note": "Alleen de drie codes uit de Airkan-catalogus."
+        },
+        {
+          "key": "h_mm",
+          "label": "H",
+          "kind": "number",
+          "default": 100,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": "Cataloguskolom H."
+        },
+        {
+          "key": "b_mm",
+          "label": "B",
+          "kind": "number",
+          "default": 100,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": "Catalogusrij B."
+        },
+        {
+          "key": "depth_mm",
+          "label": "Coordinatiediepte",
+          "kind": "number",
+          "default": 50,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": "Projectinvoer; deze diepte staat niet in de prijsbladen."
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "fire_grille",
+          "pdf_page": 1,
+          "catalogue_page": 85
+        },
+        {
+          "source_id": "fire_grille",
+          "pdf_page": 2,
+          "catalogue_page": 86
+        }
+      ],
+      "notes": "Gekocht brandwerend wandrooster als coordinatie-envelop. Alleen massieve wand; niet met mechanische ventilatie, niet buiten en watercontact vermijden. Bron vermeldt een brandweerstand van 1 uur en EN 1364-1.",
+      "naming_status": "EXACT_CATALOGUE_CODE_AND_SIZE"
+    },
+    {
+      "id": "CM",
+      "label": "CM - eigen STEP maatwerk",
+      "code": "CM",
+      "detail": "USER_SUPPLIED_STEP",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "description",
+          "label": "Omschrijving",
+          "kind": "text",
+          "default": "Custom made",
+          "note": "Vrije projectomschrijving."
+        },
+        {
+          "key": "source_step",
+          "label": "Eigen STEP-bestand",
+          "kind": "file",
+          "default": "",
+          "note": "De worker importeert dit bestand ongewijzigd."
+        },
+        {
+          "key": "material",
+          "label": "Materiaal",
+          "kind": "choice",
+          "choices": ["GALVA", "INOX304", "INOX316", "ALU", "OTHER"],
+          "default": "GALVA",
+          "note": "Projecteigenschap; niet uit STEP afgeleid."
+        },
+        {
+          "key": "thickness_mm",
+          "label": "Plaatdikte",
+          "kind": "number",
+          "default": 1,
+          "minimum": 0.01,
+          "maximum": 100,
+          "unit": "mm",
+          "note": "Projecteigenschap; niet uit STEP afgeleid."
+        },
+        {
+          "key": "area_rate_eur_per_m2",
+          "label": "Voorlopig tarief",
+          "kind": "number",
+          "default": 33.8,
+          "minimum": 0,
+          "maximum": 100000,
+          "unit": "EUR/m2",
+          "note": "Bestaande voorlopige plaatvergelijking; geen offerte."
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "rect",
+          "pdf_page": 5,
+          "catalogue_page": 28
+        }
+      ],
+      "notes": "Door gebruiker gemaakte STEP. Voorlopige vergelijking: alle STEP-vlakken / 2 x EUR/m2; geen artikelprijs of offerte.",
+      "naming_status": "PROJECT_CODE_AND_CONTENT_IDENTITY"
+    },
+    {
+      "id": "BUY",
+      "label": "BUY - extern inkoopdeel",
+      "code": "BUY",
+      "detail": "PURCHASED_USER_SUPPLIED_STEP",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "supplier",
+          "label": "Leverancier",
+          "kind": "text",
+          "default": "",
+          "note": "Verplicht; exact invullen vanaf de leveranciersbron."
+        },
+        {
+          "key": "article_code",
+          "label": "Artikelcode",
+          "kind": "text",
+          "default": "",
+          "note": "Verplicht; geen Airkan-code."
+        },
+        {
+          "key": "description",
+          "label": "Omschrijving",
+          "kind": "text",
+          "default": "",
+          "note": "Verplicht; bijvoorbeeld buitenrooster."
+        },
+        {
+          "key": "source_step",
+          "label": "Leveranciers-STEP",
+          "kind": "file",
+          "default": "",
+          "note": "Verplicht; de worker importeert dit bestand ongewijzigd."
+        },
+        {
+          "key": "a_mm",
+          "label": "A: vrije kanaalaansluiting X",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": "Door gebruiker bevestigd vanaf tekening of productblad."
+        },
+        {
+          "key": "b_mm",
+          "label": "B: vrije kanaalaansluiting Y",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": "Door gebruiker bevestigd vanaf tekening of productblad."
+        },
+        {
+          "key": "airflow_role",
+          "label": "Luchtfunctie",
+          "kind": "choice",
+          "choices": ["KIES", "AANZUIG", "AFBLAAS"],
+          "default": "KIES",
+          "note": "Bepaalt welke zijde extern is en welke zijde op het kanaal aansluit."
+        },
+        {
+          "key": "price_status",
+          "label": "Prijsstatus",
+          "kind": "choice",
+          "choices": ["KIES", "ON_REQUEST", "BEVESTIGD"],
+          "default": "KIES",
+          "note": "ON_REQUEST schrijft geen bedrag; BEVESTIGD vereist een expliciete leveranciersprijs."
+        },
+        {
+          "key": "unit_price_eur",
+          "label": "Eenheidsprijs",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 10000000,
+          "unit": "EUR/stuk",
+          "note": "Vul 0 in bij ON_REQUEST; uitsluitend een bevestigd leveranciersbedrag invoeren."
+        },
+        {
+          "key": "price_source",
+          "label": "Bron / offerte / URL",
+          "kind": "text",
+          "default": "",
+          "note": "Verplicht; bron waarmee artikel en prijsstatus kunnen worden gecontroleerd."
+        }
+      ],
+      "sources": [],
+      "notes": "Niet-Airkan inkoopdeel. Alle artikel-, aansluit- en prijsvelden worden door de gebruiker ingevuld; de STEP wordt ongewijzigd als coordinatiegeometrie geimporteerd.",
+      "naming_status": "SUPPLIER_ARTICLE_AND_CONTENT_IDENTITY"
+    },
+    {
+      "id": "INSPECTION",
+      "label": "Inspectieluik: een Body",
+      "code": "ISK / ISR / IS235",
+      "detail": "BOM_SIMPLIFIED",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "variant",
+          "label": "Type",
+          "kind": "choice",
+          "choices": [
+            "ISR",
+            "ISK",
+            "IS235"
+          ],
+          "default": "ISR",
+          "note": ""
+        },
+        {
+          "key": "size_a_mm",
+          "label": "Bestelmaat 1",
+          "kind": "number",
+          "default": 250,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "size_b_mm",
+          "label": "Bestelmaat 2",
+          "kind": "number",
+          "default": 150,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "outer_a_mm",
+          "label": "Buitenmaat 1 (0 = ISR-tabel)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "outer_b_mm",
+          "label": "Buitenmaat 2 (0 = ISR-tabel)",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "depth_mm",
+          "label": "Bouwdikte omhulling",
+          "kind": "number",
+          "default": 25,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "acc",
+          "pdf_page": 1,
+          "catalogue_page": 169
+        },
+        {
+          "source_id": "acc",
+          "pdf_page": 2,
+          "catalogue_page": 170
+        }
+      ],
+      "notes": "Gesloten omhulling, geen bevestigingsknoppen/scharnieren. ISR: beschikbare buitenmaten uit bron. IS235: externe diameter opgeven; niet gelijkstellen aan de maat van de opening.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "SUPPORT_PL",
+      "label": "Montage-/voetplaat: een Body",
+      "code": "PL150 / PL300",
+      "detail": "BOM_SIMPLIFIED",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "variant",
+          "label": "Type",
+          "kind": "choice",
+          "choices": [
+            "PL150",
+            "PL300"
+          ],
+          "default": "PL150",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "acc",
+          "pdf_page": 3,
+          "catalogue_page": 171
+        }
+      ],
+      "notes": "Gepubliceerde plaatmaten; geen gaten op verzonnen posities. Een Body, een BOM-item.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "HOOD",
+      "label": "Ronde kap: omhullings-Body",
+      "code": "K / KT / KSL / KRS",
+      "detail": "BOM_SIMPLIFIED",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "diameter_mm",
+          "label": "Nominale diameter / vrije ID bij S",
+          "kind": "number",
+          "default": 900,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "variant",
+          "label": "Type",
+          "kind": "choice",
+          "choices": [
+            "K",
+            "KT",
+            "KSL",
+            "KRS"
+          ],
+          "default": "K",
+          "note": ""
+        },
+        {
+          "key": "outer_diameter_mm",
+          "label": "Bevestigde grootste buitenmaat",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "length_mm",
+          "label": "Bevestigde totale bouwhoogte",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "roof",
+          "pdf_page": 1,
+          "catalogue_page": 71
+        }
+      ],
+      "notes": "Bewust gesloten cilindrische ruimte-envelop, GEEN catalogusgetrouwe kapvorm of luchtweg. Alleen routing/BOM. Geometrie niet voor inwendige clashes gebruiken.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "ROOF",
+      "label": "Dakdoorgang / stormkraag: een Body",
+      "code": "DD / DD15 / DD30 / DD45 / DD60 / SO",
+      "detail": "BOM_SIMPLIFIED",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "diameter_mm",
+          "label": "Nominale diameter / vrije ID bij S",
+          "kind": "number",
+          "default": 900,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "variant",
+          "label": "Type",
+          "kind": "choice",
+          "choices": [
+            "DD",
+            "DD15",
+            "DD30",
+            "DD45",
+            "DD60",
+            "SO"
+          ],
+          "default": "DD",
+          "note": ""
+        },
+        {
+          "key": "base_x_mm",
+          "label": "Bevestigde voetmaat X",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "base_y_mm",
+          "label": "Bevestigde voetmaat Y",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "length_mm",
+          "label": "Bevestigde maximale bouwhoogte",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "actual_bore_mm",
+          "label": "Werkelijke doorvoerdiameter",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0.01,
+          "maximum": 20000,
+          "unit": "mm",
+          "note": ""
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "roof",
+          "pdf_page": 2,
+          "catalogue_page": 72
+        }
+      ],
+      "notes": "Conservatieve holle blok-envelop van footprint en hoogte; dakhoek als montage-referentie. Niet de volledige zetwerkgeometrie en geen verklaring van waterdichtheid.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "AP_APA_PSA",
+      "label": "Ronde aftakkingen AP / APA / PSA",
+      "code": "AP / APA / PSA",
+      "detail": "NOT_RELEASED",
+      "status": "SOURCE_REGISTER_ONLY",
+      "fields": [],
+      "sources": [
+        {
+          "source_id": "ap",
+          "pdf_page": 1,
+          "catalogue_page": 43
+        },
+        {
+          "source_id": "ap",
+          "pdf_page": 2,
+          "catalogue_page": 44
+        },
+        {
+          "source_id": "psa",
+          "pdf_page": 1,
+          "catalogue_page": 42
+        }
+      ],
+      "notes": "Bron toont de zadel-/kegelvorm maar e en de pas-/overgangsdetails moeten eerst expliciet worden vastgelegd. Niet stilzwijgend vervangen door een ronde T-buis.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "PR_PRA",
+      "label": "Rechthoekige aftakking op rond PR / PRA",
+      "code": "PR / PRA",
+      "detail": "NOT_RELEASED",
+      "status": "SOURCE_REGISTER_ONLY",
+      "fields": [],
+      "sources": [
+        {
+          "source_id": "pr",
+          "pdf_page": 1,
+          "catalogue_page": 46
+        }
+      ],
+      "notes": "B tegenover diameter selecteert geometrische subgevallen binnen de families; dit is geen eenvoudige PR versus PRA-schakelaar. Volledige zadelconstructie en variantmapping nog niet vrijgegeven.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "TEE_SPECIAL",
+      "label": "Speciale Talpha en ongelijke T",
+      "code": "T / Talpha",
+      "detail": "NOT_RELEASED",
+      "status": "SOURCE_REGISTER_ONLY",
+      "fields": [],
+      "sources": [
+        {
+          "source_id": "rect",
+          "pdf_page": 16,
+          "catalogue_page": 157
+        },
+        {
+          "source_id": "orders",
+          "pdf_page": 8,
+          "catalogue_page": null
+        }
+      ],
+      "notes": "Niet gelijkstellen aan het geimplementeerde 90-graden T-stuk met constante hoofdsectie.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "SUPPORT_AT",
+      "label": "Verlengbare steun AT en ophangbeugels",
+      "code": "AT / ODS / ODM / ODR",
+      "detail": "NOT_RELEASED",
+      "status": "SOURCE_REGISTER_ONLY",
+      "fields": [],
+      "sources": [
+        {
+          "source_id": "acc",
+          "pdf_page": 3,
+          "catalogue_page": 171
+        },
+        {
+          "source_id": "acc",
+          "pdf_page": 4,
+          "catalogue_page": 172
+        }
+      ],
+      "notes": "Niet alle buitenmaten en bevestigingsplaatsen zijn bemaat; nog geen generator.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    },
+    {
+      "id": "COMPOSITE",
+      "label": "Samengestelde vormstukken",
+      "code": "B-G / B-B / G-VER",
+      "detail": "NOT_RELEASED",
+      "status": "SOURCE_REGISTER_ONLY",
+      "fields": [],
+      "sources": [
+        {
+          "source_id": "rect",
+          "pdf_page": 19,
+          "catalogue_page": 160
+        }
+      ],
+      "notes": "Samenstelling van generators; nog geen eigen dialoog.",
+      "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
+    }
+  ],
+  "s_standard_thickness": {
+    "80": 0.4,
+    "100": 0.4,
+    "125": 0.4,
+    "150": 0.4,
+    "160": 0.4,
+    "180": 0.5,
+    "200": 0.5,
+    "225": 0.5,
+    "250": 0.5,
+    "280": 0.6,
+    "300": 0.6,
+    "315": 0.6,
+    "355": 0.6,
+    "400": 0.6,
+    "450": 0.7,
+    "500": 0.7,
+    "560": 0.8,
+    "600": 0.8,
+    "630": 0.8,
+    "710": 0.8,
+    "800": 0.8,
+    "900": 1,
+    "1000": 1,
+    "1120": 1.2,
+    "1250": 1.2,
+    "1400": 1.2,
+    "1500": 1.2
+  },
+  "s_permitted_thickness": {
+    "80": [
+      0.4,
+      0.5,
+      0.6
+    ],
+    "100": [
+      0.4,
+      0.5,
+      0.6
+    ],
+    "125": [
+      0.4,
+      0.5,
+      0.6
+    ],
+    "150": [
+      0.4,
+      0.5,
+      0.6
+    ],
+    "160": [
+      0.4,
+      0.5,
+      0.6
+    ],
+    "180": [
+      0.5,
+      0.6
+    ],
+    "200": [
+      0.5,
+      0.6,
+      0.8
+    ],
+    "225": [
+      0.5,
+      0.6,
+      0.8
+    ],
+    "250": [
+      0.5,
+      0.6,
+      0.8
+    ],
+    "280": [
+      0.6,
+      0.8
+    ],
+    "300": [
+      0.6,
+      0.8
+    ],
+    "315": [
+      0.6,
+      0.8
+    ],
+    "355": [
+      0.6,
+      0.8
+    ],
+    "400": [
+      0.6,
+      0.8
+    ],
+    "450": [
+      0.7,
+      0.8,
+      1
+    ],
+    "500": [
+      0.7,
+      0.8,
+      1
+    ],
+    "560": [
+      0.8,
+      1
+    ],
+    "600": [
+      0.8,
+      1
+    ],
+    "630": [
+      0.8,
+      1
+    ],
+    "710": [
+      0.8,
+      1
+    ],
+    "800": [
+      0.8,
+      1,
+      1.2
+    ],
+    "900": [
+      1,
+      1.2
+    ],
+    "1000": [
+      1,
+      1.2
+    ],
+    "1120": [
+      1.2
+    ],
+    "1250": [
+      1.2
+    ],
+    "1400": [
+      1.2
+    ],
+    "1500": [
+      1.2
+    ]
+  },
+  "round_bend_angles": {
+    "BS9X": 90,
+    "B6X": 60,
+    "BS4X": 45,
+    "B3X": 30,
+    "B15X": 15
+  },
+  "fire_grille_prices_eur_each": {
+    "GE60": {
+      "h_mm": [100, 150, 200, 250, 300, 350, 400],
+      "rows_by_b_mm": {
+        "100": [47.40, 56.12, 64.94, 69.35, 73.74, 91.31, 108.87],
+        "150": [54.20, 64.80, 75.41, 86.02, 96.64, 111.66, 126.65],
+        "200": [61.00, 73.44, 85.83, 102.68, 119.52, 131.98, 144.42],
+        "250": [67.86, 82.11, 100.69, 117.16, 133.60, 150.05, 166.52],
+        "300": [74.69, 90.73, 115.55, 131.63, 147.70, 168.15, 188.60],
+        "350": [81.50, 103.77, 126.01, 146.07, 166.16, 188.48, 210.75],
+        "400": [88.35, 116.87, 136.49, 160.56, 184.63, 208.77, 232.89],
+        "450": [99.60, 125.48, 151.35, 177.22, 203.15, 229.05, 255.00],
+        "500": [110.82, 134.12, 166.21, 193.93, 221.63, 249.35, 277.06],
+        "550": [117.63, 142.75, 176.67, 206.19, 235.75, 265.24, 294.77],
+        "600": [124.44, 151.40, 187.12, 218.50, 249.82, 281.14, 312.45],
+        "650": [133.80, 162.72, 201.15, 234.86, 268.58, 302.21, 335.86],
+        "700": [143.11, 174.09, 215.20, 251.25, 287.29, 323.32, 359.29],
+        "750": [153.85, 185.21, 228.91, 267.29, 305.67, 343.95, 382.23],
+        "800": [164.58, 196.32, 242.67, 283.35, 324.02, 364.61, 405.16]
+      }
+    },
+    "GE60K": {
+      "h_mm": [100, 150, 200, 250, 300, 350, 400],
+      "rows_by_b_mm": {
+        "100": [70.91, 80.84, 96.08, 101.93, 107.84, 126.84, 145.86],
+        "150": [78.03, 89.86, 106.94, 119.04, 131.10, 147.60, 164.06],
+        "200": [85.30, 99.00, 117.92, 136.27, 154.56, 168.48, 182.38],
+        "250": [97.46, 113.16, 133.19, 151.12, 169.05, 187.01, 204.93],
+        "300": [104.86, 122.33, 148.63, 166.17, 183.73, 205.64, 227.53],
+        "350": [112.12, 135.81, 159.53, 181.05, 202.61, 226.35, 250.13],
+        "400": [124.67, 154.90, 176.24, 202.02, 227.79, 253.65, 279.50],
+        "450": [135.93, 163.56, 191.11, 218.71, 246.32, 273.97, 301.58],
+        "500": [147.77, 172.79, 206.58, 236.02, 265.46, 294.87, 324.29],
+        "550": [155.04, 181.86, 217.51, 248.76, 279.98, 311.19, 342.46],
+        "600": [162.48, 191.15, 228.57, 261.64, 294.69, 327.74, 360.74],
+        "650": [172.29, 202.91, 243.04, 278.48, 313.91, 349.25, 384.64],
+        "700": [182.22, 214.91, 257.72, 295.49, 333.23, 370.95, 408.66],
+        "750": [193.41, 226.47, 271.90, 311.95, 352.05, 392.05, 432.03],
+        "800": [206.66, 239.81, 287.51, 329.58, 373.07, 415.08, 457.03]
+      }
+    },
+    "GE60XL": {
+      "h_mm": [200, 300, 400, 500, 600, 700, 800],
+      "rows_by_b_mm": {
+        "200": [null, null, null, 431.02, 452.81, 538.84, 624.36],
+        "300": [null, null, null, 486.18, 516.38, 615.29, 713.86],
+        "400": [null, null, null, 551.39, 593.34, 703.52, 813.58],
+        "500": [null, null, null, 626.08, 683.20, 803.15, 923.10],
+        "600": [null, null, null, 675.37, 739.58, 885.00, 1030.45],
+        "700": [null, null, null, 724.41, 831.08, 971.96, 1112.86],
+        "800": [null, null, null, 919.20, 1008.29, 1211.39, 1414.48],
+        "900": [461.25, 570.85, 863.07, 968.32, 1082.24, 1298.29, 1513.79],
+        "1000": [486.59, 607.81, 913.71, 1017.44, 1156.19, 1384.62, 1613.06],
+        "1100": [548.78, 674.36, 1038.02, 1187.87, 1382.46, 1594.67, 1806.91],
+        "1200": [610.94, 740.88, 1162.32, 1358.28, 1608.73, 1804.74, 2000.73]
+      }
+    }
+  },
+  "flanges": {
+    "80": {
+      "bore_mm": 83,
+      "strip_width_mm": 20,
+      "thickness_mm": 3,
+      "pitch_mm": 108,
+      "hole_count": 4,
+      "slot_width_mm": 8,
+      "slot_length_mm": 16
+    },
+    "100": {
+      "bore_mm": 103,
+      "strip_width_mm": 20,
+      "thickness_mm": 3,
+      "pitch_mm": 129,
+      "hole_count": 4,
+      "slot_width_mm": 8,
+      "slot_length_mm": 16
+    },
+    "125": {
+      "bore_mm": 128,
+      "strip_width_mm": 20,
+      "thickness_mm": 3,
+      "pitch_mm": 155,
+      "hole_count": 4,
+      "slot_width_mm": 8,
+      "slot_length_mm": 16
+    },
+    "150": {
+      "bore_mm": 153,
+      "strip_width_mm": 30,
+      "thickness_mm": 4,
+      "pitch_mm": 184,
+      "hole_count": 6,
+      "slot_width_mm": 8,
+      "slot_length_mm": 16
+    },
+    "160": {
+      "bore_mm": 163,
+      "strip_width_mm": 30,
+      "thickness_mm": 4,
+      "pitch_mm": 194,
+      "hole_count": 6,
+      "slot_width_mm": 8,
+      "slot_length_mm": 16
+    },
+    "180": {
+      "bore_mm": 183,
+      "strip_width_mm": 30,
+      "thickness_mm": 4,
+      "pitch_mm": 213,
+      "hole_count": 6,
+      "slot_width_mm": 8,
+      "slot_length_mm": 16
+    },
+    "200": {
+      "bore_mm": 204,
+      "strip_width_mm": 30,
+      "thickness_mm": 4,
+      "pitch_mm": 235,
+      "hole_count": 6,
+      "slot_width_mm": 8,
+      "slot_length_mm": 16
+    },
+    "225": {
+      "bore_mm": 228,
+      "strip_width_mm": 30,
+      "thickness_mm": 4,
+      "pitch_mm": 259,
+      "hole_count": 6,
+      "slot_width_mm": 8,
+      "slot_length_mm": 16
+    },
+    "250": {
+      "bore_mm": 254,
+      "strip_width_mm": 30,
+      "thickness_mm": 4,
+      "pitch_mm": 586,
+      "hole_count": 6,
+      "slot_width_mm": 8,
+      "slot_length_mm": 16
+    },
+    "280": {
+      "bore_mm": 284,
+      "strip_width_mm": 30,
+      "thickness_mm": 4,
+      "pitch_mm": 322,
+      "hole_count": 6,
+      "slot_width_mm": 8,
+      "slot_length_mm": 16
+    },
+    "300": {
+      "bore_mm": 304,
+      "strip_width_mm": 35,
+      "thickness_mm": 4,
+      "pitch_mm": 341,
+      "hole_count": 8,
+      "slot_width_mm": 10,
+      "slot_length_mm": 20
+    },
+    "315": {
+      "bore_mm": 319,
+      "strip_width_mm": 35,
+      "thickness_mm": 4,
+      "pitch_mm": 356,
+      "hole_count": 8,
+      "slot_width_mm": 10,
+      "slot_length_mm": 20
+    },
+    "355": {
+      "bore_mm": 359,
+      "strip_width_mm": 35,
+      "thickness_mm": 4,
+      "pitch_mm": 395,
+      "hole_count": 8,
+      "slot_width_mm": 10,
+      "slot_length_mm": 20
+    },
+    "400": {
+      "bore_mm": 405,
+      "strip_width_mm": 35,
+      "thickness_mm": 4,
+      "pitch_mm": 438,
+      "hole_count": 12,
+      "slot_width_mm": 10,
+      "slot_length_mm": 20
+    },
+    "450": {
+      "bore_mm": 455,
+      "strip_width_mm": 35,
+      "thickness_mm": 4,
+      "pitch_mm": 487,
+      "hole_count": 12,
+      "slot_width_mm": 10,
+      "slot_length_mm": 20
+    },
+    "500": {
+      "bore_mm": 505,
+      "strip_width_mm": 35,
+      "thickness_mm": 4,
+      "pitch_mm": 541,
+      "hole_count": 12,
+      "slot_width_mm": 10,
+      "slot_length_mm": 20
+    },
+    "560": {
+      "bore_mm": 565,
+      "strip_width_mm": 40,
+      "thickness_mm": 4,
+      "pitch_mm": 605,
+      "hole_count": 16,
+      "slot_width_mm": 12,
+      "slot_length_mm": 24
+    },
+    "600": {
+      "bore_mm": 605,
+      "strip_width_mm": 40,
+      "thickness_mm": 4,
+      "pitch_mm": 644,
+      "hole_count": 16,
+      "slot_width_mm": 12,
+      "slot_length_mm": 24
+    },
+    "630": {
+      "bore_mm": 636,
+      "strip_width_mm": 40,
+      "thickness_mm": 4,
+      "pitch_mm": 674,
+      "hole_count": 16,
+      "slot_width_mm": 12,
+      "slot_length_mm": 24
+    },
+    "710": {
+      "bore_mm": 716,
+      "strip_width_mm": 40,
+      "thickness_mm": 4,
+      "pitch_mm": 751,
+      "hole_count": 16,
+      "slot_width_mm": 12,
+      "slot_length_mm": 24
+    },
+    "800": {
+      "bore_mm": 806,
+      "strip_width_mm": 40,
+      "thickness_mm": 4,
+      "pitch_mm": 842,
+      "hole_count": 24,
+      "slot_width_mm": 12,
+      "slot_length_mm": 24
+    },
+    "900": {
+      "bore_mm": 906,
+      "strip_width_mm": 40,
+      "thickness_mm": 4,
+      "pitch_mm": 942,
+      "hole_count": 24,
+      "slot_width_mm": 12,
+      "slot_length_mm": 24
+    },
+    "1000": {
+      "bore_mm": 1006,
+      "strip_width_mm": 50,
+      "thickness_mm": 6,
+      "pitch_mm": 1043,
+      "hole_count": 24,
+      "slot_width_mm": 12,
+      "slot_length_mm": 24
+    },
+    "1120": {
+      "bore_mm": 1126,
+      "strip_width_mm": 50,
+      "thickness_mm": 6,
+      "pitch_mm": 1174,
+      "hole_count": 24,
+      "slot_width_mm": 12,
+      "slot_length_mm": 24
+    },
+    "1250": {
+      "bore_mm": 1256,
+      "strip_width_mm": 50,
+      "thickness_mm": 6,
+      "pitch_mm": 1311,
+      "hole_count": 24,
+      "slot_width_mm": 12,
+      "slot_length_mm": 24
+    },
+    "1400": {
+      "bore_mm": 1406,
+      "strip_width_mm": 50,
+      "thickness_mm": 6,
+      "pitch_mm": 1461,
+      "hole_count": 24,
+      "slot_width_mm": 12,
+      "slot_length_mm": 24
+    },
+    "1500": {
+      "bore_mm": 1506,
+      "strip_width_mm": 50,
+      "thickness_mm": 6,
+      "pitch_mm": 1560,
+      "hole_count": 24,
+      "slot_width_mm": 12,
+      "slot_length_mm": 24
+    }
+  },
+  "isr": {
+    "250x150": [
+      290,
+      200
+    ],
+    "380x250": [
+      420,
+      290
+    ],
+    "510x380": [
+      550,
+      420
+    ],
+    "660x510": [
+      700,
+      550
+    ]
+  },
+  "unresolved_catalogue_rules": [
+    "AUTOMATIC_RECT_THICKNESS_USES_LARGEST_FREE_SIDE_PROJECT_RULE",
+    "BC_RANGE_OVERLAP_AT_2000_COUNTS",
+    "BC_RANGE_GAP_BELOW_200",
+    "BC_NONINTEGER_RANGE_GAPS",
+    "F250_PITCH_586_INVALID",
+    "DUCT_INSERTION_AND_RADIAL_SEATING_UNCONFIRMED",
+    "CUSTOM_NAMES_NOT_OFFICIAL_ORDER_CODES"
+  ],
+  "rect_bc_rows": [
+    {
+      "minimum": 200,
+      "maximum": 500,
+      "value_mm": 0.75,
+      "options": {
+        "clamp_count": 0,
+        "reinforcement_count": 0,
+        "permitted_frame_profiles": [
+          "TDC20",
+          "E20",
+          "A20"
+        ]
+      }
+    },
+    {
+      "minimum": 501,
+      "maximum": 1250,
+      "value_mm": 0.95,
+      "options": {
+        "clamp_count": 2,
+        "reinforcement_count": 0,
+        "permitted_frame_profiles": [
+          "TDC20",
+          "E20",
+          "A20"
+        ]
+      }
+    },
+    {
+      "minimum": 1251,
+      "maximum": 1500,
+      "value_mm": 0.95,
+      "options": {
+        "clamp_count": 3,
+        "reinforcement_count": 1,
+        "permitted_frame_profiles": [
+          "TDC30",
+          "E30",
+          "A30"
+        ]
+      }
+    },
+    {
+      "minimum": 1501,
+      "maximum": 2000,
+      "value_mm": 1.2,
+      "options": {
+        "clamp_count": 4,
+        "reinforcement_count": 1,
+        "permitted_frame_profiles": [
+          "TDC30",
+          "E30",
+          "A30"
+        ]
+      }
+    },
+    {
+      "minimum": 2000,
+      "value_mm": 1.2,
+      "options": {
+        "clamp_count": 4,
+        "reinforcement_count": 2,
+        "permitted_frame_profiles": [
+          "A40"
+        ]
+      }
+    }
+  ]
+}

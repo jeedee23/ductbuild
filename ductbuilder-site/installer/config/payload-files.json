@@ -1,0 +1,11 @@
+{
+  "schema": "aavds-installer-payload-config-v1",
+  "include": [
+    "Allshield_Project_GUI.py",
+    "Allshield_FreeCAD_Worker.py",
+    "allshield_project.py",
+    "airkan_builder",
+    "assets/type_previews",
+    "vendor/makeframe_v2.FCMacro"
+  ]
+}

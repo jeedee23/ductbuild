@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>AAVDS-duct-builder version</title>
+</head>
+<body>
+  <main>
+    <p id="version">No signed release published.</p>
+  </main>
+  <script>
+    fetch("version.json", { cache: "no-store" })
+      .then((response) => response.ok ? response.json() : Promise.reject())
+      .then((manifest) => {
+        document.getElementById("version").textContent = manifest.latestVersion || "No signed release published.";
+      })
+      .catch(() => {
+        document.getElementById("version").textContent = "Version information unavailable.";
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AAVDS duct mark">
+  <rect width="64" height="64" rx="8" fill="#172126"/>
+  <path d="M11 17h42v30H11z" fill="#d5dfe0" stroke="#fffdf7" stroke-width="3"/>
+  <path d="M17 23h30v18H17z" fill="none" stroke="#2f718a" stroke-width="2" stroke-dasharray="4 3"/>
+  <path d="M8 13h6v38H8zm42 0h6v38h-6z" fill="#edb323"/>
+</svg>

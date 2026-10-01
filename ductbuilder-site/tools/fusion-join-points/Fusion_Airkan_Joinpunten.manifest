@@ -1,0 +1,9 @@
+{
+  "autodeskProduct": "Fusion360",
+  "type": "script",
+  "author": "Johan / Airkan project",
+  "description": {"": "Voeg gecontroleerde Airkan v3 Joint Origins toe uit het bijbehorende export-JSON."},
+  "version": "3.0.2",
+  "runOnStartup": false,
+  "supportedOS": "windows|mac"
+}

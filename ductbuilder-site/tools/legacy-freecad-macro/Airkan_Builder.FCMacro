@@ -1,0 +1,41 @@
+# -*- coding: utf-8 -*-
+"""Open this macro from the UNZIPPED package folder and execute inside FreeCAD."""
+import os
+import sys
+import traceback
+
+
+def _airkan_package_dir():
+    candidates=[]
+    if globals().get('__file__'):
+        macro_dir=os.path.dirname(os.path.abspath(__file__))
+        candidates.extend([macro_dir,os.path.abspath(os.path.join(macro_dir,'..','..','app'))])
+    try:
+        import FreeCADGui as Gui
+        window=Gui.getMainWindow()
+        for child in window.findChildren(__import__('PySide').QtGui.QMdiSubWindow):
+            fn=child.windowFilePath()
+            if fn:candidates.append(os.path.dirname(os.path.abspath(fn)))
+    except Exception:pass
+    import FreeCAD as App
+    candidates += [App.getUserMacroDir(),os.getcwd()]
+    for folder in candidates:
+        if os.path.isfile(os.path.join(folder,'airkan_builder','gui.py')):return folder
+    try:
+        from PySide import QtWidgets
+    except ImportError:
+        try:from PySide2 import QtWidgets
+        except ImportError:from PySide6 import QtWidgets
+    folder=QtWidgets.QFileDialog.getExistingDirectory(None,'Kies de uitgepakte map Airkan_FreeCAD_v3')
+    if folder and os.path.isfile(os.path.join(folder,'airkan_builder','gui.py')):return folder
+    raise RuntimeError('Pakketmap ontbreekt. Pak de volledige ZIP uit; kopieer niet alleen de macro.')
+
+try:
+    _folder=_airkan_package_dir()
+    if _folder not in sys.path:sys.path.insert(0,_folder)
+    from airkan_builder.gui import main
+    main()
+except Exception:
+    import FreeCAD as App
+    App.Console.PrintError('Airkan Builder:\n'+traceback.format_exc()+'\n')
+    raise
