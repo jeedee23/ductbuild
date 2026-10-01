@@ -1,5 +1,526 @@
 {
   "version": 1,
-  "updatedAt": null,
-  "reviews": {}
+  "updatedAt": "2026-09-30T15:48:14.470Z",
+  "reviews": {
+    "A20 - H20 - SR - CL30 - CM - IS25.svg": {
+      "status": "approved",
+      "remark": "Carousel persistence test\nIt is incorrect, this was already done once but better",
+      "updatedAt": "2026-09-30T15:42:07.656Z"
+    },
+    "A20 - H20 - SR - CL30 - CM - IS25_2.svg": {
+      "status": "approved",
+      "remark": "",
+      "updatedAt": "2026-09-30T15:42:20.248Z"
+    },
+    "A20 - H20 - SR - CL30 - CM - IS25_3.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "A20 - H20 - SR - CL30 - CM - IS25_4.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "A20 - H20 - SR - CL30 - CM - IS25_5.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "A20.svg": {
+      "status": "approved",
+      "remark": "",
+      "updatedAt": "2026-09-30T15:43:01.511Z"
+    },
+    "A30 - H30 - SR - CL30 - CM - IS25.svg": {
+      "status": "changes-requested",
+      "remark": "redo please, this part has already been made correctly in D:\\github\\ductbuild\\shared\\sources\\3D parts Airkan\\AIRKAN_E30_Kader_800x800_H30.step",
+      "updatedAt": "2026-09-30T15:44:00.138Z"
+    },
+    "A30.svg": {
+      "status": "approved",
+      "remark": "",
+      "updatedAt": "2026-09-30T15:44:11.615Z"
+    },
+    "A40 - H40 - SR40 - CL40 - CM.svg": {
+      "status": "changes-requested",
+      "remark": "same remark, see D:\\github\\ductbuild\\shared\\sources\\3D parts Airkan\\AIRKAN_E30_Kader_800x800_H30.step",
+      "updatedAt": "2026-09-30T15:44:29.131Z"
+    },
+    "A40 - H40 - SR40 - CL40 - CM_2.svg": {
+      "status": "approved",
+      "remark": "",
+      "updatedAt": "2026-09-30T15:44:31.753Z"
+    },
+    "A40 - H40 - SR40 - CL40 - CM_3.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "A40.svg": {
+      "status": "approved",
+      "remark": "",
+      "updatedAt": "2026-09-30T15:44:36.523Z"
+    },
+    "airkan register dampers.svg": {
+      "status": "approved",
+      "remark": "",
+      "updatedAt": "2026-09-30T15:44:40.631Z"
+    },
+    "Airturns.svg": {
+      "status": "changes-requested",
+      "remark": "This wrong, the Radius is always 150 \nwhen the rctangle is made then there are 2 crossing plane left end down on 150 from that rectangle, after revolving there is 50 added to each resulting side of the bend",
+      "updatedAt": "2026-09-30T15:47:49.941Z"
+    },
+    "AP.svg": {
+      "status": "approved",
+      "remark": "",
+      "updatedAt": "2026-09-30T15:47:59.252Z"
+    },
+    "APA.svg": {
+      "status": "approved",
+      "remark": "",
+      "updatedAt": "2026-09-30T15:48:02.866Z"
+    },
+    "B-B.svg": {
+      "status": "approved",
+      "remark": "",
+      "updatedAt": "2026-09-30T15:48:07.150Z"
+    },
+    "B-G.svg": {
+      "status": "changes-requested",
+      "remark": "",
+      "updatedAt": "2026-09-30T15:48:13.967Z"
+    },
+    "B15X.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "B3X.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "B6X.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "B90.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "BS4X.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "BS9X.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "BTR.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "BTR_2.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "BU.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "D.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "DD.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "DD15.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "DD30.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "DD45.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "DD60.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "DF.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "DFG.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "DG.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "E20 - H20 - H20L - SR - CL30 - CM_2.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "E20.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "E30.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "F.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "G-VER.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "GE60.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "GE60K.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "GE60XL.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "HL20 - HL30 - MOUSSE - MH.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "HL20.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "IS235.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "ISR.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "ISR_2.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "K.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "Kaderprofiel voor inwendig geïsoleerde kanalen.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "KRS.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "KSL.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "KT.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "L1 - Z1 - U1.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "L1.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "Luchtdichte kaderprofielen.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "Luchtdichte kaderprofielen_2.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "OB - OBP - WK - FL.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "OB - OBP - WK - FL_2.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "P.45.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "P.BI.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "P.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "PR - PRA.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "PR.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "PRA.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "Pre-montage.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "Pre-montage_2.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "Pre-montage_3.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "Pre-montage_4.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "PSA.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "R.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "R1.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "R2.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "RC.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "RC1.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "RC2.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "S.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "S4.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "S4_2.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "SC2.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "SL.A20.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "SL.A40.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "SL.E20.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "SL.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "SM.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "Speciale bochten.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "SS.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "T.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "T_2.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "T_3.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "Transfo.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "Uitvoering in Nederland conform LUKA kwaliteit.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "Uitvoering_ hoge druk.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "UP - RU - DOP.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "V.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "VER.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "VF.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "VL.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "VLB.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "VR.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "VR_2.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "VRA.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    },
+    "VT.svg": {
+      "status": "pending",
+      "remark": "",
+      "updatedAt": null
+    }
+  }
 }

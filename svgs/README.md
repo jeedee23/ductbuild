@@ -14,6 +14,7 @@ automatically.
 ## Review
 
 - Use the left and right buttons or arrow keys to move through drawings.
+- Compare the original PNG on the left with the redrawn SVG on the right.
 - Choose **Approve**, **Request changes**, or **Reset to pending**.
 - Add an optional remark.
 - When the local review server is running, changes are saved directly to
@@ -33,4 +34,6 @@ python .\svgs\build_catalog.py
 ```
 
 The four Copilot logo/icon SVGs are intentionally excluded from the drawing
-catalog.
+catalog. PNGs are matched by filename from the repository-level
+`pngs/originals` folder; drawings without an exact match display a
+missing-reference message. Other PNGs in `pngs` remain untouched.

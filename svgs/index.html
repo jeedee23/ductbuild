@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AIRKAN SVG review</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=illustrator-path">
 </head>
 <body>
   <header class="app-header">
@@ -47,8 +47,27 @@
           <span aria-hidden="true">‹</span>
         </button>
         <figure>
-          <div class="svg-frame">
-            <img id="svgImage" alt="">
+          <div class="comparison-grid">
+            <section class="drawing-pane" aria-label="Original PNG">
+              <h2>Original PNG</h2>
+              <div class="drawing-frame">
+                <img id="pngImage" alt="">
+                <p id="pngMissing" class="missing-reference" hidden>
+                  No matching PNG filename
+                </p>
+              </div>
+            </section>
+            <section class="drawing-pane" aria-label="Redrawn SVG">
+              <h2>Redrawn SVG</h2>
+              <div class="drawing-frame">
+                <img id="svgImage" alt="">
+              </div>
+              <div id="svgPathGroup" class="svg-path-group">
+                <span class="svg-path-label">Illustrator path</span>
+                <code id="svgPath" class="svg-path"></code>
+                <button id="copySvgPathButton" class="copy-path-button" type="button">Copy path</button>
+              </div>
+            </section>
           </div>
           <figcaption>
             <strong id="drawingName"></strong>
@@ -104,6 +123,6 @@
     </aside>
   </main>
 
-  <script src="app.js" defer></script>
+  <script src="app.js?v=illustrator-path" defer></script>
 </body>
 </html>

@@ -5,6 +5,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
+PNG_ROOT = ROOT.parent / "pngs" / "originals"
 EXCLUDED_NAMES = {
     "CopilotIcon.svg",
     "copilot-logo-dark.svg",
@@ -14,11 +15,19 @@ EXCLUDED_NAMES = {
 
 
 def main() -> None:
-    items = [
-        {"file": path.name, "name": path.stem}
-        for path in sorted(ROOT.glob("*.svg"), key=lambda item: item.name.casefold())
-        if path.name not in EXCLUDED_NAMES
-    ]
+    items = []
+    for path in sorted(ROOT.glob("*.svg"), key=lambda item: item.name.casefold()):
+        if path.name in EXCLUDED_NAMES:
+            continue
+        png_path = PNG_ROOT / f"{path.stem}.png"
+        items.append(
+            {
+                "file": path.name,
+                "name": path.stem,
+                "path": str(path),
+                "png": f"/pngs/{png_path.name}" if png_path.is_file() else None,
+            }
+        )
     payload = {
         "version": 1,
         "count": len(items),

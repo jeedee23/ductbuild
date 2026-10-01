@@ -3,13 +3,16 @@
   <rect width="194" height="160" fill="#fff"/>
   <defs><marker id="a" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto-start-reverse"><path d="M5 0 0 2.5 5 5Z" fill="#8B5CF6"/></marker></defs>
   <g id="mounting-angle" fill="none" stroke="#111" stroke-width="1.8" stroke-linejoin="round">
-    <path d="M49 99V37l13-13h12v48h72v10l-11 15H74v8H49Z"/>
-    <path d="M49 72h25v27H49m25-27-8 8"/>
-    <circle cx="62" cy="55" r="3.8"/><circle cx="62" cy="80" r="4.8"/><circle cx="62" cy="93" r="4.8"/><circle cx="49" cy="93" r="4.8"/><circle cx="94" cy="86" r="3.8"/>
+    <path id="main-piece" d="M55 110V33l17-17h7v70h53l17 17v7Z"/>
+    <circle cx="64" cy="48" r="3.8"/>
+    <circle cx="64" cy="81" r="3.8"/>
+    <circle cx="68" cy="99" r="5.8"/>
+    <circle cx="85" cy="99" r="3.8"/>
+    <circle cx="114" cy="99" r="3.8"/>
   </g>
   <g id="dimensions" fill="none" stroke="#8B5CF6" stroke-width="1">
-    <path d="M49 19V9m25 10V9M49 13h25M45 90H34m11 9H34m4-9v9M74 68V58m-8 18V58m0 4h8M49 109v13m97-21v21M49 118h97" marker-start="url(#a)" marker-end="url(#a)"/>
+    <path d="M55 20V9m24 10V9M55 13h24M61 99H43M55 114v12m94-19v19M55 122h94M51 16H38m17 94H38M42 16v94" marker-start="url(#a)" marker-end="url(#a)"/>
   </g>
-  <g fill="#8B5CF6" font-family="Arial,sans-serif" font-size="8"><text x="61.5" y="8" text-anchor="middle">18</text><text x="32" y="97" text-anchor="end">Ø 9</text><text x="70" y="57">15</text><text x="97.5" y="130" text-anchor="middle">73</text></g>
+  <g fill="#8B5CF6" font-family="Arial,sans-serif" font-size="8"><text x="67" y="8" text-anchor="middle">18</text><text x="40" y="102" text-anchor="end">Ø 9</text><text x="102" y="134" text-anchor="middle">73</text><text x="35" y="63" text-anchor="middle" transform="rotate(-90 35 63)">73</text></g>
   <text id="designation" x="97" y="153" fill="#111" stroke="none" font-family="Arial, sans-serif" font-size="9.0" font-style="normal" font-weight="400" text-anchor="middle" text-decoration="none">A20 - H20 - SR - CL30 - CM - IS25</text>
 </svg>
