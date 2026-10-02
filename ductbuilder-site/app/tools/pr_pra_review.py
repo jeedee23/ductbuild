@@ -321,7 +321,7 @@ def main(argv=None):
     parser.add_argument(
         "--asymmetry",
         required=True,
-        help="S for centred, A for right tangent, or a number less than (D1 - B) / 2.",
+        help="S for centred, A for right tangent, or P<number>/number less than (D1 - B) / 2.",
     )
     arguments = parser.parse_args(argv)
     try:
