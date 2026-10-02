@@ -55,10 +55,13 @@ def _resolve_asymmetry(value, d1_mm, b_mm):
         if maximum_asymmetry_mm == 0:
             raise ValueError("A requires D1 to be greater than B.")
         return maximum_asymmetry_mm, "A"
+    numeric_text = text[1:] if text.upper().startswith("P") else text
     try:
-        asymmetry_mm = float(text)
+        asymmetry_mm = float(numeric_text)
     except ValueError as error:
-        raise ValueError("Enter A, S, or a non-negative number.") from error
+        raise ValueError(
+            "Enter A, S, P followed by a non-negative number, or a non-negative number."
+        ) from error
     if not math.isfinite(asymmetry_mm) or asymmetry_mm < 0:
         raise ValueError("Asymmetry must be a non-negative finite number.")
     if asymmetry_mm >= maximum_asymmetry_mm:
@@ -162,8 +165,8 @@ def write_review(out_dir, d1_mm, b_mm, l_mm, asymmetry_mm, asymmetry_mode, keep_
         for name, value in dimensions.items():
             _add_length_property(feature, name.title().replace("_", ""), value, name)
         if feature.ViewObject is not None:
-            feature.ViewObject.ShapeColor = (0.12, 0.12, 0.12)
-            feature.ViewObject.LineColor = (0.0, 0.0, 0.0)
+            feature.ViewObject.ShapeColor = (0.35, 0.65, 1.0)
+            feature.ViewObject.LineColor = (0.05, 0.15, 0.45)
 
         data = document.addObject("App::FeaturePython", "Review_Data")
         data.Label = f"PR/PRA {d1_label} B{b_label}x{l_label} review assumptions"

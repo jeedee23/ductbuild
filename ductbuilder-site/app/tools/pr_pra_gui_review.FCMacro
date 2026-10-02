@@ -19,22 +19,21 @@ TOOLS_DIR = Path(__file__).resolve().parent
 if str(TOOLS_DIR) not in sys.path:
     sys.path.insert(0, str(TOOLS_DIR))
 
-from pr_pra_review import _resolve_asymmetry, run_gui_review
-
-
 out_dir = Path(
     os.environ.get(
         "DUCTBUILD_PR_PRA_REVIEW_OUT",
         str(Path.home() / "Documents" / "ductbuild-pr-pra-review"),
     )
 ).expanduser()
-d1_mm = float(os.environ.get("DUCTBUILD_PR_PRA_D1_MM", "200"))
-b_mm = float(os.environ.get("DUCTBUILD_PR_PRA_B_MM", "100"))
-l_mm = float(os.environ.get("DUCTBUILD_PR_PRA_L_MM", "200"))
-asymmetry_value = os.environ.get("DUCTBUILD_PR_PRA_ASYMMETRY", "S")
-asymmetry_mm, asymmetry_mode = _resolve_asymmetry(asymmetry_value, d1_mm, b_mm)
 
 try:
+    from pr_pra_review import _resolve_asymmetry, run_gui_review
+
+    d1_mm = float(os.environ.get("DUCTBUILD_PR_PRA_D1_MM", "200"))
+    b_mm = float(os.environ.get("DUCTBUILD_PR_PRA_B_MM", "100"))
+    l_mm = float(os.environ.get("DUCTBUILD_PR_PRA_L_MM", "200"))
+    asymmetry_value = os.environ.get("DUCTBUILD_PR_PRA_ASYMMETRY", "S")
+    asymmetry_mm, asymmetry_mode = _resolve_asymmetry(asymmetry_value, d1_mm, b_mm)
     result = run_gui_review(
         out_dir,
         d1_mm,
