@@ -1,0 +1,54 @@
+"""Run a deterministic PR/PRA GUI review with no popups or input dialogs.
+
+Optional environment variables:
+    DUCTBUILD_PR_PRA_REVIEW_OUT
+    DUCTBUILD_PR_PRA_D1_MM
+    DUCTBUILD_PR_PRA_B_MM
+    DUCTBUILD_PR_PRA_L_MM
+    DUCTBUILD_PR_PRA_ASYMMETRY
+"""
+from __future__ import annotations
+
+import os
+import sys
+import traceback
+from pathlib import Path
+
+
+TOOLS_DIR = Path(__file__).resolve().parent
+if str(TOOLS_DIR) not in sys.path:
+    sys.path.insert(0, str(TOOLS_DIR))
+
+from pr_pra_review import _resolve_asymmetry, run_gui_review
+
+
+out_dir = Path(
+    os.environ.get(
+        "DUCTBUILD_PR_PRA_REVIEW_OUT",
+        str(Path.home() / "Documents" / "ductbuild-pr-pra-review"),
+    )
+).expanduser()
+d1_mm = float(os.environ.get("DUCTBUILD_PR_PRA_D1_MM", "200"))
+b_mm = float(os.environ.get("DUCTBUILD_PR_PRA_B_MM", "100"))
+l_mm = float(os.environ.get("DUCTBUILD_PR_PRA_L_MM", "200"))
+asymmetry_value = os.environ.get("DUCTBUILD_PR_PRA_ASYMMETRY", "S")
+asymmetry_mm, asymmetry_mode = _resolve_asymmetry(asymmetry_value, d1_mm, b_mm)
+
+try:
+    result = run_gui_review(
+        out_dir,
+        d1_mm,
+        b_mm,
+        l_mm,
+        asymmetry_mm,
+        asymmetry_mode,
+    )
+except Exception:
+    out_dir.mkdir(parents=True, exist_ok=True)
+    debug_path = out_dir / "PR_PRA_GUI_review_error.txt"
+    debug_path.write_text(traceback.format_exc(), encoding="utf-8")
+    print(f"PR/PRA GUI review failed; traceback written to {debug_path}")
+else:
+    ready_path = out_dir / "PR_PRA_GUI_tiled_review.ready"
+    ready_path.write_text(str(result["view_count"]), encoding="utf-8")
+    print(ready_path)

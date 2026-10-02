@@ -1,0 +1,51 @@
+"""Run a deterministic PSA GUI review with no popups or input dialogs.
+
+Optional environment variables:
+    DUCTBUILD_PSA_REVIEW_OUT
+    DUCTBUILD_PSA_D1_MM
+    DUCTBUILD_PSA_D2_MM
+    DUCTBUILD_PSA_ASYMMETRY
+"""
+from __future__ import annotations
+
+import os
+import sys
+import traceback
+from pathlib import Path
+
+
+TOOLS_DIR = Path(__file__).resolve().parent
+if str(TOOLS_DIR) not in sys.path:
+    sys.path.insert(0, str(TOOLS_DIR))
+
+from psa_fusion_saddle_review import _resolve_asymmetry, run_gui_review
+
+
+out_dir = Path(
+    os.environ.get(
+        "DUCTBUILD_PSA_REVIEW_OUT",
+        str(Path.home() / "Documents" / "ductbuild-psa-review"),
+    )
+).expanduser()
+d1_mm = float(os.environ.get("DUCTBUILD_PSA_D1_MM", "200"))
+d2_mm = float(os.environ.get("DUCTBUILD_PSA_D2_MM", "100"))
+asymmetry_value = os.environ.get("DUCTBUILD_PSA_ASYMMETRY", "A")
+asymmetry_mm, asymmetry_mode = _resolve_asymmetry(asymmetry_value, d2_mm)
+
+try:
+    result = run_gui_review(
+        out_dir,
+        d1_mm,
+        d2_mm,
+        asymmetry_mm,
+        asymmetry_mode,
+    )
+except Exception:
+    out_dir.mkdir(parents=True, exist_ok=True)
+    debug_path = out_dir / "PSA_GUI_review_error.txt"
+    debug_path.write_text(traceback.format_exc(), encoding="utf-8")
+    print(f"PSA GUI review failed; traceback written to {debug_path}")
+else:
+    ready_path = out_dir / "PSA_GUI_tiled_review.ready"
+    ready_path.write_text(str(result["view_count"]), encoding="utf-8")
+    print(ready_path)

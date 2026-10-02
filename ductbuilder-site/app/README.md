@@ -10,7 +10,7 @@ The `Allshield_*` module names and `allshield-*` JSON schemas are retained tempo
 - `Allshield_FreeCAD_Worker.py`: isolated FreeCAD geometry worker.
 - `allshield_project.py`: persistent project register and connection model.
 - `airkan_builder/`: geometry, catalogue rules and pricing implementation.
-- `assets/type_previews/`: canonical selector preview manifest and PNG files.
+- `assets/type_previews/`: canonical selector preview manifest and supplier-reference PNG files. Every dropdown family has one PNG preview; hovering a selector preview enlarges it, and the fixed **Drawing library** window shows all families without rebuilding drawings. CM, BUY, and COMPOSITE use clearly labelled neutral reference PNGs until a component-specific drawing is supplied.
 - `vendor/makeframe_v2.FCMacro`: required frame geometry implementation.
 - `tests/`: pure-Python and native FreeCAD regression tests.
 

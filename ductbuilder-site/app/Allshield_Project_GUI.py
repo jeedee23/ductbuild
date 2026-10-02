@@ -300,6 +300,7 @@ class TooltipManager:
         self.root = root
         self.help_variable = help_variable
         self.help_by_widget = weakref.WeakKeyDictionary()
+        self.popup_enabled_by_widget = weakref.WeakKeyDictionary()
         self.cooldown_until = weakref.WeakKeyDictionary()
         self.hovered_widget = None
         self.focused_widget = None
@@ -307,8 +308,9 @@ class TooltipManager:
         self.hide_job = None
         self.popup = None
 
-    def add(self, widget, text):
+    def add(self, widget, text, show_popup=True):
         self.help_by_widget[widget] = str(text)
+        self.popup_enabled_by_widget[widget] = bool(show_popup)
         widget.bind("<Enter>", lambda event, target=widget: self._enter(target), add="+")
         widget.bind("<Leave>", lambda event, target=widget: self._leave(target), add="+")
         widget.bind("<FocusIn>", lambda event, target=widget: self._focus(target), add="+")
@@ -350,7 +352,7 @@ class TooltipManager:
         self._set_help(widget)
         self._cancel_pending()
         self._hide_popup()
-        if time.monotonic() >= self.cooldown_until.get(widget, 0.0):
+        if self.popup_enabled_by_widget.get(widget, True) and time.monotonic() >= self.cooldown_until.get(widget, 0.0):
             self.pending_job = self.root.after(TOOLTIP_DELAY_MS, lambda: self._show(widget))
 
     def _leave(self, widget):
@@ -666,6 +668,7 @@ class ProjectApplication:
         self.field_labels = {}
         self.family_labels = {}
         self.family_ids = {}
+        self.prefix = tk.StringVar()
         self.process = None
         self.pending_job = None
         self.worker_log = None
@@ -674,6 +677,13 @@ class ProjectApplication:
         self.type_browser = None
         self.type_browser_tree = None
         self.preview_photo = None
+        self.preview_path = None
+        self.preview_popup = None
+        self.preview_popup_photo = None
+        self.preview_popup_hide_job = None
+        self.drawing_library = None
+        self.drawing_library_paths = ()
+        self.drawing_library_photos = []
         self.update_check_running = False
         self.help_text = tk.StringVar(value=DEFAULT_HELP_TEXT)
         self.tooltips = TooltipManager(root, self.help_text)
@@ -708,17 +718,27 @@ class ProjectApplication:
     def _build_ui(self):
         header = ttk.Frame(self.root, style="Header.TFrame", padding=(14, 10))
         header.pack(fill="x")
+        header.columnconfigure(1, weight=1)
         title_label = ttk.Label(header, text=APP_TITLE, style="Title.TLabel")
-        title_label.pack(side="left")
+        title_label.grid(row=0, column=0, sticky="w")
         self.tooltips.add(title_label, "AAVDS duct component and STEP project builder.")
-        self.project_label = ttk.Label(header, text="", style="Muted.TLabel")
-        self.project_label.pack(side="left", padx=(18, 0))
+        self.project_label = ttk.Label(header, text="", style="Muted.TLabel", anchor="w")
+        self.project_label.grid(row=0, column=1, sticky="ew", padx=(18, 28))
         self.tooltips.add(self.project_label, "Current project folder.")
+        self.header_prefix = ttk.Frame(header, style="Header.TFrame")
+        self.header_prefix.grid(row=0, column=2, sticky="w", padx=(0, 28))
+        prefix_label = ttk.Label(self.header_prefix, text="Project prefix")
+        prefix_label.pack(side="left", padx=(0, 8))
+        self.prefix_entry = ttk.Entry(self.header_prefix, textvariable=self.prefix, width=22)
+        self.prefix_entry.pack(side="left")
+        prefix_help = "Prefix used in generated file names and project identification."
+        self.tooltips.add(prefix_label, prefix_help)
+        self.tooltips.add(self.prefix_entry, prefix_help)
         update_button = ttk.Button(header, text="Check for updates", command=lambda: self.check_for_updates(show_current=True))
-        update_button.pack(side="right")
+        update_button.grid(row=0, column=4, sticky="e")
         self.tooltips.add(update_button, "Check the public version endpoint for a newer signed AAVDS release.")
         project_button = ttk.Button(header, text="Project folder", command=self.choose_project)
-        project_button.pack(side="right")
+        project_button.grid(row=0, column=3, sticky="e", padx=(0, 6))
         self.tooltips.add(project_button, "Choose or create the folder that stores the project, STEP files and logs.")
 
         self.main_pane = ttk.Panedwindow(self.root, orient="horizontal")
@@ -747,25 +767,43 @@ class ProjectApplication:
 
     def _position_split(self):
         width = max(self.root.winfo_width(), 980)
-        self.main_pane.sashpos(0, min(560, max(430, int(width * 0.40))))
+        self.main_pane.sashpos(0, min(450, max(400, int(width * 0.30))))
 
     def _build_editor(self, parent):
-        component_label = ttk.Label(parent, text="Component", font=("Segoe UI Semibold", 12))
-        component_label.pack(anchor="w", pady=(0, 10))
-        self.tooltips.add(component_label, "Edit the selected project component.")
         identity = ttk.Frame(parent)
         identity.pack(fill="x")
-        self.prefix = tk.StringVar()
+        component_label = ttk.Label(identity, text="Component", font=("Segoe UI Semibold", 12))
+        component_label.grid(row=0, column=0, sticky="w")
+        self.tooltips.add(component_label, "Edit the selected project component.")
         self.item_id = tk.StringVar()
         self.from_ref = tk.StringVar()
         self.to_ref = tk.StringVar()
-        self._entry_row(identity, 0, "Project prefix", self.prefix, help_text="Prefix used in generated file names and project identification.")
-        self._entry_row(identity, 1, "ID", self.item_id, help_text="Unique component ID, for example A-10 or B-20.")
-        self._entry_row(identity, 2, "From", self.from_ref, "readonly", "Components or external points connected to this component's inputs.")
-        self._entry_row(identity, 3, "To", self.to_ref, "readonly", "Components or external points connected to this component's outputs.")
+
+        id_label = ttk.Label(identity, text="ID")
+        id_label.grid(row=0, column=1, sticky="w", padx=(16, 6))
+        self.item_id_entry = ttk.Entry(identity, textvariable=self.item_id, width=8)
+        self.item_id_entry.grid(row=0, column=2, sticky="w")
+        self.tooltips.add(id_label, "Unique component ID, for example A-10 or B-20.")
+        self.tooltips.add(self.item_id_entry, "Unique component ID, for example A-10 or B-20.")
+
+        from_label = ttk.Label(identity, text="From")
+        from_label.grid(row=0, column=3, sticky="w", padx=(16, 6))
+        self.from_ref_entry = ttk.Entry(identity, textvariable=self.from_ref, state="readonly")
+        self.from_ref_entry.grid(row=0, column=4, sticky="ew")
+        self.tooltips.add(from_label, "Connected upstream component or external point.")
+        self.tooltips.add(self.from_ref_entry, "Connected upstream component or external point.")
+
+        to_label = ttk.Label(identity, text="To")
+        to_label.grid(row=1, column=3, sticky="w", padx=(16, 6), pady=(4, 0))
+        self.to_ref_entry = ttk.Entry(identity, textvariable=self.to_ref, state="readonly")
+        self.to_ref_entry.grid(row=1, column=4, sticky="ew", pady=(4, 0))
+        self.tooltips.add(to_label, "Connected downstream component or external point.")
+        self.tooltips.add(self.to_ref_entry, "Connected downstream component or external point.")
+
         self.connections_button = ttk.Button(identity, text="Connections...", command=self.open_connections)
-        self.connections_button.grid(row=2, column=2, rowspan=2, sticky="n", padx=(8, 0), pady=4)
+        self.connections_button.grid(row=1, column=0, columnspan=3, sticky="w", pady=(4, 0))
         self.tooltips.add(self.connections_button, "Create, inspect or remove component connections.")
+        identity.columnconfigure(4, weight=1)
 
         type_label = ttk.Label(parent, text="Type", padding=(0, 12, 0, 4))
         type_label.pack(anchor="w")
@@ -797,15 +835,24 @@ class ProjectApplication:
         )
         self.preview_canvas.pack(side="left", fill="x", expand=True)
         self.preview_canvas.bind("<Configure>", lambda event: self.refresh_type_preview())
-        self.tooltips.add(self.preview_canvas, "Technical drawing for the selected component type.")
+        self.preview_canvas.bind("<Enter>", self.show_preview_popup, add="+")
+        self.preview_canvas.bind("<Leave>", self.schedule_preview_popup_hide, add="+")
+        self.tooltips.add(
+            self.preview_canvas,
+            "Technical drawing for the selected component type. Hover to enlarge it.",
+            show_popup=False,
+        )
         type_actions = ttk.Frame(preview_row)
         type_actions.pack(side="right", fill="y", padx=(8, 0))
         self.show_types_button = ttk.Button(type_actions, text="Show all types", command=self.show_all_types)
         self.show_types_button.pack(fill="x")
         self.tooltips.add(self.show_types_button, "Open an overview of every available component type.")
-        self.open_pdf_button = ttk.Button(type_actions, text="Open PDF", command=self.open_pdf, state="disabled")
+        self.drawing_library_button = ttk.Button(type_actions, text="Drawing library", command=self.show_drawing_library)
+        self.drawing_library_button.pack(fill="x", pady=(6, 0))
+        self.tooltips.add(self.drawing_library_button, "Open the installed supplier drawing library. It contains every available PNG preview.")
+        self.open_pdf_button = ttk.Button(type_actions, text="Source PDF", command=self.open_pdf, state="disabled")
         self.open_pdf_button.pack(fill="x", pady=(6, 0))
-        self.tooltips.add(self.open_pdf_button, "Open the primary catalogue PDF for the selected component type.")
+        self.tooltips.add(self.open_pdf_button, "Open the primary source catalogue PDF for the selected component type.")
 
         ttk.Separator(parent).pack(fill="x", pady=12)
         canvas_frame = ttk.Frame(parent)
@@ -836,15 +883,6 @@ class ProjectApplication:
         self.cancel_button = ttk.Button(controls, text="Stop build", command=self.cancel_build, state="disabled")
         self.cancel_button.pack(side="right", padx=6)
         self.tooltips.add(self.cancel_button, "Stop the active FreeCAD build. Accepted files remain unchanged.")
-
-    def _entry_row(self, parent, row, label, variable, state="normal", help_text=""):
-        label_widget = ttk.Label(parent, text=label, width=16)
-        label_widget.grid(row=row, column=0, sticky="w", pady=4)
-        entry = ttk.Entry(parent, textvariable=variable, state=state)
-        entry.grid(row=row, column=1, sticky="ew", pady=4)
-        self.tooltips.add(label_widget, help_text)
-        self.tooltips.add(entry, help_text)
-        parent.columnconfigure(1, weight=1)
 
     def _build_register(self, parent):
         app_selector = ttk.Frame(parent)
@@ -1067,9 +1105,11 @@ class ProjectApplication:
     def refresh_type_preview(self):
         if not hasattr(self, "preview_canvas"):
             return
+        self.hide_preview_popup()
         canvas = self.preview_canvas
         canvas.delete("all")
         self.preview_photo = None
+        self.preview_path = None
         family_id = self.family_ids.get(self.family.get())
         width = max(canvas.winfo_width(), int(canvas["width"]))
         height = max(canvas.winfo_height(), int(canvas["height"]))
@@ -1087,10 +1127,8 @@ class ProjectApplication:
             )
             return
         try:
-            with Image.open(path) as source:
-                image = source.convert("RGBA")
-            image.thumbnail((max(width - 16, 1), max(height - 16, 1)), Image.Resampling.LANCZOS)
-            self.preview_photo = ImageTk.PhotoImage(image)
+            self.preview_photo = self._preview_photo(path, (max(width - 16, 1), max(height - 16, 1)))
+            self.preview_path = path
             canvas.create_image(width / 2, height / 2, image=self.preview_photo, anchor="center")
         except (OSError, ValueError) as error:
             canvas.create_text(
@@ -1101,6 +1139,140 @@ class ProjectApplication:
                 justify="center",
                 width=max(width - 20, 20),
             )
+
+    @staticmethod
+    def _preview_photo(path, size):
+        with Image.open(path) as source:
+            image = source.convert("RGBA")
+        image.thumbnail(size, Image.Resampling.LANCZOS)
+        return ImageTk.PhotoImage(image)
+
+    def _cancel_preview_popup_hide(self, _event=None):
+        if self.preview_popup_hide_job is not None:
+            self.root.after_cancel(self.preview_popup_hide_job)
+            self.preview_popup_hide_job = None
+
+    def schedule_preview_popup_hide(self, _event=None):
+        self._cancel_preview_popup_hide()
+        if self.preview_popup is not None and self.preview_popup.winfo_exists():
+            self.preview_popup_hide_job = self.root.after(120, self.hide_preview_popup)
+
+    def hide_preview_popup(self):
+        self._cancel_preview_popup_hide()
+        if self.preview_popup is not None and self.preview_popup.winfo_exists():
+            self.preview_popup.destroy()
+        self.preview_popup = None
+        self.preview_popup_photo = None
+
+    def show_preview_popup(self, event=None, path=None):
+        path = path or self.preview_path
+        if path is None or not Path(path).is_file():
+            return
+        self.hide_preview_popup()
+        try:
+            photo = self._preview_photo(Path(path), (1000, 760))
+        except (OSError, ValueError):
+            return
+        window = tk.Toplevel(self.root)
+        self.preview_popup = window
+        self.preview_popup_photo = photo
+        window.overrideredirect(True)
+        window.transient(self.root)
+        window.attributes("-topmost", True)
+        frame = tk.Frame(window, background="#8f9ba2", padx=1, pady=1)
+        frame.pack()
+        image = tk.Label(frame, image=photo, background="#ffffff")
+        image.pack()
+        window.update_idletasks()
+        width = window.winfo_reqwidth()
+        height = window.winfo_reqheight()
+        if event is None:
+            x = self.preview_canvas.winfo_rootx() + self.preview_canvas.winfo_width() + 12
+            y = self.preview_canvas.winfo_rooty()
+        else:
+            x = event.x_root + 12
+            y = event.y_root + 12
+        screen_width = window.winfo_screenwidth()
+        screen_height = window.winfo_screenheight()
+        x = max(12, min(x, screen_width - width - 12))
+        y = max(12, min(y, screen_height - height - 42))
+        window.geometry("+%d+%d" % (x, y))
+        window.lift()
+        window.bind("<Enter>", self._cancel_preview_popup_hide)
+        window.bind("<Leave>", self.schedule_preview_popup_hide)
+        image.bind("<Enter>", self._cancel_preview_popup_hide)
+        image.bind("<Leave>", self.schedule_preview_popup_hide)
+
+    def show_drawing_library(self):
+        if self.drawing_library is not None and self.drawing_library.winfo_exists():
+            self.drawing_library.deiconify()
+            self.drawing_library.lift()
+            self.drawing_library.focus_force()
+            return
+        window = tk.Toplevel(self.root)
+        self.drawing_library = window
+        window.title("Technical drawing library")
+        window.transient(self.root)
+        window.geometry("920x700")
+        window.minsize(680, 480)
+        window.protocol("WM_DELETE_WINDOW", self.hide_drawing_library)
+
+        body = ttk.Frame(window, padding=12)
+        body.pack(fill="both", expand=True)
+        ttk.Label(body, text="Technical drawing library", font=("Segoe UI Semibold", 13)).pack(anchor="w")
+        ttk.Label(
+            body,
+            text="One fixed PNG preview for every component type in the dropdown. Opening this library does not redraw or rebuild drawings.",
+            style="Muted.TLabel",
+            wraplength=820,
+        ).pack(anchor="w", pady=(2, 10))
+
+        gallery = ttk.Frame(body)
+        gallery.pack(fill="both", expand=True)
+        canvas = tk.Canvas(gallery, background="#f7f9fa", highlightthickness=0)
+        scrollbar = ttk.Scrollbar(gallery, orient="vertical", command=canvas.yview)
+        canvas.configure(yscrollcommand=scrollbar.set)
+        canvas.pack(side="left", fill="both", expand=True)
+        scrollbar.pack(side="right", fill="y")
+        content = ttk.Frame(canvas, padding=(0, 0, 8, 0))
+        content_window = canvas.create_window((0, 0), window=content, anchor="nw")
+        content.bind("<Configure>", lambda _event: canvas.configure(scrollregion=canvas.bbox("all")))
+        canvas.bind("<Configure>", lambda event: canvas.itemconfigure(content_window, width=event.width))
+
+        paths = tuple(
+            TYPE_PREVIEW_DIR / (family_id + ".png")
+            for family_id in sorted(FAMILIES, key=str.casefold)
+        )
+        self.drawing_library_paths = paths
+        self.drawing_library_photos = []
+        for index, path in enumerate(paths):
+            family_id = path.stem
+            card = ttk.Frame(content, padding=8, relief="solid", borderwidth=1)
+            card.grid(row=index // 3, column=index % 3, padx=6, pady=6, sticky="nsew")
+            content.grid_columnconfigure(index % 3, weight=1)
+            ttk.Label(card, text=family_id + " - " + FAMILY_NAMES.get(family_id, family_id), wraplength=260).pack(anchor="w", pady=(0, 6))
+            if not path.is_file():
+                ttk.Label(card, text="Technical preview is not installed.", foreground="#b42318", wraplength=260).pack(anchor="w")
+                continue
+            try:
+                photo = self._preview_photo(path, (260, 180))
+                self.drawing_library_photos.append(photo)
+                image = ttk.Label(card, image=photo)
+                image.pack()
+                image.bind("<Enter>", lambda event, preview_path=path: self.show_preview_popup(event, preview_path))
+                image.bind("<Leave>", self.schedule_preview_popup_hide)
+            except (OSError, ValueError) as error:
+                ttk.Label(card, text="Preview could not be loaded\n" + str(error), foreground="#b42318", wraplength=260).pack(anchor="w")
+
+        actions = ttk.Frame(body)
+        actions.pack(fill="x", pady=(10, 0))
+        close = ttk.Button(actions, text="Close", command=self.hide_drawing_library)
+        close.pack(side="right")
+        self.tooltips.add(close, "Hide this fixed drawing library. Reopening it keeps the installed PNG previews ready.")
+
+    def hide_drawing_library(self):
+        if self.drawing_library is not None and self.drawing_library.winfo_exists():
+            self.drawing_library.withdraw()
 
     def show_all_types(self):
         if self.type_browser is not None and self.type_browser.winfo_exists():
@@ -1703,6 +1875,9 @@ def main(argv=None):
         tooltip_manager._hide_popup()
         popup_closed = tooltip_manager.popup is None and tooltip_manager.hide_job is None
         tooltip_manager._leave(application.help_label)
+        tooltip_manager._enter(application.preview_canvas)
+        preview_canvas_suppresses_small_tooltip = tooltip_manager.pending_job is None
+        tooltip_manager._leave(application.preview_canvas)
 
         def help_targets(parent):
             result = []
@@ -1717,6 +1892,13 @@ def main(argv=None):
         checks = {
             "window": root.winfo_exists() == 1,
             "aavds_title": root.title() == APP_TITLE == "AAVDS-duct-builder",
+            "project_prefix_in_header": application.prefix_entry.master is application.header_prefix,
+            "compact_component_identity_layout": (
+                application.item_id_entry.grid_info()["row"] == 0
+                and application.from_ref_entry.grid_info()["row"] == 0
+                and application.to_ref_entry.grid_info()["row"] == 1
+                and application.connections_button.grid_info()["row"] == 1
+            ),
             "build_selection_saves_new_item": built_ids == [item["id"]] and len(application.store.items) == 1,
             "standard_piece_price_visible": bool(rate_text(item)) and application.tree.set(item["id"], "Rate") == rate_text(item),
             "columns": application.tree["columns"] == ("ID", "Size", "Type", "From", "To", "Error", "Area", "Rate", "Total"),
@@ -1740,6 +1922,7 @@ def main(argv=None):
             "tooltip_popup_created": popup_created,
             "tooltip_popup_has_timed_hide": popup_has_timed_hide,
             "tooltip_popup_closed": popup_closed,
+            "preview_canvas_suppresses_small_tooltip": preview_canvas_suppresses_small_tooltip,
             "tooltip_all_field_keys_documented": all_field_keys == set(FIELD_HELP),
             "tooltip_all_visible_controls_registered": all(tooltip_manager.has_help(widget) for widget in help_targets(root)),
             "tooltip_connection_controls_registered": all(tooltip_manager.has_help(widget) for widget in help_targets(dialog.window)),
@@ -1770,6 +1953,31 @@ def main(argv=None):
             and not browser.winfo_exists()
         )
         checks["bend_preview_loaded"] = application.preview_photo is not None
+        application.preview_canvas.event_generate("<Enter>", x=20, y=20)
+        root.update_idletasks()
+        checks["preview_hover_enlarges_image"] = (
+            application.preview_popup is not None
+            and application.preview_popup.winfo_exists()
+            and application.preview_popup_photo is not None
+            and application.preview_popup_photo.width() > application.preview_photo.width()
+        )
+        application.preview_canvas.event_generate("<Leave>", x=20, y=20)
+        application.hide_preview_popup()
+        application.show_drawing_library()
+        root.update_idletasks()
+        library = application.drawing_library
+        checks["drawing_library_opens"] = library is not None and library.winfo_exists()
+        expected_preview_paths = tuple(
+            TYPE_PREVIEW_DIR / (family_id + ".png")
+            for family_id in sorted(FAMILIES, key=str.casefold)
+        )
+        checks["drawing_library_lists_installed_pngs"] = (
+            application.drawing_library_paths == expected_preview_paths
+            and all(path.is_file() for path in expected_preview_paths)
+        )
+        application.show_drawing_library()
+        checks["drawing_library_is_reused"] = application.drawing_library is library
+        application.hide_drawing_library()
         application.family.set(application.family_labels["BU"])
         application.family_changed(parameters=dict(defaults("BU"), t_mm=1.5))
         root.update_idletasks()

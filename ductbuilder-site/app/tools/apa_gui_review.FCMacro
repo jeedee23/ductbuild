@@ -1,0 +1,54 @@
+"""Run a deterministic APA GUI review with no popups or input dialogs.
+
+Optional environment variables:
+    DUCTBUILD_APA_REVIEW_OUT
+    DUCTBUILD_APA_D1_MM
+    DUCTBUILD_APA_D2_MM
+    DUCTBUILD_APA_ASYMMETRY
+    DUCTBUILD_APA_E_MM
+"""
+from __future__ import annotations
+
+import os
+import sys
+import traceback
+from pathlib import Path
+
+
+TOOLS_DIR = Path(__file__).resolve().parent
+if str(TOOLS_DIR) not in sys.path:
+    sys.path.insert(0, str(TOOLS_DIR))
+
+from apa_review import _resolve_asymmetry, run_gui_review
+
+
+out_dir = Path(
+    os.environ.get(
+        "DUCTBUILD_APA_REVIEW_OUT",
+        str(Path.home() / "Documents" / "ductbuild-apa-review"),
+    )
+).expanduser()
+d1_mm = float(os.environ.get("DUCTBUILD_APA_D1_MM", "200"))
+d2_mm = float(os.environ.get("DUCTBUILD_APA_D2_MM", "90"))
+asymmetry_value = os.environ.get("DUCTBUILD_APA_ASYMMETRY", "S")
+e_mm = float(os.environ.get("DUCTBUILD_APA_E_MM", "20"))
+asymmetry_mm, asymmetry_mode = _resolve_asymmetry(asymmetry_value, d1_mm, d2_mm)
+
+try:
+    result = run_gui_review(
+        out_dir,
+        d1_mm,
+        d2_mm,
+        asymmetry_mm,
+        asymmetry_mode,
+        e_mm,
+    )
+except Exception:
+    out_dir.mkdir(parents=True, exist_ok=True)
+    debug_path = out_dir / "APA_GUI_review_error.txt"
+    debug_path.write_text(traceback.format_exc(), encoding="utf-8")
+    print(f"APA GUI review failed; traceback written to {debug_path}")
+else:
+    ready_path = out_dir / "APA_GUI_tiled_review.ready"
+    ready_path.write_text(str(result["view_count"]), encoding="utf-8")
+    print(ready_path)
