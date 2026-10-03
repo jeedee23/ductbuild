@@ -2,20 +2,28 @@
 
 ## Current scope
 
-PR/PRA is a standalone, review-only FreeCAD model. Do not add it to the
-catalogue rules, price grids, geometry registry, or GUI until its product-name
-mapping and production contract are released.
+PR/PRA is implemented in the application for the reviewed `B < D1` scope.
+The catalogue rules, geometry registry, GUI, and price grid use the accepted
+mapping: `S` is PR, `A` is PRA, and a manual intermediate `P` remains on
+request because it is not a catalogue position.
 
 The active model is [pr_pra_review.py](./pr_pra_review.py), launched for
 native review by [pr_pra_gui_review.FCMacro](./pr_pra_gui_review.FCMacro).
 It represents the rectangular branch alone; D1 is a Boolean cutter and is
 never exported as part of the fitting.
 
-The open catalogue question is deliberately not guessed:
+The exact supplier page 46 matrix is used without interpolation. It selects
+the first `L+B` maximum band and the physical frame column:
 
 ```text
-Which B-versus-D1 combinations use the PR product name, and which use PRA?
+NO_FRAME
+E20 or E30
+A40
 ```
+
+`E20`, `E30`, and `A40` create the corresponding physical branch frame in
+the application export. `B >= D1` is not exposed: it needs a separate native
+geometry review before the page's `B > Ø` price rows can be used safely.
 
 ## Source comparison and accepted review result
 
@@ -125,9 +133,17 @@ Count only a geometry change followed by a valid native visual comparison as
 one correction attempt. Limit a fitting type to ten such attempts. Do not
 describe a headless render as native FreeCAD screenshot evidence.
 
-## Release blocker
+## Production status
 
-The current PR/PRA result is review-ready only. Production release still
-requires the PR-versus-PRA B/D1 mapping, price or `ON_REQUEST` policy,
-production material and thickness rules, connection-port semantics,
-backend-independent geometry, focused tests, and a user go/no-go.
+The reviewed `B < D1` PR/PRA construction is in production as a FreeCAD
+coordination model:
+
+- `S` maps to PR and `A` maps to PRA;
+- matrix prices are direct catalogue prices, including the selected physical
+  frame column;
+- `P` remains `ON_REQUEST`;
+- D1 is retained as a curved-host Boolean reference and is not exported;
+- a framed E20 worker export/re-import passed with nine valid solids.
+
+The `B >= D1` supplier rows remain deliberately unavailable until their
+geometry and product mapping have native-review evidence.

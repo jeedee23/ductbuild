@@ -110,6 +110,73 @@ def _rectangular_rate(parameters, derived, family_model):
     return result
 
 
+def _round_branch_price(parameters):
+    grid = PRICES["round_branch_eur_each"]
+    variant = parameters["variant"]
+    row = grid[variant].get(_key(parameters["d1_mm"]))
+    branch_group_index = next(
+        (
+            index
+            for index, diameters in enumerate(grid["branch_diameter_groups_mm"])
+            if _index(diameters, parameters["d2_mm"]) is not None
+        ),
+        None,
+    )
+    if row is None or branch_group_index is None:
+        return _unavailable(
+            "ROUND_BRANCH_MATRIX",
+            "D1 and D2 must be listed nominal Airkan sizes for the AP/APA/PSA price matrix.",
+        )
+    price = row[branch_group_index]
+    if price is None:
+        return _unavailable(
+            "ROUND_BRANCH_MATRIX",
+            "The supplier matrix marks this AP/APA/PSA D1/D2 combination as unavailable.",
+        )
+    return _result(
+        "ROUND_BRANCH_MATRIX",
+        price,
+        price_basis="AIRKAN_CATALOGUE_EUR_EACH",
+        price_source_id="round_branch",
+        price_variant=variant,
+        host_diameter_mm=parameters["d1_mm"],
+        branch_diameter_mm=parameters["d2_mm"],
+        branch_diameter_group_mm=grid["branch_diameter_groups_mm"][branch_group_index],
+    )
+
+
+def _rectangular_branch_to_round_price(parameters, derived):
+    variant = derived["catalogue_variant"]
+    if variant is None:
+        return _unavailable(
+            "RECTANGULAR_BRANCH_TO_ROUND_MATRIX",
+            "The supplier matrix does not define a price for an intermediate P branch position.",
+        )
+    grid = PRICES["rectangular_branch_to_round_eur_each"]
+    maximums = grid["sum_l_plus_b_max_mm"]
+    band_index = next((index for index, maximum in enumerate(maximums) if parameters["l_mm"] + parameters["b_mm"] <= maximum), None)
+    if band_index is None:
+        return _unavailable(
+            "RECTANGULAR_BRANCH_TO_ROUND_MATRIX",
+            "L + B exceeds the largest supplier PR/PRA price band (2500 mm).",
+        )
+    frame_option = derived["price_frame_option"]
+    frame_index = grid["frame_options"].index(frame_option)
+    key = variant + "_B_LT_DIAMETER"
+    price = grid[key][band_index][frame_index]
+    return _result(
+        "RECTANGULAR_BRANCH_TO_ROUND_MATRIX",
+        price,
+        price_basis="AIRKAN_CATALOGUE_EUR_EACH",
+        price_source_id="rect_round_branch",
+        price_variant=variant,
+        b_relation_to_d1="B_LT_D1",
+        l_plus_b_mm=parameters["l_mm"] + parameters["b_mm"],
+        l_plus_b_maximum_mm=maximums[band_index],
+        frame_option=frame_option,
+    )
+
+
 def price_for_parameters(parameters, derived):
     family = parameters["family"]
     family_model = PRICES["family_models"][family]
@@ -151,6 +218,10 @@ def price_for_parameters(parameters, derived):
                        rate_eur_per_m=rate, cut_cost_status="EXCLUDED; number of cuts is not a builder parameter")
     if model == "ROUND_SEGMENT_BEND":
         price = _grid_price("round_segment_bend_eur_each", parameters["diameter_mm"], parameters["variant"])
+    elif model == "ROUND_BRANCH_MATRIX":
+        return _round_branch_price(parameters)
+    elif model == "RECTANGULAR_BRANCH_TO_ROUND_MATRIX":
+        return _rectangular_branch_to_round_price(parameters, derived)
     elif model == "REGISTER_GRID":
         grid = PRICES["register_eur_each"]
         h_index = _index(grid["h_mm"], parameters["b_mm"])

@@ -447,7 +447,7 @@
     "ROOF": {"model": "ROUND_ROOF_PASSAGE"},
     "AP_APA_PSA": {"model": "ROUND_BRANCH_MATRIX"},
     "PR_PRA": {"model": "RECTANGULAR_BRANCH_TO_ROUND_MATRIX"},
-    "TEE_SPECIAL": {"model": "RECTANGULAR_SHEET", "category": "FITTING_OR_SHORT"},
+    "TEE_SPECIAL": {"model": "ON_REQUEST"},
     "SUPPORT_AT": {"model": "SUPPORT_FIXED_OR_DIAMETER"},
     "COMPOSITE": {"model": "RECTANGULAR_SHEET", "category": "FITTING_OR_SHORT"}
   }

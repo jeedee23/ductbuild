@@ -41,9 +41,10 @@ def create_document(params,show_references=True,progress=None):
         prop(root,'App::PropertyString','SourceReferencesJSON',json.dumps(result['source_references'],ensure_ascii=False))
         prop(root,'App::PropertyString','JoiningDatumsJSON',json.dumps(result['join_datums']))
         prop(root,'App::PropertyString','Warnings','\n'.join(result['warnings']))
+        if 'pricing_status' in result['order']:
+            prop(root,'App::PropertyString','PricingStatus',result['order']['pricing_status'])
         if 'unit_price_eur' in result['order']:
             prop(root,'App::PropertyString','CataloguePriceEUR','%.2f'%result['order']['unit_price_eur'])
-            prop(root,'App::PropertyString','PricingStatus',result['order']['pricing_status'])
         prop(root,'App::PropertyString','Regenerate','Airkan_Builder: Uit actief model -> wijzigen -> nieuw model bouwen. Geen live FeaturePython-afhankelijkheid.')
         prop(root,'App::PropertyString','WeightStatus','NOT_CALCULATED: simplified/reconstructed geometry is not a weight certificate')
         objects=[];groups={}
@@ -231,13 +232,15 @@ def export_document(doc,root,objects,result,outdir):
         shape=Part.read(stmp);k=Kernel();val=result['validation']
         if not shape.isValid() or len(shape.Solids)!=val['valid_solids']:raise RuntimeError('STEP-terugleescontrole: aantal/geldigheid solids gewijzigd.')
         if any(abs(a-b)>1e-3 for a,b in zip(k.bounds(shape),val['bounds_mm'])):raise RuntimeError('STEP-terugleescontrole: buitenmaten gewijzigd.')
-        if abs(shape.Volume-val['total_shape_volume_mm3'])>max(.01,val['total_shape_volume_mm3']*1e-5):raise RuntimeError('STEP-terugleescontrole: volume gewijzigd.')
+        volume_reference=val.get('step_volume_reference_mm3',val['total_shape_volume_mm3'])
+        volume_tolerance=val.get('step_volume_relative_tolerance',1e-5)
+        if abs(shape.Volume-volume_reference)>max(.01,volume_reference*volume_tolerance):raise RuntimeError('STEP-terugleescontrole: volume gewijzigd.')
         if 'total_shape_area_mm2' in val and abs(shape.Area-val['total_shape_area_mm2'])>max(.01,val['total_shape_area_mm2']*1e-5):raise RuntimeError('STEP-terugleescontrole: oppervlak gewijzigd.')
         prop(root,'App::PropertyString','ExportValidation','STEP reread PASS; solids/bounds/volume')
         doc.recompute();doc.saveAs(paths['freecad'])
         if not Path(paths['freecad']).is_file():raise RuntimeError('FCStd is niet opgeslagen.')
         data=serializable(result);data['created_utc']=datetime.now(timezone.utc).isoformat();data['files']=paths
-        data['validation']=dict(data['validation'],step_reread='PASS',freecad_saved=True,step_bounds_tolerance_mm=.001,step_volume_relative_tolerance=1e-5)
+        data['validation']=dict(data['validation'],step_reread='PASS',freecad_saved=True,step_bounds_tolerance_mm=.001,step_volume_relative_tolerance=volume_tolerance)
         jtmp=paths['parameters']+'.tmp';temporary.append(jtmp)
         with open(jtmp,'w',encoding='utf-8') as f:json.dump(data,f,ensure_ascii=False,indent=2,allow_nan=False)
         os.replace(stmp,paths['step']);os.replace(jtmp,paths['parameters'])
@@ -276,13 +279,15 @@ def export_step_json(doc,root,objects,result,outdir,basename=None,project_item=N
         shape=Part.read(stmp);k=Kernel();val=result['validation']
         if not shape.isValid() or len(shape.Solids)!=val['valid_solids']:raise RuntimeError('STEP-terugleescontrole: aantal/geldigheid solids gewijzigd.')
         if any(abs(a-b)>1e-3 for a,b in zip(k.bounds(shape),val['bounds_mm'])):raise RuntimeError('STEP-terugleescontrole: buitenmaten gewijzigd.')
-        if abs(shape.Volume-val['total_shape_volume_mm3'])>max(.01,val['total_shape_volume_mm3']*1e-5):raise RuntimeError('STEP-terugleescontrole: volume gewijzigd.')
+        volume_reference=val.get('step_volume_reference_mm3',val['total_shape_volume_mm3'])
+        volume_tolerance=val.get('step_volume_relative_tolerance',1e-5)
+        if abs(shape.Volume-volume_reference)>max(.01,volume_reference*volume_tolerance):raise RuntimeError('STEP-terugleescontrole: volume gewijzigd.')
         if 'total_shape_area_mm2' in val and abs(shape.Area-val['total_shape_area_mm2'])>max(.01,val['total_shape_area_mm2']*1e-5):raise RuntimeError('STEP-terugleescontrole: oppervlak gewijzigd.')
         prop(root,'App::PropertyString','ExportValidation','STEP reread PASS; solids/bounds/volume')
         doc.recompute()
         data=serializable(result);data['created_utc']=datetime.now(timezone.utc).isoformat();data['files']=paths
         if project_item is not None:data['project_item']=project_item
-        data['validation']=dict(data['validation'],step_reread='PASS',freecad_saved=False,step_bounds_tolerance_mm=.001,step_volume_relative_tolerance=1e-5)
+        data['validation']=dict(data['validation'],step_reread='PASS',freecad_saved=False,step_bounds_tolerance_mm=.001,step_volume_relative_tolerance=volume_tolerance)
         jtmp=paths['parameters']+'.tmp';temporary.append(jtmp)
         with open(jtmp,'w',encoding='utf-8') as f:json.dump(data,f,ensure_ascii=False,indent=2,allow_nan=False)
         os.replace(stmp,paths['step']);os.replace(jtmp,paths['parameters'])

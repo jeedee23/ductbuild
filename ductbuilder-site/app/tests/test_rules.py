@@ -78,12 +78,36 @@ class RulesTests(unittest.TestCase):
     def test_unknown_parameter(self):
         with self.assertRaises(InputError):resolve(params('REG',execute='something'))
     def test_source_only_are_blocked(self):
-        count=0
+        source_only=set()
         for family,spec in FAMILIES.items():
             if spec['status']!='IMPLEMENTED':
-                count+=1
+                source_only.add(family)
                 with self.subTest(family=family),self.assertRaises(InputError):resolve(defaults(family))
-        self.assertEqual(count,5)
+        self.assertEqual(source_only,{'SUPPORT_AT','COMPOSITE'})
+    def test_promoted_source_family_contracts(self):
+        ap=resolve(params('AP_APA_PSA',variant='APA',position='A'))
+        self.assertEqual(ap['derived']['asymmetry_mm'],75)
+        self.assertEqual(ap['order']['pricing_status'],'CATALOGUE_PRICE')
+        self.assertEqual(ap['order']['unit_price_eur'],46.96)
+        psa=resolve(params('AP_APA_PSA',variant='PSA',position='A'))
+        self.assertEqual(psa['derived']['asymmetry_mm'],75)
+        pr=resolve(params('PR_PRA',position='P',offset_mm=10))
+        self.assertEqual(pr['derived']['asymmetry_mm'],10)
+        self.assertEqual(pr['order']['pricing_status'],'ON_REQUEST')
+        centred_pr=resolve(params('PR_PRA'))
+        self.assertEqual(centred_pr['derived']['catalogue_variant'],'PR')
+        self.assertEqual(centred_pr['order']['unit_price_eur'],31.23)
+        talpha=resolve(defaults('TEE_SPECIAL'))
+        self.assertEqual(talpha['derived']['k2_minimum_vertical_clearance_mm'],100)
+        self.assertTrue(talpha['derived']['e_source_derived'])
+        self.assertTrue(talpha['derived']['f_source_derived'])
+        self.assertGreaterEqual(talpha['derived']['k2_vertical_clearance_mm'],100)
+        self.assertEqual(talpha['order']['pricing_status'],'ON_REQUEST')
+        tasymm=resolve(params('TEE_SPECIAL',variant='TASYMM',a_mm=300,b_mm=200,c_mm=400,d_mm=200,length_mm=1000,branch_length_mm=300))
+        self.assertEqual(tasymm['derived']['geometry_basis'],'TASYMM_SOURCE_PROFILE')
+        self.assertEqual(tasymm['order']['catalogue_label'],'TASYMM - 300x200 / 200x200 - K2 300')
+        with self.assertRaises(InputError):resolve(params('AP_APA_PSA',variant='AP',position='A'))
+        with self.assertRaises(InputError):resolve(params('PR_PRA',position='P',offset_mm=50))
     def test_register_label_H_B(self):
         r=resolve(params('REG',a_mm=1000,b_mm=800,variant='REGH'))
         self.assertEqual(r['order']['catalogue_label'],'REGH 800 - 1000')

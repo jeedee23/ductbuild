@@ -2525,9 +2525,66 @@
       "id": "AP_APA_PSA",
       "label": "Ronde aftakkingen AP / APA / PSA",
       "code": "AP / APA / PSA",
-      "detail": "NOT_RELEASED",
-      "status": "SOURCE_REGISTER_ONLY",
-      "fields": [],
+      "detail": "COORDINATION_MODEL",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "variant",
+          "label": "Uitvoering",
+          "kind": "choice",
+          "choices": ["AP", "APA", "PSA"],
+          "default": "AP",
+          "note": "AP is the symmetric APA construction. PSA uses its developed-saddle construction."
+        },
+        {
+          "key": "d1_mm",
+          "label": "Hostdiameter D1",
+          "kind": "number",
+          "default": 300,
+          "minimum": 50,
+          "maximum": 2000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "d2_mm",
+          "label": "Aftakdiameter D2",
+          "kind": "number",
+          "default": 150,
+          "minimum": 50,
+          "maximum": 1500,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "position",
+          "label": "Positie",
+          "kind": "choice",
+          "choices": ["S", "A", "P"],
+          "default": "S",
+          "note": "S = gecentreerd, A = rechter raaklijn, P = handmatige positieve offset."
+        },
+        {
+          "key": "offset_mm",
+          "label": "Positie P offset",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 1000,
+          "unit": "mm",
+          "note": "Alleen voor positie P."
+        },
+        {
+          "key": "e_mm",
+          "label": "Uitsteeklengte E",
+          "kind": "number",
+          "default": 200,
+          "minimum": 1,
+          "maximum": 2000,
+          "unit": "mm",
+          "note": "Niet gebruikt door de PSA-developed-saddle uitvoering."
+        }
+      ],
       "sources": [
         {
           "source_id": "ap",
@@ -2545,16 +2602,73 @@
           "catalogue_page": 42
         }
       ],
-      "notes": "Bron toont de zadel-/kegelvorm maar e en de pas-/overgangsdetails moeten eerst expliciet worden vastgelegd. Niet stilzwijgend vervangen door een ronde T-buis.",
+      "notes": "Validated hollow AP/APA and PSA source constructions. D1 is a Boolean host cutter and is not exported. Exact listed nominal D1/D2 prices use the Airkan AP/APA/PSA source matrix; unsupported or dashed combinations remain on request.",
       "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
     },
     {
       "id": "PR_PRA",
       "label": "Rechthoekige aftakking op rond PR / PRA",
       "code": "PR / PRA",
-      "detail": "NOT_RELEASED",
-      "status": "SOURCE_REGISTER_ONLY",
-      "fields": [],
+      "detail": "COORDINATION_MODEL",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "d1_mm",
+          "label": "Hostdiameter D1",
+          "kind": "number",
+          "default": 200,
+          "minimum": 50,
+          "maximum": 2000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "b_mm",
+          "label": "Aftakbreedte B",
+          "kind": "number",
+          "default": 100,
+          "minimum": 3,
+          "maximum": 1500,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "l_mm",
+          "label": "Aftaklengte L",
+          "kind": "number",
+          "default": 200,
+          "minimum": 3,
+          "maximum": 2000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "position",
+          "label": "Positie",
+          "kind": "choice",
+          "choices": ["S", "A", "P"],
+          "default": "S",
+          "note": "S = gecentreerd, A = rechter raaklijn, P = handmatige positieve offset."
+        },
+        {
+          "key": "offset_mm",
+          "label": "Positie P offset",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 1000,
+          "unit": "mm",
+          "note": "Alleen voor positie P."
+        },
+        {
+          "key": "frame_profile",
+          "label": "Kaderprofiel",
+          "kind": "choice",
+          "choices": ["NO_FRAME", "E20", "E30", "A40"],
+          "default": "NO_FRAME",
+          "note": "Matches the physical branch frame and the supplier price-matrix column."
+        }
+      ],
       "sources": [
         {
           "source_id": "pr",
@@ -2562,16 +2676,133 @@
           "catalogue_page": 46
         }
       ],
-      "notes": "B tegenover diameter selecteert geometrische subgevallen binnen de families; dit is geen eenvoudige PR versus PRA-schakelaar. Volledige zadelconstructie en variantmapping nog niet vrijgegeven.",
+      "notes": "Validated hollow B × L rectangular branch with a concave D1 contact. D1 is a Boolean host cutter and is not exported. For review-approved B < D1 geometry, S maps to PR and A maps to PRA; exact source pricing uses L+B maximum bands and the selected physical frame. Intermediate P and B >= D1 remain on request pending their own product geometry review.",
       "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
     },
     {
       "id": "TEE_SPECIAL",
-      "label": "Speciale Talpha en ongelijke T",
-      "code": "T / Talpha",
-      "detail": "NOT_RELEASED",
-      "status": "SOURCE_REGISTER_ONLY",
-      "fields": [],
+      "label": "Talpha / TASYMM",
+      "code": "Talpha / TASYMM",
+      "detail": "COORDINATION_MODEL",
+      "status": "IMPLEMENTED",
+      "fields": [
+        {
+          "key": "variant",
+          "label": "Variant",
+          "kind": "choice",
+          "choices": ["TALPHA", "TASYMM"],
+          "default": "TALPHA",
+          "note": "TALPHA uses the approved oblique source profile; TASYMM uses the approved vertical unequal-main-port profile."
+        },
+        {
+          "key": "a_mm",
+          "label": "K1 hoogte A",
+          "kind": "number",
+          "default": 300,
+          "minimum": 50,
+          "maximum": 2000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "b_mm",
+          "label": "Gemeenschappelijke diepte B",
+          "kind": "number",
+          "default": 200,
+          "minimum": 50,
+          "maximum": 2000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "c_mm",
+          "label": "K2 hoogte C",
+          "kind": "number",
+          "default": 300,
+          "minimum": 50,
+          "maximum": 2000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "d_mm",
+          "label": "K3 hoogte D",
+          "kind": "number",
+          "default": 300,
+          "minimum": 50,
+          "maximum": 2000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "length_mm",
+          "label": "Hoofdsectie L",
+          "kind": "number",
+          "default": 1000,
+          "minimum": 100,
+          "maximum": 5000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "g_mm",
+          "label": "Afgaande sectie G",
+          "kind": "number",
+          "default": 250,
+          "minimum": 1,
+          "maximum": 3000,
+          "unit": "mm",
+          "note": ""
+        },
+        {
+          "key": "e_mm",
+          "label": "Bronmaat E",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 5000,
+          "unit": "mm",
+          "note": "Zero derives E from the L/G/C/alpha source closure; an explicit value must satisfy that closure."
+        },
+        {
+          "key": "branch_length_mm",
+          "label": "K2 lengte",
+          "kind": "number",
+          "default": 300,
+          "minimum": 100,
+          "maximum": 5000,
+          "unit": "mm",
+          "note": "Only for TASYMM: vertical K2 length from the sheet throat to its frame mating plane."
+        },
+        {
+          "key": "f_mm",
+          "label": "Schuine lengte F",
+          "kind": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 5000,
+          "unit": "mm",
+          "note": "Zero derives the minimum valid F; an explicit value must provide at least 100 mm of K2-to-G perpendicular clearance."
+        },
+        {
+          "key": "alpha_deg",
+          "label": "Hoek alpha",
+          "kind": "number",
+          "default": 45,
+          "minimum": 5,
+          "maximum": 85,
+          "unit": "deg",
+          "note": ""
+        },
+        {
+          "key": "frame_profile",
+          "label": "Kaderprofiel",
+          "kind": "choice",
+          "choices": ["E20", "E30", "A20", "A30", "A40"],
+          "default": "E20",
+          "note": ""
+        }
+      ],
       "sources": [
         {
           "source_id": "rect",
@@ -2584,7 +2815,7 @@
           "catalogue_page": null
         }
       ],
-      "notes": "Niet gelijkstellen aan het geimplementeerde 90-graden T-stuk met constante hoofdsectie.",
+      "notes": "Validated Talpha source profile with physical K1/K2/K3 frames and i >= 100 mm K2-to-G clearance, plus user-approved TASYMM vertical unequal-main-port geometry. The equal T remains TEE_RECT. Catalogue page 157 supplies geometry codes only, not a special-tee price rule, so pricing remains on request.",
       "naming_status": "CATALOGUE_FAMILY_PLUS_PROJECT_PARAMETERS"
     },
     {

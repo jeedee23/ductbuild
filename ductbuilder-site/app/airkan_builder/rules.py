@@ -6,6 +6,7 @@ import math
 import re
 from pathlib import Path
 from copy import deepcopy
+from .kernel import frame_api
 from .pricing import PRICE_PATH, price_for_parameters, rectangular_priced_thicknesses
 
 CATALOGUE_PATH = Path(__file__).with_name('catalogue_rules_v3.json')
@@ -45,6 +46,43 @@ def profile_for(a, b):
 
 def profile_depth(profile):
     return {'E30':27.0, 'A40':36.0, 'GEEN':0.0}[profile]
+
+def derive_talpha_source_dimensions(a_mm, c_mm, d_mm, main_length_mm, g_mm, alpha_deg, frame_profile):
+    try:
+        frame_depth_mm = frame_api()['frame_config'](
+            profile=frame_profile,
+            length=c_mm,
+            width=max(a_mm, c_mm, d_mm),
+        )['profile_depth']
+    except ValueError as error:
+        raise InputError('Talpha frame dimensions are invalid: ' + str(error)) from error
+    sheet_main_length_mm = main_length_mm - 2 * frame_depth_mm
+    need(sheet_main_length_mm > 0, 'TALPHA main length is too short for both main-port frames.')
+    main_x_origin_mm = frame_depth_mm
+    right_entry_x_mm = main_length_mm - frame_depth_mm
+    frame_return_x_mm = right_entry_x_mm - g_mm
+    need(main_x_origin_mm < frame_return_x_mm < right_entry_x_mm, 'TALPHA G must leave room between the two main-port frames.')
+    alpha_rad = math.radians(alpha_deg)
+    branch_cos = math.cos(alpha_rad)
+    branch_sin = math.sin(alpha_rad)
+    main_top_slope = (d_mm - a_mm) / sheet_main_length_mm
+    denominator = branch_sin - main_top_slope * branch_cos
+    need(denominator > 1e-9, 'TALPHA alpha and the main-height taper cannot form a source profile.')
+    target_z_mm = a_mm + main_top_slope * (frame_return_x_mm - main_x_origin_mm)
+    x_term_mm = frame_return_x_mm - c_mm * branch_sin
+    z_term_mm = target_z_mm - a_mm + main_top_slope * main_x_origin_mm + c_mm * branch_cos
+    alignment_length_mm = (z_term_mm - main_top_slope * x_term_mm) / denominator
+    e_mm = x_term_mm - branch_cos * alignment_length_mm
+    need(main_x_origin_mm < e_mm < right_entry_x_mm, 'TALPHA E derived from L, G, C, and alpha leaves no usable main-port section.')
+    minimum_return_length_mm = 100.0 / branch_sin
+    return {
+        'e_mm': e_mm,
+        'f_mm': alignment_length_mm + minimum_return_length_mm,
+        'alignment_length_mm': alignment_length_mm,
+        'minimum_return_length_mm': minimum_return_length_mm,
+        'frame_depth_mm': frame_depth_mm,
+        'right_entry_x_mm': right_entry_x_mm,
+    }
 
 def defaults(family):
     return {'family':family, 'prefix':DEFAULT_PREFIX, **{f['key']:deepcopy(f['default']) for f in FAMILIES[family]['fields']}}
@@ -251,6 +289,98 @@ def resolve(raw):
         need(p['price_status'] != 'BEVESTIGD' or p['unit_price_eur'] > 0, 'BUY BEVESTIGD requires a positive unit price.')
         derived.update(geometry_basis='USER_SUPPLIED_STEP', connection_a_mm=p['a_mm'], connection_b_mm=p['b_mm'])
         warnings.append('External purchased component: STEP and connection dimensions are user input; geometry is not interpreted as an Airkan item.')
+    if family == 'AP_APA_PSA':
+        variant = p['variant']
+        d1, d2 = p['d1_mm'], p['d2_mm']
+        need(d1 > d2, 'D1 must be greater than D2.')
+        maximum_offset = d2 / 2 if variant == 'PSA' else (d1 - d2) / 2
+        if variant == 'AP':
+            need(p['position'] == 'S', 'AP is the symmetric construction; use APA for an offset branch.')
+            asymmetry_mm, position = 0.0, 'S'
+        elif p['position'] == 'S':
+            asymmetry_mm, position = 0.0, 'S'
+        elif p['position'] == 'A':
+            need(maximum_offset > 0, 'A requires the host diameter to be larger than the branch diameter.')
+            asymmetry_mm, position = maximum_offset, 'A'
+        else:
+            need(0 <= p['offset_mm'] < maximum_offset, 'P offset must be non-negative and less than the right-tangent offset (%g mm).' % maximum_offset)
+            asymmetry_mm, position = p['offset_mm'], 'P'
+        derived.update(asymmetry_mm=asymmetry_mm, asymmetry_mode=position, maximum_asymmetry_mm=maximum_offset,
+                       geometry_basis=('PSA_DEVELOPED_SADDLE' if variant == 'PSA' else 'APA_CONICAL_SADDLE'),
+                       wall_thickness_mm=1.0)
+        warnings.append('D1 is a Boolean host cutter and is not exported. Listed nominal D1/D2 combinations use the exact Airkan AP/APA/PSA price matrix; all other combinations remain on request.')
+    if family == 'PR_PRA':
+        d1, b, l = p['d1_mm'], p['b_mm'], p['l_mm']
+        need(d1 > b, 'The review-approved PR/PRA scope requires B to be smaller than D1.')
+        need(b > 2 and l > 2, 'B and L must each exceed 2 mm to create the hollow branch.')
+        maximum_offset = (d1 - b) / 2
+        if p['position'] == 'S':
+            asymmetry_mm, position = 0.0, 'S'
+        elif p['position'] == 'A':
+            need(maximum_offset > 0, 'A requires D1 to be greater than B.')
+            asymmetry_mm, position = maximum_offset, 'A'
+        else:
+            need(0 <= p['offset_mm'] < maximum_offset, 'P offset must be non-negative and less than the right-tangent offset (%g mm).' % maximum_offset)
+            asymmetry_mm, position = p['offset_mm'], 'P'
+        catalogue_variant = {'S': 'PR', 'A': 'PRA'}.get(position)
+        price_frame_option = {'NO_FRAME': 'NO_FRAME', 'E20': 'E20_OR_E30', 'E30': 'E20_OR_E30', 'A40': 'A40'}[p['frame_profile']]
+        if p['frame_profile'] != 'NO_FRAME':
+            try:
+                frame_api()['frame_config'](
+                    profile=p['frame_profile'],
+                    length=b,
+                    width=l,
+                )
+            except ValueError as error:
+                raise InputError('PR/PRA frame dimensions are invalid: ' + str(error)) from error
+        derived.update(asymmetry_mm=asymmetry_mm, asymmetry_mode=position, maximum_asymmetry_mm=maximum_offset,
+                       geometry_basis='RECTANGULAR_BRANCH_ON_ROUND_HOST', wall_thickness_mm=1.0,
+                       branch_projection_above_host_crown_mm=100.0, catalogue_variant=catalogue_variant,
+                       price_frame_option=price_frame_option)
+        warnings.append('D1 is a Boolean host cutter and is not exported. Exact matrix pricing applies to S/PR and A/PRA; intermediate P remains on request.')
+    if family == 'TEE_SPECIAL':
+        need(p['length_mm'] > 2, 'Special-tee L is too short for the main-port frames.')
+        if p['variant'] == 'TALPHA':
+            talpha = derive_talpha_source_dimensions(
+                p['a_mm'], p['c_mm'], p['d_mm'], p['length_mm'], p['g_mm'], p['alpha_deg'], p['frame_profile']
+            )
+            if p['e_mm'] > 0:
+                need(abs(p['e_mm'] - talpha['e_mm']) <= 1.0, 'TALPHA E must satisfy the source L/G/C/alpha closure; use %g mm or zero to derive it.' % talpha['e_mm'])
+                e_mm = p['e_mm']
+            else:
+                e_mm = talpha['e_mm']
+            f_mm = p['f_mm'] if p['f_mm'] > 0 else talpha['f_mm'] + 1e-6
+            k2_vertical_clearance_mm = (f_mm - talpha['alignment_length_mm']) * math.sin(math.radians(p['alpha_deg']))
+            need(k2_vertical_clearance_mm >= 100.0, 'TALPHA F must be at least %g mm to keep K2 at least 100 mm above G.' % talpha['f_mm'])
+            derived.update({
+                **talpha,
+                'geometry_basis': 'TALPHA_SOURCE_PROFILE',
+                'wall_thickness_mm': 1.0,
+                'k2_minimum_vertical_clearance_mm': 100.0,
+                'e_mm': e_mm,
+                'f_mm': f_mm,
+                'e_source_derived': p['e_mm'] == 0,
+                'f_source_derived': p['f_mm'] == 0,
+                'k2_vertical_clearance_mm': k2_vertical_clearance_mm,
+            })
+            warnings.append('Talpha is the approved special-tee geometry. Catalogue page 157 has no special-tee price rule; price is on request.')
+        else:
+            try:
+                frame_depth_mm = frame_api()['frame_config'](
+                    profile=p['frame_profile'],
+                    length=p['b_mm'],
+                    width=max(p['a_mm'], p['c_mm'], p['d_mm']),
+                )['profile_depth']
+            except ValueError as error:
+                raise InputError('TASYMM frame dimensions are invalid: ' + str(error)) from error
+            need(p['branch_length_mm'] > frame_depth_mm,
+                 'TASYMM K2 length must exceed the selected frame entry depth.')
+            derived.update(
+                geometry_basis='TASYMM_SOURCE_PROFILE',
+                wall_thickness_mm=1.0,
+                branch_length_mm=p['branch_length_mm'],
+            )
+            warnings.append('TASYMM is the approved special-tee geometry. Catalogue page 157 has no special-tee price rule; price is on request.')
     if family == 'FRAME': derived['profile']=profile_for(p['a_mm'],p['b_mm'])
     if family == 'TEE_RECT': warnings.append('Limited project tee; no automatic Airkan Talpha or unequal side sections.')
     code = {'FRAME':derived.get('profile','FRAME'),'BEND_RECT':'B90' if p.get('angle_deg')==90 else 'Balpha','REDUCER_RECT':p.get('variant'),'RECT_ROUND':p.get('variant'),'BEND_ROUND':p.get('variant'),'REG':p.get('variant'),'SL_RECT':'SL.'+derived.get('profile',''), 'FLEX_ROUND':p.get('variant'),'CONNECTOR_ROUND':p.get('variant'),'FLANGE_ROUND':'F','COVER_ROUND':p.get('variant'),'INSPECTION':p.get('variant'),'SUPPORT_PL':p.get('variant'),'HOOD':p.get('variant'),'ROOF':p.get('variant'),'TAKEOFF_RECT':p.get('variant'),'TEE_RECT':'T_PROJECT','GRILLE_FIRE':p.get('variant')}.get(family, family)
@@ -260,6 +390,11 @@ def resolve(raw):
     if family=='REDUCER_RECT': tags += ['TO',n(p['c_mm'])+'x'+n(p['d_mm']),'E'+n(derived['e_mm']),'F'+n(derived['f_mm'])]
     if family=='VER':tags += ['DX'+n(p['offset_x_mm']),'DY'+n(p['offset_y_mm'])]
     if family=='TEE_RECT':tags += ['BR'+n(p['branch_a_mm'])+'x'+n(p['b_mm']),'Z'+n(p['branch_z_mm'])]
+    if family=='AP_APA_PSA':tags += [p['variant'],'D1'+n(p['d1_mm']),'D2'+n(p['d2_mm']),derived['asymmetry_mode']]
+    if family=='PR_PRA':tags += ['D1'+n(p['d1_mm']),'B'+n(p['b_mm'])+'x'+n(p['l_mm']),derived['asymmetry_mode']]
+    if family=='TEE_SPECIAL':
+        tags += [p['variant'],'A'+n(p['a_mm']),'B'+n(p['b_mm']),'C'+n(p['c_mm']),'D'+n(p['d_mm']),'L'+n(p['length_mm'])]
+        tags += (['ALPHA'+n(p['alpha_deg'])] if p['variant']=='TALPHA' else ['K2'+n(p['branch_length_mm'])])
     if 'diameter_mm' in p: tags += ['D'+n(p['diameter_mm'])]
     if 'length_mm' in p: tags += ['L'+n(p['length_mm'])]
     if family=='BEND_RECT': tags += ['ANG'+n(p['angle_deg']),'R'+n(p['radius_mm']),'S'+n(p['straight_in_mm'])+'-'+n(p['straight_out_mm']),p['turn']]
@@ -284,6 +419,15 @@ def resolve(raw):
         order.update(catalogue_label='CM - '+p['description'],pricing_status='PENDING_STEP_MEASUREMENT',price_basis='STEP_ALL_FACES_DIVIDED_BY_TWO_X_RATE',currency='EUR')
     elif family=='BUY':
         order.update(catalogue_label='BUY - %s - %s - %s'%(p['supplier'],p['article_code'],p['description']),supplier=p['supplier'],article_code=p['article_code'])
+    elif family=='AP_APA_PSA':
+        order.update(catalogue_label='%s - D1 %g - D2 %g - %s' % (p['variant'], p['d1_mm'], p['d2_mm'], derived['asymmetry_mode']))
+    elif family=='PR_PRA':
+        order.update(catalogue_label='PR/PRA - D1 %g - B %gx%g - %s' % (p['d1_mm'], p['b_mm'], p['l_mm'], derived['asymmetry_mode']))
+    elif family=='TEE_SPECIAL':
+        if p['variant'] == 'TALPHA':
+            order.update(catalogue_label='Talpha - %gx%g / %gx%g - alpha %g' % (p['a_mm'], p['b_mm'], p['d_mm'], p['b_mm'], p['alpha_deg']))
+        else:
+            order.update(catalogue_label='TASYMM - %gx%g / %gx%g - K2 %g' % (p['a_mm'], p['b_mm'], p['d_mm'], p['b_mm'], p['branch_length_mm']))
     elif family=='FLANGE_ROUND':order['catalogue_label']='F - %g'%p['diameter_mm']
     else:order['catalogue_label']=str(order['catalogue_family_code'])
     order.update(price_for_parameters(p, derived))

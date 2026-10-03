@@ -302,12 +302,151 @@ def make_fire_grille(g):
                    product_geometry_modeled=False,unit_price_eur=g.d['unit_price_eur'])
 
 
+def _require_native_review_kernel(g, family):
+    need(
+        g.K.backend == 'freecad',
+        family + ' uses the native FreeCAD BRep validated against its source drawing; CadQuery is not a supported production backend for this family.',
+    )
+
+
+def make_round_branch_source(g):
+    _require_native_review_kernel(g, 'AP / APA / PSA')
+    p = g.p
+    if p['variant'] == 'PSA':
+        from tools.psa_fusion_saddle_review import build_psa_fusion_saddle
+
+        fitting, dimensions = build_psa_fusion_saddle(p['d1_mm'], p['d2_mm'], g.d['asymmetry_mm'])
+        branch_end_z_mm = dimensions['d2_spigot_height_mm']
+    else:
+        from tools.apa_review import build_apa
+
+        fitting, dimensions = build_apa(p['d1_mm'], p['d2_mm'], g.d['asymmetry_mm'], p['e_mm'])
+        branch_end_z_mm = dimensions['straight_spigot_end_z_mm']
+    g.add('Ronde_zadelaftakking', fitting)
+    branch_x_mm = dimensions['d1_center_x_mm'] if p['variant'] == 'PSA' else dimensions['d2_center_x_mm']
+    g.port('JO_BRANCH', (branch_x_mm, 0.0, branch_end_z_mm), (0, 0, 1), diameter=p['d2_mm'])
+    g.port(
+        'HOST_CUTOUT_REFERENCE',
+        (branch_x_mm, 0.0, 0.0),
+        (0, 0, -1),
+        diameter=p['d1_mm'],
+        kind='CURVED_HOST_REFERENCE_NOT_A_MATING_PLANE',
+    )
+    g.extra.update(dimensions)
+    g.extra.update(host_geometry='BOOLEAN_CUTTER_NOT_EXPORTED', branch_port='JO_BRANCH')
+
+
+def make_rectangular_branch_source(g):
+    _require_native_review_kernel(g, 'PR / PRA')
+    from tools.pr_pra_review import build_pr_pra
+
+    p = g.p
+    fitting, dimensions = build_pr_pra(p['d1_mm'], p['b_mm'], p['l_mm'], g.d['asymmetry_mm'])
+    g.add('Rechthoekige_zadelaftakking', fitting)
+    if p['frame_profile'] != 'NO_FRAME':
+        g.frame(
+            'K_BRANCH',
+            p['b_mm'],
+            p['l_mm'],
+            (g.d['asymmetry_mm'], 0.0, dimensions['branch_height_mm']),
+            profile=p['frame_profile'],
+        )
+    g.port(
+        'JO_BRANCH',
+        (g.d['asymmetry_mm'], 0.0, dimensions['branch_height_mm']),
+        (0, 0, 1),
+        p['b_mm'],
+        p['l_mm'],
+    )
+    g.port(
+        'HOST_CUTOUT_REFERENCE',
+        (g.d['asymmetry_mm'], 0.0, 0.0),
+        (0, 0, -1),
+        diameter=p['d1_mm'],
+        kind='CURVED_HOST_REFERENCE_NOT_A_MATING_PLANE',
+    )
+    g.extra.update(dimensions)
+    g.extra.update(host_geometry='BOOLEAN_CUTTER_NOT_EXPORTED', branch_port='JO_BRANCH')
+
+
+def make_special_tee(g):
+    _require_native_review_kernel(g, 'Talpha / TASYMM')
+    from tools.tee_special_review import build_tee_special
+
+    p = g.p
+    variant = p['variant']
+    branch_length_mm = g.d['f_mm'] if variant == 'TALPHA' else p['branch_length_mm']
+    fitting, frames, dimensions = build_tee_special(
+        variant,
+        p['a_mm'],
+        p['b_mm'],
+        p['c_mm'],
+        p['d_mm'],
+        p['length_mm'],
+        branch_length_mm,
+        p['alpha_deg'],
+        frame_profile=p['frame_profile'],
+        e_mm=g.d.get('e_mm', 0.0),
+        g_mm=p['g_mm'],
+    )
+    g.add(('Talpha' if variant == 'TALPHA' else 'TASYMM') + '_plaat', fitting)
+    for frame_part in frames:
+        port_name = frame_part['name'].split('_', 1)[0]
+        g.add(frame_part['name'], frame_part['shape'], frame_part['code'], port_name, False)
+
+    if variant == 'TALPHA':
+        branch_axis = (dimensions['branch_axis_x'], 0.0, dimensions['branch_axis_z'])
+        branch_width_axis = (dimensions['branch_axis_z'], 0.0, -dimensions['branch_axis_x'])
+        mating_top = (
+            dimensions['branch_root_x_mm'] + dimensions['branch_axis_x'] * (branch_length_mm + dimensions['frame_depth_mm']),
+            dimensions['branch_root_z_mm'] + dimensions['branch_axis_z'] * (branch_length_mm + dimensions['frame_depth_mm']),
+        )
+        branch_center = plus(
+            (mating_top[0], p['b_mm'], mating_top[1]),
+            plus(scale(branch_width_axis, p['c_mm'] / 2), (0.0, -p['b_mm'] / 2, 0.0)),
+        )
+    else:
+        branch_axis = (0.0, 0.0, 1.0)
+        branch_width_axis = (1.0, 0.0, 0.0)
+        branch_center = (
+            dimensions['branch_root_x_mm'],
+            p['b_mm'] / 2,
+            dimensions['branch_root_z_mm'] + branch_length_mm,
+        )
+    g.port('JO_K1', (0.0, p['b_mm'] / 2, p['a_mm'] / 2), (-1, 0, 0), p['b_mm'], p['a_mm'])
+    g.port('JO_K2', branch_center, branch_axis, p['c_mm'], p['b_mm'], x_axis=branch_width_axis)
+    g.port('JO_K3', (p['length_mm'], p['b_mm'] / 2, p['d_mm'] / 2), (1, 0, 0), p['b_mm'], p['d_mm'])
+    for port_name, height_mm in (('K1', p['a_mm']), ('K2', p['c_mm']), ('K3', p['d_mm'])):
+        g.frames.append(
+            dict(
+                name=port_name,
+                profile=p['frame_profile'],
+                inside_mm=[p['b_mm'], height_mm],
+                profile_depth_mm=dimensions['frame_depth_mm'],
+                physical_component_count=8,
+            )
+        )
+    physical_union = fitting.multiFuse([frame_part['shape'] for frame_part in frames]).removeSplitter()
+    need(physical_union.isValid() and physical_union.Volume > 0, 'Special-tee physical assembly union is invalid.')
+    g.extra.update(dimensions)
+    g.extra.update(
+        special_tee_variant=variant,
+        k2_port='JO_K2',
+        step_volume_reference_mm3=physical_union.Volume,
+        step_volume_relative_tolerance=1e-4,
+        step_volume_reference_note='Physical union of the sheet and 24 contacting frame solids; STEP translation tolerance is 0.01%.',
+    )
+    if variant == 'TALPHA':
+        g.extra['talpha_contract'] = 'G is the downstream straight section; K2-to-G perpendicular clearance is at least 100 mm.'
+
+
 GENERATORS={
  'FRAME':make_frame,'BU':make_bu,'BEND_RECT':make_rect_bend,'REDUCER_RECT':make_transition,'VER':make_transition,
  'RECT_ROUND':make_rect_round,'TEE_RECT':make_tee,'TAKEOFF_RECT':make_takeoff,'S':make_s,'BEND_ROUND':make_round_bend,
  'REG':make_reg,'SL_RECT':make_sl_rect,'FLEX_ROUND':make_flex_round,'CONNECTOR_ROUND':make_connector,
  'FLANGE_ROUND':make_flange,'COVER_ROUND':make_cover,'INSPECTION':make_inspection,'SUPPORT_PL':make_support,
- 'HOOD':make_hood,'ROOF':make_roof,'GRILLE_FIRE':make_fire_grille}
+ 'HOOD':make_hood,'ROOF':make_roof,'GRILLE_FIRE':make_fire_grille,
+ 'AP_APA_PSA':make_round_branch_source,'PR_PRA':make_rectangular_branch_source,'TEE_SPECIAL':make_special_tee}
 
 
 def build_geometry(raw,backend='freecad',progress=None):
@@ -344,15 +483,22 @@ def build_geometry(raw,backend='freecad',progress=None):
     if geometry_price:
         data['order'].update(geometry_price)
         data['derived']['pricing']=geometry_price.copy()
+    validation={'backend':backend,'valid_solids':len(g.parts),'physical_objects':len(g.parts),'partdesign_body_count':sum(p['single_body'] for p in g.parts),'bounds_mm':bbox,
+                'total_shape_volume_mm3':sum(volumes),'clashes':clashes,'exact_intersection_checks':pair_checks,
+                'air_and_hole_sample_checks':len(g.air_points),'right_handed_ports':len(g.ports),
+                'not_tested':['fabrication tolerances','seal compression','pressure resistance','complete insertion/crimp fit']}
+    if 'step_volume_reference_mm3' in g.extra:
+        validation.update(
+            step_volume_reference_mm3=g.extra['step_volume_reference_mm3'],
+            step_volume_relative_tolerance=g.extra['step_volume_relative_tolerance'],
+            step_volume_reference_note=g.extra['step_volume_reference_note'],
+        )
     result={'schema':'airkan-component-v3','version':VERSION,'rules_sha256':data['rules_sha256'],'units':'mm','parameters':data['params'],'derived':data['derived'],
         'filename_stem':data['filename_stem'],'order':data['order'],'detail':detail,'warnings':data['warnings'],
         'source_references':[{**r,**CAT['sources'][r['source_id']]} for r in data['family_spec']['sources']],
         'source_notes':data['family_spec']['notes'],'parts':g.parts,'shape':shape,'join_datums':g.ports,'frames':g.frames,'geometry':g.extra,
         'bom':{'quantity':1,'article':data['order']['catalogue_label'],'count_children':False,'mass_kg':None,'status':'coordination model, no mass certification'},
-        'validation':{'backend':backend,'valid_solids':len(g.parts),'physical_objects':len(g.parts),'partdesign_body_count':sum(p['single_body'] for p in g.parts),'bounds_mm':bbox,
-                      'total_shape_volume_mm3':sum(volumes),'clashes':clashes,'exact_intersection_checks':pair_checks,
-                      'air_and_hole_sample_checks':len(g.air_points),'right_handed_ports':len(g.ports),
-                      'not_tested':['fabrication tolerances','seal compression','pressure resistance','complete insertion/crimp fit']}}
+        'validation':validation}
     if 'unit_price_eur' in data['order']:
         result['bom'].update(unit_price_eur=data['order']['unit_price_eur'],currency='EUR',pricing_status=data['order']['pricing_status'])
     return result

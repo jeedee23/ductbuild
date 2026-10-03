@@ -35,6 +35,12 @@ class ProjectStoreTests(unittest.TestCase):
             on_request = store.save_item("A-20", dict(defaults("FLANGE_ROUND"), diameter_mm=1500, material="INOX304"))
             self.assertEqual(price_text(on_request), "On request")
 
+            promoted = store.save_item("A-25", defaults("AP_APA_PSA"))
+            self.assertEqual(price_text(promoted), "EUR 38,42")
+
+            pr = store.save_item("A-27", dict(defaults("PR_PRA"), d1_mm=300, b_mm=150, l_mm=200, frame_profile="E20"))
+            self.assertEqual(price_text(pr), "EUR 39,37")
+
             measured = store.save_item("A-30", self.valid_bu())
             self.assertEqual(price_text(measured), "EUR 43,03/m²")
 
@@ -56,6 +62,19 @@ class ProjectStoreTests(unittest.TestCase):
             self.assertNotIn("unit_price_eur", item)
             store.set_area_override("A-10", None)
             self.assertEqual(area_text(item), "")
+
+    def test_confirmed_quote_prices_on_request_special_tee_and_expires_on_change(self):
+        with tempfile.TemporaryDirectory() as folder:
+            store = ProjectStore(folder)
+            parameters = dict(defaults("TEE_SPECIAL"), variant="TASYMM", a_mm=300, b_mm=200, c_mm=400, d_mm=200, length_mm=1000, branch_length_mm=300)
+            item = store.save_item("A-10", parameters)
+            self.assertEqual(price_text(item), "On request")
+            quoted = store.set_confirmed_quote("A-10", "321.45", "Airkan Q-2026-103")
+            self.assertEqual(quoted["confirmed_quote"]["reference"], "Airkan Q-2026-103")
+            self.assertEqual(price_text(quoted), "EUR 321,45")
+            changed = store.save_item("A-10", dict(parameters, d_mm=250))
+            self.assertNotIn("confirmed_quote", changed)
+            self.assertEqual(price_text(changed), "On request")
 
     def test_legacy_unpriced_thickness_remains_loadable(self):
         with tempfile.TemporaryDirectory() as folder:

@@ -47,6 +47,7 @@ SETTINGS_PATH = Path(os.environ.get("APPDATA", Path.home())) / APP_TITLE / "sett
 LEGACY_SETTINGS_PATH = Path(os.environ.get("APPDATA", Path.home())) / "Allshield" / "project_gui.json"
 WORKER_PATH = PACKAGE_DIR / "Allshield_FreeCAD_Worker.py"
 TYPE_PREVIEW_DIR = PACKAGE_DIR / "assets" / "type_previews"
+HIDDEN_FAMILY_IDS = frozenset({"SUPPORT_AT", "COMPOSITE"})
 DEFAULT_HELP_TEXT = "Hover over or focus a control for more information."
 TOOLTIP_DELAY_MS = 400
 TOOLTIP_DISPLAY_MS = 2000
@@ -77,8 +78,10 @@ FIELD_HELP = {
     "drain_id_mm": "Confirmed internal drain diameter.",
     "drain_length_mm": "Drain projection length.",
     "drain_od_mm": "Confirmed external drain diameter.",
-    "e_mm": "Outlet edge offset along the X axis.",
-    "f_mm": "Outlet edge offset along the Y axis.",
+    "d1_mm": "Round host diameter D1; the host is a curved Boolean contact reference and is not exported with the branch fitting.",
+    "d2_mm": "Round branch diameter D2.",
+    "e_mm": "Source/profile E dimension. For Talpha, zero derives it from the L/G/C/alpha source closure.",
+    "f_mm": "Source/profile F dimension. For Talpha, zero derives it; an explicit value must keep at least 100 mm clearance above G.",
     "frames": "Choose whether connection frames are included.",
     "h_mm": "Catalogue height.",
     "hole_clock_deg": "Angular orientation of the bolt-hole pattern.",
@@ -86,7 +89,9 @@ FIELD_HELP = {
     "insertion_mode": "Choose the standard frame boundary or a confirmed manual insertion.",
     "length_basis": "Choose whether length is measured between flange faces or profile entries.",
     "length_mm": "Component length in millimetres.",
+    "l_mm": "Rectangular PR/PRA branch length along the host duct axis.",
     "material": "Material used for catalogue selection and pricing.",
+    "offset_mm": "Positive manual P-position offset from the centred branch position.",
     "offset_x_mm": "Outlet centreline displacement along the X axis.",
     "offset_y_mm": "Outlet centreline displacement along the Y axis.",
     "outer_a_mm": "Confirmed outside size 1; zero uses the catalogue table where supported.",
@@ -95,12 +100,16 @@ FIELD_HELP = {
     "pitch_override_mm": "Manual pitch-circle correction; use zero for the catalogue value.",
     "price_source": "Reference to the quotation, catalogue page or supplier URL.",
     "price_status": "Choose On request or Confirmed.",
+    "position": "S centres the branch, A uses the right tangent, and P uses the entered positive offset.",
     "radius_mm": "Internal radius of the clear airflow path.",
     "segments": "Number of straight segments used for the round bend.",
     "shoulder_radius_mm": "Internal transition radius at the branch shoulder.",
     "size_a_mm": "First catalogue order dimension.",
     "size_b_mm": "Second catalogue order dimension.",
     "source_step": "Choose the supplier or custom STEP file to import unchanged.",
+    "g_mm": "Talpha downstream straight main-duct section G.",
+    "alpha_deg": "Talpha branch angle alpha measured upward from the main-duct axis.",
+    "frame_profile": "Physical connection-frame profile; it also selects the corresponding supplier price-matrix column where applicable.",
     "straight_in_mm": "Straight length before the bend.",
     "straight_out_mm": "Straight length after the bend.",
     "supplier": "Supplier or manufacturer of the purchased component.",
@@ -151,7 +160,7 @@ FAMILY_NAMES = {
     "BUY": "Purchased STEP component",
     "AP_APA_PSA": "Round branch families",
     "PR_PRA": "Rectangular branch on round duct",
-    "TEE_SPECIAL": "Special tee families",
+    "TEE_SPECIAL": "Talpha",
     "SUPPORT_AT": "Additional support families",
     "COMPOSITE": "Composite components",
 }
@@ -179,6 +188,7 @@ CHOICE_LABELS = {
     "HANDMATIGE_INSTEEK": "Insert sheet into frame manually",
     "PROJECT_AUTO": "Automatic project frame",
     "GEEN": "None",
+    "NO_FRAME": "No frame",
     "LINKS": "Left",
     "RECHTS": "Right",
     "FLENSVLAKKEN": "Between flange faces",
@@ -810,6 +820,8 @@ class ProjectApplication:
         type_help = "Select the component family. The input fields below adapt automatically."
         self.tooltips.add(type_label, type_help)
         for family_id, specification in FAMILIES.items():
+            if family_id in HIDDEN_FAMILY_IDS:
+                continue
             suffix = "" if specification["status"] == "IMPLEMENTED" else " [source register only]"
             label = family_id + " - " + FAMILY_NAMES.get(family_id, family_id) + suffix
             self.family_labels[family_id] = label
@@ -916,6 +928,9 @@ class ProjectApplication:
         self.area_button = ttk.Button(heading, text="Change area...", command=self.edit_area, state="disabled")
         self.area_button.pack(side="right")
         self.tooltips.add(self.area_button, "Override the measured pricing area, or clear it to restore the measured value.")
+        self.quote_button = ttk.Button(heading, text="Quote...", command=self.edit_quote, state="disabled")
+        self.quote_button.pack(side="right", padx=(0, 6))
+        self.tooltips.add(self.quote_button, "Enter or clear a confirmed supplier quote for an on-request component.")
         remove_button = ttk.Button(heading, text="Remove", command=self.delete_selected)
         remove_button.pack(side="right")
         self.tooltips.add(remove_button, "Remove selected components and their registered output files.")
@@ -1242,6 +1257,7 @@ class ProjectApplication:
         paths = tuple(
             TYPE_PREVIEW_DIR / (family_id + ".png")
             for family_id in sorted(FAMILIES, key=str.casefold)
+            if family_id not in HIDDEN_FAMILY_IDS
         )
         self.drawing_library_paths = paths
         self.drawing_library_photos = []
@@ -1312,6 +1328,8 @@ class ProjectApplication:
         self.tooltips.add(tree, "All component types. Double-click a row to select it.")
         self.tooltips.add(scrollbar, "Scroll through all component types.")
         for family_id in sorted(FAMILIES, key=str.casefold):
+            if family_id in HIDDEN_FAMILY_IDS:
+                continue
             specification = FAMILIES[family_id]
             build_support = "Implemented" if specification["status"] == "IMPLEMENTED" else "Reference only"
             tree.insert("", "end", iid=family_id, values=(family_id, FAMILY_NAMES.get(family_id, family_id), build_support))
@@ -1409,7 +1427,7 @@ class ProjectApplication:
         self.parameter_form.columnconfigure(1, weight=1)
         if "t_mm" in self.field_widgets and "material" in self.field_widgets:
             self.field_widgets["material"].bind("<<ComboboxSelected>>", self.refresh_thickness_choices, add="+")
-        for field_key in ("thickness_mode", "insertion_mode"):
+        for field_key in ("thickness_mode", "insertion_mode", "variant"):
             if field_key in self.field_widgets:
                 self.field_widgets[field_key].bind("<<ComboboxSelected>>", self.refresh_field_visibility, add="+")
         self.refresh_field_visibility()
@@ -1437,6 +1455,11 @@ class ProjectApplication:
         if "insertion_mode" in self.field_variables:
             insertion_mode = english_choice_value(self.field_variables["insertion_mode"].get())
             set_visible("insertion_mm", insertion_mode == "HANDMATIGE_INSTEEK")
+        if self.family_ids.get(self.family.get()) == "TEE_SPECIAL" and "variant" in self.field_variables:
+            special_variant = english_choice_value(self.field_variables["variant"].get())
+            for field_key in ("g_mm", "e_mm", "f_mm", "alpha_deg"):
+                set_visible(field_key, special_variant == "TALPHA")
+            set_visible("branch_length_mm", special_variant == "TASYMM")
 
     def refresh_thickness_choices(self, event=None):
         family_id = self.family_ids.get(self.family.get())
@@ -1535,6 +1558,8 @@ class ProjectApplication:
             return
         dirty_ids = {item["id"] for item in self.store.dirty_items()}
         for item in self.store.items:
+            if item["parameters"].get("family") in HIDDEN_FAMILY_IDS:
+                continue
             error = self.store.error_text(item["id"])
             tag = "error" if error else ("dirty" if item["id"] in dirty_ids else "built")
             self.tree.insert("", "end", iid=item["id"], values=(
@@ -1568,14 +1593,19 @@ class ProjectApplication:
 
     def update_area_button(self):
         selection = self.tree.selection()
-        editable_area = len(selection) == 1 and pricing_values(self.store.item(selection[0]))["rate_eur_per_m2"] is not None
+        pricing = pricing_values(self.store.item(selection[0])) if len(selection) == 1 else {}
+        editable_area = pricing.get("rate_eur_per_m2") is not None
+        editable_quote = pricing.get("status") in ("ON_REQUEST", "CONFIRMED_QUOTE")
         self.area_button.configure(state="normal" if editable_area and self.process is None else "disabled")
+        self.quote_button.configure(state="normal" if editable_quote and self.process is None else "disabled")
 
     def register_double_click(self, event):
         if self.tree.identify_region(event.x, event.y) != "cell":
             return
         if self.tree.identify_column(event.x) == "#7":
             self.edit_area()
+        elif self.tree.identify_column(event.x) in ("#8", "#9"):
+            self.edit_quote()
         else:
             self.open_step()
 
@@ -1606,6 +1636,46 @@ class ProjectApplication:
         except Exception as error:
             messagebox.showerror("Area not changed", str(error), parent=self.root)
 
+    def edit_quote(self):
+        selection = self.tree.selection()
+        if len(selection) != 1 or self.process is not None:
+            return
+        item = self.store.item(selection[0])
+        pricing = pricing_values(item)
+        if pricing["status"] not in ("ON_REQUEST", "CONFIRMED_QUOTE"):
+            messagebox.showinfo(APP_TITLE, "This component has a catalogue price and does not need a supplier quote.", parent=self.root)
+            return
+        current = item.get("confirmed_quote") or {}
+        entered = simpledialog.askstring(
+            "Confirmed supplier quote",
+            "Price in EUR per item. Leave blank to clear the quote:",
+            initialvalue="" if not current else format_value(float(current["unit_price_eur"])),
+            parent=self.root,
+        )
+        if entered is None:
+            return
+        try:
+            price = entered.strip()
+            if not price:
+                self.store.set_confirmed_quote(item["id"], None)
+                status = item["id"] + ": supplier quote cleared."
+            else:
+                reference = simpledialog.askstring(
+                    "Supplier quote reference",
+                    "Supplier quotation or reference:",
+                    initialvalue=current.get("reference", ""),
+                    parent=self.root,
+                )
+                if reference is None:
+                    return
+                self.store.set_confirmed_quote(item["id"], price.replace(",", "."), reference)
+                status = item["id"] + ": confirmed supplier quote applied."
+            self.refresh_register()
+            self.select_item(item["id"], load=False)
+            self.status.set(status)
+        except Exception as error:
+            messagebox.showerror("Quote not changed", str(error), parent=self.root)
+
     def load_item(self, item_id):
         try:
             item = self.store.item(item_id)
@@ -1613,6 +1683,15 @@ class ProjectApplication:
             self.item_id.set(item["id"])
             self.load_connection_summaries(item["id"])
             family_id = item["parameters"]["family"]
+            if family_id in HIDDEN_FAMILY_IDS:
+                self.current_id = None
+                self.family.set("")
+                self.family_changed()
+                self.status.set(
+                    item["id"] + " uses unavailable family " + family_id
+                    + "; the source record is retained but must be migrated before it can be edited or built."
+                )
+                return
             self.family.set(self.family_labels[family_id])
             self.family_changed(parameters=item["parameters"])
             self.prefix.set(self.store.prefix)
@@ -1644,7 +1723,11 @@ class ProjectApplication:
     def build_changed(self):
         if self.current_id:
             self.save_current(silent=True)
-        item_ids = [item["id"] for item in self.store.dirty_items()]
+        item_ids = [
+            item["id"]
+            for item in self.store.dirty_items()
+            if item["parameters"].get("family") not in HIDDEN_FAMILY_IDS
+        ]
         if not item_ids:
             messagebox.showinfo(APP_TITLE, "There are no changed components.", parent=self.root)
             return
@@ -1658,6 +1741,12 @@ class ProjectApplication:
             items = []
             for item_id in item_ids:
                 item = self.store.item(item_id)
+                family_id = item["parameters"].get("family")
+                if family_id in HIDDEN_FAMILY_IDS:
+                    raise InputError(
+                        family_id
+                        + " is unavailable in this app version. Migrate the retained source record before building it."
+                    )
                 resolve(item["parameters"])
                 items.append({
                     "id": item["id"],
@@ -1944,7 +2033,12 @@ def main(argv=None):
         application.show_all_types()
         root.update_idletasks()
         browser = application.type_browser
-        checks["all_types_browser_complete"] = len(application.type_browser_tree.get_children("")) == len(FAMILIES)
+        checks["source_only_types_hidden"] = all(
+            family_id not in application.family_ids
+            and application.family_labels.get(family_id) is None
+            for family_id in HIDDEN_FAMILY_IDS
+        )
+        checks["all_types_browser_complete"] = len(application.type_browser_tree.get_children("")) == len(FAMILIES) - len(HIDDEN_FAMILY_IDS)
         application.type_browser_tree.selection_set("BEND_RECT")
         application.accept_type_browser()
         checks["all_types_double_click_selection"] = (
@@ -1970,6 +2064,7 @@ def main(argv=None):
         expected_preview_paths = tuple(
             TYPE_PREVIEW_DIR / (family_id + ".png")
             for family_id in sorted(FAMILIES, key=str.casefold)
+            if family_id not in HIDDEN_FAMILY_IDS
         )
         checks["drawing_library_lists_installed_pngs"] = (
             application.drawing_library_paths == expected_preview_paths
@@ -2056,6 +2151,19 @@ def main(argv=None):
             "buy_article_value": collected_buy["article_code"] == "411/900",
             "buy_price_status": collected_buy["price_status"] == "ON_REQUEST",
         })
+        tasymm_parameters = dict(defaults("TEE_SPECIAL"), variant="TASYMM", a_mm=300, b_mm=200, c_mm=400, d_mm=200, length_mm=1000, branch_length_mm=300)
+        application.family.set(application.family_labels["TEE_SPECIAL"])
+        application.family_changed(parameters=tasymm_parameters)
+        root.update_idletasks()
+        checks["tasymm_fields_switch_from_talpha_fields"] = (
+            application.field_widgets["branch_length_mm"].winfo_ismapped()
+            and all(not application.field_widgets[key].winfo_ismapped() for key in ("g_mm", "e_mm", "f_mm", "alpha_deg"))
+        )
+        application.store.save_item("A-05", tasymm_parameters)
+        application.refresh_register()
+        application.select_item("A-05", load=False)
+        application.update_area_button()
+        checks["quote_button_available_for_on_request_special_tee"] = application.quote_button.instate(("!disabled",))
         application.store.save_item("A-10", defaults("GRILLE_FIRE"))
         application.store.save_item("A-20", dict(defaults("BU"), t_mm=0.95))
         restricted_dialog = ConnectionDialog(application, "A-20")

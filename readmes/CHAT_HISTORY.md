@@ -7,7 +7,7 @@ this repository.
 
 - **Topic:** extracting and redrawing AIRKAN technical drawings
 - **Started:** 2026-09-28
-- **Last updated:** 2026-09-30
+- **Last updated:** 2026-10-02
 - **Workspace:** `D:\github\ductbuild`
 - **Session ID:** `5c364d5b-f38e-4f2f-a84b-d16781159f24`
 - **Reopen the complete chat:**
@@ -16,6 +16,14 @@ this repository.
 The session link above is the best way to reopen the complete conversation.
 The Markdown files below remain available even when the Copilot session is not
 shown in VS Code.
+
+## Current native FreeCAD review recovery
+
+[`AIRKAN_NATIVE_REVIEW_TRANSCRIPT_2026-10-02.md`](AIRKAN_NATIVE_REVIEW_TRANSCRIPT_2026-10-02.md)
+
+This is the current continuity record for the evidence-driven native FreeCAD
+fitting review system: its hard visual-review rules, validated PSA/APA/PR-PRA
+work, production-release guardrails, and the paused TEE_SPECIAL frame work.
 
 ## Saved history files
 
@@ -90,7 +98,7 @@ Final PNG/SVG comparison sheets are retained in the session artifacts:
 ## How to find this history later
 
 1. Open the `ductbuild` folder in VS Code.
-2. In the Explorer, open `CHAT_HISTORY.md` from the repository root.
+2. In the Explorer, open `readmes\CHAT_HISTORY.md`.
 3. Use the **Open the saved Copilot session** link near the top to reopen the
    complete chat.
 4. If that link is unavailable, open the transcript and handoff files listed
@@ -105,4 +113,3 @@ For future long-running work:
 2. Add its link to this index.
 3. Update the current handoff with the latest completed work and validation.
 4. Record the Copilot session ID and `agent-host-session://` reopen link.
-

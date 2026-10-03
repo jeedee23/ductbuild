@@ -114,6 +114,19 @@ def accepted_area(payload):
     return None
 
 
+def confirmed_quote(item):
+    quote = item.get("confirmed_quote")
+    if not isinstance(quote, dict):
+        return None
+    value = quote.get("unit_price_eur")
+    reference = quote.get("reference")
+    if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or value <= 0:
+        return None
+    if not isinstance(reference, str) or not reference.strip():
+        return None
+    return {"unit_price_eur": round(float(value), 2), "reference": reference.strip()}
+
+
 def _resolved_order(item):
     try:
         return resolve(item["parameters"]).get("order") or {}
@@ -123,6 +136,16 @@ def _resolved_order(item):
 
 def pricing_values(item):
     order = _resolved_order(item)
+    quote = confirmed_quote(item)
+    if order.get("pricing_status") == "ON_REQUEST" and quote is not None:
+        return {
+            "area_m2": None,
+            "manual_area": False,
+            "rate_eur_per_m2": None,
+            "total_eur": quote["unit_price_eur"],
+            "status": "CONFIRMED_QUOTE",
+            "quote_reference": quote["reference"],
+        }
     family = item.get("parameters", {}).get("family")
     rate = order.get("area_rate_eur_per_m2")
     if family == "CM":
@@ -497,11 +520,14 @@ class ProjectStore:
                 "connection_fingerprint": "",
             }
             self.data["items"].append(item)
+        parameters_changed = item.get("parameters") != resolved["params"]
         item.update({
             "parameters": resolved["params"],
             "updated_utc": utc_now(),
             "error": "",
         })
+        if parameters_changed:
+            item.pop("confirmed_quote", None)
         valid_ports = {port["name"] for port in port_specs(item["parameters"])}
         self.data["connections"] = [
             connection for connection in self.data["connections"]
@@ -687,6 +713,31 @@ class ProjectStore:
             if not math.isfinite(area) or area <= 0:
                 raise InputError("Area must be greater than 0 m².")
             item["area_override_m2"] = area
+        item["updated_utc"] = utc_now()
+        self.save()
+        return item
+
+    def set_confirmed_quote(self, item_id, unit_price_eur, reference=None):
+        item = self.item(item_id)
+        if pricing_values(item)["status"] not in ("ON_REQUEST", "CONFIRMED_QUOTE"):
+            raise InputError("A confirmed quote can only be entered for an on-request component.")
+        if unit_price_eur is None:
+            item.pop("confirmed_quote", None)
+        else:
+            try:
+                price = float(unit_price_eur)
+            except (TypeError, ValueError) as error:
+                raise InputError("Quote price: enter a number in EUR per item.") from error
+            if not math.isfinite(price) or price <= 0:
+                raise InputError("Quote price must be greater than EUR 0 per item.")
+            quote_reference = str(reference or "").strip()
+            if not quote_reference:
+                raise InputError("Quote reference: enter the supplier quotation or reference.")
+            item["confirmed_quote"] = {
+                "unit_price_eur": round(price, 2),
+                "reference": quote_reference,
+                "confirmed_utc": utc_now(),
+            }
         item["updated_utc"] = utc_now()
         self.save()
         return item

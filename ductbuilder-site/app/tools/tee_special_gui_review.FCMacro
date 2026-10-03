@@ -1,0 +1,165 @@
+"""Run a deterministic T/Talpha GUI review without popups or input dialogs.
+
+Optional environment variables:
+    DUCTBUILD_TEE_REVIEW_OUT
+    DUCTBUILD_TEE_VARIANT
+    DUCTBUILD_TEE_A_MM
+    DUCTBUILD_TEE_B_MM
+    DUCTBUILD_TEE_C_MM
+    DUCTBUILD_TEE_D_MM
+    DUCTBUILD_TEE_MAIN_LENGTH_MM
+    DUCTBUILD_TEE_BRANCH_LENGTH_MM
+    DUCTBUILD_TEE_ALPHA_DEG
+    DUCTBUILD_TEE_FRAME_PROFILE
+    DUCTBUILD_TEE_E_MM
+    DUCTBUILD_TEE_G_MM
+    DUCTBUILD_TEE_TOOLS_DIR
+    DUCTBUILD_TEE_AUTO_CLOSE_SECONDS
+"""
+from __future__ import annotations
+
+import os
+import sys
+import traceback
+from pathlib import Path
+
+
+out_dir = Path(
+    os.environ.get(
+        "DUCTBUILD_TEE_REVIEW_OUT",
+        str(Path.home() / "Documents" / "ductbuild-tee-special-review"),
+    )
+).expanduser()
+
+
+def _resolve_tools_dir():
+    configured_dir = os.environ.get("DUCTBUILD_TEE_TOOLS_DIR")
+    if configured_dir is not None:
+        tools_dir = Path(configured_dir).expanduser().resolve()
+        if (tools_dir / "tee_special_review.py").is_file():
+            return tools_dir
+        raise RuntimeError(
+            "DUCTBUILD_TEE_TOOLS_DIR must contain tee_special_review.py: "
+            f"{tools_dir}"
+        )
+
+    macro_path = globals().get("__file__")
+    if macro_path is None:
+        raise RuntimeError(
+            "Cannot locate tee_special_review.py without this macro's file path. "
+            "Set DUCTBUILD_TEE_TOOLS_DIR to the review tools directory."
+        )
+
+    macro_dir = Path(macro_path).resolve().parent
+    candidates = [macro_dir]
+    for ancestor in macro_dir.parents:
+        candidates.extend(
+            (
+                ancestor / "ductbuilder-site" / "app" / "tools",
+                ancestor / "ductbuild" / "ductbuilder-site" / "app" / "tools",
+            )
+        )
+    for tools_dir in candidates:
+        if (tools_dir / "tee_special_review.py").is_file():
+            return tools_dir
+    raise RuntimeError(
+        "Could not locate tee_special_review.py next to this macro or in a "
+        "ductbuild repository below one of its parent directories. Set "
+        "DUCTBUILD_TEE_TOOLS_DIR to the review tools directory."
+    )
+
+
+def _schedule_no_save_close(delay_seconds):
+    if delay_seconds <= 0:
+        return
+    try:
+        from PySide6 import QtCore, QtWidgets
+    except ImportError:
+        from PySide import QtCore, QtGui as QtWidgets
+
+    def close_without_saving():
+        import FreeCAD as App
+
+        document = App.activeDocument()
+        if document is not None:
+            App.closeDocument(document.Name)
+        QtWidgets.QApplication.instance().quit()
+
+    QtCore.QTimer.singleShot(round(delay_seconds * 1000), close_without_saving)
+
+
+try:
+    tools_dir = _resolve_tools_dir()
+    if str(tools_dir) not in sys.path:
+        sys.path.insert(0, str(tools_dir))
+
+    from tee_special_review import (
+        _variant,
+        derive_talpha_source_dimensions,
+        run_gui_review,
+    )
+
+    variant = _variant(os.environ.get("DUCTBUILD_TEE_VARIANT", "T"))
+    a_mm = float(os.environ.get("DUCTBUILD_TEE_A_MM", "300"))
+    b_mm = float(os.environ.get("DUCTBUILD_TEE_B_MM", "200"))
+    c_mm = float(os.environ.get("DUCTBUILD_TEE_C_MM", "400"))
+    d_default = "200" if variant == "TASYMM" else "300"
+    d_mm = float(os.environ.get("DUCTBUILD_TEE_D_MM", d_default))
+    main_length_mm = float(os.environ.get("DUCTBUILD_TEE_MAIN_LENGTH_MM", "1000"))
+    alpha_deg = float(os.environ.get("DUCTBUILD_TEE_ALPHA_DEG", "45"))
+    frame_profile = os.environ.get("DUCTBUILD_TEE_FRAME_PROFILE", "E20")
+    g_mm = float(os.environ.get("DUCTBUILD_TEE_G_MM", "250"))
+    branch_length_value = os.environ.get("DUCTBUILD_TEE_BRANCH_LENGTH_MM")
+    e_value = os.environ.get("DUCTBUILD_TEE_E_MM")
+    if variant == "TALPHA":
+        source_dimensions = derive_talpha_source_dimensions(
+            a_mm,
+            c_mm,
+            d_mm,
+            main_length_mm,
+            g_mm,
+            alpha_deg,
+            frame_profile,
+        )
+        branch_length_mm = (
+            float(branch_length_value)
+            if branch_length_value is not None
+            else source_dimensions["f_mm"]
+        )
+        e_mm = (
+            float(e_value)
+            if e_value is not None
+            else source_dimensions["e_mm"]
+        )
+    else:
+        branch_length_mm = float(branch_length_value or "300")
+        e_mm = float(e_value or "300")
+    auto_close_seconds = float(
+        os.environ.get("DUCTBUILD_TEE_AUTO_CLOSE_SECONDS", "0")
+    )
+    if auto_close_seconds < 0:
+        raise ValueError("DUCTBUILD_TEE_AUTO_CLOSE_SECONDS cannot be negative.")
+    result = run_gui_review(
+        out_dir,
+        variant,
+        a_mm,
+        b_mm,
+        c_mm,
+        d_mm,
+        main_length_mm,
+        branch_length_mm,
+        alpha_deg,
+        frame_profile,
+        e_mm,
+        g_mm,
+    )
+except Exception:
+    out_dir.mkdir(parents=True, exist_ok=True)
+    debug_path = out_dir / "TEE_SPECIAL_GUI_review_error.txt"
+    debug_path.write_text(traceback.format_exc(), encoding="utf-8")
+    print(f"Special tee GUI review failed; traceback written to {debug_path}")
+else:
+    ready_path = out_dir / "TEE_SPECIAL_GUI_tiled_review.ready"
+    ready_path.write_text(str(result["view_count"]), encoding="utf-8")
+    _schedule_no_save_close(auto_close_seconds)
+    print(ready_path)

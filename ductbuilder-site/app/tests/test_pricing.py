@@ -46,6 +46,12 @@ class PricingTests(unittest.TestCase):
             ("ROOF", {"diameter_mm": 80, "variant": "DD60", "base_x_mm": 407, "base_y_mm": 407, "length_mm": 500, "actual_bore_mm": 80}, 69.40),
             ("INSPECTION", {"variant": "ISR", "size_a_mm": 660, "size_b_mm": 510}, 127.02),
             ("SUPPORT_PL", {"variant": "PL300"}, 7.98),
+            ("AP_APA_PSA", {"variant": "AP", "d1_mm": 300, "d2_mm": 150}, 38.42),
+            ("AP_APA_PSA", {"variant": "APA", "d1_mm": 300, "d2_mm": 150}, 46.96),
+            ("AP_APA_PSA", {"variant": "PSA", "d1_mm": 100, "d2_mm": 80}, 7.09),
+            ("PR_PRA", {"d1_mm": 200, "b_mm": 100, "l_mm": 200, "position": "S"}, 31.23),
+            ("PR_PRA", {"d1_mm": 200, "b_mm": 100, "l_mm": 200, "position": "A"}, 43.72),
+            ("PR_PRA", {"d1_mm": 300, "b_mm": 150, "l_mm": 200, "position": "S", "frame_profile": "E20"}, 39.37),
         ]
         for family, changes, expected in cases:
             with self.subTest(family=family):
@@ -88,6 +94,16 @@ class PricingTests(unittest.TestCase):
         order = priced("FLANGE_ROUND", diameter_mm=1500, material="INOX304")
         self.assertEqual(order["pricing_status"], "ON_REQUEST")
         self.assertNotIn("unit_price_eur", order)
+
+    def test_round_branch_price_matrix_rejects_nonstandard_diameters(self):
+        order = priced("AP_APA_PSA", variant="AP", d1_mm=301, d2_mm=150)
+        self.assertEqual(order["pricing_status"], "ON_REQUEST")
+        self.assertIn("listed nominal", order["pricing_note"])
+
+    def test_pr_pra_partial_position_remains_on_request(self):
+        order = priced("PR_PRA", d1_mm=200, b_mm=100, l_mm=200, position="P", offset_mm=10)
+        self.assertEqual(order["pricing_status"], "ON_REQUEST")
+        self.assertIn("intermediate P", order["pricing_note"])
 
     def test_rectangular_geometry_stores_inputs_and_calculates_total_on_demand(self):
         order = priced("BU", t_mm=0.95, length_mm=1100, airtightness_class="C")
